@@ -41,7 +41,8 @@ BinaryNode* BinarySearchTree::remove(BinaryNode*& n, const string& x) {
     return NULL;
   }
   // first look for x
-  if (x == n->value) {
+  int cmp = n->value.compare(x);
+  if (cmp == 0) {
     // found
     // no children
     if (n->left == NULL && n->right == NULL) {
@@ -68,7 +69,7 @@ BinaryNode* BinarySearchTree::remove(BinaryNode*& n, const string& x) {
     string sr = min(n->right);
     n->value = sr;
     n->right = remove(n->right, sr);
-  } else if (x < n->value) {
+  } else if (cmp < 0) {
     n->left = remove(n->left, x);
   } else {
     n->right = remove(n->right, x);
@@ -119,6 +120,7 @@ void BinarySearchTree::printTree(BinaryNode* root, Trunk* prev, bool isLeft) {
   trunk->str = "   |";
 
   printTree(root->right, trunk, false);
+  delete trunk;
 }
 
 void BinarySearchTree::printTree() { printTree(root, NULL, false); }
