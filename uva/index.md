@@ -80,27 +80,27 @@ The links in the right-most column link directly to the lecture recording on Col
 | 17 | Feb 22 | Friday | | [05: Trees][85] | [Trees][85], slides [4.12][1050311] to [6.15][1050514] ([recording][220]) |
 | 18 | Feb 25 | Monday | [Lab 5: Trees][5] ([md][25]) / [Tutorial 5: make][45] ([md][65]) | [05: Trees][85] | [Trees][85], slides [7][10506] to [7.31][1050630] ([recording][221]) |
 | 19 | Feb 27 | Wednesday | | [05: Trees][85] | [Trees][85], slides [8.1][10507] to [8.12][1050711]; [Hashes][86], slides [1][86] to [5.5][1060404] ([recording][224]) |
-| 20 | Mar 1 | Friday | | [05: Trees][85], [06: Hashes][86] | |
-| 21 | Mar 4 | Monday | [Lab 6: Hashes][6] ([md][26]) / Tutorial 6: Shell scripting, part 1 (part of [this link][46]; the specific sections are mentioned on the [tutorials page][40]) | [06: Hashes][86] | |
-| 22 | Mar 6 | Wednesday | | [06: Hashes][86] | |
-| 23 | Mar 8 | Friday | | [06: Hashes][86], [07: IBCM][87] (machine language) | |
+| 20 | Mar 1 | Friday | | [05: Trees][85], [06: Hashes][86] | [Hashes][86], slides [5.6][1060405] to [6.8][1060507] ([recording from fall 2018][225]) |
+| 21 | Mar 4 | Monday | [Lab 6: Hashes][6] ([md][26]) / Tutorial 6: Shell scripting, part 1 (part of [this link][46]; the specific sections are mentioned on the [tutorials page][40]) | [06: Hashes][86] | [Hashes][86], slides [7.1][10606] to [8.5][1060704] ([recording][226]) |
+| 22 | Mar 6 | Wednesday | | [06: Hashes][86] | [Hashes][86], slides [8.5][1060704] to [8.7][1060706] (end); [IBCM][87], slides [1][87] to [5.11][1070410] ([recording][227]) |
+| 23 | Mar 8 | Friday | | [06: Hashes][86], [07: IBCM][87] (machine language) | [IBCM][87], slides [5.11][1070410] to [6.6][1070505] ([recording][228]) |
 | | Mar 11 | Monday | No lab this week because of spring break | No class: spring break | No class: spring break |
 | | Mar 13 | Wednesday | | No class: spring break | No class: spring break |
 | | Mar 15 | Friday | | No class: spring break | No class: spring break |
-| 24 | Mar 18 | Monday | [Lab 7: IBCM][7] ([md][27]) / Tutorial 7: Shell scripting, part 2 (remainder of [here][47], as described on the [tutorials page][40]) | [07: IBCM][87] (machine language) | |
-| 25 | Mar 20 | Wednesday | | [07: IBCM][87] (machine language) | |
-| 26 | Mar 22 | Friday | | [07: IBCM][87] (machine language), [08: Assembly][88] | |
-| 27 | Mar 25 | Monday | [Lab 8: assembly, part 1][8] ([md][28]) / Tutorial 8: see the information on the [tutorials page](../tutorials/index.html) ([md](../tutorials.md)) | [08: Assembly][88] | |
-| 28 | Mar 27 | Wednesday | | [08: Assembly][88] | |
-| 29 | Mar 29 | Friday | | [08: Assembly][88] | |
+| 24 | Mar 18 | Monday | [Lab 7: IBCM][7] ([md][27]) / Tutorial 7: Shell scripting, part 2 (remainder of [here][47], as described on the [tutorials page][40]) | [07: IBCM][87] (machine language) | [IBCM][87], slides [6.7][1070506] to [7.10][1070609] (end); [Assembly][88], slides [1][88] to [4.2][1080301] ([recording][231]) |
+| 25 | Mar 20 | Wednesday | | [07: IBCM][87] (machine language) | [Assembly][88], slides [4.3][1080302] to [5.6][1080405] ([recording][232]) |
+| 26 | Mar 22 | Friday | | [07: IBCM][87] (machine language), [08: Assembly][88] | [Assembly][88], slides [5.7][1080406] to [8.14][1080713] ([recording][233]) |
+| 27 | Mar 25 | Monday | [Lab 8: assembly, part 1][8] ([md][28]) / Tutorial 8: see the information on the [tutorials page](../tutorials/index.html) ([md](../tutorials.md)) | [08: Assembly][88] | [Assembly][88], slides [8.15][1080714] to [10.16][1080915] ([recording][234]) |
+| 28 | Mar 27 | Wednesday | | [08: Assembly][88] | [Assembly][88], slides [10.17][1080916] to [10.33][1080932] (end); [Trees][85], slides [9.1][10508] to [9.3][1050802] ([recording][235]) |
+| 29 | Mar 29 | Friday | | [08: Assembly][88] | [Trees][85], slides [9.3][1050802] to [10.10][1050909] (end); [Advanced C++][89], slides [1][89] to [6.4][1090503] ([recording][237]) |
 | | Mar 31? | Sunday? | | Exam 2 review session | |
-| 30 | Apr 1 | Monday | Exam 2 instead during Tuesday's lab | [08: Assembly][88], [09: Advanced C++][89] | |
-| 31 | Apr 3 | Wednesday | | [09: Advanced C++][89] | |
-| 32 | Apr 5 | Friday | | [09: Advanced C++][89] | |
-| 33 | Apr 8 | Monday | [Lab 9: assembly, part 2][9] ([md][29]) / [Tutorial 9: C][49] ([md][69]) | [10: Heaps and Huffman coding][90] | |
-| 34 | Apr 10 | Wednesday | | [10: Heaps and Huffman coding][90] | |
-| 35 | Apr 12 | Friday | | [10: Heaps and Huffman coding][90] | |
-| 36 | Apr 15 | Monday | [Lab 10: Huffman coding][10] ([md][30]) / (no tutorial) | [10: Heaps and Huffman coding][90], [11: Graphs][91] | |
+| 30 | Apr 1 | Monday | Exam 2 instead during Tuesday's lab | [08: Assembly][88], [09: Advanced C++][89] | [Advanced C++][89], slides [6.3][1090502] to [7.3][1090602] ([recording][238]) |
+| 31 | Apr 3 | Wednesday | | [09: Advanced C++][89] | [Advanced C++][89], slides [7.3][1090602] to [8.12][1090711] (end); [Heaps & Huffman][90], slides [1][90] to  [5.5][1100404] ([recording][241]) |
+| 32 | Apr 5 | Friday | | [09: Advanced C++][89] | [Heaps & Huffman][90], slides [5.5][1100404] to  [6.7][1100506] ([recording][242]) |
+| 33 | Apr 8 | Monday | [Lab 9: assembly, part 2][9] ([md][29]) / [Tutorial 9: C][49] ([md][69]) | [10: Heaps and Huffman coding][90] | [Heaps & Huffman][90], slides [6.8][1100507] to  [8.2][1100701] ([recording][243]) |
+| 34 | Apr 10 | Wednesday | | [10: Heaps and Huffman coding][90] | [Heaps & Huffman][90], slides [8.1][11007] to [8.29][1100728] ([recording][244]) |
+| 35 | Apr 12 | Friday | | [10: Heaps and Huffman coding][90] | [Heaps & Huffman][90], slides [8.30][1100729] to  [9.9][1100808] (end); [Graphs][91], slides [1][91] to [4.11][1110310] ([recording][245]) |
+| 36 | Apr 15 | Monday | [Lab 10: Huffman coding][10] ([md][30]) / (no tutorial) | [10: Heaps and Huffman coding][90], [11: Graphs][91] | [Graphs][91], slides [4.11][1110310] to [5.9][1110408] ([recording][246]) |
 | 37 | Apr 17 | Wednesday | | [11: Graphs][91] | |
 | 38 | Apr 19 | Friday | | [11: Graphs][91] | |
 | 39 | Apr 22 | Monday | [Lab 11: Graphs][11] ([md][31]) | [11: Graphs][91] | |
@@ -507,12 +507,16 @@ Grading Concerns
 [1070601]: ../slides/07-ibcm.html#/6/1
 [1070604]: ../slides/07-ibcm.html#/6/4
 [1070609]: ../slides/07-ibcm.html#/6/9
+[1080301]: ../slides/08-assembly-64bit.html#/3/1
+[1080302]: ../slides/08-assembly-64bit.html#/3/2
 [1080306]: ../slides/08-assembly-64bit.html#/3/6
 [1080410]: ../slides/08-assembly-64bit.html#/4/10
 [1080304]: ../slides/08-assembly-64bit.html#/3/4
 [1080305]: ../slides/08-assembly-64bit.html#/3/5
 [1080309]: ../slides/08-assembly-64bit.html#/3/9
 [1080402]: ../slides/08-assembly-64bit.html#/4/2
+[1080405]: ../slides/08-assembly-64bit.html#/4/5
+[1080406]: ../slides/08-assembly-64bit.html#/4/6
 [10805]: ../slides/08-assembly-64bit.html#/5
 [1080502]: ../slides/08-assembly-64bit.html#/5/2
 [1080504]: ../slides/08-assembly-64bit.html#/5/4
@@ -543,6 +547,7 @@ Grading Concerns
 [1090308]: ../slides/09-advanced-cpp.html#/3/8
 [1090408]: ../slides/09-advanced-cpp.html#/4/8
 [10905]: ../slides/09-advanced-cpp.html#/5
+[1090502]: ../slides/09-advanced-cpp.html#/5/2
 [1090503]: ../slides/09-advanced-cpp.html#/5/3
 [1090508]: ../slides/09-advanced-cpp.html#/5/8
 [1090509]: ../slides/09-advanced-cpp.html#/5/9
@@ -551,11 +556,13 @@ Grading Concerns
 [1090520]: ../slides/09-advanced-cpp.html#/5/20
 [1090521]: ../slides/09-advanced-cpp.html#/5/21
 [10906]: ../slides/09-advanced-cpp.html#/6
+[1090602]: ../slides/09-advanced-cpp.html#/6/2
 [1090708]: ../slides/09-advanced-cpp.html#/7/8
 [1090710]: ../slides/09-advanced-cpp.html#/7/10
 [1090711]: ../slides/09-advanced-cpp.html#/7/11
 [1100303]: ../slides/10-heaps-huffman.html#/3/3
 [11004]: ../slides/10-heaps-huffman.html#/4
+[1100404]: ../slides/10-heaps-huffman.html#/4/4
 [1100406]: ../slides/10-heaps-huffman.html#/4/6
 [1100407]: ../slides/10-heaps-huffman.html#/4/7
 [1100408]: ../slides/10-heaps-huffman.html#/4/8
@@ -572,6 +579,8 @@ Grading Concerns
 [1100605]: ../slides/10-heaps-huffman.html#/6/5
 [11006]: ../slides/10-heaps-huffman.html#/6
 [1100606]: ../slides/10-heaps-huffman.html#/6/6
+[11007]: ../slides/10-heaps-huffman.html#/7
+[1100701]: ../slides/10-heaps-huffman.html#/7/1
 [1100703]: ../slides/10-heaps-huffman.html#/7/3
 [1100705]: ../slides/10-heaps-huffman.html#/7/5
 [1100706]: ../slides/10-heaps-huffman.html#/7/6
@@ -579,6 +588,8 @@ Grading Concerns
 [1100720]: ../slides/10-heaps-huffman.html#/7/20
 [1100723]: ../slides/10-heaps-huffman.html#/7/23
 [1100726]: ../slides/10-heaps-huffman.html#/7/26
+[1100728]: ../slides/10-heaps-huffman.html#/7/28
+[1100729]: ../slides/10-heaps-huffman.html#/7/29
 [1100730]: ../slides/10-heaps-huffman.html#/7/30
 [11008]: ../slides/10-heaps-huffman.html#/8
 [1100808]: ../slides/10-heaps-huffman.html#/8/8
@@ -587,6 +598,7 @@ Grading Concerns
 [1110305]: ../slides/11-graphs.html#/3/5
 [1110306]: ../slides/11-graphs.html#/3/6
 [1110312]: ../slides/11-graphs.html#/3/12
+[1110310]: ../slides/11-graphs.html#/3/10
 [1110402]: ../slides/11-graphs.html#/4/2
 [11104]: ../slides/11-graphs.html#/4
 [1110406]: ../slides/11-graphs.html#/4/6

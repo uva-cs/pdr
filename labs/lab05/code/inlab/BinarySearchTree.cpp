@@ -95,13 +95,13 @@ void showTrunks(Trunk* p) {
 
 // Recursive function to print binary tree
 // It uses inorder traversal
-void BinarySearchTree::printTree(BinaryNode* root, Trunk* prev, bool isLeft) {
+void BinarySearchTree::printTree(BinaryNode* root, Trunk* prev, bool isRight) {
   if (root == NULL) return;
 
   string prev_str = "    ";
   Trunk* trunk = new Trunk(prev, prev_str);
 
-  printTree(root->left, trunk, true);
+  printTree(root->right, trunk, true);
 
   if (!prev)
     trunk->str = "---";
@@ -118,8 +118,8 @@ void BinarySearchTree::printTree(BinaryNode* root, Trunk* prev, bool isLeft) {
 
   if (prev) prev->str = prev_str;
   trunk->str = "   |";
-
-  printTree(root->right, trunk, false);
+  
+  printTree(root->left, trunk, false);
   delete trunk;
 }
 
