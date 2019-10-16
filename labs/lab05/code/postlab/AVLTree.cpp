@@ -59,7 +59,8 @@ AVLNode* AVLTree::remove(AVLNode*& n, const string& x) {
     return NULL;
   }
   // first look for x
-  if (x == n->value) {
+  int cmp = n->value.compare(x);
+  if (cmp == 0) {
     // found
     // no children
     if (n->left == NULL && n->right == NULL) {
@@ -86,7 +87,7 @@ AVLNode* AVLTree::remove(AVLNode*& n, const string& x) {
     string sr = min(n->right);
     n->value = sr;
     n->right = remove(n->right, sr);
-  } else if (x < n->value) {
+  } else if (cmp < 0) {
     n->left = remove(n->left, x);
   } else {
     n->right = remove(n->right, x);
@@ -154,8 +155,9 @@ void AVLTree::printTree(AVLNode* root, Trunk* prev, bool isRight) {
 
   if (prev) prev->str = prev_str;
   trunk->str = "   |";
-
+  
   printTree(root->left, trunk, false);
+  delete trunk;
 }
 
 void AVLTree::printTree() { printTree(root, NULL, false); }
