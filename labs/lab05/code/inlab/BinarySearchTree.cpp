@@ -1,5 +1,6 @@
 #include "BinarySearchTree.h"
 #include <string>
+#include <iostream>
 #include "BinaryNode.h"
 using namespace std;
 
