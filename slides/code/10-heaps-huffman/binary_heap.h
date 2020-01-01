@@ -6,6 +6,7 @@
 #define BINARY_HEAP_H
 
 #include <vector>
+#include "heap_node.h"
 using namespace std;
 
 class binary_heap {
@@ -20,6 +21,7 @@ public:
     unsigned int size();
     void makeEmpty();
     bool isEmpty();
+    heap_node* createTree();
     void print();
 
 private:

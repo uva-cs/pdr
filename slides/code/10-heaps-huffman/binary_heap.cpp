@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "binary_heap.h"
+#include "heap_node.h"
 using namespace std;
 
 // default constructor
