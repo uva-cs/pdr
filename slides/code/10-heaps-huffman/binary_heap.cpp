@@ -136,14 +136,42 @@ heap_node* binary_heap::createTree() {
   return nodes[1]; // return the root node of the tree
 }
 
+// Helper function to print branches of the binary tree
+void showTrunks(Trunk* p) {
+    if (p == nullptr) return;
+    showTrunks(p->prev);
+    cout << p->str;
+}
+
 void binary_heap::print() {
-    cout << "(" << heap[0] << ") ";
-    for ( int i = 1; i <= heap_size; i++ ) {
-        cout << heap[i] << " ";
-        // next line from http://tinyurl.com/mf9tbgm
-        bool isPow2 = (((i+1) & ~(i))==(i+1))? i+1 : 0;
-        if ( isPow2 )
-            cout << endl << "\t";
+  print(createTree(), NULL, false);
+}
+
+// Recursive function to print binary tree
+// It uses inorder traversal
+void binary_heap::print(heap_node* root, Trunk* prev, bool isRight) {
+    if (root == NULL) return;
+
+    string prev_str = "    ";
+    Trunk* trunk = new Trunk(prev, prev_str);
+
+    print(root->right, trunk, true);
+
+    if (!prev)
+        trunk->str = "---";
+    else if (isRight) { // github user @willzhang05 pointed out that I forgot to change this from isLeft to isRight on my first commit
+        trunk->str = ".---";
+        prev_str = "   |";
+    } else {
+        trunk->str = "`---";
+        prev->str = prev_str;
     }
-    cout << endl;
+
+    showTrunks(trunk);
+    cout << root->value << endl;
+
+    if (prev) prev->str = prev_str;
+    trunk->str = "   |";
+
+    print(root->left, trunk, false);
 }
