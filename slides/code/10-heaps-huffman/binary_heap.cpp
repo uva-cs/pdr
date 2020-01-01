@@ -97,6 +97,44 @@ bool binary_heap::isEmpty() {
     return heap_size == 0;
 }
 
+heap_node* binary_heap::createTree() {
+  // Create all heap nodes and store them in an array
+  heap_node* nodes[heap_size+1]; // array containing all heap nodes
+  nodes[0] = NULL; // ignore the zero index
+  for (int i = 1; i <= heap_size; i++) {
+    heap_node* n = new heap_node;
+    n->value = heap[i];
+    nodes[i] = n;
+  }
+  cout << endl;
+
+  // Create the tree
+  // For every node x, we want to insert its left and right child
+  for (int i = 1; i <= heap_size; i++) {
+    heap_node* current = nodes[i];
+    int leftChildIndex = 2*i;
+    int rightChildIndex = 2*i + 1;
+
+    // If the index of the left child is larger than the number of
+    // elements in the heap, it means that the current node doesn't
+    // have a left child.
+    if (leftChildIndex >= heap_size+1)
+      current->left = NULL;
+    else
+      current->left = nodes[leftChildIndex];
+    
+    // If the index of the right child is larger than the number of
+    // elements in the heap, it means that the current node doesn't
+    // have a right child.
+    if (rightChildIndex >= heap_size+1)
+      current->right = NULL;
+    else
+      current->right = nodes[rightChildIndex];
+  }
+
+  return nodes[1]; // return the root node of the tree
+}
+
 void binary_heap::print() {
     cout << "(" << heap[0] << ") ";
     for ( int i = 1; i <= heap_size; i++ ) {
