@@ -1,0 +1,17 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ./.github/actions/publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
