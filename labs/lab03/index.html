@@ -20,6 +20,7 @@
 <p>A stack is a basic data structure similar in use to a physical stack of papers. You can add to the top (push) and take from the top (pop), but you are not allowed to access the middle or bottom. A stack adheres to the <a href="http://en.wikipedia.org/wiki/LIFO_%28computing%29">LIFO</a> property.</p>
 <h3 id="tutorial">Tutorial</h3>
 <p>Go through <a href="../../tutorials/03-04-more-unix/index.html">Tutorial 3: Unix, part 1</a>, which is the introduction and sections 1-4. This tutorial is originally from the department of Electrical Engineering at the University of Surrey, and is available online <a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">here</a>. You should complete the introductory part and sections 1-4. You should already be somewhat familiar with some of the materials in the first few of these tutorials, as they were covered in the <a href="../../tutorials/01-intro-unix/index.html">Unix tutorial from the first lab</a>. The rest of the tutorial (sections 5-8) are for next week's lab, but feel free to go through it this week, if you are interested.</p>
+<p>For the in-lab, you will need to go through the <a href="../../tutorials/05-make/index.html">makefile tutorial</a>.</p>
 <h3 id="recommended-readings">Recommended Readings</h3>
 <ul>
 <li>Postfix Calculation and Stacks and Queues sections on the <a href="../../docs/readings.html">Readings</a> page</li>
@@ -37,16 +38,18 @@
 <ol type="1">
 <li>Ensure your postfix calculator works on all the provided test cases</li>
 <li>Expand your test program to handle keyboard input</li>
+<li>Complete the <a href="../../tutorials/05-make/index.html">makefile tutorial</a>.</li>
 <li>Files to download: none (just your pre-lab source code)</li>
-<li>Files to submit: postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp</li>
+<li>Files to submit: postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp, Makefile-pizza</li>
 </ol>
 <h3 id="post-lab">Post-lab</h3>
 <ol type="1">
 <li>Implement a stack class</li>
 <li>Modify your postfix calculator to use your stack rather than the STL stack</li>
 <li>Describe any difficulties you encountered getting your code working and what you did to solve them</li>
+<li>Your code must compile with <code>make</code>!</li>
 <li>Files to download: none (just your in-lab source code)</li>
-<li>Files to submit: stack.h, stack.cpp, postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp, difficulties.txt - You may submit additional stack/list files as well, if you want</li>
+<li>Files to submit: stack.h, stack.cpp, postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp, difficulties.txt, Makefile, and any other .h and .cpp files you need</li>
 </ol>
 <hr />
 <h2 id="pre-lab-1">Pre-lab</h2>
@@ -168,6 +171,8 @@ while (cin &gt;&gt; token) {
 <p>C++ allows you to compare strings for equality with <code>==</code>. For example, you can check if <code>s</code> is the division operator with <code>if (s == &quot;/&quot;)</code>.<br />
 Hint: we can check for all the operators, since there are only five of them. If all the checks fail, what does that mean the token has to be?</p>
 <p>To convert input that represents numbers into their integer form, <code>&lt;cstdlib&gt;</code> provides the <code>int atoi(char* s)</code> function. Unfortunately, <code>atoi</code> requires C-style strings -- perhaps you should take a look at <a href="https://en.cppreference.com/w/cpp/string/basic_string">the <code>string</code> documentation</a> to see if anything can help you out.</p>
+<h3 id="makefile-tutorial">Makefile tutorial</h3>
+<p>As a reminder, please complete the <a href="../../tutorials/05-make/index.html">Makefile tutorial</a>. You will need to submit a file called Makefile-pizza (not Makefile, not Makefilepizza, not Makefile-pizza.txt). If your Makefile is not named properly, it won't work with our grading scripts and you won't get credit for this part of the in-lab.</p>
 <hr />
 <h2 id="post-lab-1">Post-lab</h2>
 <p>For the post-lab, you will be implementing your own stack and then modifying your postfix calculator to use that stack instead of the STL stack. This can be code that you write yourself, or you can re-use your List code from lab 2 (make sure it works before you re-use it, though!).</p>
@@ -179,12 +184,9 @@ Hint: we can check for all the operators, since there are only five of them. If 
 <li>Build a linked-list / pointer-based stack as discussed in lecture. Your stack class would contain a pointer to the head node of the stack, and push and pop would modify the singly-linked list accordingly.</li>
 <li>Manually implement an array-based stack. If you choose this method, your array must be able to automatically resize if the stack grows large enough to sufficiently fill the array. This is probably the most difficult of the three options.</li>
 </ol>
+<p><strong>Note:</strong> You will need to create a Makefile for this post-lab. Your code must compile when we run <code>make</code>.</p>
 <h3 id="submitting-the-stack-list-files">Submitting the stack / list files</h3>
-<p>Depending on how you implement the stack class, you may just need the stack.h/cpp files, in addition to the three postfix calculator files (postfixCalculator.h/cpp and testPostfixCalc.cpp). Or you may need stack.h/cpp and stacknode.h/cpp in addition to the three postfix calculator files. Or you may want to include the six List/ListItr/ListNode files from lab 2 as well as stack.h/cpp and the three postfix calculator files. How you do this is up to you - as long as it works, we don't really care, provided that:</p>
-<ol type="1">
-<li>It compiles with <code>clang++ *.cpp</code></li>
-<li>The total number of C++ files you submit is 11 or fewer (you can submit 12 files total, but you need to submit a text file called difficulties.txt as well)</li>
-</ol>
+<p>Depending on how you implement the stack class, you may just need the stack.h/cpp files, in addition to the three postfix calculator files (postfixCalculator.h/cpp and testPostfixCalc.cpp). Or you may need stack.h/cpp and stacknode.h/cpp in addition to the three postfix calculator files. Or you may want to include the six List/ListItr/ListNode files from lab 2 as well as stack.h/cpp and the three postfix calculator files. How you do this is up to you - as long as it works, we don't really care, provided that all of your code compiles when we run <code>make</code> (you also need to submit a text file called difficulties.txt).</p>
 <hr />
 <h2 id="test-files">Test files</h2>
 <p>The following examples provide postfix expressions and their expected value.</p>
