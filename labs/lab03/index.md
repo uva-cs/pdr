@@ -225,6 +225,9 @@ To convert input that represents numbers into their integer form, `<cstdlib>` pr
 Unfortunately, `atoi` requires C-style strings -- perhaps you should take a look at
 [the `string` documentation](https://en.cppreference.com/w/cpp/string/basic_string) to see if anything can help you out.
 
+### Makefile tutorial ###
+As a reminder, please complete the [Makefile tutorial](../../tutorials/05-make/index.html). You will need to submit a file called Makefile-pizza (not Makefile, not Makefilepizza, not Makefile-pizza.txt). If your Makefile is not named properly, it won't work with our grading scripts and you won't get credit for this part of the in-lab.
+
 ------------------------------------------------------------
 
 Post-lab
