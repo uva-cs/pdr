@@ -43,8 +43,9 @@ Procedure
 1. Implement a stack class
 2. Modify your postfix calculator to use your stack rather than the STL stack
 3. Describe any difficulties you encountered getting your code working and what you did to solve them
-4. Files to download: none (just your in-lab source code)
-5. Files to submit: stack.h, stack.cpp, postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp, difficulties.txt - You may submit additional stack/list files as well, if you want
+4. Your code must compile with `make`!
+5. Files to download: none (just your in-lab source code)
+6. Files to submit: stack.h, stack.cpp, postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp, difficulties.txt, Makefile, and any other .h and .cpp files you need
 
 ------------------------------------------------------------
 
@@ -246,13 +247,11 @@ Most of you will implement your stack in one of the following ways:
 2. Build a linked-list / pointer-based stack as discussed in lecture. Your stack class would contain a pointer to the head node of the stack, and push and pop would modify the singly-linked list accordingly.
 3. Manually implement an array-based stack. If you choose this method, your array must be able to automatically resize if the stack grows large enough to sufficiently fill the array. This is probably the most difficult of the three options.
 
+**Note:** You will need to create a Makefile for this post-lab. Your code must compile when we run `make`.
+
 ### Submitting the stack / list files ###
 
-Depending on how you implement the stack class, you may just need the stack.h/cpp files, in addition to the three postfix calculator files (postfixCalculator.h/cpp and testPostfixCalc.cpp).  Or you may need stack.h/cpp and stacknode.h/cpp in addition to the three postfix calculator files.  Or you may want to include the six List/ListItr/ListNode files from lab 2 as well as stack.h/cpp and the three postfix calculator files.  How you do this is up to you - as long as it works, we don't really care, provided that:
-
-1. It compiles with `clang++ *.cpp`
-2. The total number of C++ files you submit is 11 or fewer (you can submit 12 files total, but you need to submit a text file called difficulties.txt as well)
-
+Depending on how you implement the stack class, you may just need the stack.h/cpp files, in addition to the three postfix calculator files (postfixCalculator.h/cpp and testPostfixCalc.cpp).  Or you may need stack.h/cpp and stacknode.h/cpp in addition to the three postfix calculator files.  Or you may want to include the six List/ListItr/ListNode files from lab 2 as well as stack.h/cpp and the three postfix calculator files.  How you do this is up to you - as long as it works, we don't really care, provided that all of your code compiles when we run `make` (you also need to submit a text file called difficulties.txt).
 
 ------------------------------------------------------------
 
