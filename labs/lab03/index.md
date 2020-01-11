@@ -34,8 +34,9 @@ Procedure
 
 1. Ensure your postfix calculator works on all the provided test cases
 2. Expand your test program to handle keyboard input
-3. Files to download: none (just your pre-lab source code)
-4. Files to submit: postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp
+3. Complete the [makefile tutorial](tutorials/05-make/index.html).
+4. Files to download: none (just your pre-lab source code)
+5. Files to submit: postfixCalculator.h, postfixCalculator.cpp, testPostfixCalc.cpp, Makefile-pizza
 
 ### Post-lab ###
 
