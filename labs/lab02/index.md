@@ -203,6 +203,8 @@ However, what else do we dynamically allocate that we need to delete?
 #### Compiling ####
 To compile your code, simply run `make` in the terminal. We have provided a Makefile to make (pun intended) it easier for you to compile your code (instead of having to type `clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp` each time). You do not need to understand the syntax of the Makefile at this point, but if you're interested, you can go through the [makefile tutorial](../../tutorials/05-make/index.html), which will be required for in-lab 3.
 
+**Remark:** The provided source code will not compile out-of-the-box, so in order for `make` to run successfully, you will need to create the corresponding .cpp files for each of the .h files provided.
+
 Linker errors are commonly caused by one of two problems:
 
 - `Undefined symbols for architecture...` or `Undefined reference to...` means that you forgot to implement some functions, or that you forgot to compile all four files together. Here's an example:
