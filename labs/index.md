@@ -15,7 +15,7 @@ The labs for this course:
 &nbsp;
 
 - [Lab 2: Linked Lists](lab02/index.html)
-    - Source code: [ListNode.h](lab02/ListNode.h.html) ([src](lab02/ListNode.h)), [List.h](lab02/List.h.html) ([src](lab02/List.h)), [ListItr.h](lab02/ListItr.h.html) ([src](lab02/ListItr.h)), [ListTest.cpp](lab02/ListTest.cpp.html) ([src](lab02/ListTest.cpp)),
+    - Source code: [ListNode.h](lab02/ListNode.h.html) ([src](lab02/ListNode.h)), [List.h](lab02/List.h.html) ([src](lab02/List.h)), [ListItr.h](lab02/ListItr.h.html) ([src](lab02/ListItr.h)), [ListTest.cpp](lab02/ListTest.cpp.html) ([src](lab02/ListTest.cpp)), [Makefile](lab02/Makefile)
     - [Tutorial 2: LLDB](../tutorials/02-lldb/index.html) and the necessary [prog1.cpp](../tutorials/02-lldb/prog1.cpp.html) ([src](../tutorials/02-lldb/prog1.cpp)) and [debug.cpp](../tutorials/02-lldb/debug.cpp.html) ([src](../tutorials/02-lldb/debug.cpp))
 
 &nbsp;
@@ -23,6 +23,7 @@ The labs for this course:
 - [Lab 3: Stacks](lab03/index.html)
     - No source code for this lab!
     - [Tutorial 3: More Unix, part 1](../tutorials/03-04-more-unix/index.html), which is the introduction and sections 1-4; this tutorial is originally from [here](http://www.ee.surrey.ac.uk/Teaching/Unix/)
+    - [Makefile tutorial](../tutorials/05-make/index.html)
 
 &nbsp;
 
@@ -40,7 +41,6 @@ The labs for this course:
         - Pre-lab: [TreeCalc.h](lab05/code/prelab/TreeCalc.h.html) ([src](lab05/code/prelab/TreeCalc.h)), [TreeCalc.cpp](lab05/code/prelab/TreeCalc.cpp.html) ([src](lab05/code/prelab/TreeCalc.cpp)), [TreeNode.cpp](lab05/code/prelab/TreeNode.cpp.html) ([src](lab05/code/prelab/TreeNode.cpp)), [TreeNode.h](lab05/code/prelab/TreeNode.h.html) ([src](lab05/code/prelab/TreeNode.h)), [TreeCalcTest.cpp](lab05/code/prelab/TreeCalcTest.cpp.html) ([src](lab05/code/prelab/TreeCalcTest.cpp)).
         - In-lab: [BinaryNode.h](lab05/code/inlab/BinaryNode.h.html) ([src](lab05/code/inlab/BinaryNode.h)), [BinaryNode.cpp](lab05/code/inlab/BinaryNode.cpp.html) ([src](lab05/code/inlab/BinaryNode.cpp)), [BinarySearchTree.h](lab05/code/inlab/BinarySearchTree.h.html) ([src](lab05/code/inlab/BinarySearchTree.h)), [BinarySearchTree.cpp](lab05/code/inlab/BinarySearchTree.cpp.html) ([src](lab05/code/inlab/BinarySearchTree.cpp)), [BSTPathTest.cpp](lab05/code/inlab/BSTPathTest.cpp.html) ([src](lab05/code/inlab/BSTPathTest.cpp)), [testfile1.txt](lab05/code/inlab/testfile1.txt), [testfile2.txt](lab05/code/inlab/testfile2.txt), [testfile3.txt](lab05/code/inlab/testfile3.txt).
         - Post-lab: [AVLNode.h](lab05/code/postlab/AVLNode.h.html) ([src](lab05/code/postlab/AVLNode.h)), [AVLNode.cpp](lab05/code/postlab/AVLNode.cpp.html) ([src](lab05/code/postlab/AVLNode.cpp)), [AVLTree.h](lab05/code/postlab/AVLTree.h.html) ([src](code/postlab/AVLTree.h)), [AVLTree.cpp](lab05/code/postlab/AVLTree.cpp.html) ([src](lab05/code/postlab/AVLTree.cpp)), [AVLPathTest.cpp](lab05/code/postlab/AVLPathTest.cpp.html) ([src](lab05/code/postlab/AVLPathTest.cpp)), [testfile1.txt](lab05/code/postlab/testfile1.txt), [testfile2.txt](lab05/code/postlab/testfile2.txt), [testfile3.txt](lab05/code/postlab/testfile3.txt).
-    - [Tutorial 5: make](../tutorials/05-make/index.html)
 
 &nbsp;
 
