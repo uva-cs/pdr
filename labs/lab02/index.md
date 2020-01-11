@@ -32,8 +32,8 @@ Procedure
 ### Pre-lab ###
 
 1. Make significant progress on implementing a doubly-linked linked list
-2. Files to download: [List.h](List.h.html) ([src](List.h)), [ListNode.h](ListNode.h.html) ([src](ListNode.h)), [ListItr.h](ListItr.h.html) ([src](ListItr.h)), [ListTest.cpp](ListTest.cpp.html) ([src](ListTest.cpp))
-3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp
+2. Files to download: [List.h](List.h.html) ([src](List.h)), [ListNode.h](ListNode.h.html) ([src](ListNode.h)), [ListItr.h](ListItr.h.html) ([src](ListItr.h)), [ListTest.cpp](ListTest.cpp.html) ([src](ListTest.cpp)), [Makefile](Makefile)
+3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp, Makefile
 
 ### In-lab ###
 
@@ -46,7 +46,7 @@ Procedure
 
 1. Finish the implementation of your List and ensure it is free of any memory errors
 2. Files to download: no additional files beyond the pre-lab and in-lab
-3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp
+3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp, Makefile
 
 ------------------------------------------------------------
 
