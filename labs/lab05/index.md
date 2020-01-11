@@ -68,9 +68,10 @@ You must use the skeleton source files provided here as a basis for your prelab.
 
 Note that the code will not compile out of the box -- you need to add code so that the `printOutput()` method in TreeCalc works.
 
-You should only submit the following five files:
+You should only submit the following six files:
 
 - [TreeCalc.h](code/prelab/TreeCalc.h.html) ([src](code/prelab/TreeCalc.h)) and [TreeCalc.cpp](code/prelab/TreeCalc.cpp.html) ([src](code/prelab/TreeCalc.cpp)), after your modifications
+- Makefile (you'll need to create a Makefile for this pre-lab)
 - The unmodified [TreeNode.h](code/prelab/TreeNode.h.html) ([src](code/prelab/TreeNode.h)) and [TreeNode.cpp](code/prelab/TreeNode.cpp.html) ([src](code/prelab/TreeNode.cpp))
 - The unmodified [TreeCalcTest.cpp](code/prelab/TreeCalcTest.cpp.html) ([src](code/prelab/TreeCalcTest.cpp))
 
