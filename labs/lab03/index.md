@@ -15,6 +15,8 @@ A stack is a basic data structure similar in use to a physical stack of papers. 
 
 Go through [Tutorial 3: Unix, part 1](../../tutorials/03-04-more-unix/index.html), which is the introduction and sections 1-4.  This tutorial is originally from the department of Electrical Engineering at the University of Surrey, and is available online [here](http://www.ee.surrey.ac.uk/Teaching/Unix/).  You should complete the introductory part and sections 1-4.  You should already be somewhat familiar with some of the materials in the first few of these tutorials, as they were covered in the [Unix tutorial from the first lab](../../tutorials/01-intro-unix/index.html).  The rest of the tutorial (sections 5-8) are for next week's lab, but feel free to go through it this week, if you are interested.
 
+For the in-lab, you will need to go through the [makefile tutorial](../../tutorials/05-make/index.html).
+
 ### Recommended Readings ###
 
 - Postfix Calculation and Stacks and Queues sections on the [Readings](../../docs/readings.html) page
