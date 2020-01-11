@@ -201,13 +201,7 @@ Thus, it makes sense that we should delete all the elements we inserted (hint: d
 However, what else do we dynamically allocate that we need to delete?
 
 #### Compiling ####
-When compiling your code, you must remember to compile all of your .cpp files in one line:
-
-```
-clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp
-```
-
-There are ways to compile these programs in pieces, but we will see this later in the semester.
+To compile your code, simply run `make` in the terminal. We have provided a Makefile to make (pun intended) it easier for you to compile your code (instead of having to type `clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp` each time). You do not need to understand the syntax of the Makefile at this point, but if you're interested, you can go through the [makefile tutorial](../../tutorials/05-make/index.html), which will be required for in-lab 3.
 
 Linker errors are commonly caused by one of two problems:
 
