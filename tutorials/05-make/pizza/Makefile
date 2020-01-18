@@ -1,6 +1,6 @@
 # This is a comment
 
-CXX=clang++ $(CXXFLAGS)
+CXX=clang++ $(CXXFLAGS) -std=c++11
 DEBUG=-Wall -g
 
 pizza: pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o
