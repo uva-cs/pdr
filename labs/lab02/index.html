@@ -148,7 +148,7 @@ Since we have been dynamically allocating ListNodes, we must also be responsible
 <p>The destructor should delete <em>all</em> dynamically-allocated memory, as we no longer need this List instance. Thus, it makes sense that we should delete all the elements we inserted (hint: do we already have a method for that?). However, what else do we dynamically allocate that we need to delete?</p>
 <h4 id="compiling">Compiling</h4>
 <p>To compile your code, simply run <code>make</code> in the terminal. We have provided a Makefile to make (pun intended) it easier for you to compile your code (instead of having to type <code>clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp</code> each time). You do not need to understand the syntax of the Makefile at this point, but if you're interested, you can go through the <a href="../../tutorials/05-make/index.html">makefile tutorial</a>, which will be required for in-lab 3.</p>
-<p><strong>Remark:</strong> The provided source code will not compile out-of-the-box, so in order for <code>make</code> to run successfully, you will need to create the corresponding .cpp files for each of the .h files provided.</p>
+<p><strong>Note:</strong> The provided source code will not compile out-of-the-box, so in order for <code>make</code> to run successfully, you will need to create the corresponding .cpp files for each of the .h files provided.</p>
 <p>Linker errors are commonly caused by one of two problems:</p>
 <ul>
 <li><p><code>Undefined symbols for architecture...</code> or <code>Undefined reference to...</code> means that you forgot to implement some functions, or that you forgot to compile all four files together. Here's an example:</p>
