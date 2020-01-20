@@ -7,86 +7,79 @@
 
 body {
     font: 15px/1.4 Helvetica,arial,freesans,clean,sans-serif;
+    background-color: #000;
+    color:#eee;
 }
-
 a {
     text-decoration: none;
+    color:#e51;
 }
-
 h1 {
     font-size: 2.5em;
-    border-bottom: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid #555;
 }
-
 h2 {
     font-size: 2em;
-    border-bottom: 1px solid rgb(238, 238, 238);
+    border-bottom: 1px solid #555;
 }
-
 code {
-    background-color: rgb(248, 248, 248);
-    border: 1px solid rgb(221, 221, 221);
+    background-color: #333;
+    border: 1px solid #333;
     font-size: 13px;
     padding: 0px 5px;
+	/* prevent wide code overflowing the page */
+    white-space:pre-wrap;
 }
-
 pre {
-    background-color: rgb(248, 248, 248);
-    border: 1px solid rgb(221, 221, 221);
+    background-color: #333;
+    border: 1px solid #333;
     padding: 6px 10px;
     /* Make the pre box scrollable rather than scrolling the whole page */
     overflow: auto;
 }
-
 pre code {
     border: none;
     padding: 0;
 }
-
 img {
     /* Prevent image from scrolling off the page on mobile */
     max-width: 100%;
+    background-color:#fff;
 }
 
 /* table formatting */
-/*
-th {
-  background-color: #cccccc;
-  text-align:center;
-  padding: 4px;
-}
-
-tr:hover {
-  background-color: #eeeeee;
-}
-
-td {
-    padding: 2px;
-}
-*/
-
 table {
     border-collapse: collapse;
     border-spacing: 0px;
     word-break: keep-all;
 }
-
 table tr {
-    background-color: #FFF;
-    border-top: 1px solid #CCC;
+    background-color: #111;
+    border-top: 1px solid #555;
 }
-
 table th {
     padding: 6px 13px;
-    border: 1px solid #DDD;
-    background-color:#cccccc;
+    border: 1px solid #555;
+    background-color: #555;
 }
-
 table td {
     padding: 6px 13px;
-    border: 1px solid #DDD;
+    border: 1px solid #555;
+}
+table tr:nth-child(2n){
+    background-color: #333;
 }
 
-table tr:nth-child(2n){
-    background-color:#f8f8f8;
+/* tutorial containers */
+div#container {
+    color:#000;
+}
+div#container table th {
+    background-color:#bbb;
+}
+div#container table tr {
+    background-color:#fff;
+}
+div#container table tr:nth-child(2n) {
+    background-color:#ddd;
 }
