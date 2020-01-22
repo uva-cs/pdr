@@ -32,8 +32,8 @@
 <h3 id="pre-lab">Pre-lab</h3>
 <ol type="1">
 <li>Make significant progress on implementing a doubly-linked linked list</li>
-<li>Files to download: <a href="List.h.html">List.h</a> (<a href="List.h">src</a>), <a href="ListNode.h.html">ListNode.h</a> (<a href="ListNode.h">src</a>), <a href="ListItr.h.html">ListItr.h</a> (<a href="ListItr.h">src</a>), <a href="ListTest.cpp.html">ListTest.cpp</a> (<a href="ListTest.cpp">src</a>)</li>
-<li>Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp</li>
+<li>Files to download: <a href="List.h.html">List.h</a> (<a href="List.h">src</a>), <a href="ListNode.h.html">ListNode.h</a> (<a href="ListNode.h">src</a>), <a href="ListItr.h.html">ListItr.h</a> (<a href="ListItr.h">src</a>), <a href="ListTest.cpp.html">ListTest.cpp</a> (<a href="ListTest.cpp">src</a>), <a href="Makefile" class="uri">Makefile</a></li>
+<li>Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp, Makefile</li>
 </ol>
 <h3 id="in-lab">In-lab</h3>
 <ol type="1">
@@ -46,7 +46,7 @@
 <ol type="1">
 <li>Finish the implementation of your List and ensure it is free of any memory errors</li>
 <li>Files to download: no additional files beyond the pre-lab and in-lab</li>
-<li>Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp</li>
+<li>Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp, Makefile</li>
 </ol>
 <hr />
 <h2 id="pre-lab-1">Pre-lab</h2>
@@ -147,9 +147,8 @@ Since we have been dynamically allocating ListNodes, we must also be responsible
 <strong>Important:</strong> once you delete a ListNode, you can no longer reliably access any of its data, such as its <code>next</code> or <code>previous</code> pointers! To make sure you don't do this accidentally, we recommend setting each ListNode to NULL as soon as you delete it.</p>
 <p>The destructor should delete <em>all</em> dynamically-allocated memory, as we no longer need this List instance. Thus, it makes sense that we should delete all the elements we inserted (hint: do we already have a method for that?). However, what else do we dynamically allocate that we need to delete?</p>
 <h4 id="compiling">Compiling</h4>
-<p>When compiling your code, you must remember to compile all of your .cpp files in one line:</p>
-<pre><code>clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp</code></pre>
-<p>There are ways to compile these programs in pieces, but we will see this later in the semester.</p>
+<p>To compile your code, simply run <code>make</code> in the terminal. We have provided a Makefile to make (pun intended) it easier for you to compile your code (instead of having to type <code>clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp</code> each time). You do not need to understand the syntax of the Makefile at this point, but if you're interested, you can go through the <a href="../../tutorials/05-make/index.html">makefile tutorial</a>, which will be required for in-lab 3.</p>
+<p><strong>Note:</strong> The provided source code will not compile out-of-the-box, so in order for <code>make</code> to run successfully, you will need to create the corresponding .cpp files for each of the .h files provided.</p>
 <p>Linker errors are commonly caused by one of two problems:</p>
 <ul>
 <li><p><code>Undefined symbols for architecture...</code> or <code>Undefined reference to...</code> means that you forgot to implement some functions, or that you forgot to compile all four files together. Here's an example:</p>

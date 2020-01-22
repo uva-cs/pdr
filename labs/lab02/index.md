@@ -32,8 +32,8 @@ Procedure
 ### Pre-lab ###
 
 1. Make significant progress on implementing a doubly-linked linked list
-2. Files to download: [List.h](List.h.html) ([src](List.h)), [ListNode.h](ListNode.h.html) ([src](ListNode.h)), [ListItr.h](ListItr.h.html) ([src](ListItr.h)), [ListTest.cpp](ListTest.cpp.html) ([src](ListTest.cpp))
-3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp
+2. Files to download: [List.h](List.h.html) ([src](List.h)), [ListNode.h](ListNode.h.html) ([src](ListNode.h)), [ListItr.h](ListItr.h.html) ([src](ListItr.h)), [ListTest.cpp](ListTest.cpp.html) ([src](ListTest.cpp)), [Makefile](Makefile)
+3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp, Makefile
 
 ### In-lab ###
 
@@ -46,7 +46,7 @@ Procedure
 
 1. Finish the implementation of your List and ensure it is free of any memory errors
 2. Files to download: no additional files beyond the pre-lab and in-lab
-3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp
+3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp, Makefile
 
 ------------------------------------------------------------
 
@@ -201,13 +201,9 @@ Thus, it makes sense that we should delete all the elements we inserted (hint: d
 However, what else do we dynamically allocate that we need to delete?
 
 #### Compiling ####
-When compiling your code, you must remember to compile all of your .cpp files in one line:
+To compile your code, simply run `make` in the terminal. We have provided a Makefile to make (pun intended) it easier for you to compile your code (instead of having to type `clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp` each time). You do not need to understand the syntax of the Makefile at this point, but if you're interested, you can go through the [makefile tutorial](../../tutorials/05-make/index.html), which will be required for in-lab 3.
 
-```
-clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp
-```
-
-There are ways to compile these programs in pieces, but we will see this later in the semester.
+**Note:** The provided source code will not compile out-of-the-box, so in order for `make` to run successfully, you will need to create the corresponding .cpp files for each of the .h files provided.
 
 Linker errors are commonly caused by one of two problems:
 
