@@ -44,9 +44,10 @@ Procedure
 
 ### Post-lab ###
 
-1. Finish the implementation of your List and ensure it is free of any memory errors
-2. Files to download: no additional files beyond the pre-lab and in-lab
-3. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp
+1. Make sure your development environment is set up to be able to test for memory leaks, as described in the post-lab section
+2. Finish the implementation of your List and ensure it is free of any memory errors
+3. Files to download: no additional files beyond the pre-lab and in-lab
+4. Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp
 
 ------------------------------------------------------------
 
@@ -178,6 +179,7 @@ If you are seeing crashes in these methods, it is likely because some of the oth
 
 #### Insert methods ####
 When implementing the three insert functions, we have found it helpful to draw out the pointers on paper and determine the order in which to update the pointers _before_ beginning to code the function itself.
+Take the time to reason about how many next and previous pointers you should be updating!
 
 For `insertAfter` and `insertBefore`, the ListItr you are given is already pointing to a ListNode.
 You should insert the new ListNode after or before that ListNode, respectively.
@@ -199,6 +201,15 @@ To make sure you don't do this accidentally, we recommend setting each ListNode 
 The destructor should delete _all_ dynamically-allocated memory, as we no longer need this List instance.
 Thus, it makes sense that we should delete all the elements we inserted (hint: do we already have a method for that?).
 However, what else do we dynamically allocate that we need to delete?
+
+#### printList ####
+This one's interesting becaus it's a _non-member_ function, which means it doesn't have access to any private variables.
+
+As we've been using private variables heavily up until this point, try taking a step back and looking at the bigger picture.
+If you can't use anything private, that means you're limited to only public methods.
+
+Is there anything that helps you create a ListItr that points to the first or last node in the List?
+What about a way to retrieve each node's value from the iterator?
 
 #### Compiling ####
 When compiling your code, you must remember to compile all of your .cpp files in one line:
@@ -248,7 +259,11 @@ Post-lab
 --------
 
 For the post-lab, your goal is to submit a fully-functional version of your doubly-linked list.
+
+### Complete the LinkedList code ###
+
 Finish any methods that you haven't completed yet, and then move on to checking for memory errors.
+
 
 ### Memory Leaks and Corruption ###
 
@@ -265,7 +280,23 @@ These types of errors can cause your host machine to run out of memory and crash
 or edit some other file that your program shouldn't have access to!
 We will be checking that your code does not contain any memory errors because of their potential severity.
 
-You can test for memory errors by compiling your code with special _sanitizers_ enabled:
+To be able to test for memory errors, there are a few things you need to do first depending on your platform.
+
+- Linux
+```
+sudo update-alternatives --install /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-6.0 1000
+```
+
+- macOS
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install llvm
+PROFILE_FILE=$(if [[ -n $ZSH_VERSION ]]; then echo ~/.zshrc; else echo ~/.bash_profile; fi)
+echo 'export PATH="/usr/local/opt/llvm/bin:${PATH}"' >> $PROFILE_FILE
+source $PROFILE_FILE
+```
+
+Now you can compile your code with special _sanitizers_ enabled:
 
 ```
 clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp -fsanitize=address,leak -fno-omit-frame-pointer -g

@@ -15,7 +15,7 @@ Links
 There are a number of links and other parts of this course that are **NOT** included in this repository.  They are:
 
 - The set of online tools, which can be accessed through Collab or [here][160].
-    - These tools are: [support requests][161], [lab submission][162], [regrades][163], [gradebook][164], [lab extensions][165], and the [office hours queue][166]
+    - These tools are: [support requests][161], [lab submission][162], [regrades][163], [gradebook][164], and the [office hours queue][166]
 - The announcements, which are posted to the CS 2150 twitter feed: [\@UVaCS2150][151]
 - Grading guidelines, which are available in the Collab wiki ([here][171] is the direct link, although Collab login is required)
 - Email list archive, which is a Collab tool ([here][170] is the direct link, although Collab login is required)
@@ -33,6 +33,15 @@ The parts of this course that are in this repo are:
 - [Generic review session slide set][113], which is really just a blank set of slides
 - [Frivolous regrade policy][109] ([md][110]) for exams
 - The [final course grading metrics][116] ([md][115])
+
+The [Documents page](../docs/index.html) ([md](../docs/index.md)) has a number of useful parts:
+
+- [Useful compiler flags](../docs/compiler_flags.html) ([md](../docs/compiler_flags.md))
+- [GDB command summary](../docs/gdb_summary.html) ([md](../docs/gdb_summary.md))
+- [LLDB command summary](../docs/lldb_summary.html) ([md](../docs/lldb_summary.md))
+- [GDB vs LLDB](../docs/gdb_vs_lldb.html) ([md](../docs/gdb_vs_lldb.md))
+- [Compilation issues](../docs/compilation.html) ([md](../docs/compilation.md))
+- [Readings](../docs/readings.html) ([md](../docs/readings.md)) in lieu of a textbook
 
 ------------------------------------------------------------
 
@@ -62,13 +71,13 @@ The links in the right-most column link directly to the lecture recording on Col
 |-----|------|-------------|-------------------------|---------------|------------------|
 | 1 | Jan 13 | Monday | no lab this week | [Course introduction][80] | course intro to slide 4.6 |
 | 2 | Jan 15 | Wednesday | | [Course introduction][80], [01: C++][81] | finished course intro; C++ to slide 5.5 |
-| 3 | Jan 17 | Friday | | [01: C++][81] | |
+| 3 | Jan 17 | Friday | | [01: C++][81] | C++ to slide 7.9 |
 | | Jan 20 | Monday | [Lab 1: Intro to C++][1] ([md][21]) / [Tutorial 1: Intro to UNIX][41] ([md][61]) | No class due to MLK day | No class due to MLK day |
-| 4 | Jan 22 | Wednesday | | [01: C++][81] | |
-| 5 | Jan 24 | Friday | | [01: C++][81] | |
-| 6 | Jan 27 | Monday | [Lab 2: Linked lists][2] ([md][22]) / [Tutorial 2: LLDB][42] ([md][62]) *OR* [Tutorial 2: GDB][52] ([md][72]) (see [lab 2][2] for which one to pick) | [01: C++][81] | |
-| 7 | Jan 29 | Wednesday | | [01: C++][81], [02: Lists][82] | |
-| 8 | Jan 31 | Friday | | [02: Lists][82] | |
+| 4 | Jan 22 | Wednesday | | [01: C++][81] | C++ to slide 9.19 |
+| 5 | Jan 24 | Friday | | [01: C++][81] | C++ to slide 10.17 |
+| 6 | Jan 27 | Monday | [Lab 2: Linked lists][2] ([md][22]) / [Tutorial 2: LLDB][42] ([md][62]) *OR* [Tutorial 2: GDB][52] ([md][72]) (see [lab 2][2] for which one to pick) | [01: C++][81] | C++ to slide 12.10 |
+| 7 | Jan 29 | Wednesday | | [01: C++][81], [02: Lists][82] | finished C++; lists to slide 4.6 |
+| 8 | Jan 31 | Friday | | [02: Lists][82] | lists to slide 6.16 |
 | 9 | Feb 3 | Monday | [Lab 3: Stacks][3] ([md][23]) / [Tutorial 3: More UNIX, part 1][63], introduction and sections 1-4 | [02: Lists][82], [03: Numbers][83] | |
 | 10 | Feb 5 | Wednesday | | [03: Numbers][83] | |
 | 11 | Feb 7 | Friday | | [03: Numbers][83] | |
