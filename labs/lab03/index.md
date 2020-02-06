@@ -50,64 +50,33 @@ Procedure
 Pre-lab
 -------
 
+Before moving on to the code portion of this lab, write up at least one question that you still have on Unix (or things you are still confused about) in `unix.questions.txt`.
+
 ### Code Description ###
 
-In this lab, you will:
-
-- Implement a stack class that handles a stack of integer numbers.  This stack implementation is done for the post-lab; for the pre-lab and the in-lab, you will be using a pre-existing stack class from C++'s standard library.
-    - Documentation on the standard library routines can be found at [https://en.cppreference.com](https://en.cppreference.com). The stack class's documentation can be found [here](https://en.cppreference.com/w/cpp/container/stack).
-- Write a program that uses this class to implement a postfix calculator. This will include the following files:
-    - postfixCalculator.h, which is the class declaration of the postfix calculator
-    - postfixCalculator.cpp, which is the implementation of the postfix calculator
-    - testPostfixCalc.cpp that has a hard-coded expression (see below) and evaluates that expression.
-
-The various parts of this lab develop the entire program:
-
-- The pre-lab develops the calculator itself, without dealing with user input or the stack class
-- The in-lab develops the user input routines
-- The post-lab develops the stack class that your calculator uses
-
-Note that the program should be able to fully run after each lab portion.
-
-### Stacks ###
-
-A stack is a container that implements the LIFO (last in, first out) property.  Often it internally uses a linked list, array, vector, or a doubly-linked list to contain the elements.  In general, a stack needs to implement the following interface and functionality:
-
-- `void push(int e)`: This adds the passed element to the top of the stack.
-- `int top()`: This returns the element on the top of the stack.  It does not remove that element from the top.  If the stack is empty, then somehow an error must be indicated -- printing an error message and exiting is fine for reporting errors for this lab.
-- `void pop()`: This removes the element on the top of the stack, but does not return it.  If the stack is empty, then somehow an error must be indicated -- for this lab, you can just print out an error message and then exit.
-- `bool empty()`: This tells whether there are any elements left in the stack (false) or not (true).
-
-Often, the `top()` and `pop()` functionality are joined as an `int pop()` function, but in this lab, it is beneficial to separate them, as that is what the STL stack does.
-
-If `pop()` or `top()` are called on an empty stack, terminate the program with the function call `exit(-1)`, which is from the `<cstdlib>` library.
-
-For this lab, you will use a stack of `int` values.
-
-### Postfix Notation ###
-
-Postfix notation (also known as reverse Polish notation) involves writing the operators after the operands.  Note how parentheses are unnecessary in postfix notation.
-
-- Infix: ( 3  +  6 )  -  ( 8  /  4 )
-- Postfix: 3  6  +  8  4  /  -
-
-An online description of postfix calculators can be found [on Wikipedia](http://en.wikipedia.org/wiki/Reverse_Polish_notation).
+You will be implementing a postfix calculator that relies on a stack to perform calculations.
+Stacks and postfix notation are both described in the [Readings](../../docs/readings.html).
 
 ### Stack Calculator Implementation ###
 
-We will be using the C++ STL stack to implement our postfix calculator.  The stack class's documentation can be found [here](https://en.cppreference.com/w/cpp/container/stack).
+Your calculator must:
 
-Your calculator must implement the following arithmetic operations:
-
-- `+`: addition
-- `-`: subtraction
-- `*`: multiplication
-- `/`: division
-- `~`: unary negation
+- Be implemented in postfixCalculator.h and postfixCalculator.cpp
+- Be tested in testPostfixCalc.cpp
+- Use the [STL stack](https://en.cppreference.com/w/cpp/container/stack)
+- Work with integers
+- Support postfix expressions
+- Implement the following arithmetic operations:
+    - `+`: addition
+    - `-`: subtraction
+    - `*`: multiplication
+    - `/`: integer division
+    - `~`: unary negation
 
 Notes:
 
-- We use the tilde (~) as the unary negation operator -- this negates the top element of the stack, and (unlike the other four operators) does not use a second number from the stack.  Do not confuse this operator with the tilde operator in C++, which performs bitwise negation.  Negative numbers still use a regular minus sign (i.e. '-3') and just pushes the negative number on the stack.  But, if you want to do negation (which involves popping the top value, negating it, and pushing that new value back on the stack), then you would use the tilde.
+- We intentionally do not specify many requirements.  Rather than looking for specific method names or implementation details, we want to see that you have a working postfix calculator.
+- The tilde (`~`) takes one integer and negates it.  `-5 ~` yields `5`, and `5 ~` yields `-5`.
 - Each binary operation follows the format `left_operand right_operand operator`.  For example, `1 2 -` translates to `1 - 2`.
 
 ### Input ###
@@ -139,16 +108,20 @@ Keep in mind that you can type up a few of the blocks, and comment them out with
 
 In the past, students have run into a few problems with this lab.  We list them here in an effort to prevent these particular problems from being encountered again.
 
+#### Getting started ####
+Unlike Lab 2, this lab is a lot less structured.
+It is up to you to determine what methods, constructors, and destructors (if any) your implementation will require.
+
+How will your postfix calculator interact with the stack?
+How will you support the five arithmetic operations?
+
+Have a clear game plan before beginning to code.
+
 #### Templates ####
 The C++ `stack` class is templated,
 which means it can hold whatever type you specify (think back to ArrayLists in Java).
 Since we will be using `int`s for our postfix calculator,
 we can specify that by saying `stack<int>` when declaring our stack.
-
-#### Checking if the stack is empty ####
-Given that you will need to check if the stack is empty before every `top` and `pop` call,
-it may be worth it to add helper methods to your postfix calculator that, when called,
-will perform the necessary checks before top/pop.
 
 #### Compiling ####
 When compiling your code, remember to compile ALL of your cpp files in the compile command:

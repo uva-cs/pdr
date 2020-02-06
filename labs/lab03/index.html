@@ -50,58 +50,30 @@
 </ol>
 <hr />
 <h2 id="pre-lab-1">Pre-lab</h2>
+<p>Before moving on to the code portion of this lab, write up at least one question that you still have on Unix (or things you are still confused about) in <code>unix.questions.txt</code>.</p>
 <h3 id="code-description">Code Description</h3>
-<p>In this lab, you will:</p>
-<ul>
-<li>Implement a stack class that handles a stack of integer numbers. This stack implementation is done for the post-lab; for the pre-lab and the in-lab, you will be using a pre-existing stack class from C++'s standard library.
-<ul>
-<li>Documentation on the standard library routines can be found at <a href="https://en.cppreference.com" class="uri">https://en.cppreference.com</a>. The stack class's documentation can be found <a href="https://en.cppreference.com/w/cpp/container/stack">here</a>.</li>
-</ul></li>
-<li>Write a program that uses this class to implement a postfix calculator. This will include the following files:
-<ul>
-<li>postfixCalculator.h, which is the class declaration of the postfix calculator</li>
-<li>postfixCalculator.cpp, which is the implementation of the postfix calculator</li>
-<li>testPostfixCalc.cpp that has a hard-coded expression (see below) and evaluates that expression.</li>
-</ul></li>
-</ul>
-<p>The various parts of this lab develop the entire program:</p>
-<ul>
-<li>The pre-lab develops the calculator itself, without dealing with user input or the stack class</li>
-<li>The in-lab develops the user input routines</li>
-<li>The post-lab develops the stack class that your calculator uses</li>
-</ul>
-<p>Note that the program should be able to fully run after each lab portion.</p>
-<h3 id="stacks">Stacks</h3>
-<p>A stack is a container that implements the LIFO (last in, first out) property. Often it internally uses a linked list, array, vector, or a doubly-linked list to contain the elements. In general, a stack needs to implement the following interface and functionality:</p>
-<ul>
-<li><code>void push(int e)</code>: This adds the passed element to the top of the stack.</li>
-<li><code>int top()</code>: This returns the element on the top of the stack. It does not remove that element from the top. If the stack is empty, then somehow an error must be indicated -- printing an error message and exiting is fine for reporting errors for this lab.</li>
-<li><code>void pop()</code>: This removes the element on the top of the stack, but does not return it. If the stack is empty, then somehow an error must be indicated -- for this lab, you can just print out an error message and then exit.</li>
-<li><code>bool empty()</code>: This tells whether there are any elements left in the stack (false) or not (true).</li>
-</ul>
-<p>Often, the <code>top()</code> and <code>pop()</code> functionality are joined as an <code>int pop()</code> function, but in this lab, it is beneficial to separate them, as that is what the STL stack does.</p>
-<p>If <code>pop()</code> or <code>top()</code> are called on an empty stack, terminate the program with the function call <code>exit(-1)</code>, which is from the <code>&lt;cstdlib&gt;</code> library.</p>
-<p>For this lab, you will use a stack of <code>int</code> values.</p>
-<h3 id="postfix-notation">Postfix Notation</h3>
-<p>Postfix notation (also known as reverse Polish notation) involves writing the operators after the operands. Note how parentheses are unnecessary in postfix notation.</p>
-<ul>
-<li>Infix: ( 3 + 6 ) - ( 8 / 4 )</li>
-<li>Postfix: 3 6 + 8 4 / -</li>
-</ul>
-<p>An online description of postfix calculators can be found <a href="http://en.wikipedia.org/wiki/Reverse_Polish_notation">on Wikipedia</a>.</p>
+<p>You will be implementing a postfix calculator that relies on a stack to perform calculations. Stacks and postfix notation are both described in the <a href="../../docs/readings.html">Readings</a>.</p>
 <h3 id="stack-calculator-implementation">Stack Calculator Implementation</h3>
-<p>We will be using the C++ STL stack to implement our postfix calculator. The stack class's documentation can be found <a href="https://en.cppreference.com/w/cpp/container/stack">here</a>.</p>
-<p>Your calculator must implement the following arithmetic operations:</p>
+<p>Your calculator must:</p>
+<ul>
+<li>Be implemented in postfixCalculator.h and postfixCalculator.cpp</li>
+<li>Be tested in testPostfixCalc.cpp</li>
+<li>Use the <a href="https://en.cppreference.com/w/cpp/container/stack">STL stack</a></li>
+<li>Work with integers</li>
+<li>Support postfix expressions</li>
+<li>Implement the following arithmetic operations:
 <ul>
 <li><code>+</code>: addition</li>
 <li><code>-</code>: subtraction</li>
 <li><code>*</code>: multiplication</li>
-<li><code>/</code>: division</li>
+<li><code>/</code>: integer division</li>
 <li><code>~</code>: unary negation</li>
+</ul></li>
 </ul>
 <p>Notes:</p>
 <ul>
-<li>We use the tilde (~) as the unary negation operator -- this negates the top element of the stack, and (unlike the other four operators) does not use a second number from the stack. Do not confuse this operator with the tilde operator in C++, which performs bitwise negation. Negative numbers still use a regular minus sign (i.e. '-3') and just pushes the negative number on the stack. But, if you want to do negation (which involves popping the top value, negating it, and pushing that new value back on the stack), then you would use the tilde.</li>
+<li>We intentionally do not specify many requirements. Rather than looking for specific method names or implementation details, we want to see that you have a working postfix calculator.</li>
+<li>The tilde (<code>~</code>) takes one integer and negates it. <code>-5 ~</code> yields <code>5</code>, and <code>5 ~</code> yields <code>-5</code>.</li>
 <li>Each binary operation follows the format <code>left_operand right_operand operator</code>. For example, <code>1 2 -</code> translates to <code>1 - 2</code>.</li>
 </ul>
 <h3 id="input">Input</h3>
@@ -124,10 +96,12 @@
 <p>Keep in mind that you can type up a few of the blocks, and comment them out with the <code>/* ... */</code> comment syntax that you are familiar with from Java -- this will allow you to easily switch between the different hard-coded input test cases.</p>
 <h3 id="hints">Hints</h3>
 <p>In the past, students have run into a few problems with this lab. We list them here in an effort to prevent these particular problems from being encountered again.</p>
+<h4 id="getting-started">Getting started</h4>
+<p>Unlike Lab 2, this lab is a lot less structured. It is up to you to determine what methods, constructors, and destructors (if any) your implementation will require.</p>
+<p>How will your postfix calculator interact with the stack? How will you support the five arithmetic operations?</p>
+<p>Have a clear game plan before beginning to code.</p>
 <h4 id="templates">Templates</h4>
 <p>The C++ <code>stack</code> class is templated, which means it can hold whatever type you specify (think back to ArrayLists in Java). Since we will be using <code>int</code>s for our postfix calculator, we can specify that by saying <code>stack&lt;int&gt;</code> when declaring our stack.</p>
-<h4 id="checking-if-the-stack-is-empty">Checking if the stack is empty</h4>
-<p>Given that you will need to check if the stack is empty before every <code>top</code> and <code>pop</code> call, it may be worth it to add helper methods to your postfix calculator that, when called, will perform the necessary checks before top/pop.</p>
 <h4 id="compiling">Compiling</h4>
 <p>When compiling your code, remember to compile ALL of your cpp files in the compile command:</p>
 <pre><code>clang++ postfixCalculator.cpp testPostfixCalc.cpp</code></pre>
