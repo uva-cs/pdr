@@ -266,7 +266,7 @@ Your final program needs to both be able to compile and run with the specified c
 
 ### Makefile ###
 
-Your Makefile should have **only one** target, which you can name anything you want.  This target should do **two** things: compile your code, and run doxygen.  You can have two tabbed lines after the target specifier, which is the easiest way to accomplish this.  In other words, we are just going to call `make`, and we want it to both compile your code and create your doxygen documentation.  The in-lab Makefile should have the same dual-purpose target.
+The Makefile requirements for this in-lab are the same as those for the pre-lab.
 
 ------------------------------------------------------------
 
