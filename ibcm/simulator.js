@@ -143,7 +143,7 @@ function execute_instruction() {
         instruction = "0000";
     }
 
-    const opcode = eval(get_IBCM_opcode(instruction));
+    const opcode = get_IBCM_opcode(instruction);
     const address = instruction.substring(1, 4).toLowerCase();
     let accum = document.getElementById("accum").value;
     document.getElementById("pc" + pc).innerHTML = ""; // erase old PC
@@ -153,14 +153,14 @@ function execute_instruction() {
 
     let immediate = '';
     switch (opcode) {
-        case 0: // halt
+        case 0x0: // halt
             pc = dec_to_hex(eval(hex_to_dec(pc) - 1));
             document.getElementById("pc" + pc).innerHTML = "H";
             document.getElementById("pc").value = pc + " (halted)";
             pchexbak = pc; // so the 'H' can be erased by the reset button
             pc = "xxxx";
             break;
-        case 1: // I/O
+        case 0x1: // I/O
             const output = document.getElementById("output");
             const asciimode = get_IBCM_2bitop(instruction);
             switch (asciimode) {
@@ -208,8 +208,7 @@ function execute_instruction() {
                     break;
             }
             break;
-
-        case 2: // shifts
+        case 0x2: // shifts
             const shiftamount = get_IBCM_shift(instruction);
             let accdec = hex_to_dec(accum);
             switch (get_IBCM_2bitop(instruction)) {
@@ -228,50 +227,50 @@ function execute_instruction() {
             }
             accum = dec_to_hex(accdec);
             break;
-        case 3: // load
+        case 0x3: // load
             accum = document.getElementById("v0" + address).value;
             break;
-        case 4: // store
+        case 0x4: // store
             document.getElementById("v0" + address).value = accum;
             break;
-        case 5: // add
+        case 0x5: // add
             immediate = document.getElementById("v0" + address).value;
             accum = dec_to_hex(eval(hex_to_dec(accum) + hex_to_dec(immediate)));
             break;
-        case 6: // sub
+        case 0x6: // sub
             immediate = document.getElementById("v0" + address).value;
             accum = dec_to_hex(eval(hex_to_dec(accum) - hex_to_dec(immediate)));
             break;
-        case 7: // and
+        case 0x7: // and
             immediate = document.getElementById("v0" + address).value;
             accum = dec_to_hex(eval(hex_to_dec(accum) & hex_to_dec(immediate)));
             break;
-        case 8: // or
+        case 0x8: // or
             immediate = document.getElementById("v0" + address).value;
             accum = dec_to_hex(eval(hex_to_dec(accum) | hex_to_dec(immediate)));
             break;
-        case 9: // xor
+        case 0x9: // xor
             immediate = document.getElementById("v0" + address).value;
             accum = dec_to_hex(eval(hex_to_dec(accum) ^ hex_to_dec(immediate)));
             break;
-        case 10: // not
+        case 0xa: // not
             accum = dec_to_hex(eval(~hex_to_dec(accum)));
             break;
-        case 11: // nop
+        case 0xb: // nop
             // do nothing
             break;
-        case 12: // jmp
+        case 0xc: // jmp
             pc = "0" + address;
             break;
-        case 13: // jmpe
+        case 0xd: // jmpe
             if (accum == "0000")
                 pc = "0" + address;
             break;
-        case 14: // jmpl
+        case 0xe: // jmpl
             if (hex_to_dec(accum) < 0)
                 pc = "0" + address;
             break;
-        case 15: // brl
+        case 0xf: // brl
             accum = pc;
             pc = "0" + address;
             break;
