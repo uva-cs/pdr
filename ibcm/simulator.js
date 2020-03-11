@@ -1,7 +1,7 @@
 const INSTRUCTION_REGEX = /[a-fA-F0-9]{4}/;
 const WATCHDOG_MAX_LIMIT = 10000;
 
-let instructions = [];
+const instructions = [];
 
 let pc = "0000";
 let pchexbak = "0000";
@@ -154,7 +154,7 @@ function execute_instruction() {
     let immediate = '';
     switch (opcode) {
         case 0x0: // halt
-            pc = dec_to_hex(eval(hex_to_dec(pc) - 1));
+            pc = dec_to_hex(hex_to_dec(pc) - 1);
             document.getElementById("pc" + pc).innerHTML = "H";
             document.getElementById("pc").value = pc + " (halted)";
             pchexbak = pc; // so the 'H' can be erased by the reset button
@@ -175,7 +175,7 @@ function execute_instruction() {
                         }
 
                         document.getElementById("input").value = "";
-                        pc = dec_to_hex(eval(hex_to_dec(pc) - 1));
+                        pc = dec_to_hex(hex_to_dec(pc) - 1);
                         document.getElementById("pc" + pc).innerHTML = "I";
                         document.getElementById("pc").value = pc + " (awaiting input)";
                         awaiting_input = true;
@@ -235,26 +235,26 @@ function execute_instruction() {
             break;
         case 0x5: // add
             immediate = document.getElementById("v0" + address).value;
-            accum = dec_to_hex(eval(hex_to_dec(accum) + hex_to_dec(immediate)));
+            accum = dec_to_hex(hex_to_dec(accum) + hex_to_dec(immediate));
             break;
         case 0x6: // sub
             immediate = document.getElementById("v0" + address).value;
-            accum = dec_to_hex(eval(hex_to_dec(accum) - hex_to_dec(immediate)));
+            accum = dec_to_hex(hex_to_dec(accum) - hex_to_dec(immediate));
             break;
         case 0x7: // and
             immediate = document.getElementById("v0" + address).value;
-            accum = dec_to_hex(eval(hex_to_dec(accum) & hex_to_dec(immediate)));
+            accum = dec_to_hex(hex_to_dec(accum) & hex_to_dec(immediate));
             break;
         case 0x8: // or
             immediate = document.getElementById("v0" + address).value;
-            accum = dec_to_hex(eval(hex_to_dec(accum) | hex_to_dec(immediate)));
+            accum = dec_to_hex(hex_to_dec(accum) | hex_to_dec(immediate));
             break;
         case 0x9: // xor
             immediate = document.getElementById("v0" + address).value;
-            accum = dec_to_hex(eval(hex_to_dec(accum) ^ hex_to_dec(immediate)));
+            accum = dec_to_hex(hex_to_dec(accum) ^ hex_to_dec(immediate));
             break;
         case 0xa: // not
-            accum = dec_to_hex(eval(~hex_to_dec(accum)));
+            accum = dec_to_hex(~hex_to_dec(accum));
             break;
         case 0xb: // nop
             // do nothing
@@ -285,7 +285,7 @@ function execute_instruction() {
 }
 
 function increment_pc() {
-    pc = dec_to_hex(eval(hex_to_dec(pc) + 1));
+    pc = dec_to_hex(hex_to_dec(pc) + 1);
 }
 
 // Given an IBCM instruction abcd:
