@@ -35,26 +35,23 @@
                 <!-- Browse section -->
                 <tr>
                     <td colspan="2" align="center">
-                        <form id="simulate" name="simulate" enctype="multipart/form-data">
-                            <p class="center">
-                                Load IBCM file:
-                                <input type="file" name="userfile" id="userfile" />
-                                <input type="submit" value="Load" />
-                            </p>
-                            <p class="center danger" id="error">
-                            </p>
-                            <p class="center">
-                                Load all of memory:
-                                <input type="checkbox" id="loadmem" name="loadmem">
-                                (leave unchecked if unsure)
-                            </p>
-                            <p class="center">
-                                Enable watchdog timer:
-                                <input type="checkbox" id="watchtimer" name="watchtimer">
-                                (check to guard against infinite loops)
-                            </p>
-                            <p id="watchwarning" class="center danger"></p>
-                        </form>
+                        <p class="center">
+                            Load IBCM file:
+                            <input type="file" name="userfile" id="userfile" />
+                        </p>
+                        <p class="center danger" id="error">
+                        </p>
+                        <p class="center">
+                            Load all of memory:
+                            <input type="checkbox" id="loadmem" name="loadmem">
+                            (leave unchecked if unsure)
+                        </p>
+                        <p class="center">
+                            Enable watchdog timer:
+                            <input type="checkbox" id="watchtimer" name="watchtimer">
+                            (check to guard against infinite loops)
+                        </p>
+                        <p id="watchwarning" class="center danger"></p>
                     </td>
                 </tr>
 
