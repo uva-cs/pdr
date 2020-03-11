@@ -11,6 +11,10 @@ let awaiting_input = false;
 const userInput = document.getElementById('input');
 userInput.addEventListener('keyup', event => { if (event.key === 'Enter') run_simulator(); });
 
+// Reload table when `loadmem` is toggled
+const loadmemInput = document.getElementById('loadmem');
+loadmemInput.addEventListener('change', create_ibcm_memory_table);
+
 const fileInput = document.getElementById('userfile');
 fileInput.addEventListener('change', readIBCMFile);
 
@@ -60,12 +64,11 @@ function processIBCMFile(text) {
 
 function create_ibcm_memory_table() {
     let str = "<table id=\"tbl\" BORDER=\"7\" width=\"98%\">\n";
-    var top = 100;
-    if (document.getElementById('loadmem').checked)
-        top = 4096;
+    const top = loadmemInput.checked ? 4096 : 100;
+
     for (let i = 0; i < top; i++) {
         const divname = i.toString(16).padStart(4, '0');
-        str += "\n<tr><td>" + divname + "</td><td><input type=\"text\" id=\"v" + divname + "\" size=5></td><td><div id=\"pc" + divname + "\"></div></td></tr>";
+        str += "<tr><td>" + divname + "</td><td><input type=\"text\" id=\"v" + divname + "\" size=5></td><td><div id=\"pc" + divname + "\"></div></td></tr>\n";
     }
     str += "</table>";
     document.getElementById("memtable").innerHTML = str;
@@ -80,11 +83,6 @@ function revert() {
     reset();
     for (let i = 0; i < instructions.length; i++) {
         document.getElementById(`v${i.toString(16).padStart(4, '0')}`).value = instructions[i];
-    }
-
-    // Fill in everything else with 0000s
-    for (let i = instructions.length; i < 100; i++) {
-        document.getElementById(`v${i.toString(16).padStart(4, '0')}`).value = '0000';
     }
 }
 
