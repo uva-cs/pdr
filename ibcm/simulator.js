@@ -36,8 +36,9 @@ function readIBCMFile(event) {
 
 function processIBCMFile(text) {
     const lines = text.split(/\r?\n/) // Split on newlines
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i].trim(); // Trim whitespace
+    let currentLine = 0; // Zero-indexed indicator of which line we are parsing
+    for (let line of lines) {
+        line = line.trim(); // Trim whitespace
 
         // Ignore blank or commented-out lines
         if (line.length === 0 || line.startsWith('#') || line.startsWith('//')) {
@@ -47,17 +48,20 @@ function processIBCMFile(text) {
         // Test for invalid input
         const result = INSTRUCTION_REGEX.exec(line);
         if (result === null || result.index !== 0) {
-            document.getElementById('error').innerText = `Could not read line ${i + 1} -- make sure it is valid and try again`;
+            document.getElementById('error').innerText = `Could not read line ${currentLine + 1} -- make sure it is valid and try again`;
             revert();
             return;
         }
 
         instructions.push(result[0]);
-        document.getElementById(`v${i.toString(16).padStart(4, '0')}`).value = result[0];
+        document.getElementById(`v${currentLine.toString(16).padStart(4, '0')}`).value = result[0];
+
+        // Only increment currentLine if we successfully parse the line
+        currentLine++;
     }
 
     // Fill in everything else with 0000s
-    for (let i = lines.length; i < 100; i++) {
+    for (let i = currentLine; i < document.getElementsByClassName('address').length; i++) {
         document.getElementById(`v${i.toString(16).padStart(4, '0')}`).value = '0000';
     }
 }
@@ -68,7 +72,7 @@ function create_ibcm_memory_table() {
 
     for (let i = 0; i < top; i++) {
         const divname = i.toString(16).padStart(4, '0');
-        str += "<tr><td>" + divname + "</td><td><input type=\"text\" id=\"v" + divname + "\" size=5></td><td><div id=\"pc" + divname + "\"></div></td></tr>\n";
+        str += "<tr><td>" + divname + "</td><td><input type=\"text\" id=\"v" + divname + "\" class=\"address\" size=5></td><td><div id=\"pc" + divname + "\"></div></td></tr>\n";
     }
     str += "</table>";
     document.getElementById("memtable").innerHTML = str;
