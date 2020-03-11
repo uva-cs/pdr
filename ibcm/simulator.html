@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="IBCM, Itty Bitty Computing Machine" />
+
+    <link rel="stylesheet" type="text/css" href="ibcm.css" />
+
+    <title>IBCM Interface: Simulator</title>
+
+    <script>
+        function revert() {
+            reset();
+            // TODO
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <!-- Master Container: 88px Tall -->
+    <div id="wrap">
+        <div id="top">
+            <h2><a href="./index.html" title="Back to main page">IBCM Interface</a></h2>
+            <!-- Top Menu Container -->
+            <div id="menu">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./directions.html">Directions</a></li>
+                    <li><a href="./simulator.php" class="current">Simulator</a></li>
+                </ul>
+            </div> <!-- id="menu" -->
+        </div> <!-- id="top" -->
+
+        <!-- Main Content Container -->
+        <div id="content2">
+            <p class="center"><a href="directions.html">Directions for how to use this simulator</a> are available.</p>
+            <table border="7" cellpadding="10">
+                <!-- Browse section -->
+                <tr>
+                    <td colspan="2" align="center">
+                        <form id="simulate" name="simulate" enctype="multipart/form-data">
+                            <p class="center">
+                                Load IBCM file:
+                                <input type="file" name="userfile" id="userfile" />
+                                <input type="submit" value="Load" />
+                            </p>
+                            <p class="center danger" id="error">
+                            </p>
+                            <p class="center">
+                                Load all of memory:
+                                <input type="checkbox" id="loadmem" name="loadmem">
+                                (leave unchecked if unsure)
+                            </p>
+                            <p class="center">
+                                Enable watchdog timer:
+                                <input type="checkbox" id="watchtimer" name="watchtimer">
+                                (check to guard against infinite loops)
+                            </p>
+                            <p id="watchwarning" class="center danger"></p>
+                        </form>
+                    </td>
+                </tr>
+
+                <!-- Mem Table -->
+                <tr>
+                    <td>
+                        <div id="tabletitle">
+                            <table border="7" width="300">
+                                <tr>
+                                    <th>Mem</th>
+                                    <th>Value</th>
+                                    <th>PC</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="tbl-container">
+                            <div id="memtable"></div>
+                        </div> <!-- id="tbl-container" -->
+                    </td>
+
+                    <!-- Accum and Input Section -->
+                    <td valign="top">
+
+                        <table border=0>
+                            <tr>
+                                <td>
+                                    <p class="righttitle">Accumulator (hex): </p>
+                                </td>
+                                <td>&nbsp;<input name="accum" id="accum" type="text" value="0000" readonly="readonly"/></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="righttitle">PC (hex): </p>
+                                </td>
+                                <td>&nbsp;<input name="pc" id="pc" type="text" value="0000" readonly="readonly"/></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="righttitle">
+                                        <div id="bptitle">Breakpoint (4 digits): </div>
+                                    </p>
+                                </td>
+                                <td>&nbsp;<input name="breakpoint" id="breakpoint" type="text" value="" /></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="righttitle">
+                                        <div id="inputtitle">Input: </div>
+                                    </p>
+                                </td>
+                                <td>&nbsp;<input name="input" id="input" type="text" value="0" /></td>
+                            </tr>
+                        </table>
+
+                        <p>&nbsp;</p><hr /><p>&nbsp;</p>
+
+                        <table border="5" cellpadding="25">
+                            <tr>
+                                <td><input name="Runner" type="button" value="Run" onclick='run_simulator()'/></td>
+                                <td><input name="Stepper" type="button" value="Step" onclick="step_simulator()" /></td>
+                            </tr>
+                            <tr>
+                                <td><input name="Resetter" type="button" value="Reset" onclick="reset()" /></td>
+                                <td><input name="Reverter" type="button" value="Revert" onclick="revert()" /></td>
+                            </tr>
+                        </table>
+
+                        <p>&nbsp;</p>
+
+                        <hr />
+
+                        <p>&nbsp;</p>
+
+                        <!-- Display Section -->
+                        <p class="center">Output</p>
+                        <textarea name="output" id="output" cols="40" rows="15" readonly="readonly"></textarea>
+
+                        <!-- Separation Divider -->
+                        <div id="clear"></div>
+                    </td>
+                </tr>
+            </table>
+        </div> <!-- id="content2" -->
+
+        <!-- Footer -->
+        <div id="footer"></div>
+
+    </div> <!-- id="wrap" -->
+
+    <script src="simulator-new.js"></script>
+</body>
+</html>
