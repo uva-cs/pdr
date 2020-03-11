@@ -83,7 +83,7 @@ function revert() {
     }
 
     // Fill in everything else with 0000s
-    for (let i = lines.length; i < 100; i++) {
+    for (let i = instructions.length; i < 100; i++) {
         document.getElementById(`v${i.toString(16).padStart(4, '0')}`).value = '0000';
     }
 }
