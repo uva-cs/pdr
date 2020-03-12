@@ -170,6 +170,7 @@ You can assume the following:
 
 #### mathfun.cpp
 - Must call both of your subroutines
+    - Make sure to declare your assembly routines with `extern "C"`, just like in the provided main.cpp file.
 - Read integers via standard input (`cin`), NOT command-line parameters
     - Must take in ONLY two integers
     - Must print the result of calling `product` and `power` on the two integers
