@@ -61,47 +61,31 @@ Platform Architectures
 
 ### Different Architectures ###
 
-There are two different platforms that students are potentially developing their code on:
+There are three changes that you'll need to make to compile your program, depending on whether you're running 64-bit Linux or 64-bit macOS. **Your code must compile (with `make`) and run on the submission server, which is a 64-bit Linux machine!**
 
-1. 64-bit Linux (what is on the VirtualBox image and what the submission server is running, as well as what is installed on the computers in Rice 340 and Olsson 001)
-2. 64-bit Mac OS X
+#### Linux
+- Name your function `vecsum`. You'll need to change the name in TWO places:
+    - The `global` line (line 11 of vecsum.s)
+    - The label line (line 15 of vecsum.s)
+- Specify the `-f elf64` flag to `nasm` (update the `AS` or `ASFLAGS` macro in your Makefile accordingly)
+- Specify the `-m64` flag to `clang++` (update the `CXX` or `CXXFLAGS` macro in your Makefile accordingly)
+- **Note:** If you're using your own Linux installation (if you're not using the VirtualBox image) and are running into issues, try installing the `g++-multilib` package
+    - Even though we're no longer using the `g++` compiler in this course, it will install the correct library in the correct place
+    - Please let us know if this differs with your version of Linux!
 
-**Your code must compile and run on the submission server, which is a 64-bit Linux machine!**
+#### macOS
+- Name your function `_vecsum`. You'll need to change the name in TWO places:
+    - The `global` line (line 11 of vecsum.s)
+    - The label line (line 15 of vecsum.s)
+    - If you don't do this, you might get an error like: `main.cpp:(.text+0x12): undefined reference to 'vecsum'`
+- Specify the `-f macho64` flag to `nasm` (update the `AS` or `ASFLAGS` macro in your Makefile accordingly)
+- We're unsure about the `clang++` flags necessary, and you might not be able to print the assembly in the format discussed in class
+- **IMPORTANT:** Please test your code on a 64-bit Linux machine (such as the VirtualBox image) before submitting it. In order to do so, you'll need to change everything back to meet the Linux requirements.
+- ***WARNING:*** As mentioned in the class introduction (specifically, [here](../../uva/course-introduction.html#/unixinfo)), some parts of this lab may **NOT** be compatible with macOS.  So if things aren't working, or these directions are running into issues, consider reverting to the VirtualBox image.
 
-There are three changes that will have to be made to compile your program (and thus to the Makefile) depending on your own development platform:
+**Do NOT specify a `-o` flag to clang++ (not even `-o a`)**, as we want it to be named the default (a.out).
 
-- You will have to determine whether to name your function `vecsum` instead of `_vecsum` (note the lack of underscore in the former) in vecsum.s (this file is described more below).  In the final linking step, if you get a message such as, `main.cpp:(.text+0x12): undefined reference to 'vecsum'`, then you should change the name of the function.
-- Some systems will have to supply a command-line parameter to clang++; this can be put on the `CXX` or `CXXFLAGS` macro(s) line in your Makefile
-- All systems will have a specific nasm file format option (via `-f`) that will need to be specified.
-
-The first bullet point highlights a compatibility problem between Linux and Mac OS X.  When calling a subroutine, which in C++ would be called `foo()`, there are two standards as to how to name the assembly routine: you can name it either `_foo` (adding an underscore is added before the name), or name it just `foo` (with no underscore).  Unfortunately, Linux uses a different standard than Mac OS X, so we have to make (minor) code modifications in order to compile the code on the other system: in Mac OS X, the vecsum.s file should have the subroutine be called `_vecsum`, and under Linux, it should be called `vecsum` (this is twice, on lines 11 and 15).
-
-In an effort to make sure all the files submitted conform to one standard or the other, **all assembly and C/C++ code must be submitted in Linux form** (i.e. will be called `foo` and not `_foo`).  Note that in many programs, such as the vecsum.s that we provided you, you have to change the name in TWO places: on the `global` line (line 11 of vecsum.s) and on the label line (line 15 of vecsum.s).  **If your code does not compile on the submission system, you will receive zero credit!**
-
-Also note that your code must compile with `make`.  We provide a sample Makefile that will compile vecsum, so you can just modify this Makefile to compile your pre-lab program.  **Please note that you should NOT specify a `-o` flag to clang++ (not even `-o a`)**, as we want it to be named the default (a.out).  This allows easy porting between the two operating systems.
-
-If you plan to develop this lab in Mac OS X, we suggest that you develop it normally (putting in the `_` before the subroutine name).  Then, once you have verified everything works, remove the underscores from **all** the relevant lines, and test it out on a 64-bit Linux machine, such as the VirtualBox image, before submitting it.
-
-### Platform Specifics ###
-
-Each of these different platforms has different compilation lines to allow it to compile.  Some of them require changing the assembly files as well.  You only need to read the line(s) pertaining to the platform(s) you are developing on.
-
-**64-bit Linux:** You have to explicitly tell clang++ to compile in 64-bit mode by passing in the `-m64` parameter.  All assembly subroutine names must **NOT** have a leading underscore (i.e. they should be `vecsum` and not `_vecsum`).  nasm is invoked with the `-f elf64` option.  If you are using your own Linux installation (not the course VirtualBox image), and you run into compilation issues, try installing the g++-multilib package - we realize that we are not using the g++ compiler, but this installs the correct library in the correct place (if this differs with your version of Linux, then please let us know!).
-
-**64-bit Mac OS X:** To run the code, will need to rename all the assembly function names with a leading underscore (i.e. `_vecsum` not `vecsum`).  You will also have to use the `-f macho64` format for nasm, and tell clang++ to generate the correct architecture code.  In the provided Makefile, change the `ASFLAGS` macro line to `-f macho64` (instead of the default `-f elf64`).  You will probably want to remove the `-m64` flag on the `CXX` macro line, but be sure to put that back in before you resubmit.  Note that you **MUST** change all of this back in order for it to compile via the submission system!  Also note that some versions of Mac OS X do not support the format of assembly that we use in this course, which means that you will be stuck reading the assembly in the other format we discussed in class.
-
-***WARNING FOR MAC OS X:*** As mentioned in the class introduction (specifically, [here](../../uva/course-introduction.html#/unixinfo)), some parts of this lab may **NOT** be compatible with Mac OS X.  So if things are not working, or the directions above are running into issues, consider reverting to the VirtualBox image.
-
-Below is a table summarizing the changes
-
-
-| Platform | nasm flag | x86 subroutine name | clang++ flags | Notes |
-|---------|-----|-----|-----|-----------------------------------------|
-| 64-bit Linux | -f elf64 | vecsum | -m64 | This is what our submission server is running, **and what your code must work on.**  If you have it on your computer, you must install a few packages as well - see above |
-| 64 bit Mac OS X | -f macho64 | \_vecsum | ??? | We are unsure about the clang++ flags necessary.  May not be able to print the assembly in the format discussed in class. |
-
-
-**IMPORANT:** Just to repeat, when you submit your code, it **MUST** be in 64-bit Linux format.
+**REMINDER:** You MUST submit your code in 64-bit Linux format, and it must compile!
 
 ------------------------------------------------------------
 
