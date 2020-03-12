@@ -36,8 +36,8 @@ Procedure
 7. Your code must compile with `make`!
      - And does your code work on a 64-bit Linux machine?  It will need to in order to receive credit.
      - You may need to SSH into a lab machine to run your code. To do so, follow the instructions in the SSH/SCP tutorial.
-8. Files to download [vecsum.s](vecsum.s.html) ([src](vecsum.s)), [main.cpp](main.cpp.html) ([src](main.cpp)), [Makefile](Makefile.html) ([src](Makefile))
-9. Files to submit mathlib.s, mathfun.cpp, Makefile
+8. Files to download: [vecsum.s](vecsum.s.html) ([src](vecsum.s)), [main.cpp](main.cpp.html) ([src](main.cpp)), [Makefile](Makefile.html) ([src](Makefile))
+9. Files to submit: mathlib.s, mathfun.cpp, Makefile
 
 ### In-lab ###
 
