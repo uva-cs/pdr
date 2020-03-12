@@ -96,14 +96,17 @@ Pre-lab
 
 For this part, you will need to download three files: [vecsum.s](vecsum.s.html) ([src](vecsum.s)), [main.cpp](main.cpp.html) ([src](main.cpp)), and [Makefile](Makefile.html) ([src](Makefile)).
 
-To compile a program written partly in x86 assembly and partly in C++, we have to build the program in parts.  We build the C++ file as we have in the past:
+To compile a program written partly in x86 assembly and partly in C++, we have to build the program in parts.
 
+First, we build the C++ file as we have in the past:
 ```
-clang++ -m64 -Wall -g  -c -o main.o main.cpp
-
+clang++ -m64 -Wall -g -c -o main.o main.cpp
 ```
+- `-c -o main.o`: compiles main.cpp (but doesn't link it) and puts the compilation output into a file named main.o
+- `-m64`: tells `clang++` to compile main.cpp in 64-bit format
+- `-Wall`: prints all compile warnings
+- `-g`: compile with debugging information
 
-Note that we used the -c flag, which tells the compiler to compile but not link the program.  Linking it will create the final executable -- but as there is not a `vecsum()` function defined (yet), the compiler will report an error stating that it does not know what the vecsum() function is.  The `-o main.o` part tells clang++ to put the compilation output into the file named main.o.  Note that the `-o` flag wasn't really necessary here (as clang++ will use main.o by default when compiling main.cpp), but we wanted to include it, as we are going to use it below.  We include the `-m64` flag to force it to be a 64-bit file.  We also added a few more flags (`-Wall -g`) to print all warnings and compile debugging symbols into the program.
 
 Next, we need to compile the assembly file.  To do this, we enter the following:
 
