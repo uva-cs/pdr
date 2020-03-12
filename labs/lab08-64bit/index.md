@@ -144,21 +144,38 @@ Compile and run the vecsum program:
 - To see the vecsum function, enter `disassemble --name vecsum`.  Note that this only lists the first third (or so) of the routine -- up until the `start` label.  To see the rest of the code, enter `disassemble --name start`, `disassemble --name done`, etc.
 - To show the contents of the registers, use the `info registers` command.
 
-### Pre-lab program: mathlib.s ###
+### Pre-lab program ###
 
-You will need to write two routines in assembly, one that computes the product of two numbers, and one that computes the power of two numbers.
+For the pre-lab, you'll need to submit two files: an assembly file called mathlib.s, and a C++ file called mathfun.cpp.
 
-The first subroutine will compute the product of the two integer parameters passed in.  The restrictions are that it **can only use addition**, and thus cannot use a multiplication operation.  We will assume that both of the parameters are positive integers.  It must compute this **iteratively**, not recursively.  The resulting product is then returned to the calling routine.  This subroutine should be called `product`.  We will assume that values will not be provided to the subroutine that will cause an overflow, nor will negative (or zero) parameters be passed in.
+#### mathlib.s
+Implement the two following subroutines:
+- `product` (calculates the product of two integers)
+    - Must be defined **iteratively**
+    - Must ONLY use addition
+    - Cannot use `imul` or any built-in multiplication routine
+    - Must use the proper C-style calling convention
+    
+- `power` (calculates the power of the first integer to the second integer)
+    - Must be defined **recursively**
+    - Must call `product`
+    - Cannot use `imul` or any built-in exponentiation routine
+    - Must use the proper C-style calling convention
 
-The second subroutine will compute the power of the two integer parameters passed in.  We will assume that the first parameter is the base, and the second parameter is the exponent.  Again, both are integers.  The restrictions on this routine are that it **can only use the multiplication** routine described above -- it cannot use `imul` or call any exponentiation routine. Furthermore, it must be defined **recursively**, not iteratively.  This routine should be called `power`.
+Make sure to declare both of these subroutines with `global` at the top of the file, so that mathfun.cpp can call them. You'll need two `global` lines, one for each subroutine.
 
-You can assume that the numbers passed into both routines will both be positive, so you need not consider negative numbers or zero.  Furthermore, as described above, no values will be used on your program that could cause an integer overflow.
+You can assume the following:
+- The numbers passed into both routines are positive (you don't need to account for negative numbers or zero)
+- We will not provide your program with input that will cause an integer overflow
 
-Both of these routines should be in a file called mathlib.s, and must use the proper C-style calling convention.  You must also provide a mathfun.cpp file, which calls both of your subroutines -- see the main.cpp file provided as a template.  The program should take in ONLY two integers (we'll call them *x* and *y*).  It should then print out the output of calling `product(x,y)` and `power(x,y)`.  Thus, if the input is 3 and 4, it would print out 12 and 81.
+#### mathfun.cpp
+- Must call both of your subroutines
+- Read integers via standard input (`cin`), NOT command-line parameters
+    - Must take in ONLY two integers
+    - Must print the result of calling `product` and `power` on the two integers
 
-Input is to be read via standard input (i.e., `cin`), not through command-line parameters.
 
-In order for routines in an assembly file to be callable from C/C++, you need to declare them with `global`, like is done in `vecsum.s`.  To have multiple routines in a single assembly file (as is needed for mathlib.s), you should have multiple `global` lines, one for each subroutine that you plan on calling from your C/C++ code.
+If you need help, see the provided `main.cpp` file as a template.
 
 ------------------------------------------------------------
 
