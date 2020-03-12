@@ -175,6 +175,13 @@ You can assume the following:
     - Must take in ONLY two integers
     - Must print the result of calling `product` and `power` on the two integers
 
+Example test run:
+```
+Enter a number: 3
+Enter another number: 4
+12
+81
+```
 
 If you need help, see the provided `main.cpp` file as a template.
 
