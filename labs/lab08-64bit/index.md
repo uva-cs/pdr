@@ -29,12 +29,11 @@ Procedure
 
 1. You should be familiar with the readings described above.  They detail the x86 material that this lab requires.
 2. Complete the tutorial, which consists of reading the x86 book chapters on [x86](../../book/x86-64bit-asm-chapter.pdf) and the [C calling convention](../../book/x86-64bit-ccc-chapter.pdf).
-3. Read through the section, below, on compiling C++ with assembly on different architectures, as well as the vecsum program.
-4. There are different program formats for different architectures, and this pre-lab **must** be submitted in the submission format for this lab (see the next section, below).  If you do not submit it in the required format (64-bit Linux), you will not receive credit for the lab, as it will not compile.
 5. Follow the pre-lab instructions in this document.  They require you to write a program in x86 assembly called mathlib.s.  To see other examples of nasm code, you should look at the vecsum.s program, as well as the code in the nasm tutorial.
+3. Read through the *Platform Architectures* section below, which will guide you on how to edit and/or compile your code, depending on whether you are running Linux or macOS.
+    - **Note:** Regardless of the OS you're running, you must submit the pre-lab in 64-bit Linux format. Otherwise, your code will not compile, and you will receive a zero for this lab part.
 6. Make sure your mathfun.cpp takes in only the input described in the pre-lab section!  Input is to be provided via standard input (i.e., `cin`), not through command-line parameters.
 7. Your code must compile with `make`!
-     - And does your code work on a 64-bit Linux machine?  It will need to in order to receive credit.
      - You may need to SSH into a lab machine to run your code. To do so, follow the instructions in the SSH/SCP tutorial.
 8. Files to download: [vecsum.s](vecsum.s.html) ([src](vecsum.s)), [main.cpp](main.cpp.html) ([src](main.cpp)), [Makefile](Makefile.html) ([src](Makefile))
 9. Files to submit: mathlib.s, mathfun.cpp, Makefile
