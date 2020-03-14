@@ -29,128 +29,80 @@
         </div> <!-- id="top" -->
 
         <!-- Main Content Container -->
-        <div id="content2">
+        <div>
             <p class="center"><a href="directions.html">Directions for how to use this simulator</a> are available.</p>
-            <table border="7" cellpadding="10">
-                <!-- Browse section -->
-                <tr>
-                    <td colspan="2" align="center">
-                        <p class="center">
-                            Load IBCM file:
-                            <input type="file" name="userfile" id="userfile" />
-                        </p>
-                        <p class="center danger" id="error">
-                        </p>
-                        <p class="center">
-                            Load all of memory:
-                            <input type="checkbox" id="loadmem" name="loadmem">
-                            (leave unchecked if unsure)
-                        </p>
-                        <p class="center">
-                            Enable watchdog timer:
-                            <input type="checkbox" id="watchtimer" name="watchtimer">
-                            (check to guard against infinite loops)
-                        </p>
-                        <p id="watchwarning" class="center danger"></p>
-                    </td>
-                </tr>
-
-                <!-- Mem Table -->
-                <tr>
-                    <td>
-                        <div id="tabletitle">
-                            <table border="7" width="300">
-                                <tr>
-                                    <th>Mem</th>
-                                    <th>Value</th>
-                                    <th>PC</th>
-                                </tr>
-                            </table>
+            <div class="grid">
+                <div class="settings">
+                    <p class="center">
+                        Load IBCM file:
+                        <input type="file" id="userfile" />
+                    </p>
+                    <p class="center danger" id="error">
+                    </p>
+                    <p class="center">
+                        Load all of memory:
+                        <input type="checkbox" id="loadmem">
+                        (leave unchecked if unsure)
+                    </p>
+                    <p class="center">
+                        Enable watchdog timer:
+                        <input type="checkbox" id="watchtimer">
+                        (check to guard against infinite loops)
+                    </p>
+                    <p id="watchwarning" class="center danger"></p>
+                </div>
+                <div class="table">
+                    <table border="7" width="300" id="instructionsTable">
+                        <thead>
+                            <tr>
+                                <th>Mem</th>
+                                <th>Value</th>
+                                <th>PC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="controls">
+                    <div class="internal">
+                        <div>
+                            <div class="input-group">
+                                <label for="accum">Accumulator (hex):</label>
+                                <input id="accum" type="text" value="0000" readonly="readonly"/>
+                            </div>
+                            <div class="input-group">
+                                <label for="pc">PC (hex):</label>
+                                <input id="pc" type="text" value="0000" readonly="readonly"/>
+                            </div>
+                            <div class="input-group">
+                                <label id="bptitle" for="breakpoint">Breakpoint (4 digits):</label>
+                                <input id="breakpoint" type="text" value="" />
+                            </div>
+                            <div class="input-group">
+                                <label id="inputtitle" for="input">Input:</label>
+                                <input id="input" type="text" value="0" />
+                            </div>
                         </div>
-                        <div id="tbl-container">
-                            <div id="memtable"></div>
-                        </div> <!-- id="tbl-container" -->
-                    </td>
-
-                    <!-- Accum and Input Section -->
-                    <td valign="top">
-
-                        <table border=0>
-                            <tr>
-                                <td>
-                                    <p class="righttitle">Accumulator (hex): </p>
-                                </td>
-                                <td>&nbsp;<input name="accum" id="accum" type="text" value="0000" readonly="readonly"/></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="righttitle">PC (hex): </p>
-                                </td>
-                                <td>&nbsp;<input name="pc" id="pc" type="text" value="0000" readonly="readonly"/></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="righttitle">
-                                        <div id="bptitle">Breakpoint (4 digits): </div>
-                                    </p>
-                                </td>
-                                <td>&nbsp;<input name="breakpoint" id="breakpoint" type="text" value="" /></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="righttitle">
-                                        <div id="inputtitle">Input: </div>
-                                    </p>
-                                </td>
-                                <td>&nbsp;<input name="input" id="input" type="text" value="0" /></td>
-                            </tr>
-                        </table>
-
-                        <p>&nbsp;</p><hr /><p>&nbsp;</p>
-
-                        <table border="5" cellpadding="25">
-                            <tr>
-                                <td><input name="Runner" type="button" value="Run" onclick='run_simulator()'/></td>
-                                <td><input name="Stepper" type="button" value="Step" onclick="step_simulator()" /></td>
-                            </tr>
-                            <tr>
-                                <td><input name="Resetter" type="button" value="Reset" onclick="reset()" /></td>
-                                <td><input name="Reverter" type="button" value="Revert" onclick="revert()" /></td>
-                            </tr>
-                        </table>
-
-                        <p>&nbsp;</p>
-
-                        <hr />
-
-                        <p>&nbsp;</p>
-
-                        <!-- Display Section -->
-                        <p class="center">Output</p>
-                        <textarea name="output" id="output" cols="40" rows="15" readonly="readonly"></textarea>
-
-                        <!-- Separation Divider -->
-                        <div id="clear"></div>
-                    </td>
-                </tr>
-            </table>
-        </div> <!-- id="content2" -->
+                        <hr class="divider">
+                        <div class="control-grid">
+                            <button onclick="run_simulator()">Run</button>
+                            <button onclick="step_simulator()">Step</button>
+                            <button onclick="reset()">Reset</button>
+                            <button onclick="revert()">Revert</button>
+                        </div>
+                        <hr class="divider">
+                        <div class="output-group">
+                            <label for="output">Output</label>
+                            <textarea id="output" cols="40" rows="15" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
         <div id="footer"></div>
-
     </div> <!-- id="wrap" -->
 
     <script src="simulator.js"></script>

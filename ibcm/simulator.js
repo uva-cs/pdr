@@ -1,7 +1,7 @@
 const INSTRUCTION_REGEX = /[a-fA-F0-9]{4}/;
 const WATCHDOG_MAX_LIMIT = 10000;
 
-const instructions = [];
+let instructions = [];
 
 let pc = "0000";
 let pchexbak = "0000";
@@ -35,6 +35,8 @@ function readIBCMFile(event) {
 }
 
 function processIBCMFile(text) {
+    instructions = []; // Reset instructions array
+
     const lines = text.split(/\r?\n/) // Split on newlines
     let currentLine = 0; // Zero-indexed indicator of which line we are parsing
     for (let line of lines) {
@@ -67,15 +69,13 @@ function processIBCMFile(text) {
 }
 
 function create_ibcm_memory_table() {
-    let str = "<table id=\"tbl\" BORDER=\"7\" width=\"98%\">\n";
     const top = loadmemInput.checked ? 4096 : 100;
 
     for (let i = 0; i < top; i++) {
         const divname = i.toString(16).padStart(4, '0');
-        str += "<tr><td>" + divname + "</td><td><input type=\"text\" id=\"v" + divname + "\" class=\"address\" size=5></td><td><div id=\"pc" + divname + "\"></div></td></tr>\n";
+        const elem = "<tr><td>" + divname + "</td><td><input type=\"text\" id=\"v" + divname + "\" class=\"address\" size=5></td><td><div id=\"pc" + divname + "\"></div></td></tr>";
+        document.getElementById("instructionsTable").getElementsByTagName('tbody')[0].innerHTML += elem;
     }
-    str += "</table>";
-    document.getElementById("memtable").innerHTML = str;
 }
 
 function init() {
