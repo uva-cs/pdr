@@ -71,16 +71,19 @@ function processIBCMFile(text) {
 function create_ibcm_memory_table() {
     const top = loadmemInput.checked ? 4096 : 100;
 
+    let tableRows = "";
     for (let i = 0; i < top; i++) {
         const divname = i.toString(16).padStart(4, '0');
-        const elem = `<tr><td><code>${divname}</code></td><td><input type="text" id="v${divname}" class="address monospace-input" size=4></td><td><div id="pc${divname}"></div></td></tr>`;
-        document.getElementById('instructionsTable').getElementsByTagName('tbody')[0].innerHTML += elem;
+        tableRows += `<tr><td><code>${divname}</code></td><td><input type="text" id="v${divname}" class="address monospace-input" size=4></td><td><div id="pc${divname}"></div></td></tr>`;
     }
+    document.getElementById('instructionsTable').getElementsByTagName('tbody')[0].innerHTML = tableRows;
+
+    // We need to reset because we've cleared all the existing program information at this point
+    reset();
 }
 
 function init() {
     create_ibcm_memory_table();
-    revert();
 }
 
 function revert() {
