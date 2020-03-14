@@ -735,21 +735,13 @@ A few notes:
   you will lose any and all changes you have made to the memory
   locations!
 
-\item The simulator page is a PHP script, which means that it will not
-  work if you are viewing it as a local file (if the beginning of your
-  URL is ``file://'' instead of ``http://''), or if the web server
-  hosting this page does not have PHP installed (this latter
-  restriction includes UVa's Collab web server).
-
-\item Browser compatibility: It has been tested in Internet Explorer
-  under Windows, Safari under Mac OS X, and Firefox under Windows, Mac
-  OS X, and Ubuntu Linux. Note that the display of the changing of the
-  values as the simulation is run (the PC, memory values, etc.) will
-  only work on some browser / operating system combinations (Firefox,
-  in particular, works well for this). The other browsers will have
-  the same end state after the program is run, but will not animate
-  the execution of the IBCM program when 'Run' is pressed (the 'Step'
-  command will still animate each step).
+\item Browser compatibility: The simulator should work under any major
+  browsers released after 2018. Note that the display of the changing
+  of the values as the simulation is run (the PC, memory values, etc.)
+  only works under Firefox. The other browsers will have the same end
+  state after the program is run, but will not animate the execution
+  of the IBCM program when 'Run' is pressed (the 'Step' command will
+  still animate each step).
 
 \item The format of your program file is very rigid~-- the first four
   characters of each line are interpreted as a hexadecimal number. The
@@ -1312,12 +1304,10 @@ under various Creative Commons licenses.  They are available online
   One of the assignments is to write a quine, or an IBCM program that
   will print itself out~-- the smallest quine produced is nine IBCM
   commands.
-\item An online PHP/Javascript simulator, which is the primary way that
+\item An online Javascript simulator, which is the primary way that
   the students program in IBCM.  This is shown above in
-  Figure~\ref{wwwinterface}.  The PHP is used to allow loading of an
-  IBCM program from a text file; the Javascript implements the IBCM
-  simulator in the browser itself.  The simulator works across all
-  major browsers on all major operating systems.
+  Figure~\ref{wwwinterface}.  The simulator works across all major
+  browsers released after 2018.
 \item A C++-based command-line program, which can both compile and
   execute IBCM programs.  Not surprisingly, this is much faster than
   the online simulator.  This is particularly useful for automated

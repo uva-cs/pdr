@@ -1,10 +1,13 @@
 *.aux
 *.bbl
 *.blg
+*.fdb_latexmk
+*.fls
 *.lof
 *.log
 *.lol
 *.lot
+*.synctex.gz
 *.toc
 *.blg
 *.bbl
