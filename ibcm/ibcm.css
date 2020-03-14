@@ -11,6 +11,7 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
     row-gap: 1rem;
 }
 
@@ -64,7 +65,7 @@
 }
 
 .output-group label {
-    display: inline-block;
+    display: block;
     margin-bottom: 0.5rem;
 }
 
@@ -145,7 +146,7 @@ blockquote{
 #wrap {
     margin-left: auto;
     margin-right: auto;
-    width: 730px;
+    width: 50vw;
 }
 
 
