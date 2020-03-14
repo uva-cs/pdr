@@ -1,5 +1,5 @@
 const INSTRUCTION_REGEX = /[a-fA-F0-9]{4}/;
-const WATCHDOG_MAX_LIMIT = 10000;
+const WATCHDOG_MAX_LIMIT = 1000;
 
 let instructions = [];
 
@@ -74,7 +74,7 @@ function create_ibcm_memory_table() {
     for (let i = 0; i < top; i++) {
         const divname = i.toString(16).padStart(4, '0');
         const elem = `<tr><td><code>${divname}</code></td><td><input type="text" id="v${divname}" class="address monospace-input" size=4></td><td><div id="pc${divname}"></div></td></tr>`;
-        document.getElementById("instructionsTable").getElementsByTagName('tbody')[0].innerHTML += elem;
+        document.getElementById('instructionsTable').getElementsByTagName('tbody')[0].innerHTML += elem;
     }
 }
 
