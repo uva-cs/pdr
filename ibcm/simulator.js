@@ -19,7 +19,7 @@ const fileInput = document.getElementById('userfile');
 fileInput.addEventListener('change', readIBCMFile);
 
 function readIBCMFile(event) {
-    if (this.files.length != 1) {
+    if (this.files.length !== 1) {
         return;
     }
 
@@ -93,7 +93,7 @@ function revert() {
 function reset() {
     document.getElementById("accum").value = "0000";
     document.getElementById("pc").value = "0000";
-    if (pc != "xxxx") {
+    if (pc !== "xxxx") {
         document.getElementById("pc" + pc).innerHTML = ""; // erase old PC
     }
 
@@ -122,9 +122,9 @@ function run_simulator() {
     do {
         execute_instruction();
         watchdogCounter++;
-    } while (pc != "xxxx" && !awaiting_input && pc != breakpoint && (useWatchdogTimer ? watchdogCounter < WATCHDOG_MAX_LIMIT : true));
+    } while (pc !== "xxxx" && !awaiting_input && pc != breakpoint && (useWatchdogTimer ? watchdogCounter < WATCHDOG_MAX_LIMIT : true));
 
-    if (pc == breakpoint) {
+    if (pc === breakpoint) {
         document.getElementById("bptitle").innerHTML = "<em>Breakpoint (4 digits): </em>";
     } else if (useWatchdogTimer && watchdogCounter >= WATCHDOG_MAX_LIMIT) {
         document.getElementById("watchwarning").innerHTML = `Watchdog timed out after ${WATCHDOG_MAX_LIMIT} instructions. If this is expected, continue with 'Run'.`;
@@ -138,7 +138,7 @@ function step_simulator() {
 
 function execute_instruction() {
     let instruction = document.getElementById('v' + pc).value;
-    if (instruction == "") {
+    if (instruction === "") {
         instruction = "0000";
     }
 
@@ -182,7 +182,7 @@ function execute_instruction() {
                         return;
                     } else {
                         // is the value empty?
-                        if (document.getElementById("input").value == "") {
+                        if (document.getElementById("input").value === "") {
                             document.getElementById("pc" + pc).innerHTML = "I";
                             document.getElementById("input").focus();
                             return;
@@ -262,7 +262,7 @@ function execute_instruction() {
             pc = "0" + address;
             break;
         case 0xd: // jmpe
-            if (accum == "0000")
+            if (accum === "0000")
                 pc = "0" + address;
             break;
         case 0xe: // jmpl
@@ -275,7 +275,7 @@ function execute_instruction() {
             break;
     }
 
-    if (pc != "xxxx") {
+    if (pc !== "xxxx") {
         document.getElementById("pc" + pc).innerHTML = "<-"; // set new PC
         document.getElementById("pc").value = pc;
     }
