@@ -20,6 +20,7 @@
 
 .controls .internal {
     position: sticky;
+    -webkit-position: sticky; /* Safari is still prefixed as of Safari 13, released Sept. 2019 */
     top: 1rem;
 }
 
