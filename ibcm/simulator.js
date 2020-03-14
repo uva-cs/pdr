@@ -119,10 +119,10 @@ function run_simulator() {
     document.getElementById("bptitle").innerHTML = "Breakpoint (4 digits): ";
 
     // run until the breakpoint is hit or the watchdog counter reaches its limit
-    while (pc != "xxxx" && !awaiting_input && pc != breakpoint && (useWatchdogTimer ? watchdogCounter < WATCHDOG_MAX_LIMIT : true)) {
+    do {
         execute_instruction();
         watchdogCounter++;
-    }
+    } while (pc != "xxxx" && !awaiting_input && pc != breakpoint && (useWatchdogTimer ? watchdogCounter < WATCHDOG_MAX_LIMIT : true));
 
     if (pc == breakpoint) {
         document.getElementById("bptitle").innerHTML = "<em>Breakpoint (4 digits): </em>";
