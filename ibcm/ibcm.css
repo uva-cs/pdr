@@ -68,6 +68,10 @@
     margin-bottom: 0.5rem;
 }
 
+.monospace-input {
+    font-family: monospace;
+}
+
 body {
     margin: 0px;
     background: url(img/top_bg.gif);
