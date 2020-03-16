@@ -117,14 +117,11 @@ nasm -f elf64 -g -o vecsum.o vecsum.s
 - `-f elf64`: specifies the output format (elf64) for the final executable
     - For macOS, use `-f macho64` instead (see the Platform Architectures section above)
 
-
-Finally, we have to link the two files into the final executable.  We do this as before:
+Finally, we have to link the two .o files into the final executable a.out:
 
 ```
 clang++ -m64 -Wall -g vecsum.o main.o
 ```
-
-This tells clang++ to link both of the .o files created above into an executable, which it called `a.out`.  Note that there isn't any compiling done at this stage (the compilation was done before) -- this just links the two object files into the final executable.  Also note that for our submitted Makefiles, we will NOT have the `-o` flag present.
 
 ### Tutorial ###
 
