@@ -108,15 +108,15 @@ clang++ -m64 -Wall -g -c -o main.o main.cpp
 - `-g`: compile with debugging information
 
 
-Next, we need to compile the assembly file.  To do this, we enter the following:
+Next, we compile the assembly file (`nasm` is the assembler we're using in this course):
 
 ```
 nasm -f elf64 -g -o vecsum.o vecsum.s
 ```
+- `-o vecsum.o`: puts the assembler output in a file named vecsum.o
+- `-f elf64`: specifies the output format (elf64) for the final executable
+    - For macOS, use `-f macho64` instead (see the Platform Architectures section above)
 
-This invokes nasm, which is the assembler that we are using for this course.  We'll get to the `-f elf64` part in a moment.  The `-o vecsum.o` option is the same as with clang++ -- it is telling the assembler to put the output into a file named vecsum.o.  If you do not specify a filename with the `-o` flag, it will default to vecsum.obj, NOT vecsum.o -- this is why we are using the `-o` flag.  We also tell it to include debugging symbols via `-g`. The assembly file name is specified by the `vecsum.s` at the end of the command line.
-
-The new flag here is the `-f elf64`.  This tells the assembler the output format for the final executable.  Operating systems can typically execute a number of different formats.  As we are running under 64 bit Linux, we specify the elf64 format.  Mac OS X uses `-f macho64` -- see the above section for more details.
 
 Finally, we have to link the two files into the final executable.  We do this as before:
 
