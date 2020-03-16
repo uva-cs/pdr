@@ -250,7 +250,21 @@ For the post-lab, you should investigate and understand the topics below, and pr
 - Should be a PDF file called postlab8.pdf
     - Click [here](../../docs/convert_to_pdf.html) for details about creating a PDF file.
 - Should be single-spaced.
-- Create two numbered lists containing the various topics, one for each section.
+- Create two numbered lists containing the various topics, one for each section, like the following:
+    - ```
+        Parameter passing
+        1.
+        2.
+        3.
+        4.
+
+        Objects
+        1.
+        2.
+        3.
+        4.
+        5.
+        ```
     - For each list item, include a 1 to 2 paragraph (maximum) explanation and at least one piece of evidence.
         - Assembly code, C++ code, screenshots, memory dumps, console output, etc. count as evidence.
 - Include a *Sources* section.
