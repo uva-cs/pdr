@@ -4,8 +4,8 @@ const WATCHDOG_MAX_LIMIT = 1000;
 let instructions = [];
 
 let pc = "0000";
-let pchexbak = "0000";
 let awaiting_input = false;
+let halted = false;
 
 // Handle enter
 const userInput = document.getElementById('input');
@@ -18,7 +18,7 @@ loadmemInput.addEventListener('change', create_ibcm_memory_table);
 const fileInput = document.getElementById('userfile');
 fileInput.addEventListener('change', readIBCMFile);
 
-function readIBCMFile(event) {
+function readIBCMFile() {
     if (this.files.length !== 1) {
         return;
     }
@@ -31,7 +31,6 @@ function readIBCMFile(event) {
     const reader = new FileReader();
     reader.onload = e => processIBCMFile(e.target.result);
     reader.readAsText(file);
-    event.preventDefault();
 }
 
 function processIBCMFile(text) {
@@ -66,6 +65,9 @@ function processIBCMFile(text) {
     for (let i = currentLine; i < document.getElementsByClassName('address').length; i++) {
         document.getElementById(`v${i.toString(16).padStart(4, '0')}`).value = '0000';
     }
+
+    // New program; reset
+    reset();
 }
 
 function create_ibcm_memory_table() {
@@ -96,19 +98,17 @@ function revert() {
 function reset() {
     document.getElementById("accum").value = "0000";
     document.getElementById("pc").value = "0000";
-    if (pc !== "xxxx") {
-        document.getElementById("pc" + pc).innerHTML = ""; // erase old PC
-    }
-
-    document.getElementById("pc" + pchexbak).innerHTML = ""; // erase old PC
+    document.getElementById("pc" + pc).innerHTML = ""; // erase old PC
     document.getElementById("pc0000").innerHTML = "<-";
-    pc = "0000";
     document.getElementById("inputtitle").innerHTML = "Input:";
     document.getElementById("input").value = "";
     document.getElementById("output").value = "";
-    awaiting_input = false;
     document.getElementById("bptitle").innerHTML = "Breakpoint (hex):";
     document.getElementById("watchwarning").innerHTML = "";
+
+    pc = "0000";
+    awaiting_input = false;
+    halted = false;
 }
 
 function run_simulator() {
@@ -125,7 +125,7 @@ function run_simulator() {
     do {
         execute_instruction();
         watchdogCounter++;
-    } while (pc !== "xxxx" && !awaiting_input && pc != breakpoint && (useWatchdogTimer ? watchdogCounter < WATCHDOG_MAX_LIMIT : true));
+    } while (!halted && !awaiting_input && pc != breakpoint && (useWatchdogTimer ? watchdogCounter < WATCHDOG_MAX_LIMIT : true));
 
     if (pc === breakpoint) {
         document.getElementById("bptitle").innerHTML = "<em>Breakpoint (hex):</em>";
@@ -159,8 +159,7 @@ function execute_instruction() {
             pc = dec_to_hex(hex_to_dec(pc) - 1);
             document.getElementById("pc" + pc).innerHTML = "H";
             document.getElementById("pc").value = pc + " (halted)";
-            pchexbak = pc; // so the 'H' can be erased by the reset button
-            pc = "xxxx";
+            halted = true;
             break;
         case 0x1: // I/O
             const output = document.getElementById("output");
@@ -278,7 +277,7 @@ function execute_instruction() {
             break;
     }
 
-    if (pc !== "xxxx") {
+    if (!halted) {
         document.getElementById("pc" + pc).innerHTML = "<-"; // set new PC
         document.getElementById("pc").value = pc;
     }
