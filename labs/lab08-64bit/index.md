@@ -190,17 +190,36 @@ If you need help, see the provided `main.cpp` file as a template.
 In-lab
 ------
 
-#### Before You Start
+Before You Start:
 - Make sure you understand your pre-lab code.
     - Ask a TA if you have any questions.
     - Make sure you understand how to write recursive functions in assembly, as you'll be required to do so on the exam.
 - Read and understand the C calling convention.
 
-For the in-lab, you will be implementing merge sort in x86 assembly. We have provided the helper function `merge` in mergeSort.s. Note: `merge` makes use of two caller-saved registers, r10 and r11. **Remember to save and restore these registers** before and after calling `merge`.
+You'll need to submit three files for the in-lab: an assembly file called mergeSort.s, an **UNMODIFIED** C++ file called testMergeSort.cpp, and a Makefile.
 
-Download [mergeSort.s](mergeSort.s.html) ([src](mergeSort.s)), as well as [testMergeSort.cpp](testMergeSort.cpp.html) ([src](testMergeSort.cpp)), which you will use to test your code. Make sure you do not alter testMergeSort.cpp, as you must include the original file in your submission. You will need to create a Makefile for the in-lab. To do so, you can copy the pre-lab Makefile and set `OFILES=mergeSort.o testMergeSort.o`.
+#### mergeSort.s
+- Download the file [mergeSort.s](mergeSort.s.html) ([src](mergeSort.s)).
+- Implement the `mergeSort` method.
+    - `mergeSort` is a `void` method (it has no return type, as it modifies the original array). It takes three parameters in the following order:
+        - A pointer to an int array (`int*`)
+        - An integer corresponding to the left index of the array
+        - An integer corresponding to the right index of the array
+- **NOTE:** We have already provided a fully implemented `merge` method. This method makes use of two caller-saved registers, r10 and r11. **Remember to save and restore these registers** before and after calling `merge`.
 
-Your task for the in-lab is to implement the `mergeSort` function in mergeSort.s. This function takes in three parameters. The first parameter is a pointer to an int array. The second parameter is an integer corresponding to the left index in the array. The third parameter is an integer corresponding to the right index in the array. The return type of this function is void, and it modifies the original array. You may assume the size of the array is nonzero. When testing your function using testMergeSort.cpp, input will be read via standard input, not through command-line parameters. After entering the array size, you will be prompted to enter each element one by one. This test file will call your `mergeSort` function on the array, and print the result. Make sure you test your function on arrays of various sizes.
+#### testMergeSort.cpp
+- Download the file [testMergeSort.cpp](testMergeSort.cpp.html) ([src](testMergeSort.cpp)).
+- **DO NOT** change this file.
+- This is a C++ program for testing your merge sort implementation.
+    - It reads input via `cin` (standard input), not command-line parameters.
+    - You'll have to enter the array size, and then each array element one by one.
+    - It will call `mergeSort` on your array and print the result.
+    - Make sure to test your implementation on multiple array sizes.
+- You can assume the following:
+    - The array size is nonzero.
+
+#### Makefile
+- You can copy your pre-lab Makefile and set `OFILES=mergeSort.o testMergeSort.o`.
 
 ### Sample Execution Run
 
@@ -217,7 +236,7 @@ Below is a sample execution run to show you the input and output format we are l
 
 The following resource explains the merge sort algorithm. This is what you need to implement in x86 assembly: [www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/](https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/)
 
-Once you have completed the in-lab, submit mergeSort.s, testMergeSort.cpp, and your Makefile. **If you finish the in-lab early, you should begin working on the post-lab report.**
+**If you finish the in-lab early, you should begin working on the post-lab report.**
 
 ------------------------------------------------------------
 
