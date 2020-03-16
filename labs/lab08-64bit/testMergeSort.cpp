@@ -1,7 +1,6 @@
 /*
 University of Virginia
 CS 2150 In-Lab 8
-Spring 2018
 Test file for mergeSort
 */
 
