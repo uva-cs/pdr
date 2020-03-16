@@ -221,6 +221,9 @@ You'll need to submit three files for the in-lab: an assembly file called mergeS
 #### Makefile
 - You can copy your pre-lab Makefile and set `OFILES=mergeSort.o testMergeSort.o`.
 
+### Resources
+- Click [here](https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/) for an explanation of the merge sort algorithm.
+
 ### Sample Execution Run
 
 Below is a sample execution run to show you the input and output format we are looking for.
@@ -233,8 +236,6 @@ Below is a sample execution run to show you the input and output format we are l
     Enter value 4: 8
     Unsorted array: -7 2 -39 12 8
     Sorted array: -39 -7 2 8 12
-
-The following resource explains the merge sort algorithm. This is what you need to implement in x86 assembly: [www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/](https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/tutorial/)
 
 **If you finish the in-lab early, you should begin working on the post-lab report.**
 
