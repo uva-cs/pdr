@@ -133,15 +133,15 @@ Examine the vecsum subroutine in [vecsum.s](vecsum.s.html) ([src](vecsum.s)).  U
 
 Compile and run the vecsum program:
 
-- Use the tutorial as a guide, but see the instructions above.
 - If you forget the lldb commands described below, see the [LLDB command summary](../../docs/lldb_summary.html), which has a summary of all of these commands.
-- You can find the assembly and C++ source code in the repository ([vecsum.s](vecsum.s.html) ([src](vecsum.s)), [main.cpp](main.cpp.html) ([src](main.cpp)), [Makefile](Makefile.html) ([src](Makefile))).  For the C++ code compilation (i.e. main.cpp) and the final link, use the `-g` flag, which allows the program to work well with the lldb debugger.
-- Use the debugger to step through the assembly code, view the register contents, and view the computer's memory.
-- Set a breakpoint at the line in the main.cpp where the vecsum() function is called (probably line 38).
-- Normally, you would use the `step` function to step into the next instruction.  However, since no debugging information was included with the assembler (a shortcoming of nasm), we can't use `step` -- it will just move to the next C++ instruction (the `cout`).  Instead, we will use `stepi`, which will step exactly one *assembly instruction*, which is what we want.
-- To display the assembly code that is currently being executed, enter `disassemble`.  This is just like `list`, but it displays the assembly code instead of the C++ code.
-- Note that this prints things in a different assembly format.  To set the format to the style we are used to (and the style we are programming in with nasm), enter `settings set target.x86-disassembly-flavor intel`.  Now enter `disassemble` again -- the format should look more familiar.  You only have to enter that set command once (unless you exit and re-enter lldb).
-- To see the vecsum function, enter `disassemble --name vecsum`.  Note that this only lists the first third (or so) of the routine -- up until the `start` label.  To see the rest of the code, enter `disassemble --name start`, `disassemble --name done`, etc.
+- Set a breakpoint at the line in main.cpp where the vecsum() function is called (line 45).
+- Enter `stepi` to step to the next assembly instruction (NOT `step` - that will step to the next C++ instruction).
+- Enter `settings set target.x86-disassembly-flavor intel`. This will change the format of the assembly code to the one we're used to.
+  	- Note that you'll have to enter this command every time you exit and re-enter LLDB.
+- Enter `disassemble` to view the assembly code currently being executed.
+  	- To see the vecsum function, enter `disassemble --name vecsum`.
+	- Note that this only lists the first third (or so) of the routine -- up until the `start` label.
+	- To see the rest of the code, enter `disassemble --name start`, `disassemble --name done`, etc.
 - To show the contents of the registers, use the `info registers` command.
 
 ### Pre-lab program ###
