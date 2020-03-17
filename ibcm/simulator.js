@@ -103,7 +103,7 @@ function reset() {
     document.getElementById("inputtitle").innerHTML = "Input:";
     document.getElementById("input").value = "";
     document.getElementById("output").value = "";
-    document.getElementById("bptitle").innerHTML = "Breakpoint (hex):";
+    document.getElementById("bptitle").classList.remove('active');
     document.getElementById("watchwarning").innerHTML = "";
 
     pc = "0000";
@@ -119,7 +119,7 @@ function run_simulator() {
 
     // initialize breakpoint vars
     const breakpoint = document.getElementById("breakpoint").value.toLowerCase();
-    document.getElementById("bptitle").innerHTML = "Breakpoint (hex):";
+    document.getElementById('bptitle').classList.remove('active');
 
     // run until the breakpoint is hit or the watchdog counter reaches its limit
     do {
@@ -128,14 +128,14 @@ function run_simulator() {
     } while (!halted && !awaiting_input && pc != breakpoint && (useWatchdogTimer ? watchdogCounter < WATCHDOG_MAX_LIMIT : true));
 
     if (pc === breakpoint) {
-        document.getElementById("bptitle").innerHTML = "<em>Breakpoint (hex):</em>";
+        document.getElementById('bptitle').classList.add('active');
     } else if (useWatchdogTimer && watchdogCounter >= WATCHDOG_MAX_LIMIT) {
         document.getElementById("watchwarning").innerHTML = `Watchdog timed out after ${WATCHDOG_MAX_LIMIT} instructions. If this is expected, continue with 'Run'.`;
     }
 }
 
 function step_simulator() {
-    document.getElementById("bptitle").innerHTML = "Breakpoint (hex):";
+    document.getElementById('bptitle').classList.remove('active');
     execute_instruction();
 }
 

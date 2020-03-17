@@ -73,6 +73,10 @@
     font-family: monospace;
 }
 
+.active {
+    font-style: italic;
+}
+
 body {
     margin: 0px;
     background: url(img/top_bg.gif);
