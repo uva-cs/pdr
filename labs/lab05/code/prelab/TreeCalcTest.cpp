@@ -1,3 +1,11 @@
+/**
+    CS 2150, TreeCalcTest.cpp
+    Purpose: main file to test TreeCalc
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/24/2020
+*/
+
 // TreeCalcTest.cpp
 // CS 2150: Tree calculator test program
 // Your code MUST work with this test program

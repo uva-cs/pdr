@@ -1,0 +1,17 @@
+/**
+    CS 2150, lifecycle.questions.txt
+    Purpose: Questions about lifecycle.cpp for Lab01
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 01/21/2020
+*/
+
+1. I noticed that in the code, something like this popped up:
+
+existing code
+{
+	New code: do some new fancy stuff here
+}
+existing code
+
+I noticed that whatever new class variables that were initialized within the curly braces were destroyed after the end of the new code block. Why is this used, and when should I be using this in my code?

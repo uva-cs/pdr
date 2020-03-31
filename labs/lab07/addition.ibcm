@@ -1,0 +1,24 @@
+C00B 000 		jmp		start	skip around variables
+0000 001 i		dw 		0	 	int i
+0000 002 j 		dw		0       int j
+0000 003 k  	dw  	0 	    int k
+0000 004
+0000 005
+0000 006
+0000 007
+0000 008
+0000 009
+0000 00A
+1000 00B start	readH		    read i
+4001 00C 	    store   i     
+1000 00D        readH           read j
+4002 00E        store   j
+1000 OOF        readH           read k
+4003 010        store   k
+3001 011        load    i       loading i in
+5002 012        add     j       adding j
+5003 013        add     k       adding k
+1800 014        printH  	    printing the sum
+D017 015	    jmpe    end     end it all
+C00B 016        jmp     start   loop back to start
+0000 017 end    halt            halt

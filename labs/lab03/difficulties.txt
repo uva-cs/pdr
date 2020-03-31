@@ -1,0 +1,9 @@
+/**
+    CS 2150, difficulties.txt
+    Purpose: Difficulty notes for Lab03
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/04/2020
+*/
+
+I didn't really run into any big issues besides just changing all the places I used the STL stack from "stack<int>"" to "MyStack." The only change I made to the List class was adding another method called removeAtTail so that I could easily pop from the end of my list. Each of the methods in MyStack were only a few lines since List was already pretty thoroughly implemented.

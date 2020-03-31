@@ -8,11 +8,11 @@
 ; Return value is a long that is the sum of the integers in the sequence
 ;
 
-	global vecsum
+	global _vecsum
 
 	section .text
 
-vecsum:
+_vecsum:
 	; Standard prologue: we do not have to create any local
 	; variables (those values will be kept in registers), and 
 	; we are not using any callee-saved registers.

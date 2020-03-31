@@ -1,0 +1,66 @@
+C00B 000 		jmp		start	skip around variables
+0000 001 i      dw      0       int i (outer loop)
+0000 002 j      dw      0       int j (inner loop)
+0005 003 n      dw      5       int n (array size)
+003D 004 a      dw      3D      int a (address)
+0000 005 temp   dw      0       int temp (temporary variable for swap)
+3000 006 loadit dw      3000    load previous index
+6000 007 subit  dw      6000    subtract current index
+4000 008 storeitdw      4000    store for both previous and current index
+0000 009 zero   dw      0
+0001 00A one    dw      1
+3009 00B start  load    zero     i=0
+4001 00C        store   i
+3003 00D loop1  load    n       if (i >= n) goto xit
+6001 00E        sub     i
+E03C 00F		jmpl    xit2
+D03C 010        jmpe    xit2
+3003 011        load    n
+600A 012        sub     one
+4002 013        store   j
+3002 014 loop2  load    j       if (j >= i) goto xit
+6001 015        sub     i
+E038 016		jmpl    xit1
+D038 017        jmpe    xit1
+3006 018        load    loadit  construct instruction to load a[j-1]
+5004 019        add     a
+5002 01A        add     j
+402B 01B        store   doit3
+600A 01C        sub     one
+4023 01D        store   doit1
+402D 01E        store   doit4
+3007 01F        load    subit   construct instruction to subtract a[j]
+5004 020        add     a
+5002 021        add     j
+4024 022        store   doit2
+0000 023 doit1  dw      0       execute load a[i]
+0000 024 doit2  dw      0       execute sub a[i-1]
+E034 025		jmpl    skip	if (a[j-1]>a[j]) goto skip
+D034 026		jmpe    skip
+3008 027        load    storeit construct instruction to store into a[j]
+5004 028        add     a
+5002 029        add     j
+402E 02A        store   doit5
+0000 02B doit3  dw      0       execute load a[j]
+4005 02C        store   temp    swap a[j] and a[j-1]
+0000 02D doit4  dw      0       execute load a[j-1]
+0000 02E doit5  dw      0       execute store into a[j]
+302E 02F        load    doit5   construct instruction to store into a[j-1]
+600A 030        sub     one
+4033 031        store   doit6
+3005 032        load    temp    a[j-1]=temp
+0000 033 doit6  dw      0
+3002 034 skip   load    j       j--
+600A 035        sub     one
+4002 036        store   j
+C014 037        jmp     loop2
+3001 038 xit1   load    i       i++
+500A 039        add     one
+4001 03A        store   i
+C00D 03B        jmp     loop1
+0000 03C xit2   halt
+0004 03D a[0]   4
+0003 03E a[1]   3
+0005 03F a[2]   5
+0001 040 a[3]   1
+0002 041 a[4]   2

@@ -1,3 +1,11 @@
+/**
+    CS 2150, AVLNode.cpp
+    Purpose: class file for AVLNode
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/26/2020
+*/
+
 #include "AVLNode.h"
 #include <string>
 using namespace std;

@@ -1,0 +1,10 @@
+/**
+    CS 2150, postlab1.question.txt
+    Purpose: Questions about list.cpp and list.h for postLab01
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 01/21/2020
+*/
+
+1. What does the -> operator do?
+2. When do we want to use pointers/why are pointers useful?

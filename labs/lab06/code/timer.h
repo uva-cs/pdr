@@ -1,3 +1,11 @@
+/**
+    CS 2150, timer.h
+    Purpose: header file for timer class
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/28/2020
+*/
+
 // This timer typically has 1/1000000 second (1 micro-second) accuracy
 // under most Linux distributions
 

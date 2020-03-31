@@ -13,7 +13,7 @@
 ; Parameter 2 is the left index in the array 
 ; Parameter 3 is the right index in the array
 ; Return type is void 
-mergeSort:
+_mergeSort:
 
 	; Implement mergeSort here
 	
@@ -25,7 +25,7 @@ mergeSort:
 ; Parameter 3 is the middle index in the array 
 ; Parameter 4 is the right index in the array
 ; Return type is void 
-merge:
+_merge:
 	; Save callee-save registers
 	; Store local variables 
 	push rbx			; int i

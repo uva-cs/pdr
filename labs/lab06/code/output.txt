@@ -1,0 +1,17 @@
+0
+9 words found.
+E (0, 3):   sod
+E (1, 0):   pax
+E (2, 0):   ace
+N (2, 5):   fad
+N (3, 2):   text
+NE(2, 4):   tat
+NW(3, 6):   eft
+SW(0, 6):   tat
+There are 4 rows.
+There are 7 cols.
+W (2, 4):   tee
+aceetfj
+ohtaaoe
+paxztaq
+vztsodt

@@ -1,0 +1,42 @@
+C008 000 		jmp		start	skip around variables
+0000 001 i		dw 		0	 	int i (index)
+0000 002 max 	dw		0       int max (maximum)
+0020 003 a  	dw  	20 	    int a (address)
+000A 004 n      dw      10	    int n (array size)
+0000 005 zero	dw      0
+0001 006 one    dw      1
+3000 007 loadit dw      3000
+3005 008 start  load    zero
+4001 009		store   i 
+4002 00A 		store   max
+3004 00B loop   load	n	    if (i >= N) goto xit
+6001 00C	    sub	 	i
+E01C 00D		jmpl    xit
+D01C 00E        jmpe    xit
+3007 O0F 	    load    loadit  	form instruction
+5003 010		add     a
+5001 011        add     i
+4013 012        store   doit  	plant the instruction
+0000 013 doit   dw      0
+6002 014        sub     max     compare max
+E018 015        jmpl    skip    skip if max is greater
+5002 016        add     max     add max back to get array value again
+4002 017        store   max     update max
+3001 018 skip   load    i       increment i
+5006 019        add     one
+4001 01A        store   i
+C00B 01B        jmp     loop    repeat
+3002 01C xit    load    max     print max
+1800 01D        printH
+0000 01E        halt
+0000 01F
+0001 020 a[0]	dw      1       the array
+0002 021 a[1]   dw      2
+0003 022 a[2]   dw      3
+0004 023 a[3]   dw      4
+000B 024 a[4]   dw      11
+0005 025 a[5]   dw      5
+0006 026 a[6]   dw      6
+0007 027 a[7]   dw      7
+0008 028 a[8]   dw      8
+0009 029 a[9]   dw      9

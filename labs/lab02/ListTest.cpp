@@ -1,18 +1,10 @@
-//  Modified: 8/30/2006: mc2zk
-//  CS216 Lab 1 - Test Harness
-//   by Michael Crane
-//
-//  Integrate this test harness with your List implementation to
-//  thoroughly test your design.  I have only used functions that were
-//  explicitly defined in the specification, with one exception:
-//
-//  I have assumed a global print function whose prototype is
-//      void printList(List l, bool forward);
-//
-//  If the 'forward' parameter is true,
-//      the list is printed in forward order
-//  if the 'forward' parameter is false,
-//      the list is printed in reverse order
+/**
+    CS 2150, ListTest.cpp
+    Purpose: main file to test List class
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 01/25/2020
+*/
 
 #include <iostream>
 #include <string>

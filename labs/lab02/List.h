@@ -1,8 +1,11 @@
-/*
- * Filename: List.h
- * Description: List class definition
- * 	also includes the prototype for non-member function printList()
- */
+/**
+    CS 2150, List.h
+    Purpose: header file for List class
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 01/25/2020
+*/
+
 #ifndef LIST_H
 #define LIST_H
 
@@ -62,6 +65,9 @@ public:
 
     // Inserts x at tail of list
     void insertAtTail(int x);
+
+    // Inserts x at head of list
+    void insertAtHead(int x);
 
     // Returns an iterator that points to the first occurrence of x.
     // When the parameter is not in the list, return a ListItr object that points to the dummy tail node.

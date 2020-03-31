@@ -1,4 +1,10 @@
-// Insert your header information here
+/**
+    CS 2150, TreeNode.cpp
+    Purpose: class file for TreeNode class
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/24/2020
+*/
 // TreeNode.cpp:  Tree Node method implementations
 // CS 2150: Lab 5
 

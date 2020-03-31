@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="GNU source-highlight 
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite">
+<title>toppings.cpp</title>
+</head>
+<body style="background-color:white">
+<pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"toppings.h"</span>
+
+Toppings<span style="color:#990000">::</span><b><span style="color:#000000">Toppings</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> cheeseAmount<span style="color:#990000">,</span> <span style="color:#009900">int</span> mushroomsAmount<span style="color:#990000">,</span> <span style="color:#009900">int</span> peppersAmount<span style="color:#990000">,</span> <span style="color:#009900">int</span> pepperoniAmount<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    cheese<span style="color:#990000">=</span><b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">Cheese</span></b><span style="color:#990000">(</span>cheeseAmount<span style="color:#990000">);</span>
+    mushrooms<span style="color:#990000">=</span><b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">Mushrooms</span></b><span style="color:#990000">(</span>mushroomsAmount<span style="color:#990000">);</span>
+    peppers<span style="color:#990000">=</span><b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">Peppers</span></b><span style="color:#990000">(</span>peppersAmount<span style="color:#990000">);</span>
+    pepperoni<span style="color:#990000">=</span><b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">Pepperoni</span></b><span style="color:#990000">(</span>pepperoniAmount<span style="color:#990000">);</span>
+<span style="color:#FF0000">}</span>
+
+Toppings<span style="color:#990000">::</span> <span style="color:#990000">~</span><b><span style="color:#000000">Toppings</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">delete</span></b> cheese<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">delete</span></b> mushrooms<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">delete</span></b> peppers<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">delete</span></b> pepperoni<span style="color:#990000">;</span>
+<span style="color:#FF0000">}</span>
+</pre>
+</body>
+</html>

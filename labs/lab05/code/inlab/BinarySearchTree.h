@@ -40,9 +40,11 @@ private:
     // Declare a root node
     BinaryNode* root;
 
+    void insert(const string& x, BinaryNode* &curr);
     // private helper for remove to allow recursion over different nodes. returns
     // a BinaryNode* that is assigned to the original node.
     BinaryNode* remove(BinaryNode*& n, const string& x);
+    int numNodes(BinaryNode* curr) const;
     // min finds the string with the smallest value in a subtree.
     string min(BinaryNode* node) const;
 

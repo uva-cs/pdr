@@ -1,3 +1,11 @@
+/**
+    CS 2150, AVLNode.cpp
+    Purpose: main file for AVLTree testing
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/26/2020
+*/
+
 #include "AVLTree.h"
 
 #include <iostream>
@@ -11,6 +19,7 @@ int main() {
         cin >> word;
         if (instr == "I") {
             avl.insert(word);
+            avl.printTree();
         } else if (instr == "R") {
             avl.remove(word);
         } else if (instr == "L") {
@@ -18,4 +27,5 @@ int main() {
         }
     }
     cout << "AVL numNodes: " << avl.numNodes() << endl;
+    avl.~AVLTree();
 }

@@ -1,3 +1,10 @@
+/**
+    CS 2150, TreeNode.h
+    Purpose: header file for TreeNode class
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/24/2020
+*/
 // TreeNode.h: TreeNode class definition
 // CS 2150: Lab 5
 

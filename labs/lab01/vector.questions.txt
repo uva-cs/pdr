@@ -1,0 +1,10 @@
+/**
+    CS 2150, vector.questions.txt
+    Purpose: Questions about svtest.cpp, svutil.cpp, and svutil.h for Lab01
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 01/21/2020
+*/
+
+1. Which is more synonomous to Java/Python importing in C++, #include or using namespace? 
+2. Can you initialize empty vectors which already have a initial size?

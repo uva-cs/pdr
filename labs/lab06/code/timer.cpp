@@ -1,3 +1,11 @@
+/**
+    CS 2150, timer.cpp
+    Purpose: class file for timer class
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/28/2020
+*/
+
 #include <sstream>
 #include <math.h>
 #include <cstring>

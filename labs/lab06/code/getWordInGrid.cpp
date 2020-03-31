@@ -35,7 +35,7 @@ int main() {
     // to hold the number of rows and cols in the input file
     int rows, cols;
     // attempt to read in the file
-    bool result = readInGrid ("5x8.grid.txt", rows, cols);
+    bool result = readInGrid ("data/300x300.grid.txt", rows, cols);
     // if there is an error, report it
     if ( !result ) {
         cout << "Error reading in file!" << endl;

@@ -11,10 +11,11 @@ CXXFLAGS	= -Wall -g
 AS	= nasm
 
 # Defines the flags for the assembler
+# macho64
 ASFLAGS	= -f elf64 -g
 
 # All of the .o files for our program
-OFILES	= vecsum.o main.o
+OFILES	= mathlib.o mathfun.o
 
 # This tells make to create a .o file from a .cpp file, using the
 # defaults above (i.e. the CXX and CXXFLAGS macros)
@@ -27,7 +28,7 @@ OFILES	= vecsum.o main.o
 # How to compile our final program.  Note that we do NOT specify an
 # output executable name -- in order for this to work with the grading
 # system, the file needs to be a.out (a.exe in Cygwin).
-main:	$(OFILES)
+a.out:	$(OFILES)
 	$(CXX) $(CXXFLAGS) $(OFILES)
 
 # This will clean up (remove) all our object files.  The -f option

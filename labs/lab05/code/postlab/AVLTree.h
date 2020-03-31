@@ -1,3 +1,11 @@
+/**
+    CS 2150, AVLTree.h
+    Purpose: header file for AVLTree
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/26/2020
+*/
+
 #ifndef AVL_H
 #define AVL_H
 
@@ -62,6 +70,8 @@ private:
     // private helper for printTree to allow recursion over different nodes.
     void printTree(AVLNode* root, Trunk* prev, bool isRight);
 
+    void insert(const string& x, AVLNode* &curr);
+    int numNodes(AVLNode* curr) const;
     // Any other methods you need...
 };
 

@@ -1,4 +1,10 @@
-// Add your header information here
+/**
+    CS 2150, TreeCalc.h
+    Purpose: header file for TreeCalc class
+
+    @author Alan Zheng (az4xfp)
+    @version 1.1 02/24/2020
+*/
 // TreeCalc.h: Tree Calculator class definition
 // CS 2150: Lab 5
 // NOTE: You may use any stack implementation that you wish
@@ -11,6 +17,7 @@
 // include your stack implementation here
 
 #include "TreeNode.h"
+#include <stack>
 using namespace std;
 
 class TreeCalc {
@@ -32,6 +39,7 @@ public:
 
 private:
     // declare a stack to hold your expression tree
+    stack<TreeNode*> mystack;
     int calculate(TreeNode* ptr) const;		//Evaluates tree, returns value
 
 };

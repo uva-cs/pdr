@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="GNU source-highlight 
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite">
+<title>Makefile</title>
+</head>
+<body style="background-color:white">
+<pre><i><span style="color:#9A1900"># This is a comment</span></i>
+
+<span style="color:#009900">CXX=</span>clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXFLAGS)</span>
+<span style="color:#009900">CXXFLAGS=</span>-Wall <i><span style="color:#9A1900"># Enable all warnings</span></i>
+<span style="color:#009900">DEBUG=</span>-g
+
+<span style="color:#990000">pizza:</span> pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o
+	<span style="color:#009900">$(CXX)</span> <span style="color:#009900">$(DEBUG)</span> pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o -o pizza
+	@echo <span style="color:#FF0000">"Pizza is Hot and Ready!"</span>
+
+<span style="color:#990000">pizza.o:</span> pizza.cpp
+
+<span style="color:#990000">pizzadough.o:</span> pizzadough.cpp pizzadough.h
+
+<span style="color:#990000">tomatosauce.o:</span> tomatosauce.cpp tomatosauce.h
+
+<span style="color:#990000">toppings.o:</span> pepperoni.cpp peppers.cpp mushrooms.cpp cheese.cpp toppings.cpp <span style="color:#990000">\</span>
+            pepperoni.h peppers.h mushrooms.h cheese.h toppings.h
+
+<span style="color:#990000">pepperoni.o:</span> pepperoni.cpp pepperoni.h
+
+<span style="color:#990000">mushrooms.o:</span> mushrooms.cpp mushrooms.h
+
+<span style="color:#990000">peppers.o:</span> peppers.cpp peppers.h
+
+<span style="color:#990000">cheese.o:</span> cheese.cpp cheese.h
+
+<b><span style="color:#000080">.PHONY:</span></b> clean
+<span style="color:#990000">clean:</span>
+	-rm -f <span style="color:#990000">*</span>.o pizza
+</pre>
+</body>
+</html>

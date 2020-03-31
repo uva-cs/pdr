@@ -1,0 +1,17 @@
+C004 000        jmp     start
+0010 001        dw      size 
+3000 002 loadit dw      
+0001 003        dw      one
+3001 004 start  load    size	  if i > size
+6011 005        sub     i
+E010 006        jmpl    xit       end myself
+3002 007        load    loadit	  construct instruction to load
+5011 008        add     i
+400A 009        store   doit
+0000 00A doit   dw      temp
+1800 00B        printH
+3011 00C        load    i   	  i ++
+5003 00D        add     1
+4011 00E        store   i
+C004 00F        jmp     start
+0000 010 xit

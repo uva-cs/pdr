@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="GNU source-highlight 
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite">
+<title>toppings.h</title>
+</head>
+<body style="background-color:white">
+<pre><b><span style="color:#000080">#ifndef</span></b> TOPPINGS_H
+<b><span style="color:#000080">#define</span></b> TOPPINGS_H
+
+<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"cheese.h"</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"mushrooms.h"</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"peppers.h"</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"pepperoni.h"</span>
+
+
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Toppings</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
+    Cheese<span style="color:#990000">*</span> cheese<span style="color:#990000">;</span>
+    Mushrooms<span style="color:#990000">*</span> mushrooms<span style="color:#990000">;</span>
+    Peppers<span style="color:#990000">*</span> peppers<span style="color:#990000">;</span>
+    Pepperoni<span style="color:#990000">*</span> pepperoni<span style="color:#990000">;</span>
+<b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
+    <b><span style="color:#000000">Toppings</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> cheeseAmount<span style="color:#990000">,</span> <span style="color:#009900">int</span> mushroomsAmount<span style="color:#990000">,</span> <span style="color:#009900">int</span> peppersAmount<span style="color:#990000">,</span> <span style="color:#009900">int</span> pepperoniAmount<span style="color:#990000">);</span>
+    <span style="color:#990000">~</span><b><span style="color:#000000">Toppings</span></b><span style="color:#990000">();</span>
+<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<b><span style="color:#000080">#endif</span></b>
+</pre>
+</body>
+</html>
