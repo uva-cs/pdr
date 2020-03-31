@@ -84,22 +84,31 @@ If `pop()` or `top()` are called on an empty stack, terminate the program with t
 
 For this lab, you will use a stack of `int` values.
 
+### Postfix Notation ###
+
+Postfix notation (also known as reverse Polish notation) involves writing the operators after the operands.  Note how parentheses are unnecessary in postfix notation.
+
+- Infix: ( 3  +  6 )  -  ( 8  /  4 )
+- Postfix: 3  6  +  8  4  /  -
+
+An online description of postfix calculators can be found [on Wikipedia](http://en.wikipedia.org/wiki/Reverse_Polish_notation).
+
 ### Stack Calculator Implementation ###
 
 We will be using the C++ STL stack to implement our postfix calculator.  The stack class's documentation can be found [here](https://en.cppreference.com/w/cpp/container/stack).
 
 Your calculator must implement the following arithmetic operations:
 
-  - `+` : addition
-  - `-` : subtraction
-  - `*` : multiplication
-  - `/` : division
-  - `~` : unary negation
+- `+`: addition
+- `-`: subtraction
+- `*`: multiplication
+- `/`: division
+- `~`: unary negation
 
 Notes:
 
-  - We use the tilde (~) as the unary negation operator -- this negates the top element of the stack, and (unlike the other four operators) does not use a second number from the stack.  Do not confuse this operator with the tilde operator in C++, which performs bitwise negation.  Negative numbers still use a regular minus sign (i.e. '-3') and just pushes the negative number on the stack.  But, if you want to do negation (which involves popping the top value, negating it, and pushing that new value back on the stack), then you would use the tilde.
-  - For the non-commutative operators (operators where the order of the numbers matters, such as minus and divide), the first value you pop we'll call x, the second value you pop we'll call y; the result **must** be *y-x* or *y/x* -- in other words, the "lower" value in the stack minus/divided by the "higher" one in the stack.
+- We use the tilde (~) as the unary negation operator -- this negates the top element of the stack, and (unlike the other four operators) does not use a second number from the stack.  Do not confuse this operator with the tilde operator in C++, which performs bitwise negation.  Negative numbers still use a regular minus sign (i.e. '-3') and just pushes the negative number on the stack.  But, if you want to do negation (which involves popping the top value, negating it, and pushing that new value back on the stack), then you would use the tilde.
+- Each binary operation follows the format `left_operand right_operand operator`.  For example, `1 2 -` translates to `1 - 2`.
 
 ### Input ###
 
@@ -110,11 +119,11 @@ A sample `main()` function that might work is as follows -- this should be modif
 ```
 int main() {
     PostfixCalculator p;
-    p.pushNum (1);
-    p.pushNum (2);
-    p.pushNum (3);
-    p.pushNum (4);
-    p.pushNum (5);
+    p.pushNum(1);
+    p.pushNum(2);
+    p.pushNum(3);
+    p.pushNum(4);
+    p.pushNum(5);
     p.add();
     p.add();
     p.add();
@@ -125,15 +134,6 @@ int main() {
 ```
 
 Keep in mind that you can type up a few of the blocks, and comment them out with the `/* ... */` comment syntax that you are familiar with from Java -- this will allow you to easily switch between the different hard-coded input test cases.
-
-### Postfix Notation ###
-
-Postfix notation (also known as reverse Polish notation) involves writing the operators after the operands.  Note how parentheses are unnecessary in postfix notation.
-
-- Infix: ( 3  +  6 )  -  ( 8  /  4 )
-- Postfix: 3  6  +  8  4  /  -
-
-An online description of postfix calculators can be found [on Wikipedia](http://en.wikipedia.org/wiki/Reverse_Polish_notation).
 
 ### Hints ###
 
@@ -220,27 +220,26 @@ C++ allows you to compare strings for equality with `==`.
 For example, you can check if `s` is the division operator with `if (s == "/")`.\
 Hint: we can check for all the operators, since there are only five of them.  If all the checks fail, what does that mean the token has to be?
 
-To convert input that represents numbers into their integer form, `<cstdlib>` provides the `int atoi(char* s)` function.
-Unfortunately, `atoi` requires C-style strings -- perhaps you should take a look at
-[the `string` documentation](https://en.cppreference.com/w/cpp/string/basic_string) to see if anything can help you out.
+cin takes in all input as strings, but we need to convert those to strings so that we can push them into the stack.
+Perhaps you should take a look at [the `string` documentation](https://en.cppreference.com/w/cpp/string/basic_string) to see if anything can help you out.
 
 ------------------------------------------------------------
 
 Post-lab
 --------
 
-For the post-lab, you will be implementing your own stack and then modifying your postfix calculator to use that stack instead of the STL stack.  This can be code that you write yourself, or you can re-use your List code from lab 2 (make sure it works before you re-use it, though!).
+For the post-lab, you will be implementing your own stack and then modifying your postfix calculator to use that stack instead of the STL stack.
+
+Your stack class must:
+
+- Implement the `void push(int e)`, `void pop()`, `int top()`, and `bool empty()` methods to perform the same functionality as the STL stack
+- Internally use a linked list
+- Have no maximum capacity (we should be able to push as many elements as we'd like)
+- Not use any STL containers
+
+You may modify and re-use your LinkedList code from Lab 2, or you may write your own code, as long as you satisfy the above requirements.
 
 You will also need to write up a difficulties.txt file which contains a paragraph describing any difficulties you encountered getting your code working and what you did to solve them.
-
-Your stack is only required to implement the four methods as described in the prelab: `push()`, `pop()`, `top()`, and `empty()`.
-It must also have no maximum capacity -- in other words, we should be able to push as many elements as we'd like.
-
-Most of you will implement your stack in one of the following ways:
-
-1. Re-use your list class from lab 2. You may need to add one or two methods to it for extra convenience.
-2. Build a linked-list / pointer-based stack as discussed in lecture. Your stack class would contain a pointer to the head node of the stack, and push and pop would modify the singly-linked list accordingly.
-3. Manually implement an array-based stack. If you choose this method, your array must be able to automatically resize if the stack grows large enough to sufficiently fill the array. This is probably the most difficult of the three options.
 
 ### Submitting the stack / list files ###
 

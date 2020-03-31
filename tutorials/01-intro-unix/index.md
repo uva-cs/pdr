@@ -6,13 +6,13 @@ PDR: Tutorial 1: Introduction to UNIX
 Part I: Introduction and setting up your UNIX environment
 ---------------------------------------------------------
 
-This tutorial is meant to get you up and running with editing, compiling, and executing a program in a Unix-like environment.  There are a number of options that you can use to do this, depending on if you have your own PC, and how much time you want to spend installing software.  We recommend the first of the options listed if you are using Windows; macOS users should use the second option listed.
+This tutorial is meant to get you up and running with editing, compiling, and executing a program in a Unix-like environment.  There are a number of options that you can use to do this, depending on what operating system you are using and how much time you want to spend installing software.
 
 We recommended using VirtualBox, a free virtual machine software package.  This will allow you to run Linux on your home machine without needing to re-install anything.  Directions for setting up and how to use VirtualBox can be found at [Tutorial 1: Introduction to UNIX: VirtualBox use](virtual-box.html).  This will require downloading a hard drive image that we provide.
 
 There are other options available:
 
-- macOS users are already running UNIX, as macOS runs on top of FreeBSD (a version of UNIX).  So you can just use the computer you have.  HOWEVER, note that you still can't use an IDE (Eclipse, Xcode, etc.).  You can download Emacs (an editor) from [here](http://emacsformacosx.com/).  From a terminal window, try typing in `clang++` - if you get "Command not found", you will need to install Xcode from the App Store, and then install the Command Line Tools (under Preferences - Downloads).  In newer versions of macOS, after typing `clang++`, a pop-up should appear asking if you would like to install command line developer tools.  Also note that you cannot load up Emacs easily from a command line, but you can load it up as you would any other application.
+- macOS users are already running UNIX, as macOS runs on top of FreeBSD (a version of UNIX).  So you can just use the computer you have.  HOWEVER, note that you still can't use an IDE (Eclipse, Xcode, etc.).  You can download Emacs (an editor) from [here](http://emacsformacosx.com/).  From a terminal window, try typing in `clang++ --version` - if you get "Command not found", you will need to install Xcode from the App Store, and then install the Command Line Tools (under Preferences - Downloads).  In newer versions of macOS, after typing `clang++ --version`, a pop-up should appear asking if you would like to install command line developer tools.  Also note that you cannot load up Emacs easily from a command line, but you can load it up as you would any other application.
     - You will need to install Xcode and the command line tools (with the latest version of Xcode, you have to download and install the command-line tools separately)
     - Note that some software that you will need for this course (in particular, doxygen and x86 code creation) does NOT work well on a Mac, and you will likely need the VirtualBox image for that
 - Install a Unix variant on your home machine.  There are a number of options: Linux, FreeBSD, Solaris, etc.  We use Linux (specifically, the Ubuntu distribution), as it has a large user community, both at the University and outside.  Thus, if you run into a problem, the course staff might be able to help you.  This will require repartitioning your hard drive, and thus there is a chance of data loss.  **THUS YOU NEED TO BACK UP YOUR DATA FIRST!!!** You will have to choose a distribution of Linux to install -- as mentioned above, we use Ubuntu.  You can find install guides on the web.  Be sure to install the development environments with Linux -- pretty much all of the required software will be included in that.
@@ -23,16 +23,7 @@ There are other options available:
 Part II: A Tale of Two GUIs
 ---------------------------
 
-When you install Linux, there are a number of graphical user interfaces -- or window managers -- that one can use.  Think of how MS Windows is different than macOS, and you get the idea.  There are two relevant ones here.
-
-*KDE* is designed to be similar to Microsoft Windows -- it has the equivalent of the start button in the lower left, which pulls up a menu just like in Windows.  People who are both familiar with, and prefer, the Windows interface often also prefer this interface.  You can see a screen shot of it [here](https://kde.org/announcements/plasma-5.12/window-shadows.png).
-
-*Gnome* (pronounced guh-NOME) is a user interface that is specific to UNIX machines.  The interactions with the GUI are a bit different, but the same concepts.  One can interact with Gnome really quickly once one gets used to the new interface.  You can see a screen shot of it [here](https://149366088.v2.pressablecdn.com/wp-content/uploads/2018/04/ubuntu-1804-desktop-screenshot.jpg).
-
-The reason this is relevant is that your choice of how you will use a UNIX environment will determine which interface you use.  The VirtualBox image has *both* Gnome and KDE (see below for how to switch between them).  KDE is more similar to the Windows interface (a "start" menu in the lower-left, etc.), but many people find Gnome more productive once they get used to it.
-
-With VirtualBox, as was mentioned, you can choose which interface.  When you log in, after you click the user name and are about to enter your password, there is a gear icon beneath the password field, and you can use that to select which interface -- the Gnome interface is called "Ubuntu", and the KDE interface is called "Plasma".  It will remember that choice, so you don't have to enter it again unless you want to change to another interface.
-
+When you install Linux, there are a number of graphical user interfaces -- or window managers -- that one can use.  Think of how MS Windows is different than macOS, and you get the idea.  The one we are using is *Gnome*.  Gnome (pronounced guh-NOME) is a user interface that is specific to UNIX machines.  The interactions with the GUI are a bit different, but the same concepts.  One can interact with Gnome really quickly once one gets used to the new interface.  You can see a screen shot of it [here](https://149366088.v2.pressablecdn.com/wp-content/uploads/2018/04/ubuntu-1804-desktop-screenshot.jpg).
 
 ----
 
@@ -50,7 +41,6 @@ A quick note: Unix IS CASE SENSITIVE.  Thus, foo, Foo, FOO, and FoO are all diff
 First, you need to load up a terminal.  For those who have used the Windows command prompt, it is a somewhat similar interface.
 
 - With VirtualBox and Gnome, it's an icon on the toolbar on the left-hand side of the desktop
-- With Virtualbox and KDE, it's the black icon with a greater-than sign in it on the bottom-left
 - On macOS, open Spotlight and search for Terminal
 
 
@@ -76,7 +66,9 @@ First, you will need to open a terminal (as in the previous section), from which
 
 To load up the editor, enter `emacs &` into the terminal.  The ampersand (`&`) at the end is very imporant!  This tells the terminal to start the `emacs` process in the background, which means you can continue to use the terminal while emacs is open.
 
-You should now have Emacs loaded and running -- if not, then something is wrong.  If you are using the VirtualBox image, it will look like the following.  Other systems will look similar.
+If you are using macOS, you can open Emacs from the Dock or Spotlight if the above instructions do not work.
+
+You should now have Emacs loaded and running -- it should look something like the following.
 
 ![Emacs on open](emacs-on-open.png)
 

@@ -30,6 +30,7 @@
 </ol>
 <h3 id="post-lab">Post-lab</h3>
 <ol type="1">
+<li>Make sure your development environment is set up to be able to test for memory leaks, as described in the post-lab section</li>
 <li>Finish the implementation of your List and ensure it is free of any memory errors</li>
 <li>Files to download: no additional files beyond the pre-lab and in-lab</li>
 <li>Files to submit: ListNode.h/cpp, ListItr.h/cpp, List.h/cpp, ListTest.cpp</li>
@@ -122,7 +123,7 @@ List&amp; List::operator=(const List&amp; source) {
 }</code></pre>
 <p>Note that these two methods are correctly implemented. However, they depend on the other methods working properly. If you are seeing crashes in these methods, it is likely because some of the other supporting methods are not working properly.</p>
 <h4 id="insert-methods">Insert methods</h4>
-<p>When implementing the three insert functions, we have found it helpful to draw out the pointers on paper and determine the order in which to update the pointers <em>before</em> beginning to code the function itself.</p>
+<p>When implementing the three insert functions, we have found it helpful to draw out the pointers on paper and determine the order in which to update the pointers <em>before</em> beginning to code the function itself. Take the time to reason about how many next and previous pointers you should be updating!</p>
 <p>For <code>insertAfter</code> and <code>insertBefore</code>, the ListItr you are given is already pointing to a ListNode. You should insert the new ListNode after or before that ListNode, respectively. If you find yourself thinking about loops or iteration, that is unnecessary! Double-check the ListItr header file.</p>
 <h4 id="find-and-remove">Find and remove</h4>
 <p>Since <code>find</code> needs to return a ListItr, it might make sense to also implement it using iterators, though that is not required.</p>
@@ -132,6 +133,10 @@ List&amp; List::operator=(const List&amp; source) {
 Since we have been dynamically allocating ListNodes, we must also be responsible for deleting them to ensure we do not leak memory. There are multiple ways to iterate through the list and <code>delete</code> each ListNode – experiment and see what makes the most sense to you.<br />
 <strong>Important:</strong> once you delete a ListNode, you can no longer reliably access any of its data, such as its <code>next</code> or <code>previous</code> pointers! To make sure you don’t do this accidentally, we recommend setting each ListNode to NULL as soon as you delete it.</p>
 <p>The destructor should delete <em>all</em> dynamically-allocated memory, as we no longer need this List instance. Thus, it makes sense that we should delete all the elements we inserted (hint: do we already have a method for that?). However, what else do we dynamically allocate that we need to delete?</p>
+<h4 id="printlist">printList</h4>
+<p>This one's interesting becaus it's a <em>non-member</em> function, which means it doesn't have access to any private variables.</p>
+<p>As we've been using private variables heavily up until this point, try taking a step back and looking at the bigger picture. If you can't use anything private, that means you're limited to only public methods.</p>
+<p>Is there anything that helps you create a ListItr that points to the first or last node in the List? What about a way to retrieve each node's value from the iterator?</p>
 <h4 id="compiling">Compiling</h4>
 <p>When compiling your code, you must remember to compile all of your .cpp files in one line:</p>
 <pre><code>clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp</code></pre>
@@ -161,21 +166,35 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)<
 <p>Verify to yourself that your methods are working properly with your linked list code using the debugger that you just learned about. If you have not yet completed your linked list implementation, use the debugger to help you identify the issues/problems with parts of your current implementation. Consult with a TA if you have questions.</p>
 <hr />
 <h2 id="post-lab-1">Post-lab</h2>
-<p>For the post-lab, your goal is to submit a fully-functional version of your doubly-linked list. Finish any methods that you haven’t completed yet, and then move on to checking for memory errors.</p>
+<p>For the post-lab, your goal is to submit a fully-functional version of your doubly-linked list.</p>
+<h3 id="complete-the-linkedlist-code">Complete the LinkedList code</h3>
+<p>Finish any methods that you haven't completed yet, and then move on to checking for memory errors.</p>
 <h3 id="memory-leaks-and-corruption">Memory Leaks and Corruption</h3>
 <p>Even though your code might appear to work correctly, it might still be leaking or corrupting memory!</p>
 <ul>
 <li>A <em>memory leak</em> occurs when you forget to deallocate some memory that you dynamically allocated earlier, which causes your program to hold onto that memory forever until it exits!</li>
 <li><em>Memory corruption</em> occurs when your code attempts to access some memory address that it does not have access to, for example, attempting to read or write to a previously-deleted pointer. C++ will blindly dereference a pointer without checking its validity. Clearly, this can cause your program to do unexpected things!</li>
 </ul>
-<p>These types of errors can cause your host machine to run out of memory and crash, or edit some other file that your program shouldn’t have access to! We will be checking that your code does not contain any memory errors because of their potential severity.</p>
-<p>You can test for memory errors by compiling your code with special <em>sanitizers</em> enabled:</p>
-<pre><code>clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp -fsanitize=address,leak -fno-omit-frame-pointer -g</code></pre>
-<p><code>-fsanitize=address,leak</code> turns on two sanitizers: <a href="https://clang.llvm.org/docs/AddressSanitizer.html">AddressSanitizer</a> and <a href="https://clang.llvm.org/docs/LeakSanitizer.html">LeakSanitizer</a>. AddressSanitizer ensures that your code never attempts to reference deleted memory or memory that you do not have access to (i.e., it checks for invalid addresses). LeakSanitizer ensures that anything that is dynamically allocated is also deallocated.</p>
+<p>These types of errors can cause your host machine to run out of memory and crash, or edit some other file that your program shouldn't have access to! We will be checking that your code does not contain any memory errors because of their potential severity.</p>
+<p>To be able to test for memory errors, there are a few things you need to do first depending on your platform.</p>
+<ul>
+<li><p>Linux</p>
+<pre><code>sudo update-alternatives --install /usr/bin/llvm-symbolizer llvm-symbolizer /usr/bin/llvm-symbolizer-6.0 1000</code></pre></li>
+<li><p>macOS</p>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+brew install llvm
+PROFILE_FILE=$(if [[ -n $ZSH_VERSION ]]; then echo ~/.zshrc; else echo ~/.bash_profile; fi)
+echo &#39;ASAN_OPTIONS=detect_leaks=1\nexport PATH=&quot;/usr/local/opt/llvm/bin:${PATH}&quot;&#39; &gt;&gt; $PROFILE_FILE
+source $PROFILE_FILE</code></pre></li>
+</ul>
+<p>Now you can compile your code with <a href="https://clang.llvm.org/docs/AddressSanitizer.html">AddressSanitizer</a> enabled:</p>
+<pre><code>clang++ List.cpp ListItr.cpp ListNode.cpp ListTest.cpp -fsanitize=address -fno-omit-frame-pointer -g</code></pre>
+<p><code>-fsanitize=address</code> turns on AddressSanitizer, which ensures that your code never attempts to reference deleted memory or memory that you do not have access to (i.e., it checks for invalid addresses). It also enables LeakSanitizer, which ensures that anything that is dynamically allocated is also deallocated.</p>
 <p><code>-fno-omit-frame-pointer</code> helps us obtain better stack traces, so we include it just in case.</p>
 <p>We use the <code>-g</code> flag from earlier to indicate that we want to include debugging information such as line numbers.</p>
-<p>Now, when we run the executable, AddressSanitizer will <strong>immediately crash upon any invalid behavior</strong>. This is helpful because AddressSanitizer detects when we try to use addresses that we do not control, and thus, we have no idea what will happen when we use them! AddressSanitizer crashes the program because there is no guarantee of what will happen next. If this happens, carefully inspect the stack trace, attempt to fix the error, and recompile.</p>
-<p>Here’s an example of an AddressSanitizer crash:</p>
+<p>Run the executable with <code>./a.out</code> as usual, but make sure you are not running it in the debugger -- AddressSanitizer is incompatible with debuggers.</p>
+<p>AddressSanitizer will <strong>immediately crash upon any invalid behavior</strong>. This is helpful because AddressSanitizer detects when we try to use addresses that we do not control, and thus, we have no idea what will happen when we use them! AddressSanitizer crashes the program because there is no guarantee of what will happen next. If this happens, carefully inspect the stack trace, attempt to fix the error, and recompile.</p>
+<p>Here's an example of an AddressSanitizer crash:</p>
 <pre><code>==28315==ERROR: AddressSanitizer: heap-use-after-free on address 0x6030000003a8 at pc 0x000000519188 bp 0x7ffff83e7910 sp 0x7ffff83e7908
 READ of size 8 at 0x6030000003a8 thread T0
     #0 0x519187 in List::makeEmpty() /home/winston/github/computer-science/cs2150/labs/lab-2/postlab/List.cpp:68:20

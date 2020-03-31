@@ -1,7 +1,8 @@
 # This is a comment
 
 CXX=clang++ $(CXXFLAGS)
-DEBUG=-Wall -g
+CXXFLAGS=-Wall # Enable all warnings
+DEBUG=-g
 
 pizza: pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o
 	$(CXX) $(DEBUG) pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o -o pizza
@@ -14,7 +15,7 @@ pizzadough.o: pizzadough.cpp pizzadough.h
 tomatosauce.o: tomatosauce.cpp tomatosauce.h
 
 toppings.o: pepperoni.cpp peppers.cpp mushrooms.cpp cheese.cpp toppings.cpp \
-			pepperoni.h peppers.h mushrooms.h cheese.h toppings.h
+            pepperoni.h peppers.h mushrooms.h cheese.h toppings.h
 
 pepperoni.o: pepperoni.cpp pepperoni.h
 
@@ -24,5 +25,6 @@ peppers.o: peppers.cpp peppers.h
 
 cheese.o: cheese.cpp cheese.h
 
+.PHONY: clean
 clean:
-	-rm *.o pizza
+	-rm -f *.o pizza

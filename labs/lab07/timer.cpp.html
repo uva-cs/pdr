@@ -42,8 +42,9 @@ timer<span style="color:#990000">::</span><b><span style="color:#000000">timer</
     <b><span style="color:#0000FF">return</span></b> duration_cast<span style="color:#990000">&lt;</span>duration<span style="color:#990000">&lt;</span><span style="color:#009900">double</span><span style="color:#990000">&gt;&gt;(</span>stop_time <span style="color:#990000">-</span> start_time<span style="color:#990000">).</span><b><span style="color:#000000">count</span></b><span style="color:#990000">();</span>
 <span style="color:#FF0000">}</span>
 
+<i><span style="color:#9A1900">// Prints the time elapsed, in milliseconds</span></i>
 ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">&lt;&lt;(</span>ostream<span style="color:#990000">&amp;</span> out<span style="color:#990000">,</span> timer<span style="color:#990000">&amp;</span> t<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <b><span style="color:#0000FF">return</span></b> out <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">to_string</span></b><span style="color:#990000">(</span>t<span style="color:#990000">.</span><b><span style="color:#000000">getTime</span></b><span style="color:#990000">());</span>
+    <b><span style="color:#0000FF">return</span></b> out <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">to_string</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">static_cast</span></b><span style="color:#990000">&lt;</span><span style="color:#009900">int</span><span style="color:#990000">&gt;(</span>t<span style="color:#990000">.</span><b><span style="color:#000000">getTime</span></b><span style="color:#990000">()</span> <span style="color:#990000">*</span> <span style="color:#993399">1000</span><span style="color:#990000">));</span>
 <span style="color:#FF0000">}</span>
 </pre>
 </body>

@@ -12,7 +12,8 @@ http://www.gnu.org/software/src-highlite">
 <pre><i><span style="color:#9A1900"># This is a comment</span></i>
 
 <span style="color:#009900">CXX=</span>clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXFLAGS)</span>
-<span style="color:#009900">DEBUG=</span>-Wall -g
+<span style="color:#009900">CXXFLAGS=</span>-Wall <i><span style="color:#9A1900"># Enable all warnings</span></i>
+<span style="color:#009900">DEBUG=</span>-g
 
 <span style="color:#990000">pizza:</span> pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o
 	<span style="color:#009900">$(CXX)</span> <span style="color:#009900">$(DEBUG)</span> pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o -o pizza
@@ -25,7 +26,7 @@ http://www.gnu.org/software/src-highlite">
 <span style="color:#990000">tomatosauce.o:</span> tomatosauce.cpp tomatosauce.h
 
 <span style="color:#990000">toppings.o:</span> pepperoni.cpp peppers.cpp mushrooms.cpp cheese.cpp toppings.cpp <span style="color:#990000">\</span>
-			pepperoni.h peppers.h mushrooms.h cheese.h toppings.h
+            pepperoni.h peppers.h mushrooms.h cheese.h toppings.h
 
 <span style="color:#990000">pepperoni.o:</span> pepperoni.cpp pepperoni.h
 
@@ -35,8 +36,9 @@ http://www.gnu.org/software/src-highlite">
 
 <span style="color:#990000">cheese.o:</span> cheese.cpp cheese.h
 
+<b><span style="color:#000080">.PHONY:</span></b> clean
 <span style="color:#990000">clean:</span>
-	-rm <span style="color:#990000">*</span>.o pizza
+	-rm -f <span style="color:#990000">*</span>.o pizza
 </pre>
 </body>
 </html>

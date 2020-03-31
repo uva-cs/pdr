@@ -14,6 +14,7 @@
 
 using namespace std;
 
+// You do not need to know how Trunk works.
 struct Trunk {
     Trunk* prev;
     string str;
