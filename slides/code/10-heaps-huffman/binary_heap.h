@@ -6,7 +6,18 @@
 #define BINARY_HEAP_H
 
 #include <vector>
+#include "heap_node.h"
 using namespace std;
+
+struct Trunk {
+    Trunk* prev;
+    string str;
+
+    Trunk(Trunk* prev, string str) {
+        this->prev = prev;
+        this->str = str;
+    }
+};
 
 class binary_heap {
 public:
@@ -20,7 +31,9 @@ public:
     unsigned int size();
     void makeEmpty();
     bool isEmpty();
+    heap_node* createTree();
     void print();
+    void print(heap_node* root, Trunk* prev, bool isRight);
 
 private:
     vector<int> heap;
