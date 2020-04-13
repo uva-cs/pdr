@@ -41,7 +41,7 @@ Procedure
 1. Implement a brute-force traveling salesperson solution, as described in the in-lab section.
 2. Create a Makefile that will fully compile your code.  You should not specify the resulting executable name (i.e., no `-o` output for the final link step).  It will default to a.out, which is what is desired.
 3. Document your C++ files with doxygen commands.  You must **ALSO** include commented middleearth.h and middleearth.cpp (this should have been done in the pre-lab).
-4. Your code should compile with `make`!  It should do ***TWO*** tasks: compile your code, and call `doxygen`.  See the pre-lab section for more information about required make target.
+4. Your code should compile with `make`!  It should do ***TWO*** tasks: compile your code, and call `doxygen`. The Makefile requirements for the in-lab are the same as those for the pre-lab.
 5. Files to download: [traveling-skeleton.cpp](traveling-skeleton.cpp.html) ([src](traveling-skeleton.cpp)) (which you'll have to rename to traveling.cpp), and your commented middleearth.h / middleearth.cpp code from the pre-lab
 6. Files to submit: traveling.cpp, middleearth.h, middleearth.cpp, Makefile, Doxyfile
 
@@ -266,7 +266,7 @@ Your final program needs to both be able to compile and run with the specified c
 
 ### Makefile ###
 
-Your Makefile should have **only one** target, which you can name anything you want.  This target should do **two** things: compile your code, and run doxygen.  You can have two tabbed lines after the target specifier, which is the easiest way to accomplish this.  In other words, we are just going to call `make`, and we want it to both compile your code and create your doxygen documentation.  The in-lab Makefile should have the same dual-purpose target.
+The Makefile requirements for this in-lab are the same as those for the pre-lab.
 
 ------------------------------------------------------------
 
