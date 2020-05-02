@@ -9,7 +9,6 @@
 // 01-13-14: Modified to fit modern C++ compilers; reformatted
 
 #include <iostream>
-#include <stdio.h>
 #include "list.h"
 
 using namespace std;
