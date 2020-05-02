@@ -116,7 +116,7 @@ int main () {
                 cin >> response;
 
                 while (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertAtTail(element);
 
                     cout << "\tEnter next element: ";
@@ -177,7 +177,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
 
                     cout << "\tSetting the ListItr to find(" << element << ")..." << endl;
                     if (itr != NULL) {
@@ -263,7 +263,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertBefore(element, *itr);
                     cout << "\tInserting " << element << " before the current ListItr" << endl;
                 } else {
@@ -294,7 +294,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertAfter(element, *itr);
                     cout << "\tInserting " << element << " after the current ListItr" <<endl;
                 } else {
@@ -319,7 +319,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertAtTail(element);
                     cout << "\tInserting " << element << " at the tail of the list" << endl;
                 } else {
@@ -344,7 +344,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->remove(element);
                     cout << "\tRemoving " << element << " from list" <<endl;
                 } else {
@@ -497,7 +497,7 @@ int menu (string option[], int n_opt) {
         cin >> input;
 
         if (isdigit(input[0])) {
-            choice = atoi(input.c_str());
+            choice = stoi(input);
 
             if (choice <= n_opt && choice > 0) {
                 return choice;

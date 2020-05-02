@@ -127,7 +127,7 @@ http://www.gnu.org/software/src-highlite">
                 cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
 
                 <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#FF0000">{</span>
-                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">);</span>
                     list<span style="color:#990000">-&gt;</span><b><span style="color:#000000">insertAtTail</span></b><span style="color:#990000">(</span>element<span style="color:#990000">);</span>
 
                     cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#FF0000">Enter next element: "</span><span style="color:#990000">;</span>
@@ -188,7 +188,7 @@ http://www.gnu.org/software/src-highlite">
                 cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
 
                 <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#FF0000">{</span>
-                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">);</span>
 
                     cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#FF0000">Setting the ListItr to find("</span> <span style="color:#990000">&lt;&lt;</span> element <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">")..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
                     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>itr <span style="color:#990000">!=</span> NULL<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
@@ -274,7 +274,7 @@ http://www.gnu.org/software/src-highlite">
                 cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
 
                 <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#FF0000">{</span>
-                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">);</span>
                     list<span style="color:#990000">-&gt;</span><b><span style="color:#000000">insertBefore</span></b><span style="color:#990000">(</span>element<span style="color:#990000">,</span> <span style="color:#990000">*</span>itr<span style="color:#990000">);</span>
                     cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#FF0000">Inserting "</span> <span style="color:#990000">&lt;&lt;</span> element <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" before the current ListItr"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
                 <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
@@ -305,7 +305,7 @@ http://www.gnu.org/software/src-highlite">
                 cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
 
                 <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#FF0000">{</span>
-                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">);</span>
                     list<span style="color:#990000">-&gt;</span><b><span style="color:#000000">insertAfter</span></b><span style="color:#990000">(</span>element<span style="color:#990000">,</span> <span style="color:#990000">*</span>itr<span style="color:#990000">);</span>
                     cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#FF0000">Inserting "</span> <span style="color:#990000">&lt;&lt;</span> element <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" after the current ListItr"</span> <span style="color:#990000">&lt;&lt;</span>endl<span style="color:#990000">;</span>
                 <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
@@ -330,7 +330,7 @@ http://www.gnu.org/software/src-highlite">
                 cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
 
                 <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#FF0000">{</span>
-                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">);</span>
                     list<span style="color:#990000">-&gt;</span><b><span style="color:#000000">insertAtTail</span></b><span style="color:#990000">(</span>element<span style="color:#990000">);</span>
                     cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#FF0000">Inserting "</span> <span style="color:#990000">&lt;&lt;</span> element <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" at the tail of the list"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
                 <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
@@ -355,7 +355,7 @@ http://www.gnu.org/software/src-highlite">
                 cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
 
                 <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#FF0000">{</span>
-                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+                    <span style="color:#009900">int</span> element <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>response<span style="color:#990000">);</span>
                     list<span style="color:#990000">-&gt;</span><b><span style="color:#000000">remove</span></b><span style="color:#990000">(</span>element<span style="color:#990000">);</span>
                     cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#FF0000">Removing "</span> <span style="color:#990000">&lt;&lt;</span> element <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" from list"</span> <span style="color:#990000">&lt;&lt;</span>endl<span style="color:#990000">;</span>
                 <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
@@ -508,7 +508,7 @@ http://www.gnu.org/software/src-highlite">
         cin <span style="color:#990000">&gt;&gt;</span> input<span style="color:#990000">;</span>
 
         <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>input<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#FF0000">{</span>
-            choice <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>input<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+            choice <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>input<span style="color:#990000">);</span>
 
             <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>choice <span style="color:#990000">&lt;=</span> n_opt <span style="color:#990000">&amp;&amp;</span> choice <span style="color:#990000">&gt;</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
                 <b><span style="color:#0000FF">return</span></b> choice<span style="color:#990000">;</span>
