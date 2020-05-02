@@ -8,9 +8,6 @@
 
 #include <iostream>
 
-// next line needed because NULL is part of std namespace
-using namespace std;
-
 class ListNode {
 public:
     ListNode();         // Constructor

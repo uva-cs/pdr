@@ -32,7 +32,7 @@
  * int element (T item);  Returns 1 if T is in the list, 0 otherwise
  * pop_head (T item);     Removes an item from the head of the list
  * int remove (T item)    Removes item, returns 1 if sucessful, else 0
- * T* getptr (T item)     Returns the pointer to the parameter or NULL
+ * T* getptr (T item)     Returns the pointer to the parameter or nullptr
  * void save(FILE *fp)    Saves the list- calls the objects methods
  *
  *
@@ -90,7 +90,7 @@ private:
 
 public:
     List() {
-        _head = _tail = NULL;
+        _head = _tail = nullptr;
     } // cout << "List Constructor called.\n"; }
 
     ~List() {
@@ -99,9 +99,9 @@ public:
 
     void push(T item) {
 //    cout << "push(): called with element: " << item << endl;
-        if ( _head == NULL ) {
+        if ( _head == nullptr ) {
             _head = _tail = new List_Link<T>;
-            _head->next = NULL;
+            _head->next = nullptr;
         } else {
             List_Link<T> *temp;
             temp = _tail;
@@ -113,14 +113,14 @@ public:
     }
 
     T* pop() {
-        if ( _head == NULL )
-            return NULL;
+        if ( _head == nullptr )
+            return nullptr;
         else {
             List_Link<T> *temp;
             T *ret;
             temp = _tail;
             if ( _head == _tail )
-                _tail = _head = NULL;
+                _tail = _head = nullptr;
             else
                 _tail = _tail->next;
             ret = temp->data;
@@ -130,61 +130,61 @@ public:
     }
 
     int size() {
-        if ( _tail == NULL )
+        if ( _tail == nullptr )
             return 0;
         else {
             int s = 0;
             List_Link<T> *temp;
-            for ( temp = _tail; temp != NULL; temp = temp->next )
+            for ( temp = _tail; temp != nullptr; temp = temp->next )
                 ++s;
             return s;
         }
     }
 
     void save(FILE *fp) {
-        if ( _head == NULL ) {}
+        if ( _head == nullptr ) {}
         else {
             List_Link<T> *temp;
-            for ( temp = _tail; temp != NULL; temp = temp->next )
+            for ( temp = _tail; temp != nullptr; temp = temp->next )
                 temp->data->save(fp);
         }
     }
 
     void display() {
-        if ( _head == NULL )
+        if ( _head == nullptr )
             cout << "List is empty.\n";
         else {
 //      cout << "display(): List is printed reverse: List is not empty.\n\t";
             List_Link<T> *temp;
-            for ( temp = _tail; temp != NULL; temp = temp->next )
+            for ( temp = _tail; temp != nullptr; temp = temp->next )
                 cout << *temp->data << " ";
             cout << endl;
         }
     }
 
     int empty() {
-        return ( _head == NULL );
+        return ( _head == nullptr );
     }
 
     T* tail() {
-        if ( _tail == NULL )
-            return NULL;
+        if ( _tail == nullptr )
+            return nullptr;
         else
             return _tail->data;
     }
 
     T* head() {
-        if ( _head == NULL )
-            return NULL;
+        if ( _head == nullptr )
+            return nullptr;
         else
             return _head->data;
     }
 
     int element (T item) {
         List_Link<T> *temp;
-        if ( _tail == NULL )
+        if ( _tail == nullptr )
             return 0;
-        for ( temp = _tail; temp != NULL; temp = temp->next )
+        for ( temp = _tail; temp != nullptr; temp = temp->next )
             if ( *temp->data == item )
                 return 1;
         return 0;
@@ -192,36 +192,36 @@ public:
 
     T* getptr (T item) {
         List_Link<T> *temp;
-        if ( _tail == NULL )
-            return NULL;
-        for ( temp = _tail; temp != NULL; temp = temp->next )
+        if ( _tail == nullptr )
+            return nullptr;
+        for ( temp = _tail; temp != nullptr; temp = temp->next )
             if ( *temp->data == item )
                 return temp->data;
-        return NULL;
+        return nullptr;
     }
 
     void clear() {
-        while ( this->pop() != NULL ) { }
+        while ( this->pop() != nullptr ) { }
     }
 
     void push_head (T item) {
-        if ( _head == NULL ) {
+        if ( _head == nullptr ) {
             _head = _tail = new List_Link<T>;
-            _head->next = NULL;
+            _head->next = nullptr;
         } else {
             List_Link<T> *temp;
             temp = _head;
             _head = new List_Link<T>;
             temp->next = _head;
-            _head->next = NULL;
+            _head->next = nullptr;
         }
         _head->data = new T;
         *_head->data = item;
     }
 
     T* pop_head() {
-        if ( _head == NULL )
-            return NULL;
+        if ( _head == nullptr )
+            return nullptr;
         else {
             List_Link<T> *temp;
             T *ret;
@@ -230,7 +230,7 @@ public:
             _head = temp;
             temp = temp->next;
             delete temp;
-            _head->next = NULL;
+            _head->next = nullptr;
             return ret;
         }
     }
@@ -240,7 +240,7 @@ public:
             cout << "remove(): element '" << item << "' exists.\n";
             if ( _head == _tail ) {
                 delete _head;
-                _head = _tail = NULL;
+                _head = _tail = nullptr;
             } else if ( *_tail->data == item ) {
                 List_Link<T> *temp;
                 temp = _tail;

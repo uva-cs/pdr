@@ -74,7 +74,7 @@ Below is a UML diagram showing how these classes interact with each other.
 
 ![UML diagram](list-diagram.png)
 
-This diagram shows a list containing two elements, the integers 3 and 7.  Note that there are more methods in the List and ListItr classes than what is shown above.  The head and tail pointers in the List class point to dummy nodes -- they are put there to make inserting elements into the list easier.  It doesn't matter what the value of the dummy nodes is set to, as it won't be used.  Each ListNode points to the nodes before and after it (although the dummy nodes each have one pointer pointing to NULL).
+This diagram shows a list containing two elements, the integers 3 and 7.  Note that there are more methods in the List and ListItr classes than what is shown above.  The head and tail pointers in the List class point to dummy nodes -- they are put there to make inserting elements into the list easier.  It doesn't matter what the value of the dummy nodes is set to, as it won't be used.  Each ListNode points to the nodes before and after it (although the dummy nodes each have one pointer pointing to nullptr).
 
 Thus, our doubly linked list will have only one List object and many ListNode objects (2 more than the number of elements in the list).  A ListItr is a separate object, which points to one element in the list (possibly a dummy node).  As you call the various methods in ListItr to move the iterator forward and backward, the node that it points to will change.
 
@@ -117,7 +117,7 @@ as well as suggested implementation order:
 When beginning to test your code, chances are your program will crash unexpectedly with a message similar to `Segmentation fault (core dumped)`, commonly referred to as a _segfault_.
 Get prepared to see these often throughout the course, as unlike other programming languages like Java, C++ does not give any extra debugging information on a crash.
 In order to determine where and why your program is crashing, run your code through the debugger and look at the backtrace.
-Segfaults generally indicate that you are trying to dereference a NULL or invalid pointer, so those are good things to look out for.
+Segfaults generally indicate that you are trying to dereference a nullptr or invalid pointer, so those are good things to look out for.
 
 #### The constructor ####
 By the time the constructor finishes, we should have a functioning (but empty) list.
@@ -196,7 +196,7 @@ It should also make sure that `head` and `tail` no longer point to those deleted
 Since we have been dynamically allocating ListNodes, we must also be responsible for deleting them to ensure we do not leak memory.
 There are multiple ways to iterate through the list and `delete` each ListNode -- experiment and see what makes the most sense to you.\
 **Important:** once you delete a ListNode, you can no longer reliably access any of its data, such as its `next` or `previous` pointers!
-To make sure you don't do this accidentally, we recommend setting each ListNode to NULL as soon as you delete it.
+To make sure you don't do this accidentally, we recommend setting each ListNode to nullptr as soon as you delete it.
 
 The destructor should delete _all_ dynamically-allocated memory, as we no longer need this List instance.
 Thus, it makes sense that we should delete all the elements we inserted (hint: do we already have a method for that?).

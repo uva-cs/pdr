@@ -5,12 +5,12 @@
 using namespace std;
 
 AVLTree::AVLTree() {
-    root = NULL;
+    root = nullptr;
 }
 
 AVLTree::~AVLTree() {
     delete root;
-    root = NULL;
+    root = nullptr;
 }
 
 // insert finds a position for x in the tree and places it there, rebalancing
@@ -60,31 +60,31 @@ AVLNode* AVLTree::rotateRight(AVLNode*& n) {
 // private helper for remove to allow recursion over different nodes.
 // Returns an AVLNode* that is assigned to the original node.
 AVLNode* AVLTree::remove(AVLNode*& n, const string& x) {
-    if (n == NULL) {
-        return NULL;
+    if (n == nullptr) {
+        return nullptr;
     }
 
     // first look for x
     if (x == n->value) {
         // found
-        if (n->left == NULL && n->right == NULL) {
+        if (n->left == nullptr && n->right == nullptr) {
             // no children
             delete n;
-            n = NULL;
-            return NULL;
-        } else if (n->left == NULL) {
+            n = nullptr;
+            return nullptr;
+        } else if (n->left == nullptr) {
             // Single child (left)
             AVLNode* temp = n->right;
-            n->right = NULL;
+            n->right = nullptr;
             delete n;
-            n = NULL;
+            n = nullptr;
             return temp;
-        } else if (n->right == NULL) {
+        } else if (n->right == nullptr) {
             // Single child (right)
             AVLNode* temp = n->left;
-            n->left = NULL;
+            n->left = nullptr;
             delete n;
-            n = NULL;
+            n = nullptr;
             return temp;
         } else {
             // two children -- tree may become unbalanced after deleting n
@@ -108,7 +108,7 @@ AVLNode* AVLTree::remove(AVLNode*& n, const string& x) {
 // min finds the string with the smallest value in a subtree.
 string AVLTree::min(AVLNode* node) const {
     // go to bottom-left node
-    if (node->left == NULL) {
+    if (node->left == nullptr) {
         return node->value;
     }
     return min(node->left);
@@ -117,7 +117,7 @@ string AVLTree::min(AVLNode* node) const {
 // height returns the value of the height field in a node.
 // If the node is null, it returns -1.
 int AVLTree::height(AVLNode* node) const {
-    if (node == NULL) {
+    if (node == nullptr) {
         return -1;
     }
     return node->height;
@@ -134,7 +134,7 @@ int max(int a, int b) {
 // Helper function to print branches of the binary tree
 // You do not need to know how this function works.
 void showTrunks(Trunk* p) {
-    if (p == NULL) return;
+    if (p == nullptr) return;
     showTrunks(p->prev);
     cout << p->str;
 }
@@ -142,7 +142,7 @@ void showTrunks(Trunk* p) {
 // Recursive function to print binary tree
 // It uses inorder traversal
 void AVLTree::printTree(AVLNode* root, Trunk* prev, bool isRight) {
-    if (root == NULL) return;
+    if (root == nullptr) return;
 
     string prev_str = "    ";
     Trunk* trunk = new Trunk(prev, prev_str);
@@ -171,5 +171,5 @@ void AVLTree::printTree(AVLNode* root, Trunk* prev, bool isRight) {
 }
 
 void AVLTree::printTree() {
-    printTree(root, NULL, false);
+    printTree(root, nullptr, false);
 }

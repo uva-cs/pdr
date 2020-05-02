@@ -59,8 +59,8 @@ int const n_choice = 17;
 int main () {
     int command;
     string response;
-    List *list = NULL;
-    ListItr *itr = NULL;
+    List *list = nullptr;
+    ListItr *itr = nullptr;
 
     // Initialize this run
     cout << "--------------------------------------------------" << endl;
@@ -81,11 +81,11 @@ int main () {
 
                 // Exit normally
                 if (response[0] == 'y' || response[0] == 'Y') {
-                    if (list != NULL) {
+                    if (list != nullptr) {
                         delete list;
                     }
 
-                    if (itr != NULL) {
+                    if (itr != nullptr) {
                         delete itr;
                     }
                     return 0;
@@ -95,7 +95,7 @@ int main () {
 
             // New list
             case 2:
-                if (list != NULL) {
+                if (list != nullptr) {
                     delete list;
                 }
                 list = new List();
@@ -130,7 +130,7 @@ int main () {
 
             // Show elements
             case 3:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -152,14 +152,14 @@ int main () {
 
             // first()
             case 4:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
                 }
 
                 cout << "\tSetting the ListItr to the first element..." << endl;
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
                 }
                 itr = new ListItr(list->first());
@@ -167,7 +167,7 @@ int main () {
 
             // find()
             case 5:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -180,7 +180,7 @@ int main () {
                     int element = stoi(response);
 
                     cout << "\tSetting the ListItr to find(" << element << ")..." << endl;
-                    if (itr != NULL) {
+                    if (itr != nullptr) {
                         delete itr;
                     }
                     itr = new ListItr(list->find(element));
@@ -191,14 +191,14 @@ int main () {
 
             // last()
             case 6:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
                 }
 
                 cout << "\tSetting the ListItr to the last element..." << endl;
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
                 }
                 itr = new ListItr(list->last());
@@ -206,7 +206,7 @@ int main () {
 
             // moveForwards()
             case 7:
-                if (itr == NULL) {
+                if (itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a ListItr first." << endl;
                     break;
@@ -218,7 +218,7 @@ int main () {
 
             // moveBackwards()
             case 8:
-                if (itr == NULL) {
+                if (itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a ListItr first." << endl;
                     break;
@@ -230,7 +230,7 @@ int main () {
 
             // retrieve()
             case 9:
-                if (itr == NULL) {
+                if (itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a ListItr first." << endl;
                     break;
@@ -247,7 +247,7 @@ int main () {
 
             // insertBefore()
             case 10:
-                if (list == NULL || itr == NULL) {
+                if (list == nullptr || itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List and ListItr first." << endl;
                     break;
@@ -278,7 +278,7 @@ int main () {
 
             // insertAfter()
             case 11:
-                if (list == NULL || itr == NULL) {
+                if (list == nullptr || itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List and ListItr first." << endl;
                     break;
@@ -309,7 +309,7 @@ int main () {
 
             // insertAtTail()
             case 12:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -334,7 +334,7 @@ int main () {
 
             // remove()
             case 13:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -359,7 +359,7 @@ int main () {
 
             // size()
             case 14:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -370,7 +370,7 @@ int main () {
 
             // Copy constructor
             case 15: {
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -396,16 +396,16 @@ int main () {
                 cout << "The old list should be destroyed now." << endl;
                 delete old_list;
 
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
-                    itr = NULL;
+                    itr = nullptr;
                 }
                 break;
             }
 
             // operator=
             case 16: {
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -432,16 +432,16 @@ int main () {
                 cout << "The old list should be destroyed now." << endl;
 
                 delete old_list;
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
-                    itr = NULL;
+                    itr = nullptr;
                 }
                 break;
             }
 
             // makeEmpty()
             case 17:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -454,9 +454,9 @@ int main () {
                 printList(*list, false);
 
                 list->makeEmpty();
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
-                    itr = NULL;
+                    itr = nullptr;
                 }
 
                 cout << "The list was made empty (forward): ";

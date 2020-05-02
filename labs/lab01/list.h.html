@@ -43,7 +43,7 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"> * int element (T item);  Returns 1 if T is in the list, 0 otherwise</span></i>
 <i><span style="color:#9A1900"> * pop_head (T item);     Removes an item from the head of the list</span></i>
 <i><span style="color:#9A1900"> * int remove (T item)    Removes item, returns 1 if sucessful, else 0</span></i>
-<i><span style="color:#9A1900"> * T* getptr (T item)     Returns the pointer to the parameter or NULL</span></i>
+<i><span style="color:#9A1900"> * T* getptr (T item)     Returns the pointer to the parameter or nullptr</span></i>
 <i><span style="color:#9A1900"> * void save(FILE *fp)    Saves the list- calls the objects methods</span></i>
 <i><span style="color:#9A1900"> *</span></i>
 <i><span style="color:#9A1900"> *</span></i>
@@ -101,7 +101,7 @@ http://www.gnu.org/software/src-highlite">
 
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
     <b><span style="color:#000000">List</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        _head <span style="color:#990000">=</span> _tail <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+        _head <span style="color:#990000">=</span> _tail <span style="color:#990000">=</span> nullptr<span style="color:#990000">;</span>
     <span style="color:#FF0000">}</span> <i><span style="color:#9A1900">// cout &lt;&lt; "List Constructor called.\n"; }</span></i>
 
     <span style="color:#990000">~</span><b><span style="color:#000000">List</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
@@ -110,9 +110,9 @@ http://www.gnu.org/software/src-highlite">
 
     <span style="color:#009900">void</span> <b><span style="color:#000000">push</span></b><span style="color:#990000">(</span><span style="color:#008080">T</span> item<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
 <i><span style="color:#9A1900">//    cout &lt;&lt; "push(): called with element: " &lt;&lt; item &lt;&lt; endl;</span></i>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
             _head <span style="color:#990000">=</span> _tail <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> List_Link<span style="color:#990000">&lt;</span>T<span style="color:#990000">&gt;;</span>
-            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> nullptr<span style="color:#990000">;</span>
         <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
             <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
             temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span>
@@ -124,14 +124,14 @@ http://www.gnu.org/software/src-highlite">
     <span style="color:#FF0000">}</span>
 
     T<span style="color:#990000">*</span> <b><span style="color:#000000">pop</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-            <b><span style="color:#0000FF">return</span></b> NULL<span style="color:#990000">;</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">return</span></b> nullptr<span style="color:#990000">;</span>
         <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
             <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
             <span style="color:#008080">T</span> <span style="color:#990000">*</span>ret<span style="color:#990000">;</span>
             temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span>
             <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> _tail <span style="color:#990000">)</span>
-                _tail <span style="color:#990000">=</span> _head <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+                _tail <span style="color:#990000">=</span> _head <span style="color:#990000">=</span> nullptr<span style="color:#990000">;</span>
             <b><span style="color:#0000FF">else</span></b>
                 _tail <span style="color:#990000">=</span> _tail<span style="color:#990000">-&gt;</span>next<span style="color:#990000">;</span>
             ret <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>data<span style="color:#990000">;</span>
@@ -141,61 +141,61 @@ http://www.gnu.org/software/src-highlite">
     <span style="color:#FF0000">}</span>
 
     <span style="color:#009900">int</span> <b><span style="color:#000000">size</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
             <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
         <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
             <span style="color:#009900">int</span> s <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
             <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
-            <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> NULL<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> nullptr<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
                 <span style="color:#990000">++</span>s<span style="color:#990000">;</span>
             <b><span style="color:#0000FF">return</span></b> s<span style="color:#990000">;</span>
         <span style="color:#FF0000">}</span>
     <span style="color:#FF0000">}</span>
 
     <span style="color:#009900">void</span> <b><span style="color:#000000">save</span></b><span style="color:#990000">(</span><span style="color:#008080">FILE</span> <span style="color:#990000">*</span>fp<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span> <span style="color:#FF0000">{}</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span> <span style="color:#FF0000">{}</span>
         <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
             <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
-            <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> NULL<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> nullptr<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
                 temp<span style="color:#990000">-&gt;</span>data<span style="color:#990000">-&gt;</span><b><span style="color:#000000">save</span></b><span style="color:#990000">(</span>fp<span style="color:#990000">);</span>
         <span style="color:#FF0000">}</span>
     <span style="color:#FF0000">}</span>
 
     <span style="color:#009900">void</span> <b><span style="color:#000000">display</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
             cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"List is empty.</span><span style="color:#CC33CC">\n</span><span style="color:#FF0000">"</span><span style="color:#990000">;</span>
         <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
 <i><span style="color:#9A1900">//      cout &lt;&lt; "display(): List is printed reverse: List is not empty.\n\t";</span></i>
             <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
-            <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> NULL<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> nullptr<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
                 cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">-&gt;</span>data <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" "</span><span style="color:#990000">;</span>
             cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         <span style="color:#FF0000">}</span>
     <span style="color:#FF0000">}</span>
 
     <span style="color:#009900">int</span> <b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">return</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">);</span>
+        <b><span style="color:#0000FF">return</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">);</span>
     <span style="color:#FF0000">}</span>
 
     T<span style="color:#990000">*</span> <b><span style="color:#000000">tail</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-            <b><span style="color:#0000FF">return</span></b> NULL<span style="color:#990000">;</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">return</span></b> nullptr<span style="color:#990000">;</span>
         <b><span style="color:#0000FF">else</span></b>
             <b><span style="color:#0000FF">return</span></b> _tail<span style="color:#990000">-&gt;</span>data<span style="color:#990000">;</span>
     <span style="color:#FF0000">}</span>
 
     T<span style="color:#990000">*</span> <b><span style="color:#000000">head</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-            <b><span style="color:#0000FF">return</span></b> NULL<span style="color:#990000">;</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">return</span></b> nullptr<span style="color:#990000">;</span>
         <b><span style="color:#0000FF">else</span></b>
             <b><span style="color:#0000FF">return</span></b> _head<span style="color:#990000">-&gt;</span>data<span style="color:#990000">;</span>
     <span style="color:#FF0000">}</span>
 
     <span style="color:#009900">int</span> <b><span style="color:#000000">element</span></b> <span style="color:#990000">(</span><span style="color:#008080">T</span> item<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
         <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
             <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> NULL<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
+        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> nullptr<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
             <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> <span style="color:#990000">*</span>temp<span style="color:#990000">-&gt;</span>data <span style="color:#990000">==</span> item <span style="color:#990000">)</span>
                 <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">1</span><span style="color:#990000">;</span>
         <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
@@ -203,36 +203,36 @@ http://www.gnu.org/software/src-highlite">
 
     T<span style="color:#990000">*</span> <b><span style="color:#000000">getptr</span></b> <span style="color:#990000">(</span><span style="color:#008080">T</span> item<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
         <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-            <b><span style="color:#0000FF">return</span></b> NULL<span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> NULL<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _tail <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">return</span></b> nullptr<span style="color:#990000">;</span>
+        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span> temp <span style="color:#990000">!=</span> nullptr<span style="color:#990000">;</span> temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">)</span>
             <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> <span style="color:#990000">*</span>temp<span style="color:#990000">-&gt;</span>data <span style="color:#990000">==</span> item <span style="color:#990000">)</span>
                 <b><span style="color:#0000FF">return</span></b> temp<span style="color:#990000">-&gt;</span>data<span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">return</span></b> NULL<span style="color:#990000">;</span>
+        <b><span style="color:#0000FF">return</span></b> nullptr<span style="color:#990000">;</span>
     <span style="color:#FF0000">}</span>
 
     <span style="color:#009900">void</span> <b><span style="color:#000000">clear</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">this</span></b><span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">()</span> <span style="color:#990000">!=</span> NULL <span style="color:#990000">)</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
+        <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">this</span></b><span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">()</span> <span style="color:#990000">!=</span> nullptr <span style="color:#990000">)</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
     <span style="color:#FF0000">}</span>
 
     <span style="color:#009900">void</span> <b><span style="color:#000000">push_head</span></b> <span style="color:#990000">(</span><span style="color:#008080">T</span> item<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
             _head <span style="color:#990000">=</span> _tail <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> List_Link<span style="color:#990000">&lt;</span>T<span style="color:#990000">&gt;;</span>
-            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> nullptr<span style="color:#990000">;</span>
         <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
             <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
             temp <span style="color:#990000">=</span> _head<span style="color:#990000">;</span>
             _head <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> List_Link<span style="color:#990000">&lt;</span>T<span style="color:#990000">&gt;;</span>
             temp<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> _head<span style="color:#990000">;</span>
-            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> nullptr<span style="color:#990000">;</span>
         <span style="color:#FF0000">}</span>
         _head<span style="color:#990000">-&gt;</span>data <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> T<span style="color:#990000">;</span>
         <span style="color:#990000">*</span>_head<span style="color:#990000">-&gt;</span>data <span style="color:#990000">=</span> item<span style="color:#990000">;</span>
     <span style="color:#FF0000">}</span>
 
     T<span style="color:#990000">*</span> <b><span style="color:#000000">pop_head</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-            <b><span style="color:#0000FF">return</span></b> NULL<span style="color:#990000">;</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> nullptr <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">return</span></b> nullptr<span style="color:#990000">;</span>
         <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
             <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
             <span style="color:#008080">T</span> <span style="color:#990000">*</span>ret<span style="color:#990000">;</span>
@@ -241,7 +241,7 @@ http://www.gnu.org/software/src-highlite">
             _head <span style="color:#990000">=</span> temp<span style="color:#990000">;</span>
             temp <span style="color:#990000">=</span> temp<span style="color:#990000">-&gt;</span>next<span style="color:#990000">;</span>
             <b><span style="color:#0000FF">delete</span></b> temp<span style="color:#990000">;</span>
-            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+            _head<span style="color:#990000">-&gt;</span>next <span style="color:#990000">=</span> nullptr<span style="color:#990000">;</span>
             <b><span style="color:#0000FF">return</span></b> ret<span style="color:#990000">;</span>
         <span style="color:#FF0000">}</span>
     <span style="color:#FF0000">}</span>
@@ -251,7 +251,7 @@ http://www.gnu.org/software/src-highlite">
             cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"remove(): element '"</span> <span style="color:#990000">&lt;&lt;</span> item <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"' exists.</span><span style="color:#CC33CC">\n</span><span style="color:#FF0000">"</span><span style="color:#990000">;</span>
             <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> _head <span style="color:#990000">==</span> _tail <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
                 <b><span style="color:#0000FF">delete</span></b> _head<span style="color:#990000">;</span>
-                _head <span style="color:#990000">=</span> _tail <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+                _head <span style="color:#990000">=</span> _tail <span style="color:#990000">=</span> nullptr<span style="color:#990000">;</span>
             <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> <span style="color:#990000">*</span>_tail<span style="color:#990000">-&gt;</span>data <span style="color:#990000">==</span> item <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
                 <span style="color:#008080">List_Link&lt;T&gt;</span> <span style="color:#990000">*</span>temp<span style="color:#990000">;</span>
                 temp <span style="color:#990000">=</span> _tail<span style="color:#990000">;</span>

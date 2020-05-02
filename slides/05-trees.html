@@ -214,7 +214,7 @@ TreeNode::printTree() {
 - In-order: left node first, then self, then right node (C++):
 ```
 void BST::print(BinaryNode *curNode) {
-    if (curNode != NULL) {
+    if (curNode != nullptr) {
         print(curNode->left);
         cout << curNode->element << endl;
         print(curNode->right);
@@ -228,7 +228,7 @@ void BST::print(BinaryNode *curNode) {
 - Post-order: children first, then node (partly C++, partly pseudo-code):
 ```
 int TreeNode::numNodes(TreeNode *tnode) {
-    if ( tnode == NULL )
+    if ( tnode == nullptr )
         return 0;
     else {
         sum=0;
@@ -281,7 +281,7 @@ int TreeNode::numNodes(TreeNode *tnode) {
 <h2>Binary Trees: diagram details</h2>
 <table class="transparent"><tr>
 <td class="top" style="width:60%">
-<p>In reality, any child not shown is really a <code>NULL</code> pointer, as shown here; but these are generally omitted from the diagrams</p>
+<p>In reality, any child not shown is really a <code>nullptr</code> pointer, as shown here; but these are generally omitted from the diagrams</p>
 <img alt="bst-4" src="graphs/bst-4.svg"></td>
 <td style="width:40%"><img alt="bst-2" src="graphs/bst-2.svg"></td>
 </tr></table>
@@ -321,7 +321,7 @@ int TreeNode::numNodes(TreeNode *tnode) {
   - Compare value to be found to key of the root of the tree
     - If they are equal, then done
     - If not equal, recurse depending on which half of tree the value should be in if it is in tree
-    - If you hit a `NULL` pointer, then you have "run off" the bottom of the tree, and the value is not in the tree
+    - If you hit a `nullptr` pointer, then you have "run off" the bottom of the tree, and the value is not in the tree
       </script></section>
 
       <section data-markdown><script type="text/template">
@@ -330,7 +330,7 @@ int TreeNode::numNodes(TreeNode *tnode) {
 
 - Trying to find 3 will go, from the root, left &rarr; left &rarr; right
 - Trying to find 6 will go, from the root, right &rarr; left &rarr; left
-  - At that point, we have "run off" the bottom of the tree (via 7's left-child pointer, which is `NULL`), and thus the value is not in the tree
+  - At that point, we have "run off" the bottom of the tree (via 7's left-child pointer, which is `nullptr`), and thus the value is not in the tree
       </script></section>
 
       <section data-markdown><script type="text/template">
@@ -338,10 +338,10 @@ int TreeNode::numNodes(TreeNode *tnode) {
 (no external source code)
 ```
 BinaryNode * BST::find(int x, BinaryNode *curNode) {
-    // handle case where a NULL pointer could be passed
-    // curNode->right or curNode->left might be NULL
-    if (curNode == NULL)  // we've "run" off the bottom
-        return NULL;
+    // handle case where a nullptr pointer could be passed
+    // curNode->right or curNode->left might be nullptr
+    if (curNode == nullptr)  // we've "run" off the bottom
+        return nullptr;
     else if (x < curNode->element)
         return find(x, curNode->left);  // search left
     else if (x > curNode->element)
@@ -354,11 +354,11 @@ BinaryNode * BST::find(int x, BinaryNode *curNode) {
 
       <section>
 <h2>BST: insert</h2>
-<p>Do a find, and when we reach a <code>NULL</code> pointer, create a new node there</p>
+<p>Do a find, and when we reach a <code>nullptr</code> pointer, create a new node there</p>
 <p>(no external source code)</p>
 <pre><code>void BST::insert(int x, BinaryNode * & curNode) {
-    if (curNode==NULL)
-        curNode = new BinaryNode(x,NULL,NULL);
+    if (curNode==nullptr)
+        curNode = new BinaryNode(x,nullptr,nullptr);
     else if (x &lt; curNode->element)
         insert(x, curNode->left);
     else if (x &gt; curNode->element)
@@ -390,8 +390,8 @@ Similarly down the left subttree links for `findMin()`
       <section>
 <h2>BST: remove: no children</h2>
 <ul>
-<li>Just remove the node (reclaiming memory), adjusting the parent pointer to <code>NULL</code><ul>
-<li>In this case, 9's left child link is changed to <code>NULL</code></li></ul></li>
+<li>Just remove the node (reclaiming memory), adjusting the parent pointer to <code>nullptr</code><ul>
+<li>In this case, 9's left child link is changed to <code>nullptr</code></li></ul></li>
 </ul>
 <table class="transparent"><tr>
 <td class="top"><img alt="bst-7" src="graphs/bst-7.svg"></td>
@@ -1014,7 +1014,7 @@ unsigned int fib (unsigned int n) {
 ## Recursion on trees
 ```
 void func (BinaryNode *node) {
-    if ( node == NULL )
+    if ( node == nullptr )
 	    return;
     func (node->left);
     do_something_with_node_value (node);
@@ -1022,7 +1022,7 @@ void func (BinaryNode *node) {
 }
 ```
 - Making the problem simpler is the `func(node->left)` and the `func(node->right)`
-- Detecting when to end is the `if (node==NULL)`
+- Detecting when to end is the `if (node==nullptr)`
 - Termination is the `return`
 
 You cannot traverse a tree via iteration!  (at least not easily)
@@ -1033,7 +1033,7 @@ You cannot traverse a tree via iteration!  (at least not easily)
 - Yes, you can do recursion on lists:
 ```
 bool is_in_list (int x, ListNode *l) {
-    if ( l == NULL )
+    if ( l == nullptr )
 	    return false;
     else if ( x == l->value )
 	    return true;
@@ -1130,11 +1130,11 @@ All of these properties must hold for a red-black tree
 1. A node is either red or black
 2. The root is black
 3. All leaves are black
-   - The leaves may be the `NULL` children
+   - The leaves may be the `nullptr` children
 4. Both children of every red node are black
    - Therefore, a black node is the only possible parent for a red node
 5. Every simple path from a node to any descendant leaf contains the same number of black nodes
-   - Counting or not counting the `NULL` black nodes; it doesn't make a difference as long as you are consistent
+   - Counting or not counting the `nullptr` black nodes; it doesn't make a difference as long as you are consistent
 	  </script></section>
 
 	  <section data-markdown><script type="text/template">

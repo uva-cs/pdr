@@ -954,9 +954,9 @@ int * p;
 *p = n;    //ERROR!!!
 </code></pre>
 <ul><li>p does not have a valid memory address!</li>
-<li>A common initializer value used by programmers is NULL
-<pre><code data-trim>int *p=NULL; // better code, then add code to check 
-             // for NULL value
+<li>A common initializer value used by programmers is nullptr
+<pre><code data-trim>int *p=nullptr; // better code, then add code to check 
+             // for nullptr value
 </code></pre>
 </li>
 </ul></ul>
@@ -1271,7 +1271,7 @@ List & theList = sampleList;
   - A reference is like a pointer -- it holds an address -- with three primary differences:
     1. Its address cannot change (its address is constant)
     2. It MUST be initialized upon declaration
-       - Cannot (easily) be initialized to `NULL`
+       - Cannot (easily) be initialized to `nullptr`
     3. Has implicit dereferencing
 </script></section>
 

@@ -181,7 +181,7 @@ cout << &x << endl;
 	  <section data-markdown><script type="text/template">
 ## Pointer and Memory Allocation Pitfalls
 - Uninitialized pointers
-- Dereferencing `NULL` pointers
+- Dereferencing `nullptr` pointers
 - Dangling pointer
 - Losing address of dynamically allocated memory
 	  </script></section>
@@ -897,14 +897,6 @@ auto SomeStruct::func_name(int x, int y) -> int {
 ```
 - Note the trailing return type
 - This resolves problems when you are adding lots of C++ qualifiers
-	  </script></section>
-
-	  <section data-markdown><script type="text/template">
-## New NULL!
-- NULL for pointers was really zero
-  - And type-checking was hard, since you are type checking a pointer against an int
-- Now there is `nullptr`
-  - Which type checks better with pointers
 	  </script></section>
 
 	  <section data-markdown><script type="text/template">
