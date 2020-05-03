@@ -903,7 +903,6 @@ auto SomeStruct::func_name(int x, int y) -> int {
 ## Smart pointers
 - They are different than regular points or references
 - Like regular pointers, but they include memory management algorithms as well
-  - `auto_ptr` indicates that the caller must deallocate it
   - `unique_ptr` forces only one pointer to point to that object (the "old" one points to nullptr)
   - `shared_ptr` does reference counting, and will be deallocated (by the compiler) when nobody points to it anymore
   - `weak_ptr` is like shared_ptr, but does not modify the reference count; used to handle circular references and reference counting
