@@ -872,8 +872,9 @@ final double EPSILON = 0.000001;
 boolean foo = Math.abs (a-b) < EPSILON;
 ```
 ```
-// C++: #include <math.h> & compile with -lm
-#define EPSILON 0.000001
+// C++
+#include <cmath>
+static const double EPSILON = 0.000001;
 bool foo = fabs (a-b) < EPSILON;
 ```
 - A float has 7 decimal places of (printed) accuracy
