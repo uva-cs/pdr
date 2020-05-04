@@ -82,7 +82,7 @@ Your word search solver, implemented in `wordPuzzle.cpp`, should:
 
 - Take in a dictionary file and grid file, in that order, using command line parameters
 - Read in a dictionary and store its words in a hash table
-    - Which is implemented without using a vector of vectors or any STL hash table
+    - Which is implemented without using a vector of vectors, `unordered_set`, or `unordered_map`
 - Read in a word search grid no larger than 500x500 and store it in an appropriate data structure
 - Output every word of length three or greater and its location in the grid
     - The required output format is described below
@@ -95,7 +95,7 @@ We are not as interested in how fast your program runs for the pre-lab; leave an
 As there may be a large number of words in the dictionary, you will have to store those words in a hash table to facilitate efficient lookup.
 
 You **must** write your own hash table for this lab.
-We leave the implementation up to you, as long as you do not use a vector of vectors or any STL hash table.
+We leave the implementation up to you, as long as you do not use a vector of vectors, `unordered_set`, or `unordered_map`.
 
 ### Manipulating the grid ###
 
@@ -164,10 +164,10 @@ There are four variables that control what word is returned -- what does that im
 
 At this point, hopefully you have enough to get you going.
 
-#### Storing the grid ####
-Creating a dynamic 2D array in C++ is more difficult than it should be -- one solution is to create a vector of vectors, but that is not the most efficient means to do it.
-For this lab, you can just create a 500x500 static array, and can assume that you will not have your program run on larger input grids.
-This is not very elegant, but it will work until we go over dynamic array creation in lecture.
+#### It almost works...but now I'm getting duplicate words ####
+Take a closer look at the documentation for the `getWordInGrid` function!\
+In particular, does it say anything about what it returns when it reaches the end of the grid?
+How might you account for that in your code?
 
 #### Command-line parameters ####
 Your program must be able to run successfully if started with `./a.out <dictionary_file> <grid_file>` and no input.
