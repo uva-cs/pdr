@@ -13,8 +13,7 @@ using namespace std::chrono;
 
 class timer {
 public:
-    timer();
-    timer(timer& myTimer);
+    timer() = default;
     void start();
     void stop();
 
@@ -22,10 +21,10 @@ public:
     double getTime();
 private:
     steady_clock::time_point start_time, stop_time;
-    bool running;
+    bool running = false;
 
 };
 
-ostream& operator<<(ostream& theStream, timer& theTimer);
+ostream& operator<<(ostream& out, timer& timer);
 
 #endif

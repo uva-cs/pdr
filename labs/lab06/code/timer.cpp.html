@@ -11,16 +11,6 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"timer.h"</span>
 
-timer<span style="color:#990000">::</span><b><span style="color:#000000">timer</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    running <span style="color:#990000">=</span> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
-
-timer<span style="color:#990000">::</span><b><span style="color:#000000">timer</span></b><span style="color:#990000">(</span>timer<span style="color:#990000">&amp;</span> t<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    running <span style="color:#990000">=</span> t<span style="color:#990000">.</span>running<span style="color:#990000">;</span>
-    start_time <span style="color:#990000">=</span> t<span style="color:#990000">.</span>start_time<span style="color:#990000">;</span>
-    stop_time <span style="color:#990000">=</span> t<span style="color:#990000">.</span>stop_time<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
-
 <span style="color:#009900">void</span> timer<span style="color:#990000">::</span><b><span style="color:#000000">start</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>running<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
         running <span style="color:#990000">=</span> <b><span style="color:#0000FF">true</span></b><span style="color:#990000">;</span>
@@ -42,8 +32,8 @@ timer<span style="color:#990000">::</span><b><span style="color:#000000">timer</
     <b><span style="color:#0000FF">return</span></b> duration_cast<span style="color:#990000">&lt;</span>duration<span style="color:#990000">&lt;</span><span style="color:#009900">double</span><span style="color:#990000">&gt;&gt;(</span>stop_time <span style="color:#990000">-</span> start_time<span style="color:#990000">).</span><b><span style="color:#000000">count</span></b><span style="color:#990000">();</span>
 <span style="color:#FF0000">}</span>
 
-ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">&lt;&lt;(</span>ostream<span style="color:#990000">&amp;</span> out<span style="color:#990000">,</span> timer<span style="color:#990000">&amp;</span> t<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <b><span style="color:#0000FF">return</span></b> out <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">to_string</span></b><span style="color:#990000">(</span>t<span style="color:#990000">.</span><b><span style="color:#000000">getTime</span></b><span style="color:#990000">());</span>
+ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">&lt;&lt;(</span>ostream<span style="color:#990000">&amp;</span> out<span style="color:#990000">,</span> timer<span style="color:#990000">&amp;</span> timer<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">return</span></b> out <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">to_string</span></b><span style="color:#990000">(</span>timer<span style="color:#990000">.</span><b><span style="color:#000000">getTime</span></b><span style="color:#990000">());</span>
 <span style="color:#FF0000">}</span>
 </pre>
 </body>
