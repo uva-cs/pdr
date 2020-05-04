@@ -1,4 +1,5 @@
-/** This file defines and demonstrates two necessary components for
+/**
+ * This file defines and demonstrates two necessary components for
  * the hash table lab for CS 2150.  The first is the use of the
  * getWordInGrid() function, which is used for retrieving a word in a
  * grid of letters in one of the cardinal 8 directions (north,
@@ -9,23 +10,25 @@
  * Written by Aaron Bloomfield, 2009
  */
 
-#include <iostream>
+#include <array>
 #include <fstream>
+#include <iostream>
 #include <string>
 using namespace std;
 
 // We create a 2-D array of some big size, and assume that the grid
 // read in will be less than this size (a valid assumption for lab 6)
-#define MAXROWS 500
-#define MAXCOLS 500
-char grid[MAXROWS][MAXCOLS];
+const int MAXROWS = 500;
+const int MAXCOLS = 500;
+array<array<char, MAXCOLS>, MAXROWS> grid;
 
 // Forward declarations
 bool readInGrid(string filename, int& rows, int& cols);
 string getWordInGrid(int startRow, int startCol, int dir, int len,
                      int numRows, int numCols);
 
-/** The main() function shows how to call both the readInGrid()
+/**
+ * The main() function shows how to call both the readInGrid()
  * function as well as the getWordInGrid() function.
  */
 int main() {
@@ -42,7 +45,6 @@ int main() {
 
     // Get a word (of length 10), starting at position (2,2) in the
     // array, in each of the 8 directions
-    cout << endl;
     for (int i = 0; i < 8; i++) {
         cout << i << ": " << getWordInGrid(2, 2, i, 10, rows, cols) << endl;
     }
@@ -50,8 +52,9 @@ int main() {
     return 0;
 }
 
-/** This function will read in a grid file, as per the format in the
- * CS 2150 lab 6 document, into a global grid[][] array.  It uses C++
+/**
+ * This function will read in a grid file, as per the format in the
+ * CS 2150 lab 6 document, into a global 2D grid array.  It uses C++
  * file streams, and thus requires the the <fstream> #include header.
  *
  * @return true or false, depending on whether the file was
@@ -86,8 +89,7 @@ bool readInGrid(string filename, int& rows, int& cols) {
     // close the file
     file.close();
 
-    // convert the string read in to the 2-D grid format into the
-    // grid[][] array.
+    // convert the string read in to the 2-D grid format into the grid.
     // In the process, we'll print the grid to the screen as well.
     int pos = 0; // the current position in the input data
     for (int r = 0; r < rows; r++) {
@@ -100,11 +102,12 @@ bool readInGrid(string filename, int& rows, int& cols) {
     return true;
 }
 
-/** This function will retrieve a word in a grid of letters in a given
+/**
+ * This function will retrieve a word in a grid of letters in a given
  * direction.  If the end of the grid is encountered before the length
  * of the desired string is reached, then a shorter string will be
- * returned.  The data is retrieved from a global char grid[][]
- * array, which is assumed to be defined (and in scope).  NOTE: The
+ * returned.  The data is retrieved from a global grid,
+ * which is assumed to be defined (and in scope).  NOTE: The
  * return value is a static string variable (for efficiency
  * reasons), so a successive return value will overwrite a previous
  * return value.
@@ -121,10 +124,8 @@ bool readInGrid(string filename, int& rows, int& cols) {
  *            possible up to the edge of the grid, so the returned
  *            string may not have the same length as this parameter
  *            indicates).
- * @param numRows The number of rows in the global char grid[][]
- *                array.
- * @param numCols The number of columns in the global char grid[][]
- *                array.
+ * @param numRows The number of rows in the grid.
+ * @param numCols The number of columns in the grid.
  */
 string getWordInGrid (int startRow, int startCol, int dir, int len,
                       int numRows, int numCols) {
