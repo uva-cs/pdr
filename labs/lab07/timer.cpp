@@ -1,15 +1,5 @@
 #include "timer.h"
 
-timer::timer() {
-    running = false;
-}
-
-timer::timer(timer& t) {
-    running = t.running;
-    start_time = t.start_time;
-    stop_time = t.stop_time;
-}
-
 void timer::start() {
     if (!running) {
         running = true;
@@ -32,6 +22,6 @@ double timer::getTime() {
 }
 
 // Prints the time elapsed, in milliseconds
-ostream& operator<<(ostream& out, timer& t) {
-    return out << to_string(static_cast<int>(t.getTime() * 1000));
+ostream& operator<<(ostream& out, timer& timer) {
+    return out << to_string(static_cast<int>(timer.getTime() * 1000));
 }
