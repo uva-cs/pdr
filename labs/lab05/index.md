@@ -151,12 +151,14 @@ You should submit your BST, any supporting C++ files, as well as a Makefile to c
 
 ### Hints ###
 
-**Private methods:** Following the suggestion to implement private
+#### Use private methods ####
+Following the suggestion to implement private
 versions of all the public methods that take in BinaryNodes will help
 considerably.  How should your public method interact with the private
 version? In other words, what node should the public method pass in?
 
-**Passing pointers by reference:** When a pointer is passed by
+#### Pass pointers by reference ####
+When a pointer is passed by
 reference, that allows us to change not only the data that the pointer
 is pointing to, but also _what the pointer is pointing to in the first
 place_.  This is one option that allows you to change the structure of
@@ -198,7 +200,6 @@ You should submit your AVL tree, any supporting C++ files, the Makefile, and you
 ### Hints ###
 
 #### Balancing ####
-
 `balance(AVLNode*& node)` is crucial for both insert and remove, but has many cases that you must account for. To help avoid potential issues, here is some pseudocode for the balance method that you may use:
 
 ```
@@ -218,3 +219,9 @@ balance(node):
 		rotate right on node
 	endif
 ```
+
+#### Rotating ####
+As was the case for Lab 2's insertion methods, it is extremely helpful to draw out how each node changes during the rotation _before_ attempting to write the C++ implementation.
+
+Did you take into account that the parent should now be pointing to a different node?
+What about the heights of each node?
