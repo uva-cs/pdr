@@ -14,6 +14,7 @@
 //  if the 'forward' parameter is false,
 //      the list is printed in reverse order
 
+#include <array>
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -22,10 +23,11 @@ using namespace std;
 #include "List.h"
 #include "ListItr.h"
 
-int menu (string option[], int n_opt);
+template<size_t SIZE>
+int menu(array<string, SIZE> options);
 
 //set up menu options
-string option[] = {
+array<string, 17> options{
     "Quit",
     "New List",
     "Show List elements",
@@ -44,8 +46,6 @@ string option[] = {
     "Copy list with operator=",
     "Make list empty",
 };
-
-int const n_choice = 17;
 
 /*
  *  This main driver program interactively exercises a
@@ -71,7 +71,7 @@ int main () {
     cout << "\tobjects." << endl;
 
     while (true) {
-        command = menu(option, n_choice);
+        command = menu(options);
 
         switch (command) {
             // Quit
@@ -478,15 +478,16 @@ int main () {
  *
  *  NOTE, all input and output uses 'stdin' and 'stdout'
 */
-int menu (string option[], int n_opt) {
-    int choice, i;
+template<size_t SIZE>
+int menu(array<string, SIZE> options) {
+    int choice = -1;
     string input;
 
     cout << "     - - - - - -  MENU - - - - - -" << endl;
     cout << endl;
 
-    for (i = 0; i < n_opt; i++) {
-        cout << "\t" << i + 1 << " - " << option[i] << endl;
+    for (size_t i = 0; i < SIZE; i++) {
+        cout << "\t" << i + 1 << " - " << options[i] << endl;
     }
 
     cout << endl;
@@ -499,11 +500,11 @@ int menu (string option[], int n_opt) {
         if (isdigit(input[0])) {
             choice = stoi(input);
 
-            if (choice <= n_opt && choice > 0) {
+            if (choice > 0 && choice <= SIZE) {
                 return choice;
             } else {
                 /* choice out of range */
-                cout << "\tYour response MUST be between 1 and " << n_opt << endl;
+                cout << "\tYour response MUST be between 1 and " << SIZE << endl;
                 input.clear();
             }
         } else {
