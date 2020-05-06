@@ -166,7 +166,7 @@ scanf(&quot;%s&quot;, school);  /* Converts input to a string and stores it in s
 </ul>
 <p>Any one of these errors will corrupt your heap. This corruption will manifest in unusual ways which will be very difficult to debug and which will not have any obvious relationship with the root cause (if you are lucky, it will cause a segmentation fault).</p>
 <p>The easiest way to debug a memory error is not to make it in the first place. With care, this is easier than it sounds. Firstly, know when you need dynamic allocation; don't use it if you don't have to. Secondly, as you would do in C++, write constructors and destructors for all of your data structures, and be consistent about using them. These functions should handle your heap control and error checking explicitly, so that they are implicit in the code that uses the storage.</p>
-<p>If you do manage to develop memory errors, AddressSanitizer and LeakSanitizer work just as they did in C++.</p>
+<p>If you do run into memory errors, AddressSanitizer and LeakSanitizer work just as they did in C++.</p>
 <h3 id="examples">Examples</h3>
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
@@ -271,10 +271,7 @@ case 2:
 <p>This exercise is to be developed in C, and compiled using clang (NOT clang++!). The exercise is to implement a <strong><em>very simple</em></strong> linked list. Your program should do the following:</p>
 <ol type="1">
 <li>Read in an integer, which we'll call <em>n</em></li>
-<li>Read in <em>n</em> more ints, and put those into a linked list
-<ul>
-<li>The linked list must be dynamically allocated</li>
-</ul></li>
+<li>Read in <em>n</em> more ints, and insert those into a dynamically allocated linked list</li>
 <li>Print out that linked list (we don't care about the order!)</li>
 <li>Properly deallocate the linked list</li>
 </ol>
@@ -289,5 +286,16 @@ Enter value 4: 8
 6
 4
 2</code></pre>
+<h3 id="hints">Hints</h3>
+<h4 id="keep-it-simple">Keep it simple</h4>
+<p>A singly-linked list will probably cause you less trouble than a doubly-linked list. We really are looking for the bare minimum, here :).</p>
+<h4 id="efficient-insertion">Efficient insertion</h4>
+<p>While intuitively, you might want to add each node to the end of the list, take a moment to consider whether that's actually necessary.</p>
+<p>Would it be equally as valid to <em>prepend</em> to the beginning of the list, since you always know where your head is?</p>
+<p>In other words...from <code>head -&gt; node1</code>, could we insert node2 as <code>head -&gt; node2 -&gt; node1</code>? Take a look at your <code>insertAtTail</code> all the way back from Lab 2 for some inspiration.</p>
+<h4 id="i-thought-delete-was-bad-enough...how-do-i-free-my-list">I thought delete was bad enough...how do I free my list?</h4>
+<p>Like in Lab 2, you'll want to iterate through your list, freeing every node as you go. Make sure you know what the next node is though before you free the one you're on!</p>
+<p>Depending on your implementation, it might be easier to separate this from the loop where you print all the values.</p>
+<p>Additionally, if you malloc anything else (a LinkedList struct, or an iterator, for example), you'll also need to free those at the end.</p>
 </body>
 </html>
