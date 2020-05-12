@@ -133,6 +133,12 @@ Note that we, too, can write the function in C++ and compile it with `clang++ -O
 
 See the [last lab](../lab08/index.html) for details, but all code must be submitted to run under Linux, which is the platform that does the compilation on the submission system.
 
+### Hints ###
+
+#### No hints yet... ####
+We haven't noticed anything that we feel warrants a hint.
+If you think something belongs here, please let the professors know!
+
 ------------------------------------------------------------
 
 In-lab
