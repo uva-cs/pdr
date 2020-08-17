@@ -59,7 +59,7 @@ void TreeCalc::printPostfix(TreeNode* tree) const {
 // Prints tree in all 3 (post, in, pre) forms
 // DO NOT MODIFY
 void TreeCalc::printOutput() const {
-    if (expressionStack.size() != 0 && expressionStack.top() != NULL) {
+    if (expressionStack.size() != 0 && expressionStack.top() != nullptr) {
         TreeNode* tree = expressionStack.top();
         cout << "Expression tree in postfix expression: ";
         printPostfix(tree);

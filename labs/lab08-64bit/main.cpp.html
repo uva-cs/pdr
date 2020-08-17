@@ -12,8 +12,7 @@ http://www.gnu.org/software/src-highlite">
 <pre><i><span style="color:#9A1900">// main.cpp</span></i>
 
 <b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;time.h&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;cstdlib&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;random&gt;</span>
 
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
@@ -25,30 +24,31 @@ http://www.gnu.org/software/src-highlite">
 
 <i><span style="color:#9A1900">// Originally written by Adam Ferrari, and updated by Aaron Bloomfield</span></i>
 
-<span style="color:#009900">int</span>  <b><span style="color:#000000">main</span></b> <span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-
-    <i><span style="color:#9A1900">// delcare the local variables</span></i>
-    <span style="color:#009900">long</span>  n<span style="color:#990000">,</span> <span style="color:#990000">*</span>vec<span style="color:#990000">,</span> sum<span style="color:#990000">;</span>
+<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <i><span style="color:#9A1900">// declare the local variables</span></i>
+    <span style="color:#009900">long</span> n<span style="color:#990000">;</span>
+    <span style="color:#009900">long</span><span style="color:#990000">*</span> vec<span style="color:#990000">;</span>
+    <span style="color:#009900">long</span> sum<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// how big is the array we want to use?</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Please enter a array size:  "</span><span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Please enter a array size: "</span><span style="color:#990000">;</span>
     cin <span style="color:#990000">&gt;&gt;</span> n<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// sanity check the array size</span></i>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>n <span style="color:#990000">&lt;=</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cerr <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Array size must be greater than zero.</span><span style="color:#CC33CC">\n</span><span style="color:#FF0000">"</span><span style="color:#990000">;</span>
+        cerr <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Array size must be greater than zero."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">1</span><span style="color:#990000">;</span>
     <span style="color:#FF0000">}</span>
 
     <i><span style="color:#9A1900">// allocate the array</span></i>
     vec <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">long</span><span style="color:#990000">[</span>n<span style="color:#990000">];</span>
 
-    <i><span style="color:#9A1900">// use current time as random seed</span></i>
-    <b><span style="color:#000000">srand</span></b><span style="color:#990000">((</span><span style="color:#009900">unsigned</span><span style="color:#990000">)</span> <b><span style="color:#000000">time</span></b><span style="color:#990000">(</span>NULL<span style="color:#990000">));</span>
+    <i><span style="color:#9A1900">// initialize Mersenne-Twister randm number generator</span></i>
+    <span style="color:#008080">mt19937</span> <b><span style="color:#000000">gen</span></b><span style="color:#990000">(</span>random_device<span style="color:#FF0000">{}</span><span style="color:#990000">());</span>
 
     <i><span style="color:#9A1900">// fill the array with random values</span></i>
     <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">long</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> <span style="color:#990000">++</span>i<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        vec<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">=</span> <b><span style="color:#000000">rand</span></b><span style="color:#990000">()</span> <span style="color:#990000">%</span> <span style="color:#993399">100</span><span style="color:#990000">;</span>
+        vec<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">=</span> <b><span style="color:#000000">gen</span></b><span style="color:#990000">()</span> <span style="color:#990000">%</span> <span style="color:#993399">100</span><span style="color:#990000">;</span>
         cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#FF0000">vec["</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"] = "</span> <span style="color:#990000">&lt;&lt;</span> vec<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#FF0000">}</span>
 
@@ -57,7 +57,7 @@ http://www.gnu.org/software/src-highlite">
     cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"The sum of all array elements is "</span> <span style="color:#990000">&lt;&lt;</span> sum <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// properly deallocate the array</span></i>
-    <b><span style="color:#0000FF">delete</span></b> <span style="color:#990000">[]</span> vec<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">delete</span></b><span style="color:#990000">[]</span> vec<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// all done!</span></i>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>

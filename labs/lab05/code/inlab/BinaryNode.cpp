@@ -4,13 +4,13 @@ using namespace std;
 
 BinaryNode::BinaryNode() {
     value = "?";
-    left = NULL;
-    right = NULL;
+    left = nullptr;
+    right = nullptr;
 }
 
 BinaryNode::~BinaryNode() {
     delete left;
     delete right;
-    left = NULL;
-    right = NULL;
+    left = nullptr;
+    right = nullptr;
 }

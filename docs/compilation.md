@@ -15,7 +15,7 @@ There are a number of things you can try:
 - Check the section, below, on common compiler errors and how to solve them, as the error that you are looking for may be listed there
 - Did you submit all the required files?  In particular, if some of the files that you `#include` are not present, then it won't compile.
 - Filename case: Linux (what the compilation is done on) does care about the capitalization of file names.  So if your code has an `#include "FileName.h"` and your file is named filename.h, this will NOT compile under Linux.  Change your file name cases, or your `#include` line.
-- Did you include the appropriate system `#include` lines?  If it is complaining that it can't find `exit()`, for example, be sure to `#include <stdlib.h>`.  Many compilers automatically include `<stdlib.h>` and `<stdio.h>`, which means you can directly call functions such as `printf()` and `exit()` without the appropriate `#include` line.  The compiler used by the submission system does not include, by default, any `#include` files.
+- Did you include the appropriate system `#include` lines?  If it is complaining that it can't find `find()`, for example, be sure to `#include <algorithm>`.
 - Did you enter `using namespace std;` at the top of each file?
 - The submission system provides the compilation command - try running it on your machine.  In particular, try creating a NEW directory, copying into that directory the files that you are submitting (and ONLY those files), and then executing the compile command.
 - If the compile command is `make` (you learn about make and Makefiles about 1/3 of the way through the course), then your Makefile needs to be configured to properly compile the code

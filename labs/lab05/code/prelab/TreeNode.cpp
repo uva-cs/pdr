@@ -4,16 +4,16 @@
 
 #include "TreeNode.h"
 
-// Default Constructor - left and right are NULL, value '?'
+// Default Constructor - left and right are nullptr, value '?'
 TreeNode::TreeNode() {
     value = "?";
-    left = NULL;
-    right = NULL;
+    left = nullptr;
+    right = nullptr;
 }
 
 // Constructor - sets value to val
 TreeNode::TreeNode(const string& val) {
     value = val;
-    left = NULL;
-    right = NULL;
+    left = nullptr;
+    right = nullptr;
 }

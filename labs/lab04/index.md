@@ -148,7 +148,7 @@ The [inlab4.cpp](inlab4.cpp.html) ([src](inlab4.cpp)) program asks you to fill i
 
 &nbsp;
 
-| C++ Type | Size in bytes? | Max value? (base 16/hex) | NULL is stored as (in hex)? |
+| C++ Type | Size in bytes? | Max value? (base 16/hex) | nullptr is stored as (in hex)? |
 |----------|----------------|----------------------|-----------------------------|
 | int\* | | | |
 | char\* | | | |
@@ -219,7 +219,7 @@ For types not in `climits`, you should reason about how the data is stored and t
 
 #### Viewing values ####
 For some parts of this lab, it is helpful to assign a value to a variable, then inspect that variable's contents using a debugger.
-You can write a simple C++ program that creates the variables, and stores the appropriate value (zero, one, or NULL) into them.
+You can write a simple C++ program that creates the variables, and stores the appropriate value (zero, one, or nullptr) into them.
 Compile (remember the `-g` flag!), load the debugger, set a breakpoint, and start the program execution.
 
 When using LLDB, you can use the 'x' (for 'eXamine') command to print out the pointee of an address.

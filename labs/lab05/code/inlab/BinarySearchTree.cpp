@@ -5,12 +5,12 @@
 using namespace std;
 
 BinarySearchTree::BinarySearchTree() {
-    root = NULL;
+    root = nullptr;
 }
 
 BinarySearchTree::~BinarySearchTree() {
     delete root;
-    root = NULL;
+    root = nullptr;
 }
 
 // insert finds a position for x in the tree and places it there.
@@ -26,34 +26,34 @@ void BinarySearchTree::remove(const string& x) {
 // private helper for remove to allow recursion over different nodes. returns
 // a BinaryNode* that is assigned to the original node.
 BinaryNode* BinarySearchTree::remove(BinaryNode*& n, const string& x) {
-    if (n == NULL) {
-        return NULL;
+    if (n == nullptr) {
+        return nullptr;
     }
 
     // first look for x
     if (x == n->value) {
         // found
-        if (n->left == NULL && n->right == NULL) {
+        if (n->left == nullptr && n->right == nullptr) {
             // no children
             // just delete it :)
             delete n;
-            n = NULL;
-            return NULL;
-        } else if (n->left == NULL) {
+            n = nullptr;
+            return nullptr;
+        } else if (n->left == nullptr) {
             // single child (right)
             // remove current node and return right child node for parent
             BinaryNode* temp = n->right;
-            n->right = NULL;
+            n->right = nullptr;
             delete n;
-            n = NULL;
+            n = nullptr;
             return temp;
-        } else if (n->right == NULL) {
+        } else if (n->right == nullptr) {
             // single child (left)
             // remove current node and return left child node for parent
             BinaryNode* temp = n->left;
-            n->left = NULL;
+            n->left = nullptr;
             delete n;
-            n = NULL;
+            n = nullptr;
             return temp;
         } else {
             // two children
@@ -89,7 +89,7 @@ int BinarySearchTree::numNodes() const {
 // min finds the string with the smallest value in a subtree.
 string BinarySearchTree::min(BinaryNode* node) const {
     // go to bottom-left node
-    if (node->left == NULL) {
+    if (node->left == nullptr) {
         return node->value;
     }
     return min(node->left);
@@ -98,19 +98,19 @@ string BinarySearchTree::min(BinaryNode* node) const {
 // Helper function to print branches of the binary tree
 // You do not need to know how this function works.
 void showTrunks(Trunk* p) {
-    if (p == NULL) return;
+    if (p == nullptr) return;
     showTrunks(p->prev);
     cout << p->str;
 }
 
 void BinarySearchTree::printTree() {
-    printTree(root, NULL, false);
+    printTree(root, nullptr, false);
 }
 
 // Recursive function to print binary tree
 // It uses inorder traversal
 void BinarySearchTree::printTree(BinaryNode* root, Trunk* prev, bool isRight) {
-    if (root == NULL) return;
+    if (root == nullptr) return;
 
     string prev_str = "    ";
     Trunk* trunk = new Trunk(prev, prev_str);

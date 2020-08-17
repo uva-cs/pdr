@@ -14,6 +14,7 @@
 //  if the 'forward' parameter is false,
 //      the list is printed in reverse order
 
+#include <array>
 #include <iostream>
 #include <string>
 #include <cctype>
@@ -22,10 +23,11 @@ using namespace std;
 #include "List.h"
 #include "ListItr.h"
 
-int menu (string option[], int n_opt);
+template<size_t SIZE>
+int menu(array<string, SIZE> options);
 
 //set up menu options
-string option[] = {
+array<string, 17> options{
     "Quit",
     "New List",
     "Show List elements",
@@ -45,8 +47,6 @@ string option[] = {
     "Make list empty",
 };
 
-int const n_choice = 17;
-
 /*
  *  This main driver program interactively exercises a
  *   list package.
@@ -59,8 +59,8 @@ int const n_choice = 17;
 int main () {
     int command;
     string response;
-    List *list = NULL;
-    ListItr *itr = NULL;
+    List *list = nullptr;
+    ListItr *itr = nullptr;
 
     // Initialize this run
     cout << "--------------------------------------------------" << endl;
@@ -71,7 +71,7 @@ int main () {
     cout << "\tobjects." << endl;
 
     while (true) {
-        command = menu(option, n_choice);
+        command = menu(options);
 
         switch (command) {
             // Quit
@@ -81,11 +81,11 @@ int main () {
 
                 // Exit normally
                 if (response[0] == 'y' || response[0] == 'Y') {
-                    if (list != NULL) {
+                    if (list != nullptr) {
                         delete list;
                     }
 
-                    if (itr != NULL) {
+                    if (itr != nullptr) {
                         delete itr;
                     }
                     return 0;
@@ -95,7 +95,7 @@ int main () {
 
             // New list
             case 2:
-                if (list != NULL) {
+                if (list != nullptr) {
                     delete list;
                 }
                 list = new List();
@@ -116,7 +116,7 @@ int main () {
                 cin >> response;
 
                 while (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertAtTail(element);
 
                     cout << "\tEnter next element: ";
@@ -130,7 +130,7 @@ int main () {
 
             // Show elements
             case 3:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -152,14 +152,14 @@ int main () {
 
             // first()
             case 4:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
                 }
 
                 cout << "\tSetting the ListItr to the first element..." << endl;
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
                 }
                 itr = new ListItr(list->first());
@@ -167,7 +167,7 @@ int main () {
 
             // find()
             case 5:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -177,10 +177,10 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
 
                     cout << "\tSetting the ListItr to find(" << element << ")..." << endl;
-                    if (itr != NULL) {
+                    if (itr != nullptr) {
                         delete itr;
                     }
                     itr = new ListItr(list->find(element));
@@ -191,14 +191,14 @@ int main () {
 
             // last()
             case 6:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
                 }
 
                 cout << "\tSetting the ListItr to the last element..." << endl;
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
                 }
                 itr = new ListItr(list->last());
@@ -206,7 +206,7 @@ int main () {
 
             // moveForwards()
             case 7:
-                if (itr == NULL) {
+                if (itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a ListItr first." << endl;
                     break;
@@ -218,7 +218,7 @@ int main () {
 
             // moveBackwards()
             case 8:
-                if (itr == NULL) {
+                if (itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a ListItr first." << endl;
                     break;
@@ -230,7 +230,7 @@ int main () {
 
             // retrieve()
             case 9:
-                if (itr == NULL) {
+                if (itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a ListItr first." << endl;
                     break;
@@ -247,7 +247,7 @@ int main () {
 
             // insertBefore()
             case 10:
-                if (list == NULL || itr == NULL) {
+                if (list == nullptr || itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List and ListItr first." << endl;
                     break;
@@ -263,7 +263,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertBefore(element, *itr);
                     cout << "\tInserting " << element << " before the current ListItr" << endl;
                 } else {
@@ -278,7 +278,7 @@ int main () {
 
             // insertAfter()
             case 11:
-                if (list == NULL || itr == NULL) {
+                if (list == nullptr || itr == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List and ListItr first." << endl;
                     break;
@@ -294,7 +294,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertAfter(element, *itr);
                     cout << "\tInserting " << element << " after the current ListItr" <<endl;
                 } else {
@@ -309,7 +309,7 @@ int main () {
 
             // insertAtTail()
             case 12:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -319,7 +319,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->insertAtTail(element);
                     cout << "\tInserting " << element << " at the tail of the list" << endl;
                 } else {
@@ -334,7 +334,7 @@ int main () {
 
             // remove()
             case 13:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -344,7 +344,7 @@ int main () {
                 cin >> response;
 
                 if (isdigit(response[0])) {
-                    int element = atoi(response.c_str());
+                    int element = stoi(response);
                     list->remove(element);
                     cout << "\tRemoving " << element << " from list" <<endl;
                 } else {
@@ -359,7 +359,7 @@ int main () {
 
             // size()
             case 14:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -370,7 +370,7 @@ int main () {
 
             // Copy constructor
             case 15: {
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -396,16 +396,16 @@ int main () {
                 cout << "The old list should be destroyed now." << endl;
                 delete old_list;
 
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
-                    itr = NULL;
+                    itr = nullptr;
                 }
                 break;
             }
 
             // operator=
             case 16: {
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -432,16 +432,16 @@ int main () {
                 cout << "The old list should be destroyed now." << endl;
 
                 delete old_list;
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
-                    itr = NULL;
+                    itr = nullptr;
                 }
                 break;
             }
 
             // makeEmpty()
             case 17:
-                if (list == NULL) {
+                if (list == nullptr) {
                     cout << endl;
                     cout << "\tCreate a List first." << endl;
                     break;
@@ -454,9 +454,9 @@ int main () {
                 printList(*list, false);
 
                 list->makeEmpty();
-                if (itr != NULL) {
+                if (itr != nullptr) {
                     delete itr;
-                    itr = NULL;
+                    itr = nullptr;
                 }
 
                 cout << "The list was made empty (forward): ";
@@ -478,15 +478,16 @@ int main () {
  *
  *  NOTE, all input and output uses 'stdin' and 'stdout'
 */
-int menu (string option[], int n_opt) {
-    int choice, i;
+template<size_t SIZE>
+int menu(array<string, SIZE> options) {
+    int choice = -1;
     string input;
 
     cout << "     - - - - - -  MENU - - - - - -" << endl;
     cout << endl;
 
-    for (i = 0; i < n_opt; i++) {
-        cout << "\t" << i + 1 << " - " << option[i] << endl;
+    for (size_t i = 0; i < SIZE; i++) {
+        cout << "\t" << i + 1 << " - " << options[i] << endl;
     }
 
     cout << endl;
@@ -497,13 +498,13 @@ int menu (string option[], int n_opt) {
         cin >> input;
 
         if (isdigit(input[0])) {
-            choice = atoi(input.c_str());
+            choice = stoi(input);
 
-            if (choice <= n_opt && choice > 0) {
+            if (choice > 0 && choice <= SIZE) {
                 return choice;
             } else {
                 /* choice out of range */
-                cout << "\tYour response MUST be between 1 and " << n_opt << endl;
+                cout << "\tYour response MUST be between 1 and " << SIZE << endl;
                 input.clear();
             }
         } else {

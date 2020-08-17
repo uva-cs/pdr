@@ -181,7 +181,7 @@ cout << &x << endl;
 	  <section data-markdown><script type="text/template">
 ## Pointer and Memory Allocation Pitfalls
 - Uninitialized pointers
-- Dereferencing `NULL` pointers
+- Dereferencing `nullptr` pointers
 - Dangling pointer
 - Losing address of dynamically allocated memory
 	  </script></section>
@@ -900,18 +900,9 @@ auto SomeStruct::func_name(int x, int y) -> int {
 	  </script></section>
 
 	  <section data-markdown><script type="text/template">
-## New NULL!
-- NULL for pointers was really zero
-  - And type-checking was hard, since you are type checking a pointer against an int
-- Now there is `nullptr`
-  - Which type checks better with pointers
-	  </script></section>
-
-	  <section data-markdown><script type="text/template">
 ## Smart pointers
 - They are different than regular points or references
 - Like regular pointers, but they include memory management algorithms as well
-  - `auto_ptr` indicates that the caller must deallocate it
   - `unique_ptr` forces only one pointer to point to that object (the "old" one points to nullptr)
   - `shared_ptr` does reference counting, and will be deallocated (by the compiler) when nobody points to it anymore
   - `weak_ptr` is like shared_ptr, but does not modify the reference count; used to handle circular references and reference counting
@@ -930,14 +921,6 @@ auto SomeStruct::func_name(int x, int y) -> int {
 ## What all this means
 - Modern C++ code is very complicated, and very difficult for us to understand easily
 - And it makes a single C++ course insufficient to understand the level of C++ used in the industry...
-	  </script></section>
-
-	  <section data-markdown><script type="text/template">
-## How to use these features
-- All modern compilers support C++11 features (well, mostly...)
-  - This includes the course submission server
-- To use these features, you have to pass the `-std=c++11` flag to the compiler
-  - Put it in the Makefile!
 	  </script></section>
 
 	</section>

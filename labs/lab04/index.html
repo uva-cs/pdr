@@ -181,7 +181,7 @@ Size of double*: 8
 <th>C++ Type</th>
 <th>Size in bytes?</th>
 <th>Max value? (base 16/hex)</th>
-<th>NULL is stored as (in hex)?</th>
+<th>nullptr is stored as (in hex)?</th>
 </tr>
 </thead>
 <tbody>
@@ -244,7 +244,7 @@ char CharArray2D[6][5];</code></pre>
 <h4 id="max-values">Max values</h4>
 <p><code>climits</code> will come in handy here again. For types not in <code>climits</code>, you should reason about how the data is stored and the size of that type.</p>
 <h4 id="viewing-values">Viewing values</h4>
-<p>For some parts of this lab, it is helpful to assign a value to a variable, then inspect that variable's contents using a debugger. You can write a simple C++ program that creates the variables, and stores the appropriate value (zero, one, or NULL) into them. Compile (remember the <code>-g</code> flag!), load the debugger, set a breakpoint, and start the program execution.</p>
+<p>For some parts of this lab, it is helpful to assign a value to a variable, then inspect that variable's contents using a debugger. You can write a simple C++ program that creates the variables, and stores the appropriate value (zero, one, or nullptr) into them. Compile (remember the <code>-g</code> flag!), load the debugger, set a breakpoint, and start the program execution.</p>
 <p>When using LLDB, you can use the 'x' (for 'eXamine') command to print out the pointee of an address. Consider the C++ program that has two variables defined, <code>int i</code> and <code>int *p</code>. To print out the int variable <code>i</code>, you would enter <code>x &amp;i</code> (as you have to enter the address of where the data is located). If <code>p</code> is a pointer to a value, you would enter <code>x p</code> to print out the <em>pointee</em>. This may print it using many more hexadecimal digits than you wanted, so you can add a parameter to the 'x' command to have it print only a certain amount:</p>
 <ul>
 <li><code>x/xb p</code>: this will print the one byte at the address that is pointed to by p</li>

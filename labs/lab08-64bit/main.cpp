@@ -1,8 +1,7 @@
 // main.cpp
 
 #include <iostream>
-#include <time.h>
-#include <cstdlib>
+#include <random>
 
 using namespace std;
 
@@ -14,30 +13,31 @@ extern "C" long vecsum (long*, long);
 
 // Originally written by Adam Ferrari, and updated by Aaron Bloomfield
 
-int  main () {
-
-    // delcare the local variables
-    long  n, *vec, sum;
+int main() {
+    // declare the local variables
+    long n;
+    long* vec;
+    long sum;
 
     // how big is the array we want to use?
-    cout << "Please enter a array size:  ";
+    cout << "Please enter a array size: ";
     cin >> n;
 
     // sanity check the array size
     if (n <= 0) {
-        cerr << "Array size must be greater than zero.\n";
+        cerr << "Array size must be greater than zero." << endl;
         return 1;
     }
 
     // allocate the array
     vec = new long[n];
 
-    // use current time as random seed
-    srand((unsigned) time(NULL));
+    // initialize Mersenne-Twister randm number generator
+    mt19937 gen(random_device{}());
 
     // fill the array with random values
     for (long i = 0; i < n; ++i) {
-        vec[i] = rand() % 100;
+        vec[i] = gen() % 100;
         cout << "\tvec[" << i << "] = " << vec[i] << endl;
     }
 
@@ -46,7 +46,7 @@ int  main () {
     cout << "The sum of all array elements is " << sum << endl;
 
     // properly deallocate the array
-    delete [] vec;
+    delete[] vec;
 
     // all done!
     return 0;

@@ -4,14 +4,14 @@ using namespace std;
 
 AVLNode::AVLNode() {
     value = "?";
-    left = NULL;
-    right = NULL;
+    left = nullptr;
+    right = nullptr;
     height = 0;
 }
 
 AVLNode::~AVLNode() {
     delete left;
     delete right;
-    left = NULL;
-    right = NULL;
+    left = nullptr;
+    right = nullptr;
 }
