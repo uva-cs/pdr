@@ -13,9 +13,9 @@ The primary mechanism for learning IBCM is through the [IBCM slide set](../slide
 Website
 -------
 
-The IBCM is utilized through an online series of webpages.  The IBCM simulator needs PHP in order to run, and thus must be run from a web server (i.e., not as a local file).  Most of the computational load is on the client side (via Javascript), and little is on the server side.  There are a few mirros of this website available, which are listed below.  All the necessary code to run a separate copy are included in this repository.
+The IBCM is utilized through an online series of webpages and requires a modern browser released after 2018.  All the necessary code to run a separate copy are included in this repository.
 
-The primary file for the website is [index.html](index.html), and the directions are on the [directions.html](directions.html) page.  The simulator itself is on the [simulator.php](simulator.php) page -- but as described above, this must be run on an actual web server.  Two supporting files ([simulator.js](simulator.js) and [ibcm.css](ibcm.css)) and the entire img/ directory are needed as well.  Note that two of the programs listed below ([summation.ibcm](summation.ibcm) and [array-summation.ibcm](array-summation.ibcm)) are linked to from the various website pages.
+The primary file for the website is [index.html](index.html), and the directions are on the [directions.html](directions.html) page.  The simulator itself is on the [simulator.html](simulator.html) page.  Two supporting files ([simulator.js](simulator.js) and [ibcm.css](ibcm.css)) and the entire img/ directory are needed as well.  Note that two of the programs listed below ([summation.ibcm](summation.ibcm) and [array-summation.ibcm](array-summation.ibcm)) are linked to from the various website pages.
 
 The simulator can be accessed via [http://pegasus.cs.virginia.edu/ibcm/](http://pegasus.cs.virginia.edu/ibcm/).
 

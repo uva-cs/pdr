@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <meta name="description" content="Site description" />
+    <meta name="keywords" content="IBCM, Itty Bitty Computing Machine" />
+
+    <link rel="stylesheet" type="text/css" href="ibcm.css" />
+
+    <title>IBCM Interface: Simulator</title>
+</head>
+
+<body onload="init()">
+    <!-- Master Container: 88px Tall -->
+    <div id="wrap">
+        <div id="top">
+            <h2><a href="./index.html" title="Back to main page">IBCM Interface</a></h2>
+            <!-- Top Menu Container -->
+            <div id="menu">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./directions.html">Directions</a></li>
+                    <li><a href="./simulator.html" class="current">Simulator</a></li>
+                </ul>
+            </div> <!-- id="menu" -->
+        </div> <!-- id="top" -->
+
+        <!-- Main Content Container -->
+        <div>
+            <p class="center"><a href="directions.html">Directions for how to use this simulator</a> are available.</p>
+            <div class="grid">
+                <div class="settings">
+                    <p class="center">
+                        Load IBCM file:
+                        <input type="file" id="userfile">
+                    </p>
+                    <p class="center danger" id="error"></p>
+                    <p class="center">
+                        Load all of memory:
+                        <input type="checkbox" id="loadmem">
+                        (leave unchecked if unsure)
+                    </p>
+                    <p class="center">
+                        Enable watchdog timer:
+                        <input type="checkbox" id="watchtimer" checked>
+                        (check to guard against infinite loops)
+                    </p>
+                    <p id="watchwarning" class="center danger"></p>
+                </div>
+                <div class="table">
+                    <table id="instructionsTable">
+                        <thead>
+                            <tr>
+                                <th>Mem</th>
+                                <th>Value</th>
+                                <th>PC</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="controls">
+                    <div class="internal">
+                        <div>
+                            <div class="input-group">
+                                <label for="accum">Accumulator (hex):</label>
+                                <input id="accum" type="text" value="0000" class="monospace-input" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label for="pc">PC (hex):</label>
+                                <input id="pc" type="text" value="0000" class="monospace-input" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label id="bptitle" for="breakpoint">Breakpoint (hex):</label>
+                                <input id="breakpoint" type="text" class="monospace-input" maxlength="4">
+                            </div>
+                            <div class="input-group">
+                                <label id="inputtitle" for="input">Input:</label>
+                                <input id="input" type="text">
+                            </div>
+                        </div>
+                        <hr class="divider">
+                        <div class="control-grid">
+                            <button onclick="run_simulator()">Run</button>
+                            <button onclick="step_simulator()">Step</button>
+                            <button onclick="reset()">Reset</button>
+                            <button onclick="revert()">Revert</button>
+                        </div>
+                        <hr class="divider">
+                        <div class="output-group">
+                            <label for="output">Output</label>
+                            <textarea id="output" cols="40" rows="15" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer"></div>
+    </div> <!-- id="wrap" -->
+
+    <script src="simulator.js"></script>
+</body>
+</html>

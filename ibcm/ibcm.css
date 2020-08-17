@@ -4,12 +4,84 @@
 /*  Created Day 01.12.2006                                  */
 /* ======================================================== */
 
+* {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 1rem;
+}
+
+.grid .settings {
+    grid-column: 1 / 3;
+}
+
+#instructionsTable {
+    width: 300px;
+}
+
+#instructionsTable th {
+    position: sticky;
+    top: -2px; /* counteract the 2px border-top */
+    background-color: #ffffff;
+}
+
+.controls .internal {
+    position: sticky;
+    -webkit-position: sticky; /* Safari is still prefixed as of Safari 13, released Sept. 2019 */
+    top: 1rem;
+}
+
+.divider {
+    margin: 1.5rem 0;
+}
+
+.input-group {
+    display: grid;
+    margin-bottom: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input-group label {
+    text-align: right;
+    margin-right: 0.5rem;
+}
+
+.control-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.control-grid button {
+    margin: 0 0.25rem;
+}
+
+.output-group {
+    text-align: center;
+}
+
+.output-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.monospace-input {
+    font-family: monospace;
+}
+
+.active {
+    font-style: italic;
+}
+
 body {
     margin: 0px;
     background: url(img/top_bg.gif);
     background-repeat: repeat-x;
     font-family: Verdana, Arial, sans-serif;
-    font-size: .6em;
 }
 
 p {
@@ -78,7 +150,7 @@ blockquote{
 #wrap {
     margin-left: auto;
     margin-right: auto;
-    width: 730px;
+    width: 50vw;
 }
 
 
@@ -96,7 +168,7 @@ blockquote{
 #top h2 {
     color: White;
     letter-spacing: 3px;
-    font-size: 2.4em;
+    font-size: 1.5em;
     font-weight: normal;
     position: relative;
     margin: 0px;
@@ -302,24 +374,19 @@ blockquote{
 
 
 /**** Table ***/
-div#tbl-container {
-    width: 309px;
-    height: 750px;
-    overflow: auto;
-/*  scrollbar-base-color:#ffeaff;*/
-}
-
 table {
     table-layout: fixed;
     border-collapse: collapse;
     background-color: #f5f5f5; /* whitesmoke */
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
-table.foo {
-    table-layout: fixed;
-    border-collapse: collapse;
-    background-color: #f5f5f5; /* whitesmoke */
-    margin-right: auto;
+table td, table th {
+    padding: 0.5rem;
+    border: 1px solid gray;
+}
+
+table th {
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
 }
