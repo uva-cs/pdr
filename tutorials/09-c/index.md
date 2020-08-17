@@ -168,7 +168,7 @@ Any one of these errors will corrupt your heap. This corruption will manifest in
 
 The easiest way to debug a memory error is not to make it in the first place. With care, this is easier than it sounds.  Firstly, know when you need dynamic allocation; don't use it if you don't have to.  Secondly, as you would do in C++, write constructors and destructors for all of your data structures, and be consistent about using them.  These functions should handle your heap control and error checking explicitly, so that they are implicit in the code that uses the storage.
 
-If you do manage to develop memory errors, AddressSanitizer and LeakSanitizer work just as they did in C++.
+If you do run into memory errors, AddressSanitizer and LeakSanitizer work just as they did in C++.
 
 ### Examples ###
 
@@ -337,8 +337,7 @@ Exercise
 This exercise is to be developed in C, and compiled using clang (NOT clang++!).  The exercise is to implement a ***very simple*** linked list.  Your program should do the following:
 
 1. Read in an integer, which we'll call *n*
-2. Read in *n* more ints, and put those into a linked list
-    - The linked list must be dynamically allocated
+2. Read in *n* more ints, and insert those into a dynamically allocated linked list
 3. Print out that linked list (we don't care about the order!)
 4. Properly deallocate the linked list
 
@@ -357,3 +356,28 @@ Enter value 4: 8
 4
 2
 ```
+
+### Hints ###
+
+#### Keep it simple ####
+A singly-linked list will probably cause you less trouble than a doubly-linked list.
+We really are looking for the bare minimum, here :).
+
+#### Efficient insertion ####
+While intuitively, you might want to add each node to the end of the list,
+take a moment to consider whether that's actually necessary.
+
+Would it be equally as valid to _prepend_ to the beginning of the list,
+since you always know where your head is?
+
+In other words...from `head -> node1`, could we insert node2 as `head -> node2 -> node1`?
+Take a look at your `insertAtTail` all the way back from Lab 2 for some inspiration.
+
+#### I thought delete was bad enough...how do I free my list? ####
+Like in Lab 2, you'll want to iterate through your list, freeing every node as you go.
+Make sure you know what the next node is though before you free the one you're on!
+
+Depending on your implementation, it might be easier to separate this from the loop where you print all the values.
+
+Additionally, if you malloc anything else (a LinkedList struct, or an iterator, for example),
+you'll also need to free those at the end.

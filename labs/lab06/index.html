@@ -72,7 +72,7 @@
 <li>Take in a dictionary file and grid file, in that order, using command line parameters</li>
 <li>Read in a dictionary and store its words in a hash table
 <ul>
-<li>Which is implemented without using a vector of vectors or any STL hash table</li>
+<li>Which is implemented without using a vector of vectors, <code>unordered_set</code>, or <code>unordered_map</code></li>
 </ul></li>
 <li>Read in a word search grid no larger than 500x500 and store it in an appropriate data structure</li>
 <li>Output every word of length three or greater and its location in the grid
@@ -83,7 +83,7 @@
 <p>We are not as interested in how fast your program runs for the pre-lab; leave any optimizations for the post-lab.</p>
 <h3 id="storing-the-dictionary">Storing the dictionary</h3>
 <p>As there may be a large number of words in the dictionary, you will have to store those words in a hash table to facilitate efficient lookup.</p>
-<p>You <strong>must</strong> write your own hash table for this lab. We leave the implementation up to you, as long as you do not use a vector of vectors or any STL hash table.</p>
+<p>You <strong>must</strong> write your own hash table for this lab. We leave the implementation up to you, as long as you do not use a vector of vectors, <code>unordered_set</code>, or <code>unordered_map</code>.</p>
 <h3 id="manipulating-the-grid">Manipulating the grid</h3>
 <p><a href="code/getWordInGrid.cpp.html">getWordInGrid.cpp</a> (<a href="code/getWordInGrid.cpp">src</a>) provides two useful functions: <code>readInGrid()</code> and <code>getWordInGrid()</code>. The former reads in a grid file using C++ streams; the latter returns a word in a 2D grid of letters in a given direction.</p>
 <p>You should make sure you understand how these functions work, as you will most likely be using them in your final program.</p>
@@ -119,8 +119,9 @@ SW(0, 6):       tat
 <p>Start off by reading in the dictionary and printing out all of its words. Then store those words in a hashtable (probably the STL one for now). Great, you have a dictionary now.</p>
 <p>Next, read in the grid (use the functions in <code>getWordInGrid.cpp</code> to help you!). Plan out how to use the dictionary to find all the valid words in the grid. There are four variables that control what word is returned -- what does that imply in terms of loops?</p>
 <p>At this point, hopefully you have enough to get you going.</p>
-<h4 id="storing-the-grid">Storing the grid</h4>
-<p>Creating a dynamic 2D array in C++ is more difficult than it should be -- one solution is to create a vector of vectors, but that is not the most efficient means to do it. For this lab, you can just create a 500x500 static array, and can assume that you will not have your program run on larger input grids. This is not very elegant, but it will work until we go over dynamic array creation in lecture.</p>
+<h4 id="it-almost-works...but-now-im-getting-duplicate-words">It almost works...but now I'm getting duplicate words</h4>
+<p>Take a closer look at the documentation for the <code>getWordInGrid</code> function!<br />
+In particular, does it say anything about what it returns when it reaches the end of the grid? How might you account for that in your code?</p>
 <h4 id="command-line-parameters">Command-line parameters</h4>
 <p>Your program must be able to run successfully if started with <code>./a.out &lt;dictionary_file&gt; &lt;grid_file&gt;</code> and no input.</p>
 <p>See the <a href="../../slides/04-arrays-bigoh.html">slide set on arrays</a> if you need a refresher on command-line parameters; you can also see the <a href="../../slides/code/04-arrays-bigoh/cmdlineparams.cpp.html">cmdlineparams.cpp</a> (<a href="../../slides/code/04-arrays-bigoh/cmdlineparams.cpp">src</a>) file.</p>

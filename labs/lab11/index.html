@@ -139,8 +139,6 @@ cs1110 cs2102
 </ol>
 <p>Your final program should should print out the shortest path as the last thing printed. You can print out multiple paths as you find the shortest one, but you should <strong>NOT</strong> print out <em>every</em> path you try.</p>
 <p>Note that you are determining a cycle of cities to visit. So if your cycle has the cities in reverse, then it's still a valid solution.</p>
-<h3 id="getting-your-itinerary-correct">Getting your itinerary correct</h3>
-<p>The starting city is <strong>not to be permuted</strong>, as you will always start (and end) at that city. It's the <em>other</em> cities that are going to be permuted through the calls to <code>next_permutation()</code>.</p>
 <h3 id="timing-your-code">Timing your code</h3>
 <p>Keep in mind that as you increase the size of the city tour, the running time increases exponentially. Modern-day computers can probably compute about 200,000 routes per second (with well written and optimized code). Our 10-route cycle took 18 seconds. A 15 route cycle would take 2.5 months. A 20 route cycle would take 385,734 years! Realistically, you shouldn't be trying anything with an itinerary greater than 9 or 10.</p>
 <p>And when you are planning on testing long paths, you should really compile your code with the <code>-O2</code> compiler option. It can speed up the program by a factor of two.</p>
@@ -174,6 +172,11 @@ student@cassiopeia:~/labs/lab11$ </code></pre>
 <p>Your final program needs to both be able to compile and run with the specified command-line parameters.</p>
 <h3 id="makefile-1">Makefile</h3>
 <p>Your Makefile should have <strong>only one</strong> target, which you can name anything you want. This target should do <strong>two</strong> things: compile your code, and run doxygen. You can have two tabbed lines after the target specifier, which is the easiest way to accomplish this. In other words, we are just going to call <code>make</code>, and we want it to both compile your code and create your doxygen documentation. The in-lab Makefile should have the same dual-purpose target.</p>
+<h3 id="hints">Hints</h3>
+<h4 id="getting-your-itinerary-correct">Getting your itinerary correct</h4>
+<p>The starting city is <strong>not to be permuted</strong>, as you will always start (and end) at that city. It's the <em>other</em> cities that are going to be permuted through the calls to <code>next_permutation()</code>.</p>
+<h4 id="getting-your-itinerary-correct-part-2">Getting your itinerary correct, part 2</h4>
+<p><code>next_permutation</code> assumes that it started out with a sorted vector! Did you sort your itinerary before starting to permute it?</p>
 <hr />
 <h2 id="post-lab-1">Post-lab</h2>
 <p>Consider the <a href="https://en.wikipedia.org/wiki/15_puzzle">Sliding 8-Puzzle</a> game, depicted in the image below. If you'd like, you can play the puzzle <a href="http://www.artbylogic.com/puzzles/numSlider/numberShuffle.htm?rows=3&amp;cols=3&amp;sqr=1">HERE</a> to get a better sense for how the game works.</p>

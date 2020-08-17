@@ -103,9 +103,9 @@ You should use an appropriate precision number to make sure you don't report zer
 
 Now that you can time your program, you will need to optimize it as much as possible.  Any optimization is valid, as long as it computes the correct result, is still a recursive subroutine, and follows the C calling convention.  The grade on this pre-lab will be based both on the correctness of the subroutine and the optimizations included.
 
-What optimizations do you use?
+Put the optimizations used as a comment in the beginning of your assembly file.
+Here are a few suggestions:
 
-- First, try to figure out how you can write the same routine using fewer x86 instructions.  x86 has lots of complex instructions that can be used for this purpose -- Google is your friend, here.
 - `lea` can quickly add and multiply numbers in one instruction.
 - Multiplication and division are expensive.  Try to use bit shifts whenever possible -- `4*x+x` is likely to be faster than `5*x`, as the former can be optimized to `x << 2 + x`.
 - Branching slows down the execution speed of a program as the branch condition must be checked every iteration.  As much as possible, eliminate branching (if/else statements, loops, etc.).  For loops, consider [loop unrolling](http://en.wikipedia.org/wiki/Loop_unrolling).
@@ -113,8 +113,6 @@ What optimizations do you use?
 - Reduce the number of instructions used to create (and remove) the activation record; this was done in a few x86 examples we studied: [max](../../slides/08-assembly-64bit.html#/max) and [fact](../../slides/08-assembly-64bit.html#/fact)
 - Reduce the registers that are backed up to the stack in the calling convention
 - Many optimizations are listed [here](http://en.wikipedia.org/wiki/Category:Compiler_optimizations), but most would not apply to this one program.
-
-You will need to include at least one optimization beyond just figuring out how to write your subroutine with fewer instructions.  You should put the optimizations used as a comment in the beginning of your assembly file.
 
 Note that we, too, can write the function in C++ and compile it with `clang++ -O2 -S -mllvm --x86-asm-syntax=intel`.  And we will be looking at that assembly code when we grade the pre-lab.  If you write your program this way, it constitutes an honor violation, so please hand-code the assembly yourself.
 
@@ -133,6 +131,12 @@ Iterations: 25
 ### Different Architectures ###
 
 See the [last lab](../lab08/index.html) for details, but all code must be submitted to run under Linux, which is the platform that does the compilation on the submission system.
+
+### Hints ###
+
+#### No hints yet... ####
+We haven't noticed anything that we feel warrants a hint.
+If you think something belongs here, please let the professors know!
 
 ------------------------------------------------------------
 

@@ -143,8 +143,10 @@ BST numNodes: 18</code></pre>
 <h3 id="submission-1">Submission</h3>
 <p>You should submit your BST, any supporting C++ files, as well as a Makefile to compile everything into an <code>a.out</code> executable.</p>
 <h3 id="hints-1">Hints</h3>
-<p><strong>Private methods:</strong> Following the suggestion to implement private versions of all the public methods that take in BinaryNodes will help considerably. How should your public method interact with the private version? In other words, what node should the public method pass in?</p>
-<p><strong>Passing pointers by reference:</strong> When a pointer is passed by reference, that allows us to change not only the data that the pointer is pointing to, but also <em>what the pointer is pointing to in the first place</em>. This is one option that allows you to change the structure of your tree without having to use parent pointers.</p>
+<h4 id="use-private-methods">Use private methods</h4>
+<p>Following the suggestion to implement private versions of all the public methods that take in BinaryNodes will help considerably. How should your public method interact with the private version? In other words, what node should the public method pass in?</p>
+<h4 id="pass-pointers-by-reference">Pass pointers by reference</h4>
+<p>When a pointer is passed by reference, that allows us to change not only the data that the pointer is pointing to, but also <em>what the pointer is pointing to in the first place</em>. This is one option that allows you to change the structure of your tree without having to use parent pointers.</p>
 <hr />
 <h2 id="post-lab-1">Post-lab</h2>
 <p>The objective of this post-lab is to understand the run-time characteristics and trade-offs between normal Binary search trees and AVL trees. Your deliverable for this post-lab will be an AVL tree implementation.</p>
@@ -195,5 +197,8 @@ balance(node):
         endif
         rotate right on node
     endif</code></pre>
+<h4 id="rotating">Rotating</h4>
+<p>As was the case for Lab 2's insertion methods, it is extremely helpful to draw out how each node changes during the rotation <em>before</em> attempting to write the C++ implementation.</p>
+<p>Did you take into account that the parent should now be pointing to a different node? What about the heights of each node?</p>
 </body>
 </html>

@@ -202,10 +202,6 @@ Your final program should should print out the shortest path as the last thing p
 
 Note that you are determining a cycle of cities to visit.  So if your cycle has the cities in reverse, then it's still a valid solution.
 
-### Getting your itinerary correct ###
-
-The starting city is **not to be permuted**, as you will always start (and end) at that city.  It's the *other* cities that are going to be permuted through the calls to `next_permutation()`.
-
 ### Timing your code ###
 
 Keep in mind that as you increase the size of the city tour, the running time increases exponentially.  Modern-day computers can probably compute about 200,000 routes per second (with well written and optimized code).  Our 10-route cycle took 18 seconds.  A 15 route cycle would take 2.5 months.  A 20 route cycle would take 385,734 years!  Realistically, you shouldn't be trying anything with an itinerary greater than 9 or 10.
@@ -252,6 +248,18 @@ Your final program needs to both be able to compile and run with the specified c
 ### Makefile ###
 
 Your Makefile should have **only one** target, which you can name anything you want.  This target should do **two** things: compile your code, and run doxygen.  You can have two tabbed lines after the target specifier, which is the easiest way to accomplish this.  In other words, we are just going to call `make`, and we want it to both compile your code and create your doxygen documentation.  The in-lab Makefile should have the same dual-purpose target.
+
+### Hints ###
+
+#### Getting your itinerary correct ####
+
+The starting city is **not to be permuted**, as you will always start (and end) at that city.
+It's the *other* cities that are going to be permuted through the calls to `next_permutation()`.
+
+#### Getting your itinerary correct, part 2 ####
+
+`next_permutation` assumes that it started out with a sorted vector!
+Did you sort your itinerary before starting to permute it?
 
 ------------------------------------------------------------
 
