@@ -213,4 +213,4 @@ Once you have completed the in-lab, submit linearSearch.s, testLinearSearch.cpp,
 
 #### Accessing Array Elements in Assembly ####
 
-Recall that C++ arrays are stored contiguously in memory. This means that if you know the start address of the array `&a`, and the size of the elements that are being stored, you can find the address of an element at any index `i` with `&a[i] = &a + <size_of_elements>*i` (if the array is one-dimensional). Use this fact along with [the memory addressing slide](../slides/08-assembly-64bit.html#/3/8) from lecture to access array elements in assembly.
+Recall that C++ arrays are stored contiguously in memory. This means that if you know the start address of the array `&a`, and the size of the elements that are being stored, you can find the address of an element at any index `i` with `&a[i] = &a + <size_of_elements>*i` (if the array is one-dimensional). Use this fact along with [the memory addressing slide](../../slides/08-assembly-64bit.html#/3/8) from lecture to access array elements in assembly.
