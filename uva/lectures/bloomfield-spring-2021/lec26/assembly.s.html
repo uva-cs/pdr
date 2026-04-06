@@ -1,87 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!DOCTYPE HTML>
 <html lang='en'>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 3.1.8
+<meta name="GENERATOR" content="GNU source-highlight 
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>lec26/assembly.s</title>
+<title>assembly.s</title>
 </head>
-<body bgcolor="white">
-<pre><tt>; factArray() and factorial()
-;
-; <b><font color="#0000FF">for</font></b> factArray():
-; Parameter 1 (in rdi) is the starting address of a sequence of 64-bit longs
-; Parameter 2 (in rsi) is the number of integers in the sequence
-;
-; <b><font color="#0000FF">for</font></b> factorial():
-; Parameter 1 (in rdi) is the value to return the factorial of
+<body style="background-color:white">
+<main><pre><i><span style="color:#9A1900">; factArray() and factorial()</span></i>
+<i><span style="color:#9A1900">;</span></i>
+<i><span style="color:#9A1900">; for factArray():</span></i>
+<i><span style="color:#9A1900">; Parameter 1 (in rdi) is the starting address of a sequence of 64-bit longs</span></i>
+<i><span style="color:#9A1900">; Parameter 2 (in rsi) is the number of integers in the sequence</span></i>
+<i><span style="color:#9A1900">;</span></i>
+<i><span style="color:#9A1900">; for factorial():</span></i>
+<i><span style="color:#9A1900">; Parameter 1 (in rdi) is the value to return the factorial of</span></i>
 
 
 	global factArray
 	global factorial
 
-	section .text
+	section <span style="color:#990000">.</span>text
 
 	
-;  factArray(): given a array and a size, compute the factorial of each spot in that array
+<i><span style="color:#9A1900">;  factArray(): given a array and a size, compute the factorial of each spot in that array</span></i>
 	
-factArray:
+<b><span style="color:#000080">factArray:</span></b>
 
-	xor r10, r10 			; r10 will store i to loop through a
+	<b><span style="color:#0000FF">xor</span></b> r<span style="color:#993399">10</span><span style="color:#990000">,</span> r<span style="color:#993399">10</span> 			<i><span style="color:#9A1900">; r10 will store i to loop through a</span></i>
 
-_factArrayLoop:
-	cmp r10, rsi 			; is i == n?
-	je _factArrayDone
+_factArrayLoop<span style="color:#990000">:</span>
+	<b><span style="color:#0000FF">cmp</span></b> r<span style="color:#993399">10</span><span style="color:#990000">,</span> rsi 			<i><span style="color:#9A1900">; is i == n?</span></i>
+	<b><span style="color:#0000FF">je</span></b> _factArrayDone
 
-	; put parameters in proper place
-	; save values that could get overwritten
-	push rdi
-	push rsi
-	push r10
+	<i><span style="color:#9A1900">; put parameters in proper place</span></i>
+	<i><span style="color:#9A1900">; save values that could get overwritten</span></i>
+	<b><span style="color:#0000FF">push</span></b> rdi
+	<b><span style="color:#0000FF">push</span></b> rsi
+	<b><span style="color:#0000FF">push</span></b> r<span style="color:#993399">10</span>
 
-	; put the parameter into rdi and call factorial()
-	mov rdi, [rdi + 8*r10]
-	call factorial
+	<i><span style="color:#9A1900">; put the parameter into rdi and call factorial()</span></i>
+	<b><span style="color:#0000FF">mov</span></b> rdi<span style="color:#990000">,</span> <span style="color:#990000">[</span>rdi <span style="color:#990000">+</span> <span style="color:#993399">8</span><span style="color:#990000">*</span>r<span style="color:#993399">10</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">call</span></b> factorial
 
-	; restore the pushed values
-	pop r10
-	pop rsi
-	pop rdi
+	<i><span style="color:#9A1900">; restore the pushed values</span></i>
+	<b><span style="color:#0000FF">pop</span></b> r<span style="color:#993399">10</span>
+	<b><span style="color:#0000FF">pop</span></b> rsi
+	<b><span style="color:#0000FF">pop</span></b> rdi
 
-	; store the return value in the right place
-	mov [rdi + 8*r10], rax
+	<i><span style="color:#9A1900">; store the return value in the right place</span></i>
+	<b><span style="color:#0000FF">mov</span></b> <span style="color:#990000">[</span>rdi <span style="color:#990000">+</span> <span style="color:#993399">8</span><span style="color:#990000">*</span>r<span style="color:#993399">10</span><span style="color:#990000">],</span> rax
 	
-	; finish up the loop
-	inc r10
-	jmp _factArrayLoop
+	<i><span style="color:#9A1900">; finish up the loop</span></i>
+	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">10</span>
+	<b><span style="color:#0000FF">jmp</span></b> _factArrayLoop
 
-_factArrayDone:
-	ret
+_factArrayDone<span style="color:#990000">:</span>
+	<b><span style="color:#0000FF">ret</span></b>
 
 
 
-; factorial(): takes one param (in rdi) and computes the factorial of that value
+<i><span style="color:#9A1900">; factorial(): takes one param (in rdi) and computes the factorial of that value</span></i>
 
-factorial:
-	cmp rdi, 1			; is the parameter 1?
-	jle _factbase
+<b><span style="color:#000080">factorial:</span></b>
+	<b><span style="color:#0000FF">cmp</span></b> rdi<span style="color:#990000">,</span> <span style="color:#993399">1</span>			<i><span style="color:#9A1900">; is the parameter 1?</span></i>
+	<b><span style="color:#0000FF">jle</span></b> _factbase
 
-	; recursively compute the factorial
-	mov rsi, rdi 			; mov param over
-	push rsi
-	;; the previous two lines could have been simplified with <font color="#FF0000">'push rdi'</font>
+	<i><span style="color:#9A1900">; recursively compute the factorial</span></i>
+	<b><span style="color:#0000FF">mov</span></b> rsi<span style="color:#990000">,</span> rdi 			<i><span style="color:#9A1900">; mov param over</span></i>
+	<b><span style="color:#0000FF">push</span></b> rsi
+	<i><span style="color:#9A1900">;; the previous two lines could have been simplified with 'push rdi'</span></i>
 
-	dec rdi				; setup n-1 <b><font color="#0000FF">for</font></b> recursive call
-	call factorial			; call factorial
-	pop rsi
-	imul rax, rsi 			; multiply n into recursive answer
-	ret 				; return
+	<b><span style="color:#0000FF">dec</span></b> rdi				<i><span style="color:#9A1900">; setup n-1 for recursive call</span></i>
+	<b><span style="color:#0000FF">call</span></b> factorial			<i><span style="color:#9A1900">; call factorial</span></i>
+	<b><span style="color:#0000FF">pop</span></b> rsi
+	<b><span style="color:#0000FF">imul</span></b> rax<span style="color:#990000">,</span> rsi 			<i><span style="color:#9A1900">; multiply n into recursive answer</span></i>
+	<b><span style="color:#0000FF">ret</span></b> 				<i><span style="color:#9A1900">; return</span></i>
 
-_factbase:
-	mov rax, 1
-	ret
-</tt></pre>
+_factbase<span style="color:#990000">:</span>
+	<b><span style="color:#0000FF">mov</span></b> rax<span style="color:#990000">,</span> <span style="color:#993399">1</span>
+	<b><span style="color:#0000FF">ret</span></b>
+</pre></main>
 </body>
 </html>

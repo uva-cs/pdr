@@ -5,6 +5,9 @@ markdown:
 	@git checkout uva/old/*.html
 	@echo done!
 
+touchall:
+	find . | grep "\.md$$" | awk '{print "touch "$$1}' | bash
+
 all: markdown format highlight
 
 format:

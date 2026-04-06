@@ -1,59 +1,59 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<!DOCTYPE HTML>
 <html lang='en'>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 3.1.8
+<meta name="GENERATOR" content="GNU source-highlight 
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>lec33/create_tree.cpp</title>
+<title>create_tree.cpp</title>
 </head>
-<body bgcolor="white">
-<pre><tt>
+<body style="background-color:white">
+<main><pre>
 
 
-<font color="#009900">void</font> <b><font color="#000000">create_path</font></b> <font color="#990000">(</font>HuffmanNode<font color="#990000">*</font> node<font color="#990000">,</font> <font color="#009900">char</font> leaf<font color="#990000">,</font> <font color="#008080">string</font> prefix_code<font color="#990000">)</font> <font color="#FF0000">{</font>
+<span style="color:#009900">void</span> <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>HuffmanNode<span style="color:#990000">*</span> node<span style="color:#990000">,</span> <span style="color:#009900">char</span> leaf<span style="color:#990000">,</span> <span style="color:#008080">string</span> prefix_code<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
 
-    <i><font color="#9A1900">// how recursion stops</font></i>
-    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font> prefix_code <font color="#990000">==</font> <font color="#FF0000">""</font> <font color="#990000">)</font> <font color="#FF0000">{</font>
-        node<font color="#990000">-&gt;</font>character <font color="#990000">=</font> leaf<font color="#990000">;</font>
-        <b><font color="#0000FF">return</font></b><font color="#990000">;</font>
-    <font color="#FF0000">}</font>
+    <i><span style="color:#9A1900">// how recursion stops</span></i>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> prefix_code <span style="color:#990000">==</span> <span style="color:#FF0000">""</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+        node<span style="color:#990000">-&gt;</span>character <span style="color:#990000">=</span> leaf<span style="color:#990000">;</span>
+        <b><span style="color:#0000FF">return</span></b><span style="color:#990000">;</span>
+    <span style="color:#FF0000">}</span>
 
-    <i><font color="#9A1900">// make problem simpler (i.e., the actual recursion)</font></i>
-    first_char <font color="#990000">=</font> <b><font color="#000000">first_character_of_prefix_code</font></b><font color="#990000">();</font>
-    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font> first_char <font color="#990000">==</font> <font color="#FF0000">'0'</font> <font color="#990000">)</font> <font color="#FF0000">{</font>
-        <b><font color="#000000">ensure_there_is_a_left_child_of_node</font></b><font color="#990000">();</font>
-        <b><font color="#000000">create_path</font></b> <font color="#990000">(</font>node<font color="#990000">-&gt;</font>left<font color="#990000">,</font> leaf<font color="#990000">,</font> prefix_code_minus_first_character<font color="#990000">);</font>
-    <font color="#FF0000">}</font> <b><font color="#0000FF">else</font></b> <font color="#FF0000">{</font> <i><font color="#9A1900">// first_char is a '1'</font></i>
-        <b><font color="#000000">ensure_there_is_a_right_child_of_node</font></b><font color="#990000">();</font>
-        <b><font color="#000000">create_path</font></b> <font color="#990000">(</font>node<font color="#990000">-&gt;</font>right<font color="#990000">,</font> leaf<font color="#990000">,</font> prefix_code_minus_first_character<font color="#990000">);</font>
-    <font color="#FF0000">}</font>
+    <i><span style="color:#9A1900">// make problem simpler (i.e., the actual recursion)</span></i>
+    first_char <span style="color:#990000">=</span> <b><span style="color:#000000">first_character_of_prefix_code</span></b><span style="color:#990000">();</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> first_char <span style="color:#990000">==</span> <span style="color:#FF0000">'0'</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+        <b><span style="color:#000000">ensure_there_is_a_left_child_of_node</span></b><span style="color:#990000">();</span>
+        <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>node<span style="color:#990000">-&gt;</span>left<span style="color:#990000">,</span> leaf<span style="color:#990000">,</span> prefix_code_minus_first_character<span style="color:#990000">);</span>
+    <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span> <i><span style="color:#9A1900">// first_char is a '1'</span></i>
+        <b><span style="color:#000000">ensure_there_is_a_right_child_of_node</span></b><span style="color:#990000">();</span>
+        <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>node<span style="color:#990000">-&gt;</span>right<span style="color:#990000">,</span> leaf<span style="color:#990000">,</span> prefix_code_minus_first_character<span style="color:#990000">);</span>
+    <span style="color:#FF0000">}</span>
 
-<font color="#FF0000">}</font>
-
-
-
-<font color="#009900">int</font> <b><font color="#000000">main</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
-
-    root <font color="#990000">=</font> <b><font color="#000000">create_new_node</font></b><font color="#990000">();</font>
-    <b><font color="#0000FF">for</font></b> <font color="#990000">(</font> <font color="#008080">each</font> character <font color="#990000">-</font> <font color="#008080">prefix_code</font> pair <font color="#990000">)</font>
-        <b><font color="#000000">create_path</font></b> <font color="#990000">(</font>root<font color="#990000">,</font> character<font color="#990000">,</font> prefix_code<font color="#990000">);</font>
-
-<font color="#FF0000">}</font>
+<span style="color:#FF0000">}</span>
 
 
 
-<i><font color="#9A1900">/*</font></i>
+<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
 
-<i><font color="#9A1900">binary_heap::print() for the tree on slide 5.9:</font></i>
+    root <span style="color:#990000">=</span> <b><span style="color:#000000">create_new_node</span></b><span style="color:#990000">();</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008080">each</span> character <span style="color:#990000">-</span> <span style="color:#008080">prefix_code</span> pair <span style="color:#990000">)</span>
+        <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>root<span style="color:#990000">,</span> character<span style="color:#990000">,</span> prefix_code<span style="color:#990000">);</span>
 
-<i><font color="#9A1900">         10</font></i>
-<i><font color="#9A1900">    20        80</font></i>
-<i><font color="#9A1900"> 40     60   99 85</font></i>
-<i><font color="#9A1900">50 700</font></i>
+<span style="color:#FF0000">}</span>
 
-<i><font color="#9A1900">*/</font></i>
-</tt></pre>
+
+
+<i><span style="color:#9A1900">/*</span></i>
+
+<i><span style="color:#9A1900">binary_heap::print() for the tree on slide 5.9:</span></i>
+
+<i><span style="color:#9A1900">         10</span></i>
+<i><span style="color:#9A1900">    20        80</span></i>
+<i><span style="color:#9A1900"> 40     60   99 85</span></i>
+<i><span style="color:#9A1900">50 700</span></i>
+
+<i><span style="color:#9A1900">*/</span></i>
+</pre></main>
 </body>
 </html>

@@ -9,7 +9,7 @@ http://www.gnu.org/software/src-highlite">
 <title>Makefile</title>
 </head>
 <body style="background-color:white">
-<pre><span style="color:#990000">graphs:</span>
+<main><pre><span style="color:#990000">graphs:</span>
 	@echo Making all graphs into .svg files<span style="color:#990000">...</span>
 	@ls <span style="color:#990000">*</span>.dot <span style="color:#990000">|</span> grep -v Red-black <span style="color:#990000">|</span> grep -v graph <span style="color:#990000">|</span> sed s<span style="color:#990000">/</span>.dot//g <span style="color:#990000">|</span> awk <span style="color:#FF0000">'{print "dot -Tsvg "$$1".dot -o "$$1".svg"}'</span> <span style="color:#990000">|</span> bash
 	@ls <span style="color:#990000">*</span>.dot <span style="color:#990000">|</span> grep -v Red-black <span style="color:#990000">|</span> grep -v graph <span style="color:#990000">|</span> sed s<span style="color:#990000">/</span>.dot//g <span style="color:#990000">|</span> awk <span style="color:#FF0000">'{print "dot -Tps "$$1".dot -o "$$1".ps"}'</span> <span style="color:#990000">|</span> bash
@@ -41,6 +41,6 @@ http://www.gnu.org/software/src-highlite">
 
 <span style="color:#990000">clean:</span>
 	/bin/rm -f <span style="color:#990000">*</span>.ps <span style="color:#990000">*</span>.png <span style="color:#990000">*~</span>
-</pre>
+</pre></main>
 </body>
 </html>
