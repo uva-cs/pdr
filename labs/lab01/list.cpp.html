@@ -19,72 +19,72 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900">// 07-12-95: Bug updates</span></i>
 <i><span style="color:#9A1900">// 01-13-14: Modified to fit modern C++ compilers; reformatted</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;stdio.h&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"list.h"</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;stdio.h&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"list.h"</span>
 
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"main(): started."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#008080">List&lt;int&gt;</span> <span style="color:#990000">*</span>l <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> List<span style="color:#990000">&lt;</span><span style="color:#009900">int</span><span style="color:#990000">&gt;();</span>
-    <span style="color:#009900">int</span> <span style="color:#990000">*</span>n<span style="color:#990000">,</span> i<span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"main(): started."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#008080">List&lt;int&gt;</span> <span style="color:#990000">*</span>l <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> List<span style="color:#990000">&lt;</span><span style="color:#008A00">int</span><span style="color:#990000">&gt;();</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">*</span>n<span style="color:#990000">,</span> i<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"size(): returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"size(): returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">head</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">tail</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"element(): '"</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#993399">2</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"' returned: "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">element</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"element(): '"</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#993399">2</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"' returned: "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">element</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">push</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">);</span>
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">head</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">tail</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">push</span></b><span style="color:#990000">(</span><span style="color:#993399">3</span><span style="color:#990000">);</span>
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">head</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">tail</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"element(): '"</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#993399">2</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"' returned: "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">element</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"element(): '"</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#993399">4</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"' returned: "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">element</span></b><span style="color:#990000">(</span><span style="color:#993399">4</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"element(): '"</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#993399">2</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"' returned: "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">element</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"element(): '"</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#993399">4</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"' returned: "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">element</span></b><span style="color:#990000">(</span><span style="color:#993399">4</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
@@ -93,90 +93,90 @@ http://www.gnu.org/software/src-highlite">
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">head</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">tail</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">push</span></b><span style="color:#990000">(</span><span style="color:#993399">5</span><span style="color:#990000">);</span>
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">head</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">tail</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">head</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">tail</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"tail(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"size(): returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"size(): returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
@@ -194,27 +194,27 @@ http://www.gnu.org/software/src-highlite">
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): list is empty, pop(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
     n <span style="color:#990000">=</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">pop_head</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> n <span style="color:#990000">==</span> NULL <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop_head(): list is empty, pop_head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop_head(): list is empty, pop_head(): returned NULL."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"pop_head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"pop_head(): returned "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">clear</span></b><span style="color:#990000">();</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"clear() called."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"clear() called."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">display</span></b><span style="color:#990000">();</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"empty() called, returned "</span> <span style="color:#990000">&lt;&lt;</span> l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">remove</span></b><span style="color:#990000">(</span><span style="color:#993399">1</span><span style="color:#990000">);</span>
     l<span style="color:#990000">-&gt;</span><b><span style="color:#000000">push</span></b><span style="color:#990000">(</span><span style="color:#993399">1</span><span style="color:#990000">);</span>
@@ -240,10 +240,10 @@ http://www.gnu.org/software/src-highlite">
 
     cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"main(): Goodbye."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"main(): Goodbye."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

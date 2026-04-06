@@ -13,39 +13,39 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900">// It will print a file to the screen two times.</span></i>
 
 <i><span style="color:#9A1900">// included so we can use cout</span></i>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <i><span style="color:#9A1900">// file I/O</span></i>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;fstream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;fstream&gt;</span>
 <i><span style="color:#9A1900">// cstdlib is where exit() lives</span></i>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;cstdlib&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;cstdlib&gt;</span>
 
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// we want to use parameters</span></i>
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> argc<span style="color:#990000">,</span> <span style="color:#009900">char</span><span style="color:#990000">**</span> argv<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> argc<span style="color:#990000">,</span> <span style="color:#008A00">char</span><span style="color:#990000">**</span> argv<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <i><span style="color:#9A1900">// verify the correct number of parameters</span></i>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>argc <span style="color:#990000">!=</span> <span style="color:#993399">2</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Must supply the input file name as the one and only parameter"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>argc <span style="color:#990000">!=</span> <span style="color:#993399">2</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Must supply the input file name as the one and only parameter"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         <b><span style="color:#000000">exit</span></b><span style="color:#990000">(</span><span style="color:#993399">1</span><span style="color:#990000">);</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// attempt to open the supplied file</span></i>
     <i><span style="color:#9A1900">// ifstream stands for "input file stream"</span></i>
     <span style="color:#008080">ifstream</span> <b><span style="color:#000000">file</span></b><span style="color:#990000">(</span>argv<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]);</span>
     <i><span style="color:#9A1900">// if the file wasn't found, output an error message and exit</span></i>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>file<span style="color:#990000">.</span><b><span style="color:#000000">is_open</span></b><span style="color:#990000">())</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Unable to open '"</span> <span style="color:#990000">&lt;&lt;</span> argv<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"' for reading"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>file<span style="color:#990000">.</span><b><span style="color:#000000">is_open</span></b><span style="color:#990000">())</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Unable to open '"</span> <span style="color:#990000">&lt;&lt;</span> argv<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"' for reading"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         <b><span style="color:#000000">exit</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">);</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// read in characters one by one, until reading fails (we hit the end of the file)</span></i>
-    <span style="color:#009900">char</span> g<span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span>file<span style="color:#990000">.</span><b><span style="color:#000000">get</span></b><span style="color:#990000">(</span>g<span style="color:#990000">))</span> <span style="color:#FF0000">{</span>
+    <span style="color:#008A00">char</span> g<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span>file<span style="color:#990000">.</span><b><span style="color:#000000">get</span></b><span style="color:#990000">(</span>g<span style="color:#990000">))</span> <span style="color:#EF0000">{</span>
         cout <span style="color:#990000">&lt;&lt;</span> g<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// a nice pretty separator</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// once we hit the end of the file we are marked as "failed", so clear that</span></i>
     <i><span style="color:#9A1900">// then "seek" to the beginning of the file to start again</span></i>
@@ -53,15 +53,15 @@ http://www.gnu.org/software/src-highlite">
     file<span style="color:#990000">.</span><b><span style="color:#000000">seekg</span></b><span style="color:#990000">(</span><span style="color:#993399">0</span><span style="color:#990000">);</span>
 
     <i><span style="color:#9A1900">// Read the file again, and print to the screen</span></i>
-    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span>file<span style="color:#990000">.</span><b><span style="color:#000000">get</span></b><span style="color:#990000">(</span>g<span style="color:#990000">))</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span>file<span style="color:#990000">.</span><b><span style="color:#000000">get</span></b><span style="color:#990000">(</span>g<span style="color:#990000">))</span> <span style="color:#EF0000">{</span>
         cout <span style="color:#990000">&lt;&lt;</span> g<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// close the file</span></i>
     file<span style="color:#990000">.</span><b><span style="color:#000000">close</span></b><span style="color:#990000">();</span>
 
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

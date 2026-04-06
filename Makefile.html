@@ -17,7 +17,7 @@ http://www.gnu.org/software/src-highlite">
 	@echo <b><span style="color:#0000FF">done</span></b><span style="color:#990000">!</span>
 
 <span style="color:#990000">touchall:</span>
-	find <span style="color:#990000">.</span> <span style="color:#990000">|</span> grep <span style="color:#FF0000">"</span><span style="color:#CC33CC">\.</span><span style="color:#FF0000">md$$"</span> <span style="color:#990000">|</span> awk <span style="color:#FF0000">'{print "touch "$$1}'</span> <span style="color:#990000">|</span> bash
+	find <span style="color:#990000">.</span> <span style="color:#990000">|</span> grep <span style="color:#EF0000">"</span><span style="color:#CC33CC">\.</span><span style="color:#EF0000">md$$"</span> <span style="color:#990000">|</span> awk <span style="color:#EF0000">'{print "touch "$$1}'</span> <span style="color:#990000">|</span> bash
 
 <span style="color:#990000">all:</span> markdown format highlight
 

@@ -12,35 +12,35 @@ http://www.gnu.org/software/src-highlite">
 <main><pre>
 
 
-<span style="color:#009900">void</span> <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>HuffmanNode<span style="color:#990000">*</span> node<span style="color:#990000">,</span> <span style="color:#009900">char</span> leaf<span style="color:#990000">,</span> <span style="color:#008080">string</span> prefix_code<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>HuffmanNode<span style="color:#990000">*</span> node<span style="color:#990000">,</span> <span style="color:#008A00">char</span> leaf<span style="color:#990000">,</span> <span style="color:#008080">string</span> prefix_code<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
 
     <i><span style="color:#9A1900">// how recursion stops</span></i>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> prefix_code <span style="color:#990000">==</span> <span style="color:#FF0000">""</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> prefix_code <span style="color:#990000">==</span> <span style="color:#EF0000">""</span> <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         node<span style="color:#990000">-&gt;</span>character <span style="color:#990000">=</span> leaf<span style="color:#990000">;</span>
         <b><span style="color:#0000FF">return</span></b><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// make problem simpler (i.e., the actual recursion)</span></i>
     first_char <span style="color:#990000">=</span> <b><span style="color:#000000">first_character_of_prefix_code</span></b><span style="color:#990000">();</span>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> first_char <span style="color:#990000">==</span> <span style="color:#FF0000">'0'</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> first_char <span style="color:#990000">==</span> <span style="color:#EF0000">'0'</span> <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#000000">ensure_there_is_a_left_child_of_node</span></b><span style="color:#990000">();</span>
         <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>node<span style="color:#990000">-&gt;</span>left<span style="color:#990000">,</span> leaf<span style="color:#990000">,</span> prefix_code_minus_first_character<span style="color:#990000">);</span>
-    <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span> <i><span style="color:#9A1900">// first_char is a '1'</span></i>
+    <span style="color:#EF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#EF0000">{</span> <i><span style="color:#9A1900">// first_char is a '1'</span></i>
         <b><span style="color:#000000">ensure_there_is_a_right_child_of_node</span></b><span style="color:#990000">();</span>
         <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>node<span style="color:#990000">-&gt;</span>right<span style="color:#990000">,</span> leaf<span style="color:#990000">,</span> prefix_code_minus_first_character<span style="color:#990000">);</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
 
     root <span style="color:#990000">=</span> <b><span style="color:#000000">create_new_node</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008080">each</span> character <span style="color:#990000">-</span> <span style="color:#008080">prefix_code</span> pair <span style="color:#990000">)</span>
         <b><span style="color:#000000">create_path</span></b> <span style="color:#990000">(</span>root<span style="color:#990000">,</span> character<span style="color:#990000">,</span> prefix_code<span style="color:#990000">);</span>
 
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
 

@@ -9,17 +9,17 @@ http://www.gnu.org/software/src-highlite">
 <title>strings.c</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;stdlib.h&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;string.h&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;stdio.h&gt;</span>
+<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;stdlib.h&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;string.h&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;stdio.h&gt;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> argc<span style="color:#990000">,</span> <span style="color:#009900">char</span> <span style="color:#990000">**</span>argv<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> argc<span style="color:#990000">,</span> <span style="color:#008A00">char</span> <span style="color:#990000">**</span>argv<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// allocate a space in memory for result</span></i>
-    <span style="color:#009900">char</span> <span style="color:#990000">*</span>result <span style="color:#990000">=</span> <span style="color:#990000">(</span><span style="color:#009900">char</span> <span style="color:#990000">*)</span> <b><span style="color:#000000">malloc</span></b> <span style="color:#990000">(</span><b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(*</span>result<span style="color:#990000">));</span>
-    <span style="color:#990000">*</span>result <span style="color:#990000">=</span> <span style="color:#FF0000">'</span><span style="color:#CC33CC">\0</span><span style="color:#FF0000">'</span><span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span>i <span style="color:#990000">&lt;</span> argc<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>  <i><span style="color:#9A1900">// while there are still arguments</span></i>
-        <span style="color:#009900">char</span> <span style="color:#990000">*</span>s <span style="color:#990000">=</span> <span style="color:#990000">(</span><span style="color:#009900">char</span> <span style="color:#990000">*)</span> <b><span style="color:#000000">malloc</span></b> <span style="color:#990000">(</span><b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(*</span>s<span style="color:#990000">)</span> <span style="color:#990000">*</span>
+    <span style="color:#008A00">char</span> <span style="color:#990000">*</span>result <span style="color:#990000">=</span> <span style="color:#990000">(</span><span style="color:#008A00">char</span> <span style="color:#990000">*)</span> <b><span style="color:#000000">malloc</span></b> <span style="color:#990000">(</span><b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(*</span>result<span style="color:#990000">));</span>
+    <span style="color:#990000">*</span>result <span style="color:#990000">=</span> <span style="color:#EF0000">'</span><span style="color:#CC33CC">\0</span><span style="color:#EF0000">'</span><span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span>i <span style="color:#990000">&lt;</span> argc<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>  <i><span style="color:#9A1900">// while there are still arguments</span></i>
+        <span style="color:#008A00">char</span> <span style="color:#990000">*</span>s <span style="color:#990000">=</span> <span style="color:#990000">(</span><span style="color:#008A00">char</span> <span style="color:#990000">*)</span> <b><span style="color:#000000">malloc</span></b> <span style="color:#990000">(</span><b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(*</span>s<span style="color:#990000">)</span> <span style="color:#990000">*</span>
                                    <span style="color:#990000">(</span><b><span style="color:#000000">strlen</span></b><span style="color:#990000">(</span>result<span style="color:#990000">)</span> <span style="color:#990000">+</span> <b><span style="color:#000000">strlen</span></b><span style="color:#990000">(</span>argv<span style="color:#990000">[</span>i<span style="color:#990000">])</span> <span style="color:#990000">+</span> <span style="color:#993399">1</span><span style="color:#990000">));</span>
         <b><span style="color:#000000">strcpy</span></b> <span style="color:#990000">(</span>s<span style="color:#990000">,</span> result<span style="color:#990000">);</span>
         <i><span style="color:#9A1900">// add "free(result); here...</span></i>
@@ -27,10 +27,10 @@ http://www.gnu.org/software/src-highlite">
         <i><span style="color:#9A1900">// ... or here</span></i>
         result <span style="color:#990000">=</span> s<span style="color:#990000">;</span>
         i<span style="color:#990000">++;</span>
-    <span style="color:#FF0000">}</span>
-    <b><span style="color:#000000">printf</span></b> <span style="color:#990000">(</span><span style="color:#FF0000">"Concatenation: %s</span><span style="color:#CC33CC">\n</span><span style="color:#FF0000">"</span><span style="color:#990000">,</span> result<span style="color:#990000">);</span>
+    <span style="color:#EF0000">}</span>
+    <b><span style="color:#000000">printf</span></b> <span style="color:#990000">(</span><span style="color:#EF0000">"Concatenation: %s</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">,</span> result<span style="color:#990000">);</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

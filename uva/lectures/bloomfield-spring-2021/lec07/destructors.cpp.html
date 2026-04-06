@@ -11,50 +11,50 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <main><pre><i><span style="color:#9A1900">// Must compile with the -m32 compiler flag</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<span style="color:#009900">long</span> count <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#009900">int</span> space <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
+<span style="color:#008A00">long</span> count <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> space <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
 
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Item</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Item</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">int</span><span style="color:#990000">*</span> id<span style="color:#990000">;</span>
-    <span style="color:#009900">double</span> price <span style="color:#990000">=</span> <span style="color:#993399">0.0</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span><span style="color:#990000">*</span> id<span style="color:#990000">;</span>
+    <span style="color:#008A00">double</span> price <span style="color:#990000">=</span> <span style="color:#993399">0.0</span><span style="color:#990000">;</span>
 
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#000000">Item</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">try</span></b> <span style="color:#FF0000">{</span>
-            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Constructor called"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-            id <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span> <span style="color:#990000">(</span><span style="color:#993399">7</span><span style="color:#990000">);</span>
+    <b><span style="color:#000000">Item</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+        <b><span style="color:#0000FF">try</span></b> <span style="color:#EF0000">{</span>
+            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Constructor called"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+            id <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span> <span style="color:#990000">(</span><span style="color:#993399">7</span><span style="color:#990000">);</span>
             count<span style="color:#990000">++;</span>
-        <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">catch</span></b> <span style="color:#990000">(</span>bad_alloc<span style="color:#990000">&amp;</span> x<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"out of memory at allocation # "</span> <span style="color:#990000">&lt;&lt;</span> count <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-            <span style="color:#009900">double</span> mem <span style="color:#990000">=</span> <span style="color:#990000">(</span> <span style="color:#990000">(</span><span style="color:#009900">double</span><span style="color:#990000">)</span> count <span style="color:#990000">*</span> <span style="color:#990000">(</span><span style="color:#009900">double</span><span style="color:#990000">)</span> space <span style="color:#990000">)</span> <span style="color:#990000">/</span> <span style="color:#990000">(</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">);</span>
-            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Used memory: "</span> <span style="color:#990000">&lt;&lt;</span> mem <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" Gb"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Remaining memory is about: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">(</span><span style="color:#993399">4.0</span> <span style="color:#990000">-</span> mem<span style="color:#990000">)</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" Kb"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+        <span style="color:#EF0000">}</span> <b><span style="color:#0000FF">catch</span></b> <span style="color:#990000">(</span>bad_alloc<span style="color:#990000">&amp;</span> x<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"out of memory at allocation # "</span> <span style="color:#990000">&lt;&lt;</span> count <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+            <span style="color:#008A00">double</span> mem <span style="color:#990000">=</span> <span style="color:#990000">(</span> <span style="color:#990000">(</span><span style="color:#008A00">double</span><span style="color:#990000">)</span> count <span style="color:#990000">*</span> <span style="color:#990000">(</span><span style="color:#008A00">double</span><span style="color:#990000">)</span> space <span style="color:#990000">)</span> <span style="color:#990000">/</span> <span style="color:#990000">(</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">);</span>
+            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Used memory: "</span> <span style="color:#990000">&lt;&lt;</span> mem <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" Gb"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Remaining memory is about: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">(</span><span style="color:#993399">4.0</span> <span style="color:#990000">-</span> mem<span style="color:#990000">)</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">*</span> <span style="color:#993399">1024.0</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" Kb"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
             <b><span style="color:#000000">exit</span></b> <span style="color:#990000">(</span><span style="color:#993399">0</span><span style="color:#990000">);</span>
-        <span style="color:#FF0000">}</span>
-    <span style="color:#FF0000">}</span>
+        <span style="color:#EF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
-    <span style="color:#990000">~</span><b><span style="color:#000000">Item</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <span style="color:#990000">~</span><b><span style="color:#000000">Item</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">delete</span></b> id<span style="color:#990000">;</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Destructor called"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Destructor called"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
 
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
     <span style="color:#008080">Item</span> i<span style="color:#990000">;</span>
     Item<span style="color:#990000">*</span> j <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">Item</span></b><span style="color:#990000">();</span>
-    <span style="color:#009900">int</span><span style="color:#990000">*</span> n <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span><span style="color:#990000">,</span> <span style="color:#990000">*</span>m <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span><span style="color:#990000">*</span> n <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">,</span> <span style="color:#990000">*</span>m <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">;</span>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"First allocated int: "</span> <span style="color:#990000">&lt;&lt;</span> n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Second allocated int: "</span> <span style="color:#990000">&lt;&lt;</span> m <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    space <span style="color:#990000">=</span> <span style="color:#990000">(</span><span style="color:#009900">int</span><span style="color:#990000">)</span> m <span style="color:#990000">-</span> <span style="color:#990000">(</span><span style="color:#009900">int</span><span style="color:#990000">)</span> n<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"sizeof(int): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"space allocated between ints: "</span> <span style="color:#990000">&lt;&lt;</span> space <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"First allocated int: "</span> <span style="color:#990000">&lt;&lt;</span> n <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Second allocated int: "</span> <span style="color:#990000">&lt;&lt;</span> m <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    space <span style="color:#990000">=</span> <span style="color:#990000">(</span><span style="color:#008A00">int</span><span style="color:#990000">)</span> m <span style="color:#990000">-</span> <span style="color:#990000">(</span><span style="color:#008A00">int</span><span style="color:#990000">)</span> n<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"sizeof(int): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"space allocated between ints: "</span> <span style="color:#990000">&lt;&lt;</span> space <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <b><span style="color:#0000FF">delete</span></b> n<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">delete</span></b> m<span style="color:#990000">;</span>
@@ -67,7 +67,7 @@ http://www.gnu.org/software/src-highlite">
     <b><span style="color:#0000FF">delete</span></b> j<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// destructor for i called here</span></i>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

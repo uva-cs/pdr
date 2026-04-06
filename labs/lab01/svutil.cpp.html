@@ -11,52 +11,52 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <main><pre><i><span style="color:#9A1900">// utility functions for vectors of strings</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"svutil.h"</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"svutil.h"</span>
 
 <i><span style="color:#9A1900">// prints the strings in the vector</span></i>
-<span style="color:#009900">void</span> <b><span style="color:#000000">svOutput</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">();</span> <span style="color:#990000">++</span>i<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">at</span></b><span style="color:#990000">(</span>i<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" "</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">svOutput</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">();</span> <span style="color:#990000">++</span>i<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">at</span></b><span style="color:#990000">(</span>i<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" "</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
     cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
 <i><span style="color:#9A1900">// finds a string in a vector and returns its index</span></i>
-<span style="color:#009900">int</span> <b><span style="color:#000000">svFind</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008080">string</span> s<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">();</span> <span style="color:#990000">++</span>i<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">svFind</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008080">string</span> s<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">();</span> <span style="color:#990000">++</span>i<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">at</span></b><span style="color:#990000">(</span>i<span style="color:#990000">)</span> <span style="color:#990000">==</span> s <span style="color:#990000">)</span> <b><span style="color:#0000FF">return</span></b> i<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#990000">-</span><span style="color:#993399">1</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// removes an element from the vector at index idx</span></i>
 <i><span style="color:#9A1900">// returns true if remove successful, otherwise false</span></i>
-<span style="color:#009900">bool</span> <b><span style="color:#000000">svDeleteAt</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#009900">int</span> idx <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> lastIndex <span style="color:#990000">=</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()-</span><span style="color:#993399">1</span><span style="color:#990000">;</span>
+<span style="color:#008A00">bool</span> <b><span style="color:#000000">svDeleteAt</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008A00">int</span> idx <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> lastIndex <span style="color:#990000">=</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()-</span><span style="color:#993399">1</span><span style="color:#990000">;</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> idx <span style="color:#990000">&lt;</span> <span style="color:#993399">0</span> <span style="color:#990000">||</span> idx <span style="color:#990000">&gt;</span> lastIndex <span style="color:#990000">)</span>
         <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> idx <span style="color:#990000">==</span> lastIndex <span style="color:#990000">)</span>
         vect<span style="color:#990000">.</span><b><span style="color:#000000">pop_back</span></b><span style="color:#990000">();</span>
-    <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">else</span></b> <span style="color:#EF0000">{</span>
         <span style="color:#008080">string</span> temp <span style="color:#990000">=</span> vect<span style="color:#990000">.</span><b><span style="color:#000000">at</span></b><span style="color:#990000">(</span>lastIndex<span style="color:#990000">);</span>
         vect<span style="color:#990000">.</span><b><span style="color:#000000">pop_back</span></b><span style="color:#990000">();</span>
         vect<span style="color:#990000">.</span><b><span style="color:#000000">at</span></b><span style="color:#990000">(</span>idx<span style="color:#990000">)</span> <span style="color:#990000">=</span> temp<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">true</span></b><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// sorts a vector of string in ascending order</span></i>
-<span style="color:#009900">void</span> <b><span style="color:#000000">svSort</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">svSort</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <i><span style="color:#9A1900">// not implemented yet</span></i>
     <b><span style="color:#0000FF">return</span></b><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// return the index of the largest string in range index start to end</span></i>
-<span style="color:#009900">int</span> <b><span style="color:#000000">svFindMax</span></b><span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#009900">int</span> start<span style="color:#990000">,</span> <span style="color:#009900">int</span> end <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">svFindMax</span></b><span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008A00">int</span> start<span style="color:#990000">,</span> <span style="color:#008A00">int</span> end <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <i><span style="color:#9A1900">// not implemented yet</span></i>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#990000">-</span><span style="color:#993399">1</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 </pre></main>
 </body>

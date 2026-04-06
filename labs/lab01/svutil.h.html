@@ -14,26 +14,26 @@ http://www.gnu.org/software/src-highlite">
 <b><span style="color:#000080">#ifndef</span></b> SVUTIL_H
 <b><span style="color:#000080">#define</span></b> SVUTIL_H
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;vector&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;string&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;vector&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;string&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// prints the strings in the vector</span></i>
-<span style="color:#009900">void</span> <b><span style="color:#000000">svOutput</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">);</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">svOutput</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">);</span>
 
 <i><span style="color:#9A1900">// finds a string in a vector and returns its index</span></i>
-<span style="color:#009900">int</span> <b><span style="color:#000000">svFind</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008080">string</span> s<span style="color:#990000">);</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">svFind</span></b> <span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008080">string</span> s<span style="color:#990000">);</span>
 
 <i><span style="color:#9A1900">// removes an element from the vector at index idx</span></i>
 <i><span style="color:#9A1900">// returns true if remove successful, otherwise false</span></i>
-<span style="color:#009900">bool</span> <b><span style="color:#000000">svDeleteAt</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#009900">int</span> idx <span style="color:#990000">);</span>
+<span style="color:#008A00">bool</span> <b><span style="color:#000000">svDeleteAt</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008A00">int</span> idx <span style="color:#990000">);</span>
 
 <i><span style="color:#9A1900">// sorts a vector of string in ascending order</span></i>
-<span style="color:#009900">void</span> <b><span style="color:#000000">svSort</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">);</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">svSort</span></b> <span style="color:#990000">(</span> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect <span style="color:#990000">);</span>
 
 <i><span style="color:#9A1900">// return the index of the largest string in range index start to end</span></i>
-<span style="color:#009900">int</span> <b><span style="color:#000000">svFindMax</span></b><span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#009900">int</span> start<span style="color:#990000">,</span> <span style="color:#009900">int</span> end <span style="color:#990000">);</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">svFindMax</span></b><span style="color:#990000">(</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#008080">vector&lt;string&gt;</span> <span style="color:#990000">&amp;</span>vect<span style="color:#990000">,</span> <span style="color:#008A00">int</span> start<span style="color:#990000">,</span> <span style="color:#008A00">int</span> end <span style="color:#990000">);</span>
 
 
 <b><span style="color:#000080">#endif</span></b>

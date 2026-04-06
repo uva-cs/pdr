@@ -18,58 +18,58 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"> * the -m64 flag</span></i>
 <i><span style="color:#9A1900"> */</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
     <i><span style="color:#9A1900">// declare and initialize some int variables (we use longs to</span></i>
     <i><span style="color:#9A1900">// ensure 64-bit operation)</span></i>
-    <span style="color:#009900">long</span> y <span style="color:#990000">=</span> <span style="color:#993399">5</span><span style="color:#990000">;</span>
-    <span style="color:#009900">long</span> x <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">long</span> y <span style="color:#990000">=</span> <span style="color:#993399">5</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">long</span> x <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// declare a pointer to int and initialize to the address of x</span></i>
-    <span style="color:#009900">long</span> <span style="color:#990000">*</span> x_pointer <span style="color:#990000">=</span> <span style="color:#990000">&amp;</span>x<span style="color:#990000">;</span>
+    <span style="color:#008A00">long</span> <span style="color:#990000">*</span> x_pointer <span style="color:#990000">=</span> <span style="color:#990000">&amp;</span>x<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// print the values of each of these variables</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// change the value of the memory pointed to by x_pointer</span></i>
     <i><span style="color:#9A1900">// by dereferencing and assigning a new value</span></i>
     <span style="color:#990000">*</span>x_pointer <span style="color:#990000">=</span> <span style="color:#993399">2</span><span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// print the values of all variables</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"After *x_pointer = 2 "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"After *x_pointer = 2 "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// change the address that x_pointer points to, to y</span></i>
     x_pointer <span style="color:#990000">=</span> <span style="color:#990000">&amp;</span>y<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// print the values of all variables</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"After x_pointer = &amp;y "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"After x_pointer = &amp;y "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// change the value of the memory pointed to by x_pointer</span></i>
     <i><span style="color:#9A1900">// by dereferencing and assigning a new value</span></i>
     <span style="color:#990000">*</span>x_pointer <span style="color:#990000">=</span> <span style="color:#993399">3</span><span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// print the values of all variables</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"After *x_pointer = 3 "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"After *x_pointer = 3 "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x = "</span> <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"y = "</span> <span style="color:#990000">&lt;&lt;</span> y <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> x_pointer <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"*x_pointer = "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>x_pointer <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

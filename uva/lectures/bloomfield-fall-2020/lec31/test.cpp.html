@@ -9,43 +9,43 @@ http://www.gnu.org/software/src-highlite">
 <title>test.cpp</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">foo</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">foo</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"in foo's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"in foo's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">qux</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">qux</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"in qux's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"in qux's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">thud</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> qux<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> foo <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">thud</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> qux<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> foo <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#009900">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"in thud's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#008A00">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"in thud's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">bletch</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> thud <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">bletch</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> thud <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#009900">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"in bletch's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#008A00">void</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"in bletch's bar()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
     thud<span style="color:#990000">*</span> x <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">bletch</span></b><span style="color:#990000">();</span>
     x<span style="color:#990000">-&gt;</span><b><span style="color:#000000">bar</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

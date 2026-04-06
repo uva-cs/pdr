@@ -11,13 +11,13 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <main><pre><i><span style="color:#9A1900"># This is a comment</span></i>
 
-<span style="color:#009900">CXX=</span>clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXFLAGS)</span>
-<span style="color:#009900">CXXFLAGS=</span>-Wall <i><span style="color:#9A1900"># Enable all warnings</span></i>
-<span style="color:#009900">DEBUG=</span>-g
+<span style="color:#008A00">CXX=</span>clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXFLAGS)</span>
+<span style="color:#008A00">CXXFLAGS=</span>-Wall <i><span style="color:#9A1900"># Enable all warnings</span></i>
+<span style="color:#008A00">DEBUG=</span>-g
 
 <span style="color:#990000">pizza:</span> pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o
-	<span style="color:#009900">$(CXX)</span> <span style="color:#009900">$(DEBUG)</span> pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o -o pizza
-	@echo <span style="color:#FF0000">"Pizza is Hot and Ready!"</span>
+	<span style="color:#008A00">$(CXX)</span> <span style="color:#008A00">$(DEBUG)</span> pizza.o pizzadough.o tomatosauce.o toppings.o mushrooms.o peppers.o cheese.o pepperoni.o -o pizza
+	@echo <span style="color:#EF0000">"Pizza is Hot and Ready!"</span>
 
 <span style="color:#990000">pizza.o:</span> pizza.cpp
 

@@ -9,7 +9,7 @@ http://www.gnu.org/software/src-highlite">
 <title>test_fib.s</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">	.file</span></b>	<span style="color:#FF0000">"test_fib.cpp"</span>
+<main><pre><b><span style="color:#000080">	.file</span></b>	<span style="color:#EF0000">"test_fib.cpp"</span>
 <b><span style="color:#000080">	.intel</span></b>_syntax noprefix
 <b><span style="color:#000080">	.local</span></b>	_ZStL<span style="color:#993399">8</span>__ioinit
 <b><span style="color:#000080">	.comm</span></b>	_ZStL<span style="color:#993399">8</span>__ioinit<span style="color:#990000">,</span><span style="color:#993399">1</span><span style="color:#990000">,</span><span style="color:#993399">1</span>
@@ -19,38 +19,38 @@ http://www.gnu.org/software/src-highlite">
 <b><span style="color:#000080">fib:</span></b>
 <b><span style="color:#000080">.LFB1021</span></b><span style="color:#990000">:</span>
 <b><span style="color:#000080">	.cfi</span></b>_startproc
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">ebp</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">ebp</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa_offset <span style="color:#993399">8</span>
 <b><span style="color:#000080">	.cfi</span></b>_offset <span style="color:#993399">5</span><span style="color:#990000">,</span> <span style="color:#990000">-</span><span style="color:#993399">8</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ebp</span><span style="color:#990000">,</span> <span style="color:#009900">esp</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ebp</span><span style="color:#990000">,</span> <span style="color:#008A00">esp</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa_register <span style="color:#993399">5</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">ebx</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">ebx</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>
 <b><span style="color:#000080">	.cfi</span></b>_offset <span style="color:#993399">3</span><span style="color:#990000">,</span> <span style="color:#990000">-</span><span style="color:#993399">12</span>
-	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
+	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
 	<b><span style="color:#0000FF">je</span></b>	<span style="color:#990000">.</span>L<span style="color:#993399">2</span>
-	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">1</span>
+	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">1</span>
 	<b><span style="color:#0000FF">jne</span></b>	<span style="color:#990000">.</span>L<span style="color:#993399">3</span>
 <b><span style="color:#000080">.L2</span></b><span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#993399">1</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#993399">1</span>
 	<b><span style="color:#0000FF">jmp</span></b>	<span style="color:#990000">.</span>L<span style="color:#993399">4</span>
 <b><span style="color:#000080">.L3</span></b><span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#993399">1</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">eax</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#993399">1</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">eax</span>
 	<b><span style="color:#0000FF">call</span></b>	fib
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ebx</span><span style="color:#990000">,</span> <span style="color:#009900">eax</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#993399">2</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">eax</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ebx</span><span style="color:#990000">,</span> <span style="color:#008A00">eax</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#993399">2</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">eax</span>
 	<b><span style="color:#0000FF">call</span></b>	fib
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#009900">ebx</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#008A00">ebx</span>
 <b><span style="color:#000080">.L4</span></b><span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ebx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ebx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
 	<b><span style="color:#0000FF">leave</span></b>
 <b><span style="color:#000080">	.cfi</span></b>_restore <span style="color:#993399">5</span>
 <b><span style="color:#000080">	.cfi</span></b>_restore <span style="color:#993399">3</span>
@@ -61,77 +61,77 @@ http://www.gnu.org/software/src-highlite">
 <b><span style="color:#000080">	.size</span></b>	fib<span style="color:#990000">,</span> <span style="color:#990000">.-</span>fib
 <b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>rodata
 <b><span style="color:#000080">.LC0</span></b><span style="color:#990000">:</span>
-<b><span style="color:#000080">	.string</span></b>	<span style="color:#FF0000">"Enter value for fib(): "</span>
+<b><span style="color:#000080">	.string</span></b>	<span style="color:#EF0000">"Enter value for fib(): "</span>
 <b><span style="color:#000080">.LC1</span></b><span style="color:#990000">:</span>
-<b><span style="color:#000080">	.string</span></b>	<span style="color:#FF0000">"The result is: "</span>
+<b><span style="color:#000080">	.string</span></b>	<span style="color:#EF0000">"The result is: "</span>
 <b><span style="color:#000080">	.text</span></b>
 <b><span style="color:#000080">	.globl</span></b>	main
 <b><span style="color:#000080">	.type</span></b>	main<span style="color:#990000">,</span> @function
 <b><span style="color:#000080">main:</span></b>
 <b><span style="color:#000080">.LFB1022</span></b><span style="color:#990000">:</span>
 <b><span style="color:#000080">	.cfi</span></b>_startproc
-	<b><span style="color:#0000FF">lea</span></b>	<span style="color:#009900">ecx</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#009900">esp</span><span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">lea</span></b>	<span style="color:#008A00">ecx</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#008A00">esp</span><span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa <span style="color:#993399">1</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>
-	<b><span style="color:#0000FF">and</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#990000">-</span><span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">push</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ecx</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">ebp</span>
+	<b><span style="color:#0000FF">and</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#990000">-</span><span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">push</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ecx</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">ebp</span>
 <b><span style="color:#000080">	.cfi</span></b>_escape <span style="color:#993399">0x10</span><span style="color:#990000">,</span><span style="color:#993399">0x5</span><span style="color:#990000">,</span><span style="color:#993399">0x2</span><span style="color:#990000">,</span><span style="color:#993399">0x75</span><span style="color:#990000">,</span><span style="color:#993399">0</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ebp</span><span style="color:#990000">,</span> <span style="color:#009900">esp</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">ecx</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ebp</span><span style="color:#990000">,</span> <span style="color:#008A00">esp</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">ecx</span>
 <b><span style="color:#000080">	.cfi</span></b>_escape <span style="color:#993399">0xf</span><span style="color:#990000">,</span><span style="color:#993399">0x3</span><span style="color:#990000">,</span><span style="color:#993399">0x75</span><span style="color:#990000">,</span><span style="color:#993399">0x7c</span><span style="color:#990000">,</span><span style="color:#993399">0x6</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">20</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#009900">gs</span><span style="color:#990000">:</span><span style="color:#993399">20</span>
-	<b><span style="color:#0000FF">mov</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">12</span><span style="color:#990000">],</span> <span style="color:#009900">eax</span>
-	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#009900">eax</span>
-	<b><span style="color:#0000FF">mov</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">20</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">20</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#008A00">gs</span><span style="color:#990000">:</span><span style="color:#993399">20</span>
+	<b><span style="color:#0000FF">mov</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">12</span><span style="color:#990000">],</span> <span style="color:#008A00">eax</span>
+	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#008A00">eax</span>
+	<b><span style="color:#0000FF">mov</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">20</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:.</span>LC<span style="color:#993399">0</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZSt<span style="color:#993399">4</span>cout
 	<b><span style="color:#0000FF">call</span></b>	_ZStlsISt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIcT_ES<span style="color:#993399">5</span>_PKc
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZSt<span style="color:#993399">4</span>endlIcSt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIT_T<span style="color:#993399">0</span>_ES<span style="color:#993399">6</span>_
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">eax</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">eax</span>
 	<b><span style="color:#0000FF">call</span></b>	_ZNSolsEPFRSoS_E
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
-	<b><span style="color:#0000FF">lea</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">20</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">eax</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">lea</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">20</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">eax</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZSt<span style="color:#993399">3</span>cin
 	<b><span style="color:#0000FF">call</span></b>	_ZNSirsERi
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">20</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">eax</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">20</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">eax</span>
 	<b><span style="color:#0000FF">call</span></b>	fib
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">mov</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">16</span><span style="color:#990000">],</span> <span style="color:#009900">eax</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">mov</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">16</span><span style="color:#990000">],</span> <span style="color:#008A00">eax</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:.</span>LC<span style="color:#993399">1</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZSt<span style="color:#993399">4</span>cout
 	<b><span style="color:#0000FF">call</span></b>	_ZStlsISt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIcT_ES<span style="color:#993399">5</span>_PKc
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
-	<b><span style="color:#0000FF">push</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">16</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">eax</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">push</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">16</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">eax</span>
 	<b><span style="color:#0000FF">call</span></b>	_ZNSolsEi
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZSt<span style="color:#993399">4</span>endlIcSt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIT_T<span style="color:#993399">0</span>_ES<span style="color:#993399">6</span>_
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">eax</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">eax</span>
 	<b><span style="color:#0000FF">call</span></b>	_ZNSolsEPFRSoS_E
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">edx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">12</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#009900">edx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#009900">gs</span><span style="color:#990000">:</span><span style="color:#993399">20</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">edx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">12</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#008A00">edx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#008A00">gs</span><span style="color:#990000">:</span><span style="color:#993399">20</span>
 	<b><span style="color:#0000FF">je</span></b>	<span style="color:#990000">.</span>L<span style="color:#993399">7</span>
 	<b><span style="color:#0000FF">call</span></b>	__stack_chk_fail
 <b><span style="color:#000080">.L7</span></b><span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ecx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ecx</span><span style="color:#990000">,</span> DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa <span style="color:#993399">1</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>
 	<b><span style="color:#0000FF">leave</span></b>
 <b><span style="color:#000080">	.cfi</span></b>_restore <span style="color:#993399">5</span>
-	<b><span style="color:#0000FF">lea</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#009900">ecx</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">lea</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#008A00">ecx</span><span style="color:#990000">-</span><span style="color:#993399">4</span><span style="color:#990000">]</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa <span style="color:#993399">4</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>
 	<b><span style="color:#0000FF">ret</span></b>
 <b><span style="color:#000080">	.cfi</span></b>_endproc
@@ -141,26 +141,26 @@ http://www.gnu.org/software/src-highlite">
 _Z<span style="color:#993399">41</span>__static_initialization_and_destruction<span style="color:#993399">_0</span>ii<span style="color:#990000">:</span>
 <b><span style="color:#000080">.LFB1031</span></b><span style="color:#990000">:</span>
 <b><span style="color:#000080">	.cfi</span></b>_startproc
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">ebp</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">ebp</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa_offset <span style="color:#993399">8</span>
 <b><span style="color:#000080">	.cfi</span></b>_offset <span style="color:#993399">5</span><span style="color:#990000">,</span> <span style="color:#990000">-</span><span style="color:#993399">8</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ebp</span><span style="color:#990000">,</span> <span style="color:#009900">esp</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ebp</span><span style="color:#990000">,</span> <span style="color:#008A00">esp</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa_register <span style="color:#993399">5</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
-	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">1</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">1</span>
 	<b><span style="color:#0000FF">jne</span></b>	<span style="color:#990000">.</span>L<span style="color:#993399">10</span>
-	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">12</span><span style="color:#990000">],</span> <span style="color:#993399">65535</span>
+	<b><span style="color:#0000FF">cmp</span></b>	DWORD <b><span style="color:#0000FF">PTR</span></b> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">12</span><span style="color:#990000">],</span> <span style="color:#993399">65535</span>
 	<b><span style="color:#0000FF">jne</span></b>	<span style="color:#990000">.</span>L<span style="color:#993399">10</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">12</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZStL<span style="color:#993399">8</span>__ioinit
 	<b><span style="color:#0000FF">call</span></b>	_ZNSt<span style="color:#993399">8</span>ios_base<span style="color:#993399">4</span>InitC<span style="color:#993399">1</span>Ev
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>__dso_handle
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZStL<span style="color:#993399">8</span>__ioinit
 	<b><span style="color:#0000FF">push</span></b>	<b><span style="color:#0000FF">OFFSET</span></b> FLAT<span style="color:#990000">:</span>_ZNSt<span style="color:#993399">8</span>ios_base<span style="color:#993399">4</span>InitD<span style="color:#993399">1</span>Ev
 	<b><span style="color:#0000FF">call</span></b>	__cxa_atexit
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
 <b><span style="color:#000080">.L10</span></b><span style="color:#990000">:</span>
 	<b><span style="color:#0000FF">nop</span></b>
 	<b><span style="color:#0000FF">leave</span></b>
@@ -174,17 +174,17 @@ _Z<span style="color:#993399">41</span>__static_initialization_and_destruction<s
 _GLOBAL__sub_I_fib<span style="color:#990000">:</span>
 <b><span style="color:#000080">.LFB1032</span></b><span style="color:#990000">:</span>
 <b><span style="color:#000080">	.cfi</span></b>_startproc
-	<b><span style="color:#0000FF">push</span></b>	<span style="color:#009900">ebp</span>
+	<b><span style="color:#0000FF">push</span></b>	<span style="color:#008A00">ebp</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa_offset <span style="color:#993399">8</span>
 <b><span style="color:#000080">	.cfi</span></b>_offset <span style="color:#993399">5</span><span style="color:#990000">,</span> <span style="color:#990000">-</span><span style="color:#993399">8</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ebp</span><span style="color:#990000">,</span> <span style="color:#009900">esp</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ebp</span><span style="color:#990000">,</span> <span style="color:#008A00">esp</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa_register <span style="color:#993399">5</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
-	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
+	<b><span style="color:#0000FF">sub</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">8</span>
 	<b><span style="color:#0000FF">push</span></b>	<span style="color:#993399">65535</span>
 	<b><span style="color:#0000FF">push</span></b>	<span style="color:#993399">1</span>
 	<b><span style="color:#0000FF">call</span></b>	_Z<span style="color:#993399">41</span>__static_initialization_and_destruction<span style="color:#993399">_0</span>ii
-	<b><span style="color:#0000FF">add</span></b>	<span style="color:#009900">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
+	<b><span style="color:#0000FF">add</span></b>	<span style="color:#008A00">esp</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
 	<b><span style="color:#0000FF">leave</span></b>
 <b><span style="color:#000080">	.cfi</span></b>_restore <span style="color:#993399">5</span>
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa <span style="color:#993399">4</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>
@@ -192,12 +192,12 @@ _GLOBAL__sub_I_fib<span style="color:#990000">:</span>
 <b><span style="color:#000080">	.cfi</span></b>_endproc
 <b><span style="color:#000080">.LFE1032</span></b><span style="color:#990000">:</span>
 <b><span style="color:#000080">	.size</span></b>	_GLOBAL__sub_I_fib<span style="color:#990000">,</span> <span style="color:#990000">.-</span>_GLOBAL__sub_I_fib
-<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>init_array<span style="color:#990000">,</span><span style="color:#FF0000">"aw"</span>
+<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>init_array<span style="color:#990000">,</span><span style="color:#EF0000">"aw"</span>
 <b><span style="color:#000080">	.align</span></b> <span style="color:#993399">4</span>
 <b><span style="color:#000080">	.long</span></b>	_GLOBAL__sub_I_fib
 <b><span style="color:#000080">	.hidden</span></b>	__dso_handle
-<b><span style="color:#000080">	.ident</span></b>	<span style="color:#FF0000">"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.2) 5.4.0 20160609"</span>
-<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>note<span style="color:#990000">.</span>GNU<span style="color:#990000">-</span>stack<span style="color:#990000">,</span><span style="color:#FF0000">""</span><span style="color:#990000">,</span>@progbits
+<b><span style="color:#000080">	.ident</span></b>	<span style="color:#EF0000">"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.2) 5.4.0 20160609"</span>
+<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>note<span style="color:#990000">.</span>GNU<span style="color:#990000">-</span>stack<span style="color:#990000">,</span><span style="color:#EF0000">""</span><span style="color:#990000">,</span>@progbits
 </pre></main>
 </body>
 </html>

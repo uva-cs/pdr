@@ -11,24 +11,24 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <main><pre><i><span style="color:#9A1900">// File IntCell.cpp</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"IntCell.h"</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"IntCell.h"</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span> <i><span style="color:#9A1900">// (not really necessary, but...)</span></i>
 
-IntCell<span style="color:#990000">::</span><b><span style="color:#000000">IntCell</span></b><span style="color:#990000">(</span> <span style="color:#009900">int</span> initialValue <span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">storedValue</span></b><span style="color:#990000">(</span> initialValue <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+IntCell<span style="color:#990000">::</span><b><span style="color:#000000">IntCell</span></b><span style="color:#990000">(</span> <span style="color:#008A00">int</span> initialValue <span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">storedValue</span></b><span style="color:#990000">(</span> initialValue <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
 
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-<span style="color:#009900">int</span> IntCell<span style="color:#990000">::</span><b><span style="color:#000000">getValue</span></b><span style="color:#990000">(</span> <span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> IntCell<span style="color:#990000">::</span><b><span style="color:#000000">getValue</span></b><span style="color:#990000">(</span> <span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">return</span></b> storedValue<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-<span style="color:#009900">void</span> IntCell<span style="color:#990000">::</span><b><span style="color:#000000">setValue</span></b><span style="color:#990000">(</span> <span style="color:#009900">int</span> val <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">void</span> IntCell<span style="color:#990000">::</span><b><span style="color:#000000">setValue</span></b><span style="color:#990000">(</span> <span style="color:#008A00">int</span> val <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     storedValue <span style="color:#990000">=</span> val<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-<span style="color:#009900">int</span> IntCell<span style="color:#990000">::</span><b><span style="color:#000000">max</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> m<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> IntCell<span style="color:#990000">::</span><b><span style="color:#000000">max</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> m<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#990000">(</span>m<span style="color:#990000">&gt;</span>storedValue<span style="color:#990000">)</span> <span style="color:#990000">?</span> m <span style="color:#990000">:</span> storedValue<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

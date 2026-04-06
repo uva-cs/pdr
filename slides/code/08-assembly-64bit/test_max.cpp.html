@@ -9,29 +9,29 @@ http://www.gnu.org/software/src-highlite">
 <title>test_max.cpp</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
-<b><span style="color:#0000FF">extern</span></b> <span style="color:#FF0000">"C"</span> <span style="color:#009900">int</span> <b><span style="color:#000000">max</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> x<span style="color:#990000">,</span> <span style="color:#009900">int</span> y<span style="color:#990000">);</span>
+<b><span style="color:#0000FF">extern</span></b> <span style="color:#EF0000">"C"</span> <span style="color:#008A00">int</span> <b><span style="color:#000000">max</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> x<span style="color:#990000">,</span> <span style="color:#008A00">int</span> y<span style="color:#990000">);</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">max</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> x<span style="color:#990000">,</span> <span style="color:#009900">int</span> y<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> theMax<span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">max</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> x<span style="color:#990000">,</span> <span style="color:#008A00">int</span> y<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> theMax<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>x <span style="color:#990000">&gt;</span> y<span style="color:#990000">)</span> 		<i><span style="color:#9A1900">// if x &gt; y then x is max</span></i>
         theMax <span style="color:#990000">=</span> x<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b> 		<i><span style="color:#9A1900">// else y is the max</span></i>
         theMax <span style="color:#990000">=</span> y<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">return</span></b> theMax<span style="color:#990000">;</span>	<i><span style="color:#9A1900">// return the max</span></i>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> theValue1<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">,</span> theValue2<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Enter value 1: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> theValue1<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">,</span> theValue2<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter value 1: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     cin <span style="color:#990000">&gt;&gt;</span> theValue1<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Enter value 2: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter value 2: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     cin <span style="color:#990000">&gt;&gt;</span> theValue2<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> theResult <span style="color:#990000">=</span> <b><span style="color:#000000">max</span></b><span style="color:#990000">(</span>theValue1<span style="color:#990000">,</span> theValue2<span style="color:#990000">);</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"The result is: "</span> <span style="color:#990000">&lt;&lt;</span> theResult <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> theResult <span style="color:#990000">=</span> <b><span style="color:#000000">max</span></b><span style="color:#990000">(</span>theValue1<span style="color:#990000">,</span> theValue2<span style="color:#990000">);</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"The result is: "</span> <span style="color:#990000">&lt;&lt;</span> theResult <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

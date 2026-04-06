@@ -14,7 +14,7 @@ http://www.gnu.org/software/src-highlite">
 <b><span style="color:#000080">#ifndef</span></b> RATIONAL_H
 <b><span style="color:#000080">#define</span></b> RATIONAL_H
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Rational</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Rational</span> <span style="color:#EF0000">{</span>
 
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
     <i><span style="color:#9A1900">// default constructor</span></i>
@@ -24,10 +24,10 @@ http://www.gnu.org/software/src-highlite">
     <span style="color:#990000">~</span><b><span style="color:#000000">Rational</span></b><span style="color:#990000">();</span>
 
     <i><span style="color:#9A1900">// create and initialize a new Rational object</span></i>
-    <b><span style="color:#000000">Rational</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> numerator<span style="color:#990000">,</span> <span style="color:#009900">int</span> denominator<span style="color:#990000">);</span>
+    <b><span style="color:#000000">Rational</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> numerator<span style="color:#990000">,</span> <span style="color:#008A00">int</span> denominator<span style="color:#990000">);</span>
 
     <i><span style="color:#9A1900">// print string representation of (this) to cout</span></i>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b><span style="color:#990000">;</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b><span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// return (this * b)</span></i>
     <span style="color:#008080">Rational</span> <b><span style="color:#000000">times</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b><span style="color:#990000">;</span>
@@ -42,16 +42,16 @@ http://www.gnu.org/software/src-highlite">
     <span style="color:#008080">Rational</span> <b><span style="color:#000000">divides</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b><span style="color:#990000">;</span>
 
 <b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">int</span> num<span style="color:#990000">;</span>   <i><span style="color:#9A1900">// the numerator</span></i>
-    <span style="color:#009900">int</span> den<span style="color:#990000">;</span>   <i><span style="color:#9A1900">// the denominator</span></i>
+    <span style="color:#008A00">int</span> num<span style="color:#990000">;</span>   <i><span style="color:#9A1900">// the numerator</span></i>
+    <span style="color:#008A00">int</span> den<span style="color:#990000">;</span>   <i><span style="color:#9A1900">// the denominator</span></i>
 
     <i><span style="color:#9A1900">/*************************************************************************</span></i>
 <i><span style="color:#9A1900">    *  Helper functions</span></i>
 <i><span style="color:#9A1900">    *************************************************************************/</span></i>
     <i><span style="color:#9A1900">// return gcd(m, n)</span></i>
-    <span style="color:#009900">int</span> <b><span style="color:#000000">gcd</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> m<span style="color:#990000">,</span> <span style="color:#009900">int</span> n<span style="color:#990000">);</span>
+    <span style="color:#008A00">int</span> <b><span style="color:#000000">gcd</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> m<span style="color:#990000">,</span> <span style="color:#008A00">int</span> n<span style="color:#990000">);</span>
 
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
 <b><span style="color:#000080">#endif</span></b>
 </pre></main>

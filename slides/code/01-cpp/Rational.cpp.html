@@ -11,59 +11,59 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <main><pre><i><span style="color:#9A1900">// File Rational.cpp</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"Rational.h"</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"Rational.h"</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// default constructor: initialize to 0/1</span></i>
-Rational<span style="color:#990000">::</span><b><span style="color:#000000">Rational</span></b><span style="color:#990000">()</span> <span style="color:#990000">:</span> <b><span style="color:#000000">num</span></b><span style="color:#990000">(</span><span style="color:#993399">0</span><span style="color:#990000">),</span> <b><span style="color:#000000">den</span></b><span style="color:#990000">(</span><span style="color:#993399">1</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-<span style="color:#FF0000">}</span>
+Rational<span style="color:#990000">::</span><b><span style="color:#000000">Rational</span></b><span style="color:#990000">()</span> <span style="color:#990000">:</span> <b><span style="color:#000000">num</span></b><span style="color:#990000">(</span><span style="color:#993399">0</span><span style="color:#990000">),</span> <b><span style="color:#000000">den</span></b><span style="color:#990000">(</span><span style="color:#993399">1</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// destructor : more on these later...</span></i>
-Rational<span style="color:#990000">::~</span><b><span style="color:#000000">Rational</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-<span style="color:#FF0000">}</span>
+Rational<span style="color:#990000">::~</span><b><span style="color:#000000">Rational</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// create and initialize a new Rational object</span></i>
-Rational<span style="color:#990000">::</span><b><span style="color:#000000">Rational</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> numerator<span style="color:#990000">,</span> <span style="color:#009900">int</span> denominator<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>denominator <span style="color:#990000">==</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Denominator is zero"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <span style="color:#009900">int</span> g <span style="color:#990000">=</span> <b><span style="color:#000000">gcd</span></b><span style="color:#990000">(</span>numerator<span style="color:#990000">,</span> denominator<span style="color:#990000">);</span>
+Rational<span style="color:#990000">::</span><b><span style="color:#000000">Rational</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> numerator<span style="color:#990000">,</span> <span style="color:#008A00">int</span> denominator<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>denominator <span style="color:#990000">==</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Denominator is zero"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+    <span style="color:#008A00">int</span> g <span style="color:#990000">=</span> <b><span style="color:#000000">gcd</span></b><span style="color:#990000">(</span>numerator<span style="color:#990000">,</span> denominator<span style="color:#990000">);</span>
     num <span style="color:#990000">=</span> numerator   <span style="color:#990000">/</span> g<span style="color:#990000">;</span>
     den <span style="color:#990000">=</span> denominator <span style="color:#990000">/</span> g<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// print string representation of (this) to cout</span></i>
-<span style="color:#009900">void</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">print</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>den <span style="color:#990000">==</span> <span style="color:#993399">1</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> num <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">""</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> num <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"/"</span> <span style="color:#990000">&lt;&lt;</span> den <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#008A00">void</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">print</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>den <span style="color:#990000">==</span> <span style="color:#993399">1</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> num <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">""</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> num <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"/"</span> <span style="color:#990000">&lt;&lt;</span> den <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// return (this * b)</span></i>
-<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">times</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
+<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">times</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#000000">Rational</span></b><span style="color:#990000">(</span>num <span style="color:#990000">*</span> b<span style="color:#990000">.</span>num<span style="color:#990000">,</span> den <span style="color:#990000">*</span> b<span style="color:#990000">.</span>den<span style="color:#990000">);</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
 <i><span style="color:#9A1900">// return (this + b)</span></i>
-<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">plus</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> numerator   <span style="color:#990000">=</span> <span style="color:#990000">(</span>num <span style="color:#990000">*</span> b<span style="color:#990000">.</span>den<span style="color:#990000">)</span> <span style="color:#990000">+</span> <span style="color:#990000">(</span>den <span style="color:#990000">*</span> b<span style="color:#990000">.</span>num<span style="color:#990000">);</span>
-    <span style="color:#009900">int</span> denominator <span style="color:#990000">=</span> den <span style="color:#990000">*</span> b<span style="color:#990000">.</span>den<span style="color:#990000">;</span>
+<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">plus</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> numerator   <span style="color:#990000">=</span> <span style="color:#990000">(</span>num <span style="color:#990000">*</span> b<span style="color:#990000">.</span>den<span style="color:#990000">)</span> <span style="color:#990000">+</span> <span style="color:#990000">(</span>den <span style="color:#990000">*</span> b<span style="color:#990000">.</span>num<span style="color:#990000">);</span>
+    <span style="color:#008A00">int</span> denominator <span style="color:#990000">=</span> den <span style="color:#990000">*</span> b<span style="color:#990000">.</span>den<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#000000">Rational</span></b><span style="color:#990000">(</span>numerator<span style="color:#990000">,</span> denominator<span style="color:#990000">);</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// return (1 / this)</span></i>
-<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">reciprocal</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
+<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">reciprocal</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#000000">Rational</span></b><span style="color:#990000">(</span>den<span style="color:#990000">,</span> num<span style="color:#990000">);</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// return (this / b)</span></i>
-<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">divides</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
+<span style="color:#008080">Rational</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">divides</span></b><span style="color:#990000">(</span><span style="color:#008080">Rational</span> b<span style="color:#990000">)</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#000000">times</span></b><span style="color:#990000">(</span>b<span style="color:#990000">.</span><b><span style="color:#000000">reciprocal</span></b><span style="color:#990000">());</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
 <i><span style="color:#9A1900">/*************************************************************************</span></i>
@@ -72,12 +72,12 @@ Rational<span style="color:#990000">::</span><b><span style="color:#000000">Rati
 
 <i><span style="color:#9A1900">// return gcd(m, n)</span></i>
 <i><span style="color:#9A1900">// not marked as 'static' here because that can only be done in declaration</span></i>
-<span style="color:#009900">int</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">gcd</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> m<span style="color:#990000">,</span> <span style="color:#009900">int</span> n<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> Rational<span style="color:#990000">::</span><b><span style="color:#000000">gcd</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> m<span style="color:#990000">,</span> <span style="color:#008A00">int</span> n<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><span style="color:#993399">0</span> <span style="color:#990000">==</span> n<span style="color:#990000">)</span>
         <b><span style="color:#0000FF">return</span></b> m<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">else</span></b>
         <b><span style="color:#0000FF">return</span></b> <b><span style="color:#000000">gcd</span></b><span style="color:#990000">(</span>n<span style="color:#990000">,</span> m <span style="color:#990000">%</span> n<span style="color:#990000">);</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

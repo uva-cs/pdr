@@ -11,8 +11,8 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <main><pre><b><span style="color:#000080">	.text</span></b>
 <b><span style="color:#000080">	.intel</span></b>_syntax noprefix
-<b><span style="color:#000080">	.file</span></b>	<span style="color:#FF0000">"test_abs.cpp"</span>
-<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>text<span style="color:#990000">.</span>startup<span style="color:#990000">,</span><span style="color:#FF0000">"ax"</span><span style="color:#990000">,</span>@progbits
+<b><span style="color:#000080">	.file</span></b>	<span style="color:#EF0000">"test_abs.cpp"</span>
+<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>text<span style="color:#990000">.</span>startup<span style="color:#990000">,</span><span style="color:#EF0000">"ax"</span><span style="color:#990000">,</span>@progbits
 <b><span style="color:#000080">	.align</span></b>	<span style="color:#993399">16</span><span style="color:#990000">,</span> <span style="color:#993399">0x90</span>
 <b><span style="color:#000080">	.type</span></b>	__cxx_global_var_init<span style="color:#990000">,</span>@function
 __cxx_global_var_init<span style="color:#990000">:</span>                  # @__cxx_global_var_init
@@ -27,7 +27,7 @@ __cxx_global_var_init<span style="color:#990000">:</span>                  # @__
 	movabs	rsi<span style="color:#990000">,</span> _ZStL<span style="color:#993399">8</span>__ioinit
 	movabs	rdx<span style="color:#990000">,</span> __dso_handle
 	<b><span style="color:#0000FF">call</span></b>	__cxa_atexit
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">dword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">4</span><span style="color:#990000">],</span> <span style="color:#009900">eax</span> # <span style="color:#993399">4</span><span style="color:#990000">-</span><span style="color:#009900">byte</span> Spill
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">dword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">4</span><span style="color:#990000">],</span> <span style="color:#008A00">eax</span> # <span style="color:#993399">4</span><span style="color:#990000">-</span><span style="color:#008A00">byte</span> Spill
 	<b><span style="color:#0000FF">pop</span></b>	rax
 	<b><span style="color:#0000FF">ret</span></b>
 <b><span style="color:#000080">.Lfunc</span></b>_end<span style="color:#993399">0</span><span style="color:#990000">:</span>
@@ -41,16 +41,16 @@ __cxx_global_var_init<span style="color:#990000">:</span>                  # @__
 absolute_value<span style="color:#990000">:</span>                         # @absolute_value
 <b><span style="color:#000080">	.cfi</span></b>_startproc
 # BB#<span style="color:#993399">0</span><span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> rdi
-	<b><span style="color:#0000FF">cmp</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> rdi
+	<b><span style="color:#0000FF">cmp</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
 	<b><span style="color:#0000FF">jge</span></b>	<span style="color:#990000">.</span>LBB<span style="color:#993399">1_2</span>
 # BB#<span style="color:#993399">1</span><span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#009900">eax</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">ecx</span><span style="color:#990000">,</span> <span style="color:#009900">eax</span>
-	<b><span style="color:#0000FF">sub</span></b>	rcx<span style="color:#990000">,</span> <span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> rcx
+	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#008A00">eax</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">ecx</span><span style="color:#990000">,</span> <span style="color:#008A00">eax</span>
+	<b><span style="color:#0000FF">sub</span></b>	rcx<span style="color:#990000">,</span> <span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> rcx
 <b><span style="color:#000080">.LBB1</span></b><span style="color:#993399">_2</span><span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">mov</span></b>	rax<span style="color:#990000">,</span> <span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">mov</span></b>	rax<span style="color:#990000">,</span> <span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">-</span> <span style="color:#993399">8</span><span style="color:#990000">]</span>
 	<b><span style="color:#0000FF">ret</span></b>
 <b><span style="color:#000080">.Lfunc</span></b>_end<span style="color:#993399">1</span><span style="color:#990000">:</span>
 <b><span style="color:#000080">	.size</span></b>	absolute_value<span style="color:#990000">,</span> <span style="color:#990000">.</span>Lfunc_end<span style="color:#993399">1</span><span style="color:#990000">-</span>absolute_value
@@ -67,39 +67,39 @@ absolute_value<span style="color:#990000">:</span>                         # @ab
 <b><span style="color:#000080">	.cfi</span></b>_def_cfa_offset <span style="color:#993399">64</span>
 	movabs	rdi<span style="color:#990000">,</span> _ZSt<span style="color:#993399">4</span>cout
 	movabs	rsi<span style="color:#990000">,</span> <span style="color:#990000">.</span>L<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">dword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">52</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">40</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">dword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">52</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">40</span><span style="color:#990000">],</span> <span style="color:#993399">0</span>
 	<b><span style="color:#0000FF">call</span></b>	_ZStlsISt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIcT_ES<span style="color:#993399">5</span>_PKc
 	movabs	rsi<span style="color:#990000">,</span> _ZSt<span style="color:#993399">4</span>endlIcSt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIT_T<span style="color:#993399">0</span>_ES<span style="color:#993399">6</span>_
 	<b><span style="color:#0000FF">mov</span></b>	rdi<span style="color:#990000">,</span> rax
 	<b><span style="color:#0000FF">call</span></b>	_ZNSolsEPFRSoS_E
 	movabs	rdi<span style="color:#990000">,</span> _ZSt<span style="color:#993399">3</span>cin
 	<b><span style="color:#0000FF">lea</span></b>	rsi<span style="color:#990000">,</span> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">40</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">24</span><span style="color:#990000">],</span> rax # <span style="color:#993399">8</span><span style="color:#990000">-</span><span style="color:#009900">byte</span> Spill
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">24</span><span style="color:#990000">],</span> rax # <span style="color:#993399">8</span><span style="color:#990000">-</span><span style="color:#008A00">byte</span> Spill
 	<b><span style="color:#0000FF">call</span></b>	_ZNSirsERl
-	<b><span style="color:#0000FF">mov</span></b>	rdi<span style="color:#990000">,</span> <span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">40</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">16</span><span style="color:#990000">],</span> rax # <span style="color:#993399">8</span><span style="color:#990000">-</span><span style="color:#009900">byte</span> Spill
+	<b><span style="color:#0000FF">mov</span></b>	rdi<span style="color:#990000">,</span> <span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">40</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">16</span><span style="color:#990000">],</span> rax # <span style="color:#993399">8</span><span style="color:#990000">-</span><span style="color:#008A00">byte</span> Spill
 	<b><span style="color:#0000FF">call</span></b>	absolute_value
 	movabs	rdi<span style="color:#990000">,</span> _ZSt<span style="color:#993399">4</span>cout
 	movabs	rsi<span style="color:#990000">,</span> <span style="color:#990000">.</span>L<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#993399">.1</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">32</span><span style="color:#990000">],</span> rax
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">32</span><span style="color:#990000">],</span> rax
 	<b><span style="color:#0000FF">call</span></b>	_ZStlsISt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIcT_ES<span style="color:#993399">5</span>_PKc
-	<b><span style="color:#0000FF">mov</span></b>	rsi<span style="color:#990000">,</span> <span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">32</span><span style="color:#990000">]</span>
+	<b><span style="color:#0000FF">mov</span></b>	rsi<span style="color:#990000">,</span> <span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">32</span><span style="color:#990000">]</span>
 	<b><span style="color:#0000FF">mov</span></b>	rdi<span style="color:#990000">,</span> rax
 	<b><span style="color:#0000FF">call</span></b>	_ZNSolsEl
 	movabs	rsi<span style="color:#990000">,</span> _ZSt<span style="color:#993399">4</span>endlIcSt<span style="color:#993399">11</span>char_traitsIcEERSt<span style="color:#993399">13</span>basic_ostreamIT_T<span style="color:#993399">0</span>_ES<span style="color:#993399">6</span>_
 	<b><span style="color:#0000FF">mov</span></b>	rdi<span style="color:#990000">,</span> rax
 	<b><span style="color:#0000FF">call</span></b>	_ZNSolsEPFRSoS_E
-	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#009900">ecx</span><span style="color:#990000">,</span> <span style="color:#009900">ecx</span>
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> rax # <span style="color:#993399">8</span><span style="color:#990000">-</span><span style="color:#009900">byte</span> Spill
-	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#009900">ecx</span>
+	<b><span style="color:#0000FF">xor</span></b>	<span style="color:#008A00">ecx</span><span style="color:#990000">,</span> <span style="color:#008A00">ecx</span>
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">qword</span> <b><span style="color:#0000FF">ptr</span></b> <span style="color:#990000">[</span>rsp <span style="color:#990000">+</span> <span style="color:#993399">8</span><span style="color:#990000">],</span> rax # <span style="color:#993399">8</span><span style="color:#990000">-</span><span style="color:#008A00">byte</span> Spill
+	<b><span style="color:#0000FF">mov</span></b>	<span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#008A00">ecx</span>
 	<b><span style="color:#0000FF">add</span></b>	rsp<span style="color:#990000">,</span> <span style="color:#993399">56</span>
 	<b><span style="color:#0000FF">ret</span></b>
 <b><span style="color:#000080">.Lfunc</span></b>_end<span style="color:#993399">2</span><span style="color:#990000">:</span>
 <b><span style="color:#000080">	.size</span></b>	main<span style="color:#990000">,</span> <span style="color:#990000">.</span>Lfunc_end<span style="color:#993399">2</span><span style="color:#990000">-</span>main
 <b><span style="color:#000080">	.cfi</span></b>_endproc
 
-<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>text<span style="color:#990000">.</span>startup<span style="color:#990000">,</span><span style="color:#FF0000">"ax"</span><span style="color:#990000">,</span>@progbits
+<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>text<span style="color:#990000">.</span>startup<span style="color:#990000">,</span><span style="color:#EF0000">"ax"</span><span style="color:#990000">,</span>@progbits
 <b><span style="color:#000080">	.align</span></b>	<span style="color:#993399">16</span><span style="color:#990000">,</span> <span style="color:#993399">0x90</span>
 <b><span style="color:#000080">	.type</span></b>	_GLOBAL__sub_I_test_abs<span style="color:#990000">.</span>cpp<span style="color:#990000">,</span>@function
 _GLOBAL__sub_I_test_abs<span style="color:#990000">.</span>cpp<span style="color:#990000">:</span>            # @_GLOBAL__sub_I_test_abs<span style="color:#990000">.</span>cpp
@@ -119,22 +119,22 @@ _GLOBAL__sub_I_test_abs<span style="color:#990000">.</span>cpp<span style="color
 <b><span style="color:#000080">	.local</span></b>	_ZStL<span style="color:#993399">8</span>__ioinit
 <b><span style="color:#000080">	.comm</span></b>	_ZStL<span style="color:#993399">8</span>__ioinit<span style="color:#990000">,</span><span style="color:#993399">1</span><span style="color:#990000">,</span><span style="color:#993399">1</span>
 <b><span style="color:#000080">	.type</span></b>	<span style="color:#990000">.</span>L<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#990000">,</span>@object          # @<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b>
-<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>rodata<span style="color:#990000">.</span>str<span style="color:#993399">1.1</span><span style="color:#990000">,</span><span style="color:#FF0000">"aMS"</span><span style="color:#990000">,</span>@progbits<span style="color:#990000">,</span><span style="color:#993399">1</span>
+<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>rodata<span style="color:#990000">.</span>str<span style="color:#993399">1.1</span><span style="color:#990000">,</span><span style="color:#EF0000">"aMS"</span><span style="color:#990000">,</span>@progbits<span style="color:#990000">,</span><span style="color:#993399">1</span>
 <b><span style="color:#000080">.L</span></b><span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#990000">:</span>
-<b><span style="color:#000080">	.asciz</span></b>	<span style="color:#FF0000">"Enter a value: "</span>
+<b><span style="color:#000080">	.asciz</span></b>	<span style="color:#EF0000">"Enter a value: "</span>
 <b><span style="color:#000080">	.size</span></b>	<span style="color:#990000">.</span>L<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#990000">,</span> <span style="color:#993399">16</span>
 
 <b><span style="color:#000080">	.type</span></b>	<span style="color:#990000">.</span>L<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#993399">.1</span><span style="color:#990000">,</span>@object        # @<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#993399">.1</span>
 <b><span style="color:#000080">.L</span></b><span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#993399">.1</span><span style="color:#990000">:</span>
-<b><span style="color:#000080">	.asciz</span></b>	<span style="color:#FF0000">"The result is: "</span>
+<b><span style="color:#000080">	.asciz</span></b>	<span style="color:#EF0000">"The result is: "</span>
 <b><span style="color:#000080">	.size</span></b>	<span style="color:#990000">.</span>L<span style="color:#990000">.</span><b><span style="color:#0000FF">str</span></b><span style="color:#993399">.1</span><span style="color:#990000">,</span> <span style="color:#993399">16</span>
 
-<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>init_array<span style="color:#990000">,</span><span style="color:#FF0000">"aw"</span><span style="color:#990000">,</span>@init_array
+<b><span style="color:#000080">	.section</span></b>	<span style="color:#990000">.</span>init_array<span style="color:#990000">,</span><span style="color:#EF0000">"aw"</span><span style="color:#990000">,</span>@init_array
 <b><span style="color:#000080">	.align</span></b>	<span style="color:#993399">8</span>
 <b><span style="color:#000080">	.quad</span></b>	_GLOBAL__sub_I_test_abs<span style="color:#990000">.</span>cpp
 
-<b><span style="color:#000080">	.ident</span></b>	<span style="color:#FF0000">"clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)"</span>
-<b><span style="color:#000080">	.section</span></b>	<span style="color:#FF0000">".note.GNU-stack"</span><span style="color:#990000">,</span><span style="color:#FF0000">""</span><span style="color:#990000">,</span>@progbits
+<b><span style="color:#000080">	.ident</span></b>	<span style="color:#EF0000">"clang version 3.8.0-2ubuntu4 (tags/RELEASE_380/final)"</span>
+<b><span style="color:#000080">	.section</span></b>	<span style="color:#EF0000">".note.GNU-stack"</span><span style="color:#990000">,</span><span style="color:#EF0000">""</span><span style="color:#990000">,</span>@progbits
 </pre></main>
 </body>
 </html>

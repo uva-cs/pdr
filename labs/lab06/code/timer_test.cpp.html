@@ -9,19 +9,19 @@ http://www.gnu.org/software/src-highlite">
 <title>timer_test.cpp</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">"timer.h"</span>
+<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"timer.h"</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b> <span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b> <span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <span style="color:#008080">timer</span> t<span style="color:#990000">;</span>
     t<span style="color:#990000">.</span><b><span style="color:#000000">start</span></b><span style="color:#990000">();</span>
     <i><span style="color:#9A1900">// do something that takes some time...</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> <span style="color:#993399">1000000000</span><span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#FF0000">{}</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> <span style="color:#993399">1000000000</span><span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#EF0000">{}</span>
     t<span style="color:#990000">.</span><b><span style="color:#000000">stop</span></b><span style="color:#990000">();</span>
     cout <span style="color:#990000">&lt;&lt;</span> t <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     cout <span style="color:#990000">&lt;&lt;</span> t<span style="color:#990000">.</span><b><span style="color:#000000">getTime</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

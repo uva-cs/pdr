@@ -30,31 +30,31 @@ http://www.gnu.org/software/src-highlite">
 
 <b><span style="color:#000080">vecsum:</span></b>
 	<i><span style="color:#9A1900">; Standard prologue</span></i>
-	<b><span style="color:#0000FF">push</span></b>  <span style="color:#009900">ebp</span>		<i><span style="color:#9A1900">; Save the old base pointer</span></i>
-	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#009900">ebp</span><span style="color:#990000">,</span> <span style="color:#009900">esp</span>		<i><span style="color:#9A1900">; Set new value of the base pointer</span></i>
-	<b><span style="color:#0000FF">push</span></b>  <span style="color:#009900">esi</span>		<i><span style="color:#9A1900">; Save registers</span></i>
+	<b><span style="color:#0000FF">push</span></b>  <span style="color:#008A00">ebp</span>		<i><span style="color:#9A1900">; Save the old base pointer</span></i>
+	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#008A00">ebp</span><span style="color:#990000">,</span> <span style="color:#008A00">esp</span>		<i><span style="color:#9A1900">; Set new value of the base pointer</span></i>
+	<b><span style="color:#0000FF">push</span></b>  <span style="color:#008A00">esi</span>		<i><span style="color:#9A1900">; Save registers</span></i>
 
-	<b><span style="color:#0000FF">xor</span></b>   <span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#009900">eax</span>		<i><span style="color:#9A1900">; Place zero in EAX. We will keep a running</span></i>
+	<b><span style="color:#0000FF">xor</span></b>   <span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#008A00">eax</span>		<i><span style="color:#9A1900">; Place zero in EAX. We will keep a running</span></i>
 				<i><span style="color:#9A1900">; sum of the vector elements in EAX.</span></i>
 
-	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#009900">esi</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; Put the vector starting address in ESI.</span></i>
-	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#009900">ecx</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#009900">ebp</span><span style="color:#990000">+</span><span style="color:#993399">12</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; Put the vector size in ECX. We will use</span></i>
+	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#008A00">esi</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">8</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; Put the vector starting address in ESI.</span></i>
+	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#008A00">ecx</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#008A00">ebp</span><span style="color:#990000">+</span><span style="color:#993399">12</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; Put the vector size in ECX. We will use</span></i>
 				<i><span style="color:#9A1900">; ECX to indicate how many vector elements</span></i>
 				<i><span style="color:#9A1900">; are left to add into the sum.</span></i>
 
-	<b><span style="color:#0000FF">cmp</span></b>   <span style="color:#009900">ecx</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>		<i><span style="color:#9A1900">; If there are not more than zero elemen</span></i>
+	<b><span style="color:#0000FF">cmp</span></b>   <span style="color:#008A00">ecx</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>		<i><span style="color:#9A1900">; If there are not more than zero elemen</span></i>
 	<b><span style="color:#0000FF">jle</span></b>   vecsum_done	<i><span style="color:#9A1900">; in the array, skip to the end and return</span></i>
 				<i><span style="color:#9A1900">; zero (already in EAX).</span></i>
 
 vecsum_loop<span style="color:#990000">:</span>
-	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#009900">edx</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#009900">esi</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; Put the current vector element into EDX.</span></i>
-	<b><span style="color:#0000FF">add</span></b>   <span style="color:#009900">eax</span><span style="color:#990000">,</span> <span style="color:#009900">edx</span>		<i><span style="color:#9A1900">; Add the current vector element into the</span></i>
+	<b><span style="color:#0000FF">mov</span></b>   <span style="color:#008A00">edx</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#008A00">esi</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; Put the current vector element into EDX.</span></i>
+	<b><span style="color:#0000FF">add</span></b>   <span style="color:#008A00">eax</span><span style="color:#990000">,</span> <span style="color:#008A00">edx</span>		<i><span style="color:#9A1900">; Add the current vector element into the</span></i>
 				<i><span style="color:#9A1900">; running sum.</span></i>
-	<b><span style="color:#0000FF">add</span></b>   <span style="color:#009900">esi</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>		<i><span style="color:#9A1900">; Increment ESI to point to the next</span></i>
+	<b><span style="color:#0000FF">add</span></b>   <span style="color:#008A00">esi</span><span style="color:#990000">,</span> <span style="color:#993399">4</span>		<i><span style="color:#9A1900">; Increment ESI to point to the next</span></i>
 				<i><span style="color:#9A1900">; vector element (4 bytes away).</span></i>
-	<b><span style="color:#0000FF">dec</span></b>   <span style="color:#009900">ecx</span>		<i><span style="color:#9A1900">; Decrement ECX, the counter of how many</span></i>
+	<b><span style="color:#0000FF">dec</span></b>   <span style="color:#008A00">ecx</span>		<i><span style="color:#9A1900">; Decrement ECX, the counter of how many</span></i>
 				<i><span style="color:#9A1900">; left to do.</span></i>
-	<b><span style="color:#0000FF">cmp</span></b>   <span style="color:#009900">ecx</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>		<i><span style="color:#9A1900">; If there are more than zero elements</span></i>
+	<b><span style="color:#0000FF">cmp</span></b>   <span style="color:#008A00">ecx</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>		<i><span style="color:#9A1900">; If there are more than zero elements</span></i>
 	<b><span style="color:#0000FF">jg</span></b>    vecsum_loop	<i><span style="color:#9A1900">; left to add up, then do the loop again.</span></i>
 
 vecsum_done<span style="color:#990000">:</span>
@@ -63,9 +63,9 @@ vecsum_done<span style="color:#990000">:</span>
 	<i><span style="color:#9A1900">; return value to be.</span></i>
 
 	<i><span style="color:#9A1900">; Standard epilogue</span></i>
-	<b><span style="color:#0000FF">pop</span></b>   <span style="color:#009900">esi</span>		<i><span style="color:#9A1900">; Restore registers that we used.</span></i>
+	<b><span style="color:#0000FF">pop</span></b>   <span style="color:#008A00">esi</span>		<i><span style="color:#9A1900">; Restore registers that we used.</span></i>
 				<i><span style="color:#9A1900">; Note - no local variables to dealocate.</span></i>
-	<b><span style="color:#0000FF">pop</span></b>   <span style="color:#009900">ebp</span>		<i><span style="color:#9A1900">; Restore the caller's base pointer.</span></i>
+	<b><span style="color:#0000FF">pop</span></b>   <span style="color:#008A00">ebp</span>		<i><span style="color:#9A1900">; Restore the caller's base pointer.</span></i>
 	<b><span style="color:#0000FF">ret</span></b>			<i><span style="color:#9A1900">; Return to the caller.</span></i>
 </pre></main>
 </body>

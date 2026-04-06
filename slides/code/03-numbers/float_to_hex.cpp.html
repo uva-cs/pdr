@@ -12,19 +12,19 @@ http://www.gnu.org/software/src-highlite">
 <main><pre><i><span style="color:#9A1900">// This should be compiled with the -m32 flag, so as to make the</span></i>
 <i><span style="color:#9A1900">// pointer a 32-bit memory address.</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">union</span></b> <span style="color:#008080">foo</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">float</span> f<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> <span style="color:#990000">*</span>x<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span> bar<span style="color:#990000">;</span>
+<b><span style="color:#0000FF">union</span></b> <span style="color:#008080">foo</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">float</span> f<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">*</span>x<span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span> bar<span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
     bar<span style="color:#990000">.</span>f <span style="color:#990000">=</span> <span style="color:#993399">42.125</span><span style="color:#990000">;</span>
     cout <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span> <i><span style="color:#9A1900">// prints in big-endian</span></i>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

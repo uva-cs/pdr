@@ -9,7 +9,7 @@ http://www.gnu.org/software/src-highlite">
 <title>Makefile</title>
 </head>
 <body style="background-color:white">
-<main><pre><span style="color:#009900">CXXASMFLAGS	=</span> -m<span style="color:#993399">64</span> -mllvm --x<span style="color:#993399">86</span>-asm-syntax<span style="color:#990000">=</span>intel -S -fomit-frame-pointer
+<main><pre><span style="color:#008A00">CXXASMFLAGS	=</span> -m<span style="color:#993399">64</span> -mllvm --x<span style="color:#993399">86</span>-asm-syntax<span style="color:#990000">=</span>intel -S -fomit-frame-pointer
 <span style="color:#990000">main:</span>
 	@echo You should <b><span style="color:#0000FF">read</span></b> the readme.txt file<span style="color:#990000">!</span>
 
@@ -21,16 +21,16 @@ http://www.gnu.org/software/src-highlite">
 	g<span style="color:#990000">++</span> -o test_string_compare test_string_compare.cpp
 
 <span style="color:#990000">asm:</span>
-	clang   <span style="color:#009900">$(CXXASMFLAGS)</span> test_abs_c.c -o test_abs_c.s
+	clang   <span style="color:#008A00">$(CXXASMFLAGS)</span> test_abs_c.c -o test_abs_c.s
 	clang<span style="color:#990000">++</span> -m<span style="color:#993399">64</span> -S -fomit-frame-pointer test_abs.cpp -o test_abs-non-intel.s
-	clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXASMFLAGS)</span> test_abs.cpp -o test_abs.s
-	clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXASMFLAGS)</span> test_abs_int.cpp -o test_abs_int.s
-	clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXASMFLAGS)</span> -O<span style="color:#993399">2</span> test_fib.cpp -o test_fib.s
-	clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXASMFLAGS)</span> -O<span style="color:#993399">2</span> test_string_compare.cpp -o test_string_compare.s
-	clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXASMFLAGS)</span> test_max.cpp -o test_max.s
-	clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXASMFLAGS)</span> -O<span style="color:#993399">2</span> test_max.cpp -o test_max-O2.s
+	clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXASMFLAGS)</span> test_abs.cpp -o test_abs.s
+	clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXASMFLAGS)</span> test_abs_int.cpp -o test_abs_int.s
+	clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXASMFLAGS)</span> -O<span style="color:#993399">2</span> test_fib.cpp -o test_fib.s
+	clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXASMFLAGS)</span> -O<span style="color:#993399">2</span> test_string_compare.cpp -o test_string_compare.s
+	clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXASMFLAGS)</span> test_max.cpp -o test_max.s
+	clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXASMFLAGS)</span> -O<span style="color:#993399">2</span> test_max.cpp -o test_max-O2.s
 	grep -v extern test_max.cpp <span style="color:#990000">&gt;</span> foo.cpp
-	clang<span style="color:#990000">++</span> <span style="color:#009900">$(CXXASMFLAGS)</span> foo.cpp -o test_max-noextern.s
+	clang<span style="color:#990000">++</span> <span style="color:#008A00">$(CXXASMFLAGS)</span> foo.cpp -o test_max-noextern.s
 	/bin/rm -rf foo.cpp
 
 <span style="color:#990000">clean:</span>

@@ -13,23 +13,23 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"># This Makefile shows how to link assembly with C/C++</span></i>
 
 <i><span style="color:#9A1900"># Defines the C++ compiler we'll be using</span></i>
-<span style="color:#009900">CXX =</span> clang<span style="color:#990000">++</span>
+<span style="color:#008A00">CXX =</span> clang<span style="color:#990000">++</span>
 
 <i><span style="color:#9A1900"># Defines the flags we'll be passing to the C++ compiler</span></i>
-<span style="color:#009900">CXXFLAGS =</span> -Wall -g
+<span style="color:#008A00">CXXFLAGS =</span> -Wall -g
 
 <i><span style="color:#9A1900"># Defines the assembler</span></i>
-<span style="color:#009900">AS =</span> nasm
+<span style="color:#008A00">AS =</span> nasm
 
 <i><span style="color:#9A1900"># Defines the flags for the assembler</span></i>
-<span style="color:#009900">ASFLAGS =</span> -f elf64 -g
+<span style="color:#008A00">ASFLAGS =</span> -f elf64 -g
 
 <i><span style="color:#9A1900"># All of the .o files for our program</span></i>
-<span style="color:#009900">OFILES =</span> assembly.o main.o
+<span style="color:#008A00">OFILES =</span> assembly.o main.o
 
 <i><span style="color:#9A1900"># Compile our files into a.out</span></i>
-<span style="color:#990000">a.out:</span> <span style="color:#009900">$(OFILES)</span>
-	<span style="color:#009900">$(CXX)</span> <span style="color:#009900">$(CXXFLAGS)</span> <span style="color:#009900">$(OFILES)</span>
+<span style="color:#990000">a.out:</span> <span style="color:#008A00">$(OFILES)</span>
+	<span style="color:#008A00">$(CXX)</span> <span style="color:#008A00">$(CXXFLAGS)</span> <span style="color:#008A00">$(OFILES)</span>
 
 <i><span style="color:#9A1900"># This will clean up (remove) all our object files.  The -f option</span></i>
 <i><span style="color:#9A1900"># tells rm to forcily remove the files (i.e. don't ask if they should</span></i>

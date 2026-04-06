@@ -14,65 +14,65 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900">// average and the maximum value</span></i>
 <i><span style="color:#9A1900">//----------------------------------------------------------------------</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// Global Constants</span></i>
-<b><span style="color:#0000FF">const</span></b> <span style="color:#009900">int</span> MAX <span style="color:#990000">=</span> <span style="color:#993399">5</span><span style="color:#990000">;</span>
+<b><span style="color:#0000FF">const</span></b> <span style="color:#008A00">int</span> MAX <span style="color:#990000">=</span> <span style="color:#993399">5</span><span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// Function Prototypes</span></i>
-<span style="color:#009900">double</span> <b><span style="color:#000000">GetAverage</span></b><span style="color:#990000">(</span> <span style="color:#009900">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#009900">int</span> nMax<span style="color:#990000">);</span>
-<span style="color:#009900">int</span> <b><span style="color:#000000">GetMax</span></b><span style="color:#990000">(</span> <span style="color:#009900">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#009900">int</span> nMax <span style="color:#990000">);</span>
+<span style="color:#008A00">double</span> <b><span style="color:#000000">GetAverage</span></b><span style="color:#990000">(</span> <span style="color:#008A00">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#008A00">int</span> nMax<span style="color:#990000">);</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">GetMax</span></b><span style="color:#990000">(</span> <span style="color:#008A00">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#008A00">int</span> nMax <span style="color:#990000">);</span>
 
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
 
-    <span style="color:#009900">int</span> nValues<span style="color:#990000">[</span>MAX<span style="color:#990000">];</span>
-    <span style="color:#009900">int</span> nCount<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> nValues<span style="color:#990000">[</span>MAX<span style="color:#990000">];</span>
+    <span style="color:#008A00">int</span> nCount<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// Display a prompt:</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Enter five numbers: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter five numbers: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// First we read in the numbers.</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> nCount <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> nCount <span style="color:#990000">&lt;</span> MAX<span style="color:#990000">;</span> nCount<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Enter the next number : "</span><span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> nCount <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> nCount <span style="color:#990000">&lt;</span> MAX<span style="color:#990000">;</span> nCount<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter the next number : "</span><span style="color:#990000">;</span>
         cin <span style="color:#990000">&gt;&gt;</span> nValues<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">];</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// Now we echo the input back to the user</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> nCount <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span> nCount <span style="color:#990000">&lt;</span> MAX<span style="color:#990000">;</span> nCount<span style="color:#990000">++)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Value [ "</span> <span style="color:#990000">&lt;&lt;</span> nCount <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"] is : "</span> <span style="color:#990000">&lt;&lt;</span> nValues<span style="color:#990000">[</span>nCount<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> nCount <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span> nCount <span style="color:#990000">&lt;</span> MAX<span style="color:#990000">;</span> nCount<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Value [ "</span> <span style="color:#990000">&lt;&lt;</span> nCount <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"] is : "</span> <span style="color:#990000">&lt;&lt;</span> nValues<span style="color:#990000">[</span>nCount<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// Now lets call a function to get the average:</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"The average is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">GetAverage</span></b><span style="color:#990000">(</span>nValues<span style="color:#990000">,</span> MAX <span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"The average is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">GetAverage</span></b><span style="color:#990000">(</span>nValues<span style="color:#990000">,</span> MAX <span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// Now lets call a function to get the max:</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"The max is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">GetMax</span></b><span style="color:#990000">(</span>nValues<span style="color:#990000">,</span> MAX <span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"The max is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">GetMax</span></b><span style="color:#990000">(</span>nValues<span style="color:#990000">,</span> MAX <span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
 
-<span style="color:#FF0000">}</span> <i><span style="color:#9A1900">// End of main</span></i>
+<span style="color:#EF0000">}</span> <i><span style="color:#9A1900">// End of main</span></i>
 
 
-<span style="color:#009900">double</span> <b><span style="color:#000000">GetAverage</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#009900">int</span> nMax<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">double</span> <b><span style="color:#000000">GetAverage</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#008A00">int</span> nMax<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
 
-    <span style="color:#009900">double</span> temp <span style="color:#990000">=</span> <span style="color:#993399">0.0</span><span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&gt;</span> nMax<span style="color:#990000">;</span> i<span style="color:#990000">++)</span>
+    <span style="color:#008A00">double</span> temp <span style="color:#990000">=</span> <span style="color:#993399">0.0</span><span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&gt;</span> nMax<span style="color:#990000">;</span> i<span style="color:#990000">++)</span>
         temp <span style="color:#990000">+=</span> nIn<span style="color:#990000">[</span>i<span style="color:#990000">];</span>
     temp <span style="color:#990000">/=</span> nMax<span style="color:#990000">;</span>
 
     <b><span style="color:#0000FF">return</span></b> temp<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span> <i><span style="color:#9A1900">// End of GetAverage()</span></i>
+<span style="color:#EF0000">}</span> <i><span style="color:#9A1900">// End of GetAverage()</span></i>
 
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">GetMax</span></b><span style="color:#990000">(</span> <span style="color:#009900">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#009900">int</span> nMax<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> nBiggest <span style="color:#990000">=</span> nIn<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">];</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> nMax<span style="color:#990000">;</span> i<span style="color:#990000">++)</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">GetMax</span></b><span style="color:#990000">(</span> <span style="color:#008A00">int</span> nIn<span style="color:#990000">[],</span> <span style="color:#008A00">int</span> nMax<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> nBiggest <span style="color:#990000">=</span> nIn<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">];</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> nMax<span style="color:#990000">;</span> i<span style="color:#990000">++)</span>
         <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>nBiggest <span style="color:#990000">&gt;</span> nIn<span style="color:#990000">[</span>i<span style="color:#990000">])</span>
             nBiggest <span style="color:#990000">=</span> nIn<span style="color:#990000">[</span>i<span style="color:#990000">];</span>
     <b><span style="color:#0000FF">return</span></b> nBiggest<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span> <i><span style="color:#9A1900">// End of GetMax()</span></i>
+<span style="color:#EF0000">}</span> <i><span style="color:#9A1900">// End of GetMax()</span></i>
 
 <i><span style="color:#9A1900">//----------------------------------------------------------------------</span></i>
 <i><span style="color:#9A1900">// END OF LISTING</span></i>

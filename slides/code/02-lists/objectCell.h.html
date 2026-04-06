@@ -13,22 +13,22 @@ http://www.gnu.org/software/src-highlite">
 <b><span style="color:#000080">#define</span></b> OBJECTCELL_H
 
 <b><span style="color:#0000FF">template</span></b> <span style="color:#990000">&lt;</span><b><span style="color:#0000FF">typename</span></b> <span style="color:#008080">Object</span><span style="color:#990000">&gt;</span>
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">ObjectCell</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">ObjectCell</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#000000">ObjectCell</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> Object <span style="color:#990000">&amp;</span> initValue <span style="color:#990000">=</span> <b><span style="color:#000000">Object</span></b><span style="color:#990000">())</span> <span style="color:#990000">:</span> <b><span style="color:#000000">storedValue</span></b><span style="color:#990000">(</span>initValue<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    <span style="color:#FF0000">}</span>
+    <b><span style="color:#000000">ObjectCell</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> Object <span style="color:#990000">&amp;</span> initValue <span style="color:#990000">=</span> <b><span style="color:#000000">Object</span></b><span style="color:#990000">())</span> <span style="color:#990000">:</span> <b><span style="color:#000000">storedValue</span></b><span style="color:#990000">(</span>initValue<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    <span style="color:#EF0000">}</span>
 
-    <b><span style="color:#0000FF">const</span></b> Object <span style="color:#990000">&amp;</span> <b><span style="color:#000000">getValue</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">const</span></b> Object <span style="color:#990000">&amp;</span> <b><span style="color:#000000">getValue</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">return</span></b> storedValue<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
-    <span style="color:#009900">void</span> <b><span style="color:#000000">setValue</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> Object <span style="color:#990000">&amp;</span> val<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">setValue</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> Object <span style="color:#990000">&amp;</span> val<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         storedValue <span style="color:#990000">=</span> val<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
 <b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
     <span style="color:#008080">Object</span> storedValue<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
 <b><span style="color:#000080">#endif</span></b>
 </pre></main>

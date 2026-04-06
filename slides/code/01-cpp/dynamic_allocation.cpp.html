@@ -14,34 +14,34 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"> * Description: Demonstrates dynamic allocation and de-allocation</span></i>
 <i><span style="color:#9A1900"> *			using new and delete</span></i>
 <i><span style="color:#9A1900"> */</span></i>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> n<span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> n<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// read in a value from the user</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Please enter an integer value: "</span> <span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Please enter an integer value: "</span> <span style="color:#990000">;</span>
     cin <span style="color:#990000">&gt;&gt;</span> n<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// use the user's input to create an array of int</span></i>
-    <span style="color:#009900">int</span> <span style="color:#990000">*</span> ages <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span> <span style="color:#990000">[</span>n<span style="color:#990000">];</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">*</span> ages <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span> <span style="color:#990000">[</span>n<span style="color:#990000">];</span>
 
     <i><span style="color:#9A1900">// use a loop to prompt the user to initialize the array</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Enter a value for ages[ "</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" ]: "</span> <span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter a value for ages[ "</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" ]: "</span> <span style="color:#990000">;</span>
         cin <span style="color:#990000">&gt;&gt;</span> ages<span style="color:#990000">[</span>i<span style="color:#990000">];</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// print out the contents of the array</span></i>
-    <b><span style="color:#0000FF">for</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i<span style="color:#990000">&lt;</span>n<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"ages[ "</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" ]: "</span> <span style="color:#990000">&lt;&lt;</span> ages<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" , "</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <b><span style="color:#0000FF">for</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> i<span style="color:#990000">=</span><span style="color:#993399">0</span><span style="color:#990000">;</span> i<span style="color:#990000">&lt;</span>n<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"ages[ "</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" ]: "</span> <span style="color:#990000">&lt;&lt;</span> ages<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" , "</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
     cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// finished with the array, clean up the memory used by calling delete</span></i>
     <b><span style="color:#0000FF">delete</span></b> <span style="color:#990000">[]</span> ages<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

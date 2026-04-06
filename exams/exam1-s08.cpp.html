@@ -11,8 +11,8 @@ http://www.gnu.org/software/src-highlite">
 <body style="background-color:white">
 <main><pre><i><span style="color:#9A1900">// CS 216 exam 1 code</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;stdio.h&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;stdio.h&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">/* This function will print out the results of the memory diagram</span></i>
@@ -20,54 +20,54 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"> * function are the ones that cause errors: the first a compile-time</span></i>
 <i><span style="color:#9A1900"> * error, the last two a run-time error.</span></i>
 <i><span style="color:#9A1900"> */</span></i>
-<span style="color:#009900">void</span> <b><span style="color:#000000">memoryDiagramQuestion</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Memory diagram question output: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> a <span style="color:#990000">=</span> <span style="color:#993399">7</span><span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> <span style="color:#990000">*</span>b <span style="color:#990000">=</span> <span style="color:#990000">&amp;</span>a<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> <span style="color:#990000">&amp;</span>c <span style="color:#990000">=</span> a<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> d<span style="color:#990000">[</span><span style="color:#993399">5</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#FF0000">{</span> <span style="color:#993399">1</span><span style="color:#990000">,</span> <span style="color:#993399">2</span><span style="color:#990000">,</span> <span style="color:#993399">3</span><span style="color:#990000">,</span> <span style="color:#993399">4</span><span style="color:#990000">,</span> <span style="color:#993399">5</span> <span style="color:#FF0000">}</span><span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> <span style="color:#990000">*</span>e <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span><span style="color:#990000">[</span><span style="color:#993399">5</span><span style="color:#990000">];</span>
-    <span style="color:#009900">int</span> <span style="color:#990000">*</span>f <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> <span style="color:#990000">&amp;</span>g <span style="color:#990000">=</span> <span style="color:#990000">*</span>f<span style="color:#990000">;</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">memoryDiagramQuestion</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Memory diagram question output: "</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> a <span style="color:#990000">=</span> <span style="color:#993399">7</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">*</span>b <span style="color:#990000">=</span> <span style="color:#990000">&amp;</span>a<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">&amp;</span>c <span style="color:#990000">=</span> a<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> d<span style="color:#990000">[</span><span style="color:#993399">5</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#EF0000">{</span> <span style="color:#993399">1</span><span style="color:#990000">,</span> <span style="color:#993399">2</span><span style="color:#990000">,</span> <span style="color:#993399">3</span><span style="color:#990000">,</span> <span style="color:#993399">4</span><span style="color:#990000">,</span> <span style="color:#993399">5</span> <span style="color:#EF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">*</span>e <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">[</span><span style="color:#993399">5</span><span style="color:#990000">];</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">*</span>f <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> <span style="color:#990000">&amp;</span>g <span style="color:#990000">=</span> <span style="color:#990000">*</span>f<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">//c = b;</span></i>
     c <span style="color:#990000">=</span> <span style="color:#990000">*</span>b<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"a:  "</span> <span style="color:#990000">&lt;&lt;</span> a <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"b:  "</span> <span style="color:#990000">&lt;&lt;</span> b <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"*b: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>b <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"c:  "</span> <span style="color:#990000">&lt;&lt;</span> c <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"d:  "</span> <span style="color:#990000">&lt;&lt;</span> d <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"e:  "</span> <span style="color:#990000">&lt;&lt;</span> e <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"*e: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>e <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"f:  "</span> <span style="color:#990000">&lt;&lt;</span> f <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"a:  "</span> <span style="color:#990000">&lt;&lt;</span> a <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"b:  "</span> <span style="color:#990000">&lt;&lt;</span> b <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"*b: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>b <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"c:  "</span> <span style="color:#990000">&lt;&lt;</span> c <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"d:  "</span> <span style="color:#990000">&lt;&lt;</span> d <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"e:  "</span> <span style="color:#990000">&lt;&lt;</span> e <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"*e: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>e <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"f:  "</span> <span style="color:#990000">&lt;&lt;</span> f <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">//cout &lt;&lt; "*f:  " &lt;&lt; *f &lt;&lt; endl;</span></i>
     <i><span style="color:#9A1900">//cout &lt;&lt; "g:  " &lt;&lt; g &lt;&lt; endl;</span></i>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// The array that is declared in question 3</span></i>
-<span style="color:#009900">int</span> x<span style="color:#990000">[</span><span style="color:#993399">3</span><span style="color:#990000">][</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">{</span><span style="color:#993399">1</span><span style="color:#990000">,</span><span style="color:#993399">2</span><span style="color:#FF0000">}</span><span style="color:#990000">,</span> <span style="color:#FF0000">{</span><span style="color:#993399">3</span><span style="color:#990000">,</span><span style="color:#993399">4</span><span style="color:#FF0000">}</span><span style="color:#990000">,</span> <span style="color:#FF0000">{</span><span style="color:#993399">5</span><span style="color:#990000">,</span><span style="color:#993399">6</span><span style="color:#FF0000">}</span> <span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> x<span style="color:#990000">[</span><span style="color:#993399">3</span><span style="color:#990000">][</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">{</span><span style="color:#993399">1</span><span style="color:#990000">,</span><span style="color:#993399">2</span><span style="color:#EF0000">}</span><span style="color:#990000">,</span> <span style="color:#EF0000">{</span><span style="color:#993399">3</span><span style="color:#990000">,</span><span style="color:#993399">4</span><span style="color:#EF0000">}</span><span style="color:#990000">,</span> <span style="color:#EF0000">{</span><span style="color:#993399">5</span><span style="color:#990000">,</span><span style="color:#993399">6</span><span style="color:#EF0000">}</span> <span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// The union used for questin 12</span></i>
-<b><span style="color:#0000FF">union</span></b> <span style="color:#008080">foo</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> x<span style="color:#990000">;</span>               <i><span style="color:#9A1900">// used to write the int value</span></i>
-    <span style="color:#009900">float</span> f<span style="color:#990000">;</span>             <i><span style="color:#9A1900">// used to read the floating point value</span></i>
-    <span style="color:#009900">int</span> <span style="color:#990000">*</span>p<span style="color:#990000">;</span>              <i><span style="color:#9A1900">// used to print out the values in hex</span></i>
-    <span style="color:#009900">unsigned</span> <span style="color:#009900">char</span> c<span style="color:#990000">[</span><span style="color:#993399">4</span><span style="color:#990000">];</span>  <i><span style="color:#9A1900">// used to swap the bytes</span></i>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<b><span style="color:#0000FF">union</span></b> <span style="color:#008080">foo</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> x<span style="color:#990000">;</span>               <i><span style="color:#9A1900">// used to write the int value</span></i>
+    <span style="color:#008A00">float</span> f<span style="color:#990000">;</span>             <i><span style="color:#9A1900">// used to read the floating point value</span></i>
+    <span style="color:#008A00">int</span> <span style="color:#990000">*</span>p<span style="color:#990000">;</span>              <i><span style="color:#9A1900">// used to print out the values in hex</span></i>
+    <span style="color:#008A00">unsigned</span> <span style="color:#008A00">char</span> c<span style="color:#990000">[</span><span style="color:#993399">4</span><span style="color:#990000">];</span>  <i><span style="color:#9A1900">// used to swap the bytes</span></i>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">/* This function will compute the result of the endian number question</span></i>
 <i><span style="color:#9A1900"> * (question 12).  Because the x86 writes both the floating point</span></i>
 <i><span style="color:#9A1900"> * number and the int value both in the same endian format, the bytes</span></i>
 <i><span style="color:#9A1900"> * have to be switched to simulate what was asked in the question.</span></i>
 <i><span style="color:#9A1900"> */</span></i>
-<span style="color:#009900">void</span> <b><span style="color:#000000">endianNumberQuestion</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">endianNumberQuestion</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
 
     <i><span style="color:#9A1900">// Write the int to the union, and print out the value in hex.  This</span></i>
     <i><span style="color:#9A1900">// is also the value expected for the first part of the 'partial</span></i>
     <i><span style="color:#9A1900">// credit' option for this question.</span></i>
     <span style="color:#008080">foo</span> bar<span style="color:#990000">;</span>
     bar<span style="color:#990000">.</span>x <span style="color:#990000">=</span> <span style="color:#993399">2113</span><span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Decimal value: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Hex value before endian swap: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>p <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Decimal value: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>x <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Hex value before endian swap: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>p <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// Any machine will write both floating point numbers and int</span></i>
     <i><span style="color:#9A1900">// numbers in the same endian format.  To simulate the exam question</span></i>
@@ -76,7 +76,7 @@ http://www.gnu.org/software/src-highlite">
     <i><span style="color:#9A1900">// switched.  Note that it doesn't matter if this is running on a</span></i>
     <i><span style="color:#9A1900">// big-endian machine or a little-endian machine, as the byte swap</span></i>
     <i><span style="color:#9A1900">// will just switch the bytes to the 'other' format.</span></i>
-    <span style="color:#009900">unsigned</span> <span style="color:#009900">char</span> g<span style="color:#990000">;</span>
+    <span style="color:#008A00">unsigned</span> <span style="color:#008A00">char</span> g<span style="color:#990000">;</span>
     g <span style="color:#990000">=</span> bar<span style="color:#990000">.</span>c<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">];</span>
     bar<span style="color:#990000">.</span>c<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> bar<span style="color:#990000">.</span>c<span style="color:#990000">[</span><span style="color:#993399">3</span><span style="color:#990000">];</span>
     bar<span style="color:#990000">.</span>c<span style="color:#990000">[</span><span style="color:#993399">3</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> g<span style="color:#990000">;</span>
@@ -85,21 +85,21 @@ http://www.gnu.org/software/src-highlite">
     bar<span style="color:#990000">.</span>c<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> g<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// Extract the floating point value</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Hex value after endian swap: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>p <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Floating point value: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>f <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Hex value after endian swap: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>p <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Floating point value: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>f <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// This is the second part of the 'partial credit' option for this</span></i>
     <i><span style="color:#9A1900">// question.</span></i>
     bar<span style="color:#990000">.</span>x <span style="color:#990000">=</span> <span style="color:#993399">0x419c0000</span><span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"0x419c0000 as a float: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>f <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"0x419c0000 as a float: "</span> <span style="color:#990000">&lt;&lt;</span> bar<span style="color:#990000">.</span>f <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">// Calls the two defined functions above, and then exits.</span></i>
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> argc<span style="color:#990000">,</span> <span style="color:#009900">char</span> <span style="color:#990000">**</span>argv<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> argc<span style="color:#990000">,</span> <span style="color:#008A00">char</span> <span style="color:#990000">**</span>argv<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <b><span style="color:#000000">endianNumberQuestion</span></b><span style="color:#990000">();</span>
     <b><span style="color:#000000">memoryDiagramQuestion</span></b><span style="color:#990000">();</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
 <i><span style="color:#9A1900">/* Output:</span></i>

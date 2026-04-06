@@ -9,92 +9,92 @@ http://www.gnu.org/software/src-highlite">
 <title>classes.cpp</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;string&gt;</span>
+<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;string&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">gplistnode</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">gplistnode</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
     gplistnode<span style="color:#990000">*</span> prev<span style="color:#990000">,</span> <span style="color:#990000">*</span>next<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> id<span style="color:#990000">;</span>
-    <b><span style="color:#000000">gplistnode</span></b><span style="color:#990000">()</span> <span style="color:#990000">:</span> <b><span style="color:#000000">prev</span></b> <span style="color:#990000">(</span>nullptr<span style="color:#990000">),</span> <b><span style="color:#000000">next</span></b> <span style="color:#990000">(</span>nullptr<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"In gplistnode::constructor()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> id<span style="color:#990000">;</span>
+    <b><span style="color:#000000">gplistnode</span></b><span style="color:#990000">()</span> <span style="color:#990000">:</span> <b><span style="color:#000000">prev</span></b> <span style="color:#990000">(</span>nullptr<span style="color:#990000">),</span> <b><span style="color:#000000">next</span></b> <span style="color:#990000">(</span>nullptr<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"In gplistnode::constructor()"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         id <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">gplistnode</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#009900">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">gplistnode</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#008A00">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">return</span></b> id<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">person</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">person</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">int</span> id<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> id<span style="color:#990000">;</span>
     <span style="color:#008080">string</span> name<span style="color:#990000">;</span>
-    <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">name</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"In person::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">name</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"In person::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         id <span style="color:#990000">=</span> <span style="color:#993399">2</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">person</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#009900">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">person</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#008A00">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">return</span></b> id<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">student</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> gplistnode<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> person <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">student</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> gplistnode<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> person <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">int</span> id<span style="color:#990000">;</span>
-    <b><span style="color:#000000">student</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span>  <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"In student::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> id<span style="color:#990000">;</span>
+    <b><span style="color:#000000">student</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span>  <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"In student::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         id <span style="color:#990000">=</span> <span style="color:#993399">3</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">student</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#009900">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">student</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#008A00">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">return</span></b> id<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">professor</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> gplistnode<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> person <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">professor</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> gplistnode<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> person <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">int</span> id<span style="color:#990000">;</span>
-    <b><span style="color:#000000">professor</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span>  <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"In professor::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> id<span style="color:#990000">;</span>
+    <b><span style="color:#000000">professor</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span>  <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"In professor::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         id <span style="color:#990000">=</span> <span style="color:#993399">4</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">professor</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#009900">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">professor</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#008A00">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">return</span></b> id<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">student_prof</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> student<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> professor <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">student_prof</span> <span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> student<span style="color:#990000">,</span> <b><span style="color:#0000FF">public</span></b> <b><span style="color:#0000FF">virtual</span></b> professor <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <span style="color:#009900">int</span> id<span style="color:#990000">;</span>
-    <b><span style="color:#000000">student_prof</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">student</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">),</span> <b><span style="color:#000000">professor</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">),</span> <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span>  <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"In student_prof::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> id<span style="color:#990000">;</span>
+    <b><span style="color:#000000">student_prof</span></b> <span style="color:#990000">(</span><span style="color:#008080">string</span> n<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">student</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">),</span> <b><span style="color:#000000">professor</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">),</span> <b><span style="color:#000000">person</span></b> <span style="color:#990000">(</span>n<span style="color:#990000">)</span>  <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"In student_prof::constructor(string)"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         cout <span style="color:#990000">&lt;&lt;</span> student<span style="color:#990000">::</span>prev <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         cout <span style="color:#990000">&lt;&lt;</span> professor<span style="color:#990000">::</span>prev <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         id <span style="color:#990000">=</span> <span style="color:#993399">5</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">student_prof</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
-    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#009900">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+    <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#990000">~</span><b><span style="color:#000000">student_prof</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">}</span>
+    <b><span style="color:#0000FF">virtual</span></b> <span style="color:#008A00">int</span> <b><span style="color:#000000">getID</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">return</span></b> id<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"sizeof(string): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>string<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"sizeof(gplistnode): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>gplistnode<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"sizeof(person): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>person<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"sizeof(student): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>student<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"sizeof(professor): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>professor<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"sizeof(student_prof): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>student_prof<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"sizeof(string): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>string<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"sizeof(gplistnode): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>gplistnode<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"sizeof(person): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>person<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"sizeof(student): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>student<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"sizeof(professor): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>professor<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"sizeof(student_prof): "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span>student_prof<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
-    <span style="color:#008080">student_prof</span> <b><span style="color:#000000">s</span></b> <span style="color:#990000">(</span><span style="color:#FF0000">"Batman"</span><span style="color:#990000">);</span>
+    <span style="color:#008080">student_prof</span> <b><span style="color:#000000">s</span></b> <span style="color:#990000">(</span><span style="color:#EF0000">"Batman"</span><span style="color:#990000">);</span>
 
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

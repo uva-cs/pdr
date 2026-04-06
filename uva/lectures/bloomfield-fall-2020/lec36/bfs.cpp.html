@@ -9,88 +9,88 @@ http://www.gnu.org/software/src-highlite">
 <title>bfs.cpp</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;string&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;limits.h&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;queue&gt;</span>
+<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;string&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;limits.h&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;queue&gt;</span>
 
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">//assumes 0 is start node always</span></i>
-<span style="color:#009900">void</span> <b><span style="color:#000000">bfs</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span><span style="color:#990000">**</span> g<span style="color:#990000">,</span> <span style="color:#009900">int</span><span style="color:#990000">*</span> dist<span style="color:#990000">,</span> <span style="color:#009900">int</span> n<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">void</span> <b><span style="color:#000000">bfs</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span><span style="color:#990000">**</span> g<span style="color:#990000">,</span> <span style="color:#008A00">int</span><span style="color:#990000">*</span> dist<span style="color:#990000">,</span> <span style="color:#008A00">int</span> n<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
 
     <span style="color:#008080">queue&lt;int&gt;</span> q<span style="color:#990000">;</span>
     dist<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
     q<span style="color:#990000">.</span><b><span style="color:#000000">push</span></b> <span style="color:#990000">(</span><span style="color:#993399">0</span><span style="color:#990000">);</span>
 
-    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span> q<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()</span> <span style="color:#990000">&gt;</span> <span style="color:#993399">0</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        <span style="color:#009900">int</span> curNode <span style="color:#990000">=</span> q<span style="color:#990000">.</span><b><span style="color:#000000">front</span></b><span style="color:#990000">();</span>
+    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span> q<span style="color:#990000">.</span><b><span style="color:#000000">size</span></b><span style="color:#990000">()</span> <span style="color:#990000">&gt;</span> <span style="color:#993399">0</span> <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        <span style="color:#008A00">int</span> curNode <span style="color:#990000">=</span> q<span style="color:#990000">.</span><b><span style="color:#000000">front</span></b><span style="color:#990000">();</span>
         q<span style="color:#990000">.</span><b><span style="color:#000000">pop</span></b><span style="color:#990000">();</span>
 
         <i><span style="color:#9A1900">//look at all neighbors</span></i>
-        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
-            <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> g<span style="color:#990000">[</span>curNode<span style="color:#990000">][</span>i<span style="color:#990000">]</span> <span style="color:#990000">==</span> <span style="color:#993399">1</span> <span style="color:#990000">&amp;&amp;</span> dist<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">==</span> INT_MAX <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
+            <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> g<span style="color:#990000">[</span>curNode<span style="color:#990000">][</span>i<span style="color:#990000">]</span> <span style="color:#990000">==</span> <span style="color:#993399">1</span> <span style="color:#990000">&amp;&amp;</span> dist<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">==</span> INT_MAX <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
                 dist<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">=</span> dist<span style="color:#990000">[</span>curNode<span style="color:#990000">]</span> <span style="color:#990000">+</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
                 q<span style="color:#990000">.</span><b><span style="color:#000000">push</span></b> <span style="color:#990000">(</span>i<span style="color:#990000">);</span>
-            <span style="color:#FF0000">}</span>
-    <span style="color:#FF0000">}</span>
-<span style="color:#FF0000">}</span>
+            <span style="color:#EF0000">}</span>
+    <span style="color:#EF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
 
     <i><span style="color:#9A1900">//read in n (number of nodes) and e (number of edges)</span></i>
-    <span style="color:#009900">int</span> n<span style="color:#990000">,</span> e<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> n<span style="color:#990000">,</span> e<span style="color:#990000">;</span>
     cin <span style="color:#990000">&gt;&gt;</span> n <span style="color:#990000">&gt;&gt;</span> e<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">//initialize the matrix of the graph to all 0s</span></i>
-    <span style="color:#009900">int</span><span style="color:#990000">**</span> g <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span><span style="color:#990000">*</span> <span style="color:#990000">[</span>n<span style="color:#990000">];</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        g<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span><span style="color:#990000">[</span>n<span style="color:#990000">];</span>
-        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> j <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> j <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> j<span style="color:#990000">++</span> <span style="color:#990000">)</span>
+    <span style="color:#008A00">int</span><span style="color:#990000">**</span> g <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">*</span> <span style="color:#990000">[</span>n<span style="color:#990000">];</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        g<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">[</span>n<span style="color:#990000">];</span>
+        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> j <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> j <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> j<span style="color:#990000">++</span> <span style="color:#990000">)</span>
             g<span style="color:#990000">[</span>i<span style="color:#990000">][</span>j<span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">//setup edges by changing some values in matrix to 1</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> e<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        <span style="color:#009900">int</span> u<span style="color:#990000">,</span> v<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> e<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        <span style="color:#008A00">int</span> u<span style="color:#990000">,</span> v<span style="color:#990000">;</span>
         cin <span style="color:#990000">&gt;&gt;</span> u <span style="color:#990000">&gt;&gt;</span> v<span style="color:#990000">;</span>
         g<span style="color:#990000">[</span>u<span style="color:#990000">][</span>v<span style="color:#990000">]</span> <span style="color:#990000">=</span> g<span style="color:#990000">[</span>v<span style="color:#990000">][</span>u<span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">//take in the number of "bad" nodes that cannot be traveled</span></i>
-    <span style="color:#009900">int</span> numBad<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> numBad<span style="color:#990000">;</span>
     cin <span style="color:#990000">&gt;&gt;</span> numBad<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">//remove any edges connected to bad nodes</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> numBad<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        <span style="color:#009900">int</span> bad<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> numBad<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        <span style="color:#008A00">int</span> bad<span style="color:#990000">;</span>
         cin <span style="color:#990000">&gt;&gt;</span> bad<span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> j <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> j <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> j<span style="color:#990000">++</span> <span style="color:#990000">)</span>
+        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> j <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> j <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> j<span style="color:#990000">++</span> <span style="color:#990000">)</span>
             g<span style="color:#990000">[</span>bad<span style="color:#990000">][</span>j<span style="color:#990000">]</span> <span style="color:#990000">=</span> g<span style="color:#990000">[</span>j<span style="color:#990000">][</span>bad<span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">//setup array of distances to all be infinity</span></i>
-    <span style="color:#009900">int</span><span style="color:#990000">*</span> dist <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#009900">int</span><span style="color:#990000">[</span>n<span style="color:#990000">];</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
+    <span style="color:#008A00">int</span><span style="color:#990000">*</span> dist <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">[</span>n<span style="color:#990000">];</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
         dist<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">=</span> INT_MAX<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">//run bfs on the graph</span></i>
     <b><span style="color:#000000">bfs</span></b> <span style="color:#990000">(</span>g<span style="color:#990000">,</span> dist<span style="color:#990000">,</span> n<span style="color:#990000">);</span>
 
     <i><span style="color:#9A1900">//print out the distances</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Dist to node "</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">": "</span> <span style="color:#990000">&lt;&lt;</span> dist<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Dist to node "</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">": "</span> <span style="color:#990000">&lt;&lt;</span> dist<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// deallocation</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++</span> <span style="color:#990000">)</span>
         <b><span style="color:#0000FF">delete</span></b> <span style="color:#990000">[]</span> g<span style="color:#990000">[</span>i<span style="color:#990000">];</span>
     <b><span style="color:#0000FF">delete</span></b> <span style="color:#990000">[]</span> g<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">delete</span></b> <span style="color:#990000">[]</span> dist<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// all done!</span></i>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

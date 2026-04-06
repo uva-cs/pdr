@@ -20,75 +20,75 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"> * Written by Aaron Bloomfield, 2009</span></i>
 <i><span style="color:#9A1900"> */</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;fstream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;string&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;fstream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;string&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// We create a 2-D array of some big size, and assume that the grid</span></i>
 <i><span style="color:#9A1900">// read in will be less than this size (a valid assumption for lab 6)</span></i>
 <b><span style="color:#000080">#define</span></b> MAXROWS <span style="color:#993399">500</span>
 <b><span style="color:#000080">#define</span></b> MAXCOLS <span style="color:#993399">500</span>
-<span style="color:#009900">char</span> grid<span style="color:#990000">[</span>MAXROWS<span style="color:#990000">][</span>MAXCOLS<span style="color:#990000">];</span>
+<span style="color:#008A00">char</span> grid<span style="color:#990000">[</span>MAXROWS<span style="color:#990000">][</span>MAXCOLS<span style="color:#990000">];</span>
 
 <i><span style="color:#9A1900">// Forward declarations</span></i>
-<span style="color:#009900">bool</span> <b><span style="color:#000000">readInGrid</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> filename<span style="color:#990000">,</span> <span style="color:#009900">int</span><span style="color:#990000">&amp;</span> rows<span style="color:#990000">,</span> <span style="color:#009900">int</span><span style="color:#990000">&amp;</span> cols<span style="color:#990000">);</span>
-<span style="color:#008080">string</span> <b><span style="color:#000000">getWordInGrid</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> startRow<span style="color:#990000">,</span> <span style="color:#009900">int</span> startCol<span style="color:#990000">,</span> <span style="color:#009900">int</span> dir<span style="color:#990000">,</span> <span style="color:#009900">int</span> len<span style="color:#990000">,</span>
-                     <span style="color:#009900">int</span> numRows<span style="color:#990000">,</span> <span style="color:#009900">int</span> numCols<span style="color:#990000">);</span>
+<span style="color:#008A00">bool</span> <b><span style="color:#000000">readInGrid</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> filename<span style="color:#990000">,</span> <span style="color:#008A00">int</span><span style="color:#990000">&amp;</span> rows<span style="color:#990000">,</span> <span style="color:#008A00">int</span><span style="color:#990000">&amp;</span> cols<span style="color:#990000">);</span>
+<span style="color:#008080">string</span> <b><span style="color:#000000">getWordInGrid</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> startRow<span style="color:#990000">,</span> <span style="color:#008A00">int</span> startCol<span style="color:#990000">,</span> <span style="color:#008A00">int</span> dir<span style="color:#990000">,</span> <span style="color:#008A00">int</span> len<span style="color:#990000">,</span>
+                     <span style="color:#008A00">int</span> numRows<span style="color:#990000">,</span> <span style="color:#008A00">int</span> numCols<span style="color:#990000">);</span>
 
 <i><span style="color:#9A1900">/** The main() function shows how to call both the readInGrid()</span></i>
 <i><span style="color:#9A1900"> * function as well as the getWordInGrid() function.</span></i>
 <i><span style="color:#9A1900"> */</span></i>
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
     <i><span style="color:#9A1900">// to hold the number of rows and cols in the input file</span></i>
-    <span style="color:#009900">int</span> rows<span style="color:#990000">,</span> cols<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> rows<span style="color:#990000">,</span> cols<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// attempt to read in the file</span></i>
-    <span style="color:#009900">bool</span> result <span style="color:#990000">=</span> <b><span style="color:#000000">readInGrid</span></b><span style="color:#990000">(</span><span style="color:#FF0000">"5x8.grid.txt"</span><span style="color:#990000">,</span> rows<span style="color:#990000">,</span> cols<span style="color:#990000">);</span>
+    <span style="color:#008A00">bool</span> result <span style="color:#990000">=</span> <b><span style="color:#000000">readInGrid</span></b><span style="color:#990000">(</span><span style="color:#EF0000">"5x8.grid.txt"</span><span style="color:#990000">,</span> rows<span style="color:#990000">,</span> cols<span style="color:#990000">);</span>
     <i><span style="color:#9A1900">// if there is an error, report it</span></i>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>result<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Error reading in file!"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>result<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Error reading in file!"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
         <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// Get a word (of length 10), starting at position (2,2) in the</span></i>
     <i><span style="color:#9A1900">// array, in each of the 8 directions</span></i>
     cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> <span style="color:#993399">8</span><span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#FF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">": "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">getWordInGrid</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">,</span> <span style="color:#993399">2</span><span style="color:#990000">,</span> i<span style="color:#990000">,</span> <span style="color:#993399">10</span><span style="color:#990000">,</span> rows<span style="color:#990000">,</span> cols<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> <span style="color:#993399">8</span><span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
+        cout <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">": "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">getWordInGrid</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">,</span> <span style="color:#993399">2</span><span style="color:#990000">,</span> i<span style="color:#990000">,</span> <span style="color:#993399">10</span><span style="color:#990000">,</span> rows<span style="color:#990000">,</span> cols<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
 
     <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">/** This function will read in a grid file, as per the format in the</span></i>
 <i><span style="color:#9A1900"> * CS 2150 lab 6 document, into a global grid[][] array.  It uses C++</span></i>
 <i><span style="color:#9A1900"> * file streams, and thus requires the the </span></i><b><span style="color:#0000FF">&lt;fstream&gt;</span></b><i><span style="color:#9A1900"> #include header.</span></i>
 <i><span style="color:#9A1900"> *</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@return</span><i><span style="color:#9A1900"> true or false, depending on whether the file was</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@return</span><i><span style="color:#9A1900"> true or false, depending on whether the file was</span></i>
 <i><span style="color:#9A1900"> *         successfully opened.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> filename The file name to read in -- it's assumed to be in</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> filename The file name to read in -- it's assumed to be in</span></i>
 <i><span style="color:#9A1900"> *                 the file format described in the lab document.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> rows The number of rows as specified in the input file;</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> rows The number of rows as specified in the input file;</span></i>
 <i><span style="color:#9A1900"> *             as this is a reference, it is set by the function.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> cols The number of columns as specified in the input file;</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> cols The number of columns as specified in the input file;</span></i>
 <i><span style="color:#9A1900"> *             as this is a reference, it is set by the function.</span></i>
 <i><span style="color:#9A1900"> */</span></i>
-<span style="color:#009900">bool</span> <b><span style="color:#000000">readInGrid</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> filename<span style="color:#990000">,</span> <span style="color:#009900">int</span><span style="color:#990000">&amp;</span> rows<span style="color:#990000">,</span> <span style="color:#009900">int</span><span style="color:#990000">&amp;</span> cols<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">bool</span> <b><span style="color:#000000">readInGrid</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> filename<span style="color:#990000">,</span> <span style="color:#008A00">int</span><span style="color:#990000">&amp;</span> rows<span style="color:#990000">,</span> <span style="color:#008A00">int</span><span style="color:#990000">&amp;</span> cols<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <i><span style="color:#9A1900">// try to open the file</span></i>
     <span style="color:#008080">ifstream</span> <b><span style="color:#000000">file</span></b><span style="color:#990000">(</span>filename<span style="color:#990000">);</span>
     <i><span style="color:#9A1900">// upon an error, return false</span></i>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>file<span style="color:#990000">.</span><b><span style="color:#000000">is_open</span></b><span style="color:#990000">())</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>file<span style="color:#990000">.</span><b><span style="color:#000000">is_open</span></b><span style="color:#990000">())</span> <span style="color:#EF0000">{</span>
         <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <i><span style="color:#9A1900">// first comes the number of rows</span></i>
     file <span style="color:#990000">&gt;&gt;</span> rows<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"There are "</span> <span style="color:#990000">&lt;&lt;</span> rows <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" rows."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"There are "</span> <span style="color:#990000">&lt;&lt;</span> rows <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" rows."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// then the columns</span></i>
     file <span style="color:#990000">&gt;&gt;</span> cols<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"There are "</span> <span style="color:#990000">&lt;&lt;</span> cols <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" cols."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"There are "</span> <span style="color:#990000">&lt;&lt;</span> cols <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" cols."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
 
     <i><span style="color:#9A1900">// and finally the grid itself</span></i>
     <span style="color:#008080">string</span> data<span style="color:#990000">;</span>
@@ -100,16 +100,16 @@ http://www.gnu.org/software/src-highlite">
     <i><span style="color:#9A1900">// convert the string read in to the 2-D grid format into the</span></i>
     <i><span style="color:#9A1900">// grid[][] array.</span></i>
     <i><span style="color:#9A1900">// In the process, we'll print the grid to the screen as well.</span></i>
-    <span style="color:#009900">int</span> pos <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> <i><span style="color:#9A1900">// the current position in the input data</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> r <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> r <span style="color:#990000">&lt;</span> rows<span style="color:#990000">;</span> r<span style="color:#990000">++)</span> <span style="color:#FF0000">{</span>
-        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> c <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> c <span style="color:#990000">&lt;</span> cols<span style="color:#990000">;</span> c<span style="color:#990000">++)</span> <span style="color:#FF0000">{</span>
+    <span style="color:#008A00">int</span> pos <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> <i><span style="color:#9A1900">// the current position in the input data</span></i>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> r <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> r <span style="color:#990000">&lt;</span> rows<span style="color:#990000">;</span> r<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
+        <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> c <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> c <span style="color:#990000">&lt;</span> cols<span style="color:#990000">;</span> c<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
             grid<span style="color:#990000">[</span>r<span style="color:#990000">][</span>c<span style="color:#990000">]</span> <span style="color:#990000">=</span> data<span style="color:#990000">[</span>pos<span style="color:#990000">++];</span>
             cout <span style="color:#990000">&lt;&lt;</span> grid<span style="color:#990000">[</span>r<span style="color:#990000">][</span>c<span style="color:#990000">];</span>
-        <span style="color:#FF0000">}</span>
+        <span style="color:#EF0000">}</span>
         cout <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">true</span></b><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 <i><span style="color:#9A1900">/** This function will retrieve a word in a grid of letters in a given</span></i>
 <i><span style="color:#9A1900"> * direction.  If the end of the grid is encountered before the length</span></i>
@@ -120,25 +120,25 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"> * reasons), so a successive return value will overwrite a previous</span></i>
 <i><span style="color:#9A1900"> * return value.</span></i>
 <i><span style="color:#9A1900"> *</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@return</span><i><span style="color:#9A1900"> A STATIC string containing the letters in the provided direction.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> startRow The starting (row,col) position to find the word.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> startCol The starting (row,col) position to find the word.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> dir The direction to move: 0 is north (upwards), 1 is</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@return</span><i><span style="color:#9A1900"> A STATIC string containing the letters in the provided direction.</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> startRow The starting (row,col) position to find the word.</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> startCol The starting (row,col) position to find the word.</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> dir The direction to move: 0 is north (upwards), 1 is</span></i>
 <i><span style="color:#9A1900"> *            northeast, and it rotates around clockwise until it</span></i>
 <i><span style="color:#9A1900"> *            reaches 7 for northwest.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> len The desired length of the string to return (assuming</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> len The desired length of the string to return (assuming</span></i>
 <i><span style="color:#9A1900"> *            the edge of the grid is not reached--if the edge of the</span></i>
 <i><span style="color:#9A1900"> *            grid is reached, it will return as many characters as</span></i>
 <i><span style="color:#9A1900"> *            possible up to the edge of the grid, so the returned</span></i>
 <i><span style="color:#9A1900"> *            string may not have the same length as this parameter</span></i>
 <i><span style="color:#9A1900"> *            indicates).</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> numRows The number of rows in the global char grid[][]</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> numRows The number of rows in the global char grid[][]</span></i>
 <i><span style="color:#9A1900"> *                array.</span></i>
-<i><span style="color:#9A1900"> * </span></i><span style="color:#009900">@param</span><i><span style="color:#9A1900"> numCols The number of columns in the global char grid[][]</span></i>
+<i><span style="color:#9A1900"> * </span></i><span style="color:#008A00">@param</span><i><span style="color:#9A1900"> numCols The number of columns in the global char grid[][]</span></i>
 <i><span style="color:#9A1900"> *                array.</span></i>
 <i><span style="color:#9A1900"> */</span></i>
-<span style="color:#008080">string</span> <b><span style="color:#000000">getWordInGrid</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> startRow<span style="color:#990000">,</span> <span style="color:#009900">int</span> startCol<span style="color:#990000">,</span> <span style="color:#009900">int</span> dir<span style="color:#990000">,</span> <span style="color:#009900">int</span> len<span style="color:#990000">,</span>
-                      <span style="color:#009900">int</span> numRows<span style="color:#990000">,</span> <span style="color:#009900">int</span> numCols<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008080">string</span> <b><span style="color:#000000">getWordInGrid</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> startRow<span style="color:#990000">,</span> <span style="color:#008A00">int</span> startCol<span style="color:#990000">,</span> <span style="color:#008A00">int</span> dir<span style="color:#990000">,</span> <span style="color:#008A00">int</span> len<span style="color:#990000">,</span>
+                      <span style="color:#008A00">int</span> numRows<span style="color:#990000">,</span> <span style="color:#008A00">int</span> numCols<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <i><span style="color:#9A1900">// the static-ness of this variable prevents it from being</span></i>
     <i><span style="color:#9A1900">// re-declared upon each function invocation.  It also prevents it</span></i>
     <i><span style="color:#9A1900">// from being deallocated between invocations.  It's probably not</span></i>
@@ -150,20 +150,20 @@ http://www.gnu.org/software/src-highlite">
 
     <i><span style="color:#9A1900">// the position in the output array, the current row, and the</span></i>
     <i><span style="color:#9A1900">// current column</span></i>
-    <span style="color:#009900">int</span> r <span style="color:#990000">=</span> startRow<span style="color:#990000">,</span> c <span style="color:#990000">=</span> startCol<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> r <span style="color:#990000">=</span> startRow<span style="color:#990000">,</span> c <span style="color:#990000">=</span> startCol<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// iterate once for each character in the output</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> len<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> len<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
         <i><span style="color:#9A1900">// if the current row or column is out of bounds, then break</span></i>
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>c <span style="color:#990000">&gt;=</span> numCols <span style="color:#990000">||</span> r <span style="color:#990000">&gt;=</span> numRows <span style="color:#990000">||</span> r <span style="color:#990000">&lt;</span> <span style="color:#993399">0</span> <span style="color:#990000">||</span> c <span style="color:#990000">&lt;</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>c <span style="color:#990000">&gt;=</span> numCols <span style="color:#990000">||</span> r <span style="color:#990000">&gt;=</span> numRows <span style="color:#990000">||</span> r <span style="color:#990000">&lt;</span> <span style="color:#993399">0</span> <span style="color:#990000">||</span> c <span style="color:#990000">&lt;</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
             <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-        <span style="color:#FF0000">}</span>
+        <span style="color:#EF0000">}</span>
 
         <i><span style="color:#9A1900">// set the next character in the output array to the next letter</span></i>
         <i><span style="color:#9A1900">// in the grid</span></i>
         output <span style="color:#990000">+=</span> grid<span style="color:#990000">[</span>r<span style="color:#990000">][</span>c<span style="color:#990000">];</span>
 
         <i><span style="color:#9A1900">// move in the direction specified by the parameter</span></i>
-        <b><span style="color:#0000FF">switch</span></b> <span style="color:#990000">(</span>dir<span style="color:#990000">)</span> <span style="color:#FF0000">{</span> <i><span style="color:#9A1900">// assumes grid[0][0] is in the upper-left</span></i>
+        <b><span style="color:#0000FF">switch</span></b> <span style="color:#990000">(</span>dir<span style="color:#990000">)</span> <span style="color:#EF0000">{</span> <i><span style="color:#9A1900">// assumes grid[0][0] is in the upper-left</span></i>
             <b><span style="color:#0000FF">case</span></b> <span style="color:#993399">0</span><span style="color:#990000">:</span>
                 r<span style="color:#990000">--;</span>
                 <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span> <i><span style="color:#9A1900">// north</span></i>
@@ -192,11 +192,11 @@ http://www.gnu.org/software/src-highlite">
                 r<span style="color:#990000">--;</span>
                 c<span style="color:#990000">--;</span>
                 <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span> <i><span style="color:#9A1900">// north-west</span></i>
-        <span style="color:#FF0000">}</span>
-    <span style="color:#FF0000">}</span>
+        <span style="color:#EF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
     <b><span style="color:#0000FF">return</span></b> output<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

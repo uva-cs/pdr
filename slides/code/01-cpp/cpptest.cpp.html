@@ -25,75 +25,75 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"> * rights reesrved.</span></i>
 <i><span style="color:#9A1900"> */</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">//--------------------------------------------------</span></i>
 <i><span style="color:#9A1900">// this would be in test.h</span></i>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">test</span> <span style="color:#FF0000">{</span>
-    <b><span style="color:#0000FF">static</span></b> <span style="color:#009900">int</span> idcount<span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">const</span></b> <span style="color:#009900">int</span> id<span style="color:#990000">;</span>
-    <span style="color:#009900">int</span> value<span style="color:#990000">;</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">test</span> <span style="color:#EF0000">{</span>
+    <b><span style="color:#0000FF">static</span></b> <span style="color:#008A00">int</span> idcount<span style="color:#990000">;</span>
+    <b><span style="color:#0000FF">const</span></b> <span style="color:#008A00">int</span> id<span style="color:#990000">;</span>
+    <span style="color:#008A00">int</span> value<span style="color:#990000">;</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
     <b><span style="color:#000000">test</span></b><span style="color:#990000">();</span>
-    <b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> v<span style="color:#990000">);</span>
+    <b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> v<span style="color:#990000">);</span>
     <b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> x<span style="color:#990000">);</span>
     <span style="color:#990000">~</span><b><span style="color:#000000">test</span></b><span style="color:#990000">();</span>
     test<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">=(</span><b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> other<span style="color:#990000">);</span>
     <b><span style="color:#0000FF">friend</span></b> ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">&lt;&lt;(</span>ostream<span style="color:#990000">&amp;</span> out<span style="color:#990000">,</span> <b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> f<span style="color:#990000">);</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">//--------------------------------------------------</span></i>
 <i><span style="color:#9A1900">// this would be in test.cpp</span></i>
 
-<span style="color:#009900">int</span> test<span style="color:#990000">::</span>idcount <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> test<span style="color:#990000">::</span>idcount <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
 
-test<span style="color:#990000">::</span><b><span style="color:#000000">test</span></b><span style="color:#990000">()</span> <span style="color:#990000">:</span> <b><span style="color:#000000">id</span></b> <span style="color:#990000">(</span>idcount<span style="color:#990000">++),</span> <b><span style="color:#000000">value</span></b><span style="color:#990000">(</span><span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"calling test(); object created is "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b>
-         <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"; address is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+test<span style="color:#990000">::</span><b><span style="color:#000000">test</span></b><span style="color:#990000">()</span> <span style="color:#990000">:</span> <b><span style="color:#000000">id</span></b> <span style="color:#990000">(</span>idcount<span style="color:#990000">++),</span> <b><span style="color:#000000">value</span></b><span style="color:#990000">(</span><span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"calling test(); object created is "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b>
+         <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"; address is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span>
 
-test<span style="color:#990000">::</span><b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> v<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">id</span></b> <span style="color:#990000">(</span>idcount<span style="color:#990000">++),</span> <b><span style="color:#000000">value</span></b><span style="color:#990000">(</span>v<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"calling test("</span> <span style="color:#990000">&lt;&lt;</span> v <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"); object created is "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b>
-         <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"; address is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+test<span style="color:#990000">::</span><b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> v<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">id</span></b> <span style="color:#990000">(</span>idcount<span style="color:#990000">++),</span> <b><span style="color:#000000">value</span></b><span style="color:#990000">(</span>v<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"calling test("</span> <span style="color:#990000">&lt;&lt;</span> v <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"); object created is "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b>
+         <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"; address is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span>
 
-test<span style="color:#990000">::</span><b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> x<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">id</span></b><span style="color:#990000">(</span>x<span style="color:#990000">.</span>id<span style="color:#990000">),</span> <b><span style="color:#000000">value</span></b><span style="color:#990000">(</span>x<span style="color:#990000">.</span>value<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"calling test(const test&amp;) on "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"; address is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+test<span style="color:#990000">::</span><b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> x<span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">id</span></b><span style="color:#990000">(</span>x<span style="color:#990000">.</span>id<span style="color:#990000">),</span> <b><span style="color:#000000">value</span></b><span style="color:#990000">(</span>x<span style="color:#990000">.</span>value<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"calling test(const test&amp;) on "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"; address is "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span>
 
-test<span style="color:#990000">::~</span><b><span style="color:#000000">test</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"calling ~test() on "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+test<span style="color:#990000">::~</span><b><span style="color:#000000">test</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"calling ~test() on "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span><b><span style="color:#0000FF">this</span></b> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span>
 
-test<span style="color:#990000">&amp;</span> test<span style="color:#990000">::</span><b><span style="color:#0000FF">operator</span></b><span style="color:#990000">=(</span><b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> other<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"calling operator=("</span> <span style="color:#990000">&lt;&lt;</span> other <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">")"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+test<span style="color:#990000">&amp;</span> test<span style="color:#990000">::</span><b><span style="color:#0000FF">operator</span></b><span style="color:#990000">=(</span><b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> other<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"calling operator=("</span> <span style="color:#990000">&lt;&lt;</span> other <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">")"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#008080">test</span> <span style="color:#990000">*</span>tmp <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">test</span></b><span style="color:#990000">(</span>other<span style="color:#990000">);</span>
     <b><span style="color:#0000FF">return</span></b> <span style="color:#990000">*</span>tmp<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">&lt;&lt;(</span>ostream<span style="color:#990000">&amp;</span> out<span style="color:#990000">,</span> <b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> f<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-    out <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"test[id="</span> <span style="color:#990000">&lt;&lt;</span> f<span style="color:#990000">.</span>id <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">",v="</span> <span style="color:#990000">&lt;&lt;</span> f<span style="color:#990000">.</span>value <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"]"</span><span style="color:#990000">;</span>
+ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">&lt;&lt;(</span>ostream<span style="color:#990000">&amp;</span> out<span style="color:#990000">,</span> <b><span style="color:#0000FF">const</span></b> test<span style="color:#990000">&amp;</span> f<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+    out <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"test[id="</span> <span style="color:#990000">&lt;&lt;</span> f<span style="color:#990000">.</span>id <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">",v="</span> <span style="color:#990000">&lt;&lt;</span> f<span style="color:#990000">.</span>value <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"]"</span><span style="color:#990000">;</span>
     <b><span style="color:#0000FF">return</span></b> out<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
 
 <i><span style="color:#9A1900">//--------------------------------------------------</span></i>
 <i><span style="color:#9A1900">// this would be in main.cpp</span></i>
 
-<span style="color:#008080">test</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">(</span><span style="color:#008080">test</span> param<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008080">test</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">(</span><span style="color:#008080">test</span> param<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><span style="color:#993399">10</span><span style="color:#990000">);</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
 
     <i><span style="color:#9A1900">// this does NOT create a test object; instead, it creates a function</span></i>
     <i><span style="color:#9A1900">// called a() that has no body (and thus C++ defaults it to return</span></i>
     <i><span style="color:#9A1900">// 1).  Note that there is no output statement from the default</span></i>
     <i><span style="color:#9A1900">// constructor.</span></i>
     <span style="color:#008080">test</span> <b><span style="color:#000000">a</span></b><span style="color:#990000">();</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"attempted to create a: "</span> <span style="color:#990000">&lt;&lt;</span> a <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"attempted to create a: "</span> <span style="color:#990000">&lt;&lt;</span> a <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// attempted to create a: 1</span></i>
 
@@ -102,9 +102,9 @@ ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">o
     <i><span style="color:#9A1900">// calling  the  default  constructor  has another  meaning  in  C++</span></i>
     <i><span style="color:#9A1900">// (specifically,  creating  a  function),   we  have  to  omit  the</span></i>
     <i><span style="color:#9A1900">// parenthesis.</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#008080">test</span> aa<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"created aa: "</span> <span style="color:#990000">&lt;&lt;</span> aa <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"created aa: "</span> <span style="color:#990000">&lt;&lt;</span> aa <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
     <i><span style="color:#9A1900">// calling test(); object created is test[id=0,v=0]; address is 0xff852a50</span></i>
@@ -112,20 +112,20 @@ ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">o
 
     <i><span style="color:#9A1900">// this creates a test object, calling the specific constructor that</span></i>
     <i><span style="color:#9A1900">// takes in a single int value</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#008080">test</span> <b><span style="color:#000000">b</span></b><span style="color:#990000">(</span><span style="color:#993399">1</span><span style="color:#990000">);</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"created b: "</span> <span style="color:#990000">&lt;&lt;</span> b <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"created b: "</span> <span style="color:#990000">&lt;&lt;</span> b <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
     <i><span style="color:#9A1900">// calling test(1); object created is test[id=1,v=1]; address is 0xff852a48</span></i>
     <i><span style="color:#9A1900">// created b: test[id=1,v=1]</span></i>
 
     <i><span style="color:#9A1900">// this creates two test objects via pointers and new</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#008080">test</span> <span style="color:#990000">*</span>c <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">test</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">);</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"created *c: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>c <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" at "</span> <span style="color:#990000">&lt;&lt;</span> c <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"created *c: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>c <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" at "</span> <span style="color:#990000">&lt;&lt;</span> c <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#008080">test</span> <span style="color:#990000">*</span>d <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> test<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"created *d: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>d <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" at "</span> <span style="color:#990000">&lt;&lt;</span> d <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"created *d: "</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">*</span>d <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" at "</span> <span style="color:#990000">&lt;&lt;</span> d <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
     <i><span style="color:#9A1900">// calling test(2); object created is test[id=2,v=2]; address is 0xa009008</span></i>
@@ -138,10 +138,10 @@ ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">o
     <i><span style="color:#9A1900">// subroutine then creates test[id=4,v=10].  The parameter that was</span></i>
     <i><span style="color:#9A1900">// copied into the subroutine (via the copy constructor) is then</span></i>
     <i><span style="color:#9A1900">// destructed upon termination of the subroutine.</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"about to invoke subroutine..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"about to invoke subroutine..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#008080">test</span> e <span style="color:#990000">=</span> <b><span style="color:#000000">bar</span></b><span style="color:#990000">(*</span>c<span style="color:#990000">);</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"finished invoking subroutine..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"finished invoking subroutine..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
     <i><span style="color:#9A1900">// about to invoke subroutine...</span></i>
@@ -152,15 +152,15 @@ ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">o
 
     <i><span style="color:#9A1900">// because this assignment happens in the same statement as the</span></i>
     <i><span style="color:#9A1900">// declaration, it invokes the copy constructor</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <span style="color:#008080">test</span> f <span style="color:#990000">=</span> b<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
     <i><span style="color:#9A1900">// calling test(&amp;test) on test[id=1,v=1]; address is 0xff852a30</span></i>
 
     <i><span style="color:#9A1900">// we are only deleting one of the dynamically created test objects</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"about to delete a test object..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"about to delete a test object..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <b><span style="color:#0000FF">delete</span></b> c<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
@@ -169,8 +169,8 @@ ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">o
 
     <i><span style="color:#9A1900">// because this assignment does NOT happen in the same statement as</span></i>
     <i><span style="color:#9A1900">// the declaration, the operator=() subroutine is called.</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"assignment..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"assignment..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     aa <span style="color:#990000">=</span> b<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
@@ -180,8 +180,8 @@ ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">o
 
     <i><span style="color:#9A1900">// upon termination of the main() function, all statically created</span></i>
     <i><span style="color:#9A1900">// test objects are deallocated.</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"about to leave main..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"----------------------------------------"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"about to leave main..."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
     <i><span style="color:#9A1900">// output:</span></i>
     <i><span style="color:#9A1900">// ----------------------------------------</span></i>
     <i><span style="color:#9A1900">// about to leave main...</span></i>
@@ -193,7 +193,7 @@ ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">o
     <i><span style="color:#9A1900">// Note that d was created via dynamic memory allocation, so it is</span></i>
     <i><span style="color:#9A1900">// not deallcoated by the program.  The operating system will clean</span></i>
     <i><span style="color:#9A1900">// up the used memory, but it does not call the destructor on d.</span></i>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

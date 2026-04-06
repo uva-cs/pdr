@@ -13,38 +13,38 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900">//</span></i>
 <i><span style="color:#9A1900">// written by Aaron Bloomfield, 2014</span></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
 <i><span style="color:#9A1900">// yes, there are much faster -- and much better -- ways to check if a</span></i>
 <i><span style="color:#9A1900">// number is prime (see the Sieve of Eratosthenes, for one example),</span></i>
 <i><span style="color:#9A1900">// but this code will work correctly, it is fairly straightforward,</span></i>
 <i><span style="color:#9A1900">// and it is fast enough for our purposes in the hash lab</span></i>
-<span style="color:#009900">bool</span> <b><span style="color:#000000">checkprime</span></b><span style="color:#990000">(</span><span style="color:#009900">unsigned</span> <span style="color:#009900">int</span> p<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">bool</span> <b><span style="color:#000000">checkprime</span></b><span style="color:#990000">(</span><span style="color:#008A00">unsigned</span> <span style="color:#008A00">int</span> p<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> p <span style="color:#990000">&lt;=</span> <span style="color:#993399">1</span> <span style="color:#990000">)</span> <i><span style="color:#9A1900">// 0 and 1 are not primes; the are both special cases</span></i>
         <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> p <span style="color:#990000">==</span> <span style="color:#993399">2</span> <span style="color:#990000">)</span> <i><span style="color:#9A1900">// 2 is prime</span></i>
         <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">true</span></b><span style="color:#990000">;</span>
     <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> p <span style="color:#990000">%</span> <span style="color:#993399">2</span> <span style="color:#990000">==</span> <span style="color:#993399">0</span> <span style="color:#990000">)</span> <i><span style="color:#9A1900">// even numbers other than 2 are not prime</span></i>
         <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#009900">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">3</span><span style="color:#990000">;</span> i<span style="color:#990000">*</span>i <span style="color:#990000">&lt;=</span> p<span style="color:#990000">;</span> i <span style="color:#990000">+=</span> <span style="color:#993399">2</span> <span style="color:#990000">)</span> <i><span style="color:#9A1900">// only go up to the sqrt of p</span></i>
+    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span> <span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">3</span><span style="color:#990000">;</span> i<span style="color:#990000">*</span>i <span style="color:#990000">&lt;=</span> p<span style="color:#990000">;</span> i <span style="color:#990000">+=</span> <span style="color:#993399">2</span> <span style="color:#990000">)</span> <i><span style="color:#9A1900">// only go up to the sqrt of p</span></i>
         <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> p <span style="color:#990000">%</span> i <span style="color:#990000">==</span> <span style="color:#993399">0</span> <span style="color:#990000">)</span>
             <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
     <b><span style="color:#0000FF">return</span></b> <b><span style="color:#0000FF">true</span></b><span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">getNextPrime</span></b> <span style="color:#990000">(</span><span style="color:#009900">unsigned</span> <span style="color:#009900">int</span> n<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">getNextPrime</span></b> <span style="color:#990000">(</span><span style="color:#008A00">unsigned</span> <span style="color:#008A00">int</span> n<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span> <span style="color:#990000">!</span><b><span style="color:#000000">checkprime</span></b><span style="color:#990000">(++</span>n<span style="color:#990000">)</span> <span style="color:#990000">);</span>
     <b><span style="color:#0000FF">return</span></b> n<span style="color:#990000">;</span> <i><span style="color:#9A1900">// all your primes are belong to us</span></i>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#FF0000">{</span>
-    <span style="color:#009900">int</span> x<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"Enter number: "</span><span style="color:#990000">;</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+    <span style="color:#008A00">int</span> x<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter number: "</span><span style="color:#990000">;</span>
     cin <span style="color:#990000">&gt;&gt;</span> x<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">" is prime: "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">checkprime</span></b><span style="color:#990000">(</span>x<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#FF0000">"next higest prime: "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">getNextPrime</span></b><span style="color:#990000">(</span>x<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span>
+    cout <span style="color:#990000">&lt;&lt;</span> x <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" is prime: "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">checkprime</span></b><span style="color:#990000">(</span>x<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"next higest prime: "</span> <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">getNextPrime</span></b><span style="color:#990000">(</span>x<span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

@@ -13,19 +13,19 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"># This Makefile shows how to link assembly with C/C++</span></i>
 
 <i><span style="color:#9A1900"># Defines the C++ compiler we'll be using</span></i>
-<span style="color:#009900">CXX	=</span> g<span style="color:#990000">++</span> -m<span style="color:#993399">32</span>
+<span style="color:#008A00">CXX	=</span> g<span style="color:#990000">++</span> -m<span style="color:#993399">32</span>
 
 <i><span style="color:#9A1900"># Defines the flags we'll be passing to the C++ compiler</span></i>
-<span style="color:#009900">CXXFLAGS	=</span> -Wall -g
+<span style="color:#008A00">CXXFLAGS	=</span> -Wall -g
 
 <i><span style="color:#9A1900"># Defines the assembler</span></i>
-<span style="color:#009900">AS	=</span> nasm
+<span style="color:#008A00">AS	=</span> nasm
 
 <i><span style="color:#9A1900"># Defines the flags for the assembler</span></i>
-<span style="color:#009900">ASFLAGS	=</span> -f elf -g
+<span style="color:#008A00">ASFLAGS	=</span> -f elf -g
 
 <i><span style="color:#9A1900"># All of the .o files for our program</span></i>
-<span style="color:#009900">OFILES	=</span> vecsum.o main.o
+<span style="color:#008A00">OFILES	=</span> vecsum.o main.o
 
 <i><span style="color:#9A1900"># This tells make to create a .o file from a .cpp file, using the</span></i>
 <i><span style="color:#9A1900"># defaults above (i.e. the CXX and CXXFLAGS macros)</span></i>
@@ -38,8 +38,8 @@ http://www.gnu.org/software/src-highlite">
 <i><span style="color:#9A1900"># How to compile our final program.  Note that we do NOT specify an</span></i>
 <i><span style="color:#9A1900"># output executable name -- in order for this to work with the grading</span></i>
 <i><span style="color:#9A1900"># system, the file needs to be a.out (a.exe in Cygwin).</span></i>
-<span style="color:#990000">main:</span>	<span style="color:#009900">$(OFILES)</span>
-	<span style="color:#009900">$(CXX)</span> <span style="color:#009900">$(CXXFLAGS)</span> <span style="color:#009900">$(OFILES)</span>
+<span style="color:#990000">main:</span>	<span style="color:#008A00">$(OFILES)</span>
+	<span style="color:#008A00">$(CXX)</span> <span style="color:#008A00">$(CXXFLAGS)</span> <span style="color:#008A00">$(OFILES)</span>
 
 <i><span style="color:#9A1900"># This will clean up (remove) all our object files.  The -f option</span></i>
 <i><span style="color:#9A1900"># tells rm to forcily remove the files (i.e. don't ask if they should</span></i>

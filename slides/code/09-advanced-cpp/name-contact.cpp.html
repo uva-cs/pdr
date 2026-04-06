@@ -9,47 +9,47 @@ http://www.gnu.org/software/src-highlite">
 <title>name-contact.cpp</title>
 </head>
 <body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;iostream&gt;</span>
+<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Name</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Name</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#000000">Name</span></b><span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">myName</span></b><span style="color:#990000">(</span><span style="color:#FF0000">""</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
-    <span style="color:#990000">~</span><b><span style="color:#000000">Name</span></b><span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>  <span style="color:#FF0000">}</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">SetName</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> theName<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#000000">Name</span></b><span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#990000">:</span> <b><span style="color:#000000">myName</span></b><span style="color:#990000">(</span><span style="color:#EF0000">""</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">}</span>
+    <span style="color:#990000">~</span><b><span style="color:#000000">Name</span></b><span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>  <span style="color:#EF0000">}</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">SetName</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> theName<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         myName <span style="color:#990000">=</span> theName<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <span style="color:#EF0000">}</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         cout <span style="color:#990000">&lt;&lt;</span> myName <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 
 <b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
     <span style="color:#008080">string</span> myName<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Contact</span><span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> Name <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">Contact</span><span style="color:#990000">:</span> <b><span style="color:#0000FF">public</span></b> Name <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#000000">Contact</span></b><span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
-        myAddress <span style="color:#990000">=</span> <span style="color:#FF0000">""</span><span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <span style="color:#990000">~</span><b><span style="color:#000000">Contact</span></b><span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span> <span style="color:#FF0000">}</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">SetAddress</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> theAddress<span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <b><span style="color:#000000">Contact</span></b><span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
+        myAddress <span style="color:#990000">=</span> <span style="color:#EF0000">""</span><span style="color:#990000">;</span>
+    <span style="color:#EF0000">}</span>
+    <span style="color:#990000">~</span><b><span style="color:#000000">Contact</span></b><span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span> <span style="color:#EF0000">}</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">SetAddress</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> theAddress<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         myAddress <span style="color:#990000">=</span> theAddress<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+    <span style="color:#EF0000">}</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
         Name<span style="color:#990000">::</span><b><span style="color:#000000">print</span></b><span style="color:#990000">();</span>
         cout <span style="color:#990000">&lt;&lt;</span> myAddress <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#FF0000">}</span>
+    <span style="color:#EF0000">}</span>
 <b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
     <span style="color:#008080">string</span> myAddress<span style="color:#990000">;</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
-<span style="color:#009900">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">(</span><span style="color:#009900">void</span><span style="color:#990000">)</span> <span style="color:#FF0000">{</span>
+<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">(</span><span style="color:#008A00">void</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
     <span style="color:#008080">Contact</span> c<span style="color:#990000">;</span>
-    c<span style="color:#990000">.</span><b><span style="color:#000000">SetName</span></b><span style="color:#990000">(</span><span style="color:#FF0000">"John Doe"</span><span style="color:#990000">);</span>
-    c<span style="color:#990000">.</span><b><span style="color:#000000">SetAddress</span></b><span style="color:#990000">(</span><span style="color:#FF0000">"009 Olsson Hall"</span><span style="color:#990000">);</span>
+    c<span style="color:#990000">.</span><b><span style="color:#000000">SetName</span></b><span style="color:#990000">(</span><span style="color:#EF0000">"John Doe"</span><span style="color:#990000">);</span>
+    c<span style="color:#990000">.</span><b><span style="color:#000000">SetAddress</span></b><span style="color:#990000">(</span><span style="color:#EF0000">"009 Olsson Hall"</span><span style="color:#990000">);</span>
     c<span style="color:#990000">.</span><b><span style="color:#000000">print</span></b><span style="color:#990000">();</span>
-<span style="color:#FF0000">}</span>
+<span style="color:#EF0000">}</span>
 </pre></main>
 </body>
 </html>

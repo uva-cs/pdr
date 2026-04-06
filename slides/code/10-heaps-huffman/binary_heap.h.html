@@ -16,30 +16,30 @@ http://www.gnu.org/software/src-highlite">
 <b><span style="color:#000080">#ifndef</span></b> BINARY_HEAP_H
 <b><span style="color:#000080">#define</span></b> BINARY_HEAP_H
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#FF0000">&lt;vector&gt;</span>
+<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;vector&gt;</span>
 <b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">binary_heap</span> <span style="color:#FF0000">{</span>
+<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">binary_heap</span> <span style="color:#EF0000">{</span>
 <b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
     <b><span style="color:#000000">binary_heap</span></b><span style="color:#990000">();</span>
     <b><span style="color:#000000">binary_heap</span></b><span style="color:#990000">(</span><span style="color:#008080">vector&lt;int&gt;</span> vec<span style="color:#990000">);</span>
     <span style="color:#990000">~</span><b><span style="color:#000000">binary_heap</span></b><span style="color:#990000">();</span>
 
-    <span style="color:#009900">void</span> <b><span style="color:#000000">insert</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> x<span style="color:#990000">);</span>
-    <span style="color:#009900">int</span> <b><span style="color:#000000">findMin</span></b><span style="color:#990000">();</span>
-    <span style="color:#009900">int</span> <b><span style="color:#000000">deleteMin</span></b><span style="color:#990000">();</span>
-    <span style="color:#009900">unsigned</span> <span style="color:#009900">int</span> <b><span style="color:#000000">size</span></b><span style="color:#990000">();</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">makeEmpty</span></b><span style="color:#990000">();</span>
-    <span style="color:#009900">bool</span> <b><span style="color:#000000">isEmpty</span></b><span style="color:#990000">();</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">();</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">insert</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> x<span style="color:#990000">);</span>
+    <span style="color:#008A00">int</span> <b><span style="color:#000000">findMin</span></b><span style="color:#990000">();</span>
+    <span style="color:#008A00">int</span> <b><span style="color:#000000">deleteMin</span></b><span style="color:#990000">();</span>
+    <span style="color:#008A00">unsigned</span> <span style="color:#008A00">int</span> <b><span style="color:#000000">size</span></b><span style="color:#990000">();</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">makeEmpty</span></b><span style="color:#990000">();</span>
+    <span style="color:#008A00">bool</span> <b><span style="color:#000000">isEmpty</span></b><span style="color:#990000">();</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">();</span>
 
 <b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
     <span style="color:#008080">vector&lt;int&gt;</span> heap<span style="color:#990000">;</span>
-    <span style="color:#009900">unsigned</span> <span style="color:#009900">int</span> heap_size<span style="color:#990000">;</span>
+    <span style="color:#008A00">unsigned</span> <span style="color:#008A00">int</span> heap_size<span style="color:#990000">;</span>
 
-    <span style="color:#009900">void</span> <b><span style="color:#000000">percolateUp</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> hole<span style="color:#990000">);</span>
-    <span style="color:#009900">void</span> <b><span style="color:#000000">percolateDown</span></b><span style="color:#990000">(</span><span style="color:#009900">int</span> hole<span style="color:#990000">);</span>
-<span style="color:#FF0000">}</span><span style="color:#990000">;</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">percolateUp</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> hole<span style="color:#990000">);</span>
+    <span style="color:#008A00">void</span> <b><span style="color:#000000">percolateDown</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> hole<span style="color:#990000">);</span>
+<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
 
 <b><span style="color:#000080">#endif</span></b>
 </pre></main>
