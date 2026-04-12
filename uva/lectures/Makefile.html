@@ -1,47 +1,47 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./uva/lectures/Makefile file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>Makefile</title>
+<title>Source code for ./uva/lectures/Makefile (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">.PHONY:</span></b> resize
-<span style="color:#008A00">ASTYLEOPTS	=</span> --align-pointer<span style="color:#990000">=</span><b><span style="color:#0000FF">type</span></b> --align-reference<span style="color:#990000">=</span><b><span style="color:#0000FF">type</span></b> --pad-oper <span style="color:#990000">\</span>
-		  --remove-braces --style<span style="color:#990000">=</span>attach --indent<span style="color:#990000">=</span><span style="color:#008A00">spaces</span><span style="color:#990000">=</span><span style="color:#993399">4</span> <span style="color:#990000">\</span>
-		  --pad-paren-out --indent-switches --suffix<span style="color:#990000">=</span>none --formatted 
+<body bgcolor="white">
+<main><h1>Source code for ./uva/lectures/Makefile (via source-highlight)</h1><pre><tt><b><font color="#000080">.PHONY:</font></b> resize
+<font color="#008A00">ASTYLEOPTS	=</font> --align-pointer<font color="#990000">=</font><b><font color="#0000FF">type</font></b> --align-reference<font color="#990000">=</font><b><font color="#0000FF">type</font></b> --pad-oper <font color="#990000">\</font>
+		  --remove-braces --style<font color="#990000">=</font>attach --indent<font color="#990000">=</font><font color="#008A00">spaces</font><font color="#990000">=</font><font color="#993399">4</font> <font color="#990000">\</font>
+		  --pad-paren-out --indent-switches --suffix<font color="#990000">=</font>none --formatted 
 
-<span style="color:#990000">default:</span>
-	make -C <span style="color:#990000">../..</span>
+<font color="#990000">default:</font>
+	make -C <font color="#990000">../..</font>
 
-<span style="color:#990000">clean:</span>
-	/bin/rm -f <span style="color:#990000">*~</span> <span style="color:#990000">*/*~</span> <span style="color:#990000">*</span>/a.out
+<font color="#990000">clean:</font>
+	/bin/rm -f <font color="#990000">*~</font> <font color="#990000">*/*~</font> <font color="#990000">*</font>/a.out
 
-<span style="color:#990000">code:</span>
-	@astyle <span style="color:#008A00">$(ASTYLEOPTS)</span> <span style="color:#990000">*/*</span>.cpp <span style="color:#990000">*/*</span>.h <i><span style="color:#9A1900"># */*.s</span></i>
-	@source-highlight -d <span style="color:#990000">*/*</span>.cpp <span style="color:#990000">*/*</span>.h <span style="color:#990000">*</span>/Makefile <span style="color:#990000">*/*</span>.s
-	@/bin/rm -f bloomfield-fall-<span style="color:#993399">2020</span>/Makefile.html
+<font color="#990000">code:</font>
+	@astyle <font color="#008A00">$(ASTYLEOPTS)</font> <font color="#990000">*/*</font>.cpp <font color="#990000">*/*</font>.h <i><font color="#9A1900"># */*.s</font></i>
+	@source-highlight -d <font color="#990000">*/*</font>.cpp <font color="#990000">*/*</font>.h <font color="#990000">*</font>/Makefile <font color="#990000">*/*</font>.s
+	@/bin/rm -f bloomfield-fall-<font color="#993399">2020</font>/Makefile.html
 
-<span style="color:#990000">markdown:</span>
+<font color="#990000">markdown:</font>
 	@make clean
 	@make code
-	@<b><span style="color:#0000FF">for</span></b> dir <b><span style="color:#0000FF">in</span></b> `ls <span style="color:#990000">|</span> sort <span style="color:#990000">|</span> grep lec`<span style="color:#990000">;</span> <b><span style="color:#0000FF">do</span></b> <span style="color:#990000">\</span>
-		<span style="color:#008A00">title</span><span style="color:#990000">=</span>`echo <span style="color:#008A00">$$</span>dir <span style="color:#990000">|</span> sed s/lec/Lecture<span style="color:#990000">\</span> /g <span style="color:#990000">|</span> sed s/Lecture<span style="color:#990000">\</span> <span style="color:#993399">0</span>/Lecture<span style="color:#990000">\</span> /g`<span style="color:#990000">;</span> <span style="color:#990000">\</span>
-		/bin/echo <span style="color:#EF0000">"- $$title: (date)"</span><span style="color:#990000">;</span> <span style="color:#990000">\</span>
-		<b><span style="color:#0000FF">for</span></b> file <b><span style="color:#0000FF">in</span></b> `ls <span style="color:#008A00">$$</span>dir<span style="color:#990000">/</span> <span style="color:#990000">|</span> grep -v html <span style="color:#990000">|</span> grep -v svg`<span style="color:#990000">;</span> <b><span style="color:#0000FF">do</span></b> <span style="color:#990000">\</span>
-			/bin/echo <span style="color:#EF0000">"    - [$$file]($$dir/$$file.html) ([raw code]($$dir/$$file))"</span> <span style="color:#990000">;</span> <span style="color:#990000">\</span>
-		<b><span style="color:#0000FF">done</span></b> <span style="color:#990000">;</span> <span style="color:#990000">\</span>
-		<b><span style="color:#0000FF">for</span></b> file <b><span style="color:#0000FF">in</span></b> `ls <span style="color:#990000">*/*</span>.svg <span style="color:#990000">|</span> grep <span style="color:#008A00">$$</span>dir`<span style="color:#990000">;</span> <b><span style="color:#0000FF">do</span></b> <span style="color:#990000">\</span>
-			/bin/echo <span style="color:#EF0000">"    - [sketched image]($$file)"</span> <span style="color:#990000">;</span> <span style="color:#990000">\</span>
-		<b><span style="color:#0000FF">done</span></b> <span style="color:#990000">;</span> <span style="color:#990000">\</span>
-	<b><span style="color:#0000FF">done</span></b>
+	@<b><font color="#0000FF">for</font></b> dir <b><font color="#0000FF">in</font></b> `ls <font color="#990000">|</font> sort <font color="#990000">|</font> grep lec`<font color="#990000">;</font> <b><font color="#0000FF">do</font></b> <font color="#990000">\</font>
+		<font color="#008A00">title</font><font color="#990000">=</font>`echo <font color="#008A00">$$</font>dir <font color="#990000">|</font> sed s/lec/Lecture<font color="#990000">\</font> /g <font color="#990000">|</font> sed s/Lecture<font color="#990000">\</font> <font color="#993399">0</font>/Lecture<font color="#990000">\</font> /g`<font color="#990000">;</font> <font color="#990000">\</font>
+		/bin/echo <font color="#DF0000">"- $$title: (date)"</font><font color="#990000">;</font> <font color="#990000">\</font>
+		<b><font color="#0000FF">for</font></b> file <b><font color="#0000FF">in</font></b> `ls <font color="#008A00">$$</font>dir<font color="#990000">/</font> <font color="#990000">|</font> grep -v html <font color="#990000">|</font> grep -v svg`<font color="#990000">;</font> <b><font color="#0000FF">do</font></b> <font color="#990000">\</font>
+			/bin/echo <font color="#DF0000">"    - [$$file]($$dir/$$file.html) ([raw code]($$dir/$$file))"</font> <font color="#990000">;</font> <font color="#990000">\</font>
+		<b><font color="#0000FF">done</font></b> <font color="#990000">;</font> <font color="#990000">\</font>
+		<b><font color="#0000FF">for</font></b> file <b><font color="#0000FF">in</font></b> `ls <font color="#990000">*/*</font>.svg <font color="#990000">|</font> grep <font color="#008A00">$$</font>dir`<font color="#990000">;</font> <b><font color="#0000FF">do</font></b> <font color="#990000">\</font>
+			/bin/echo <font color="#DF0000">"    - [sketched image]($$file)"</font> <font color="#990000">;</font> <font color="#990000">\</font>
+		<b><font color="#0000FF">done</font></b> <font color="#990000">;</font> <font color="#990000">\</font>
+	<b><font color="#0000FF">done</font></b>
 
-<span style="color:#990000">resize:</span>
+<font color="#990000">resize:</font>
 	mkdir -p resize
-	ls <span style="color:#990000">*</span>.jpg <span style="color:#990000">|</span> awk <span style="color:#EF0000">'{print "jpegtopnm '</span>\'<span style="color:#EF0000">'"$$0"'</span>\'<span style="color:#EF0000">' | pnmscale -xsize 1000 |ppmtojpeg -quality 75 &gt; '</span>\'<span style="color:#EF0000">'resize/"$$0"'</span>\'<span style="color:#EF0000">'"}'</span> <span style="color:#990000">|</span> bash
-</pre></main>
+	ls <font color="#990000">*</font>.jpg <font color="#990000">|</font> awk <font color="#DF0000">'{print "jpegtopnm '</font>\'<font color="#DF0000">'"$$0"'</font>\'<font color="#DF0000">' | pnmscale -xsize 1000 |ppmtojpeg -quality 75 &gt; '</font>\'<font color="#DF0000">'resize/"$$0"'</font>\'<font color="#DF0000">'"}'</font> <font color="#990000">|</font> bash
+</tt></pre></main>
 </body>
 </html>

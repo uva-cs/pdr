@@ -1,190 +1,190 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab01/TestBankAccount.cpp file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>TestBankAccount.cpp</title>
+<title>Source code for ./labs/lab01/TestBankAccount.cpp (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;string&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;stdlib.h&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;cmath&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iomanip&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"bankAccount.h"</span>
-<b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab01/TestBankAccount.cpp (via source-highlight)</h1><pre><tt><b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iostream&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;string&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;stdlib.h&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;cmath&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iomanip&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">"bankAccount.h"</font>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
 
-<span style="color:#008080">string</span> options<span style="color:#990000">[]</span> <span style="color:#990000">=</span>   <span style="color:#EF0000">{</span><span style="color:#EF0000">"Quit"</span><span style="color:#990000">,</span>
-					  <span style="color:#EF0000">"Create Account"</span><span style="color:#990000">,</span>
-                      <span style="color:#EF0000">"Deposit"</span><span style="color:#990000">,</span>
-                      <span style="color:#EF0000">"Withdraw"</span><span style="color:#990000">,</span>
-                      <span style="color:#EF0000">"View Balance"</span><span style="color:#990000">,</span>
-                     <span style="color:#EF0000">}</span><span style="color:#990000">;</span>
-<span style="color:#008A00">int</span> <b><span style="color:#0000FF">const</span></b> n_choice <span style="color:#990000">=</span> <span style="color:#993399">5</span><span style="color:#990000">;</span>
-<span style="color:#008A00">int</span> <b><span style="color:#000000">menu</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> option<span style="color:#990000">[],</span> <span style="color:#008A00">int</span> n_opt<span style="color:#990000">);</span>
-<span style="color:#008A00">bool</span> <b><span style="color:#000000">is_double</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> string<span style="color:#990000">&amp;</span> s<span style="color:#990000">);</span>
-<span style="color:#008A00">double</span> <b><span style="color:#000000">sanitize</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> string<span style="color:#990000">&amp;</span> s<span style="color:#990000">);</span>
+<font color="#008080">string</font> options<font color="#990000">[]</font> <font color="#990000">=</font>   <font color="#DF0000">{</font><font color="#DF0000">"Quit"</font><font color="#990000">,</font>
+					  <font color="#DF0000">"Create Account"</font><font color="#990000">,</font>
+                      <font color="#DF0000">"Deposit"</font><font color="#990000">,</font>
+                      <font color="#DF0000">"Withdraw"</font><font color="#990000">,</font>
+                      <font color="#DF0000">"View Balance"</font><font color="#990000">,</font>
+                     <font color="#DF0000">}</font><font color="#990000">;</font>
+<font color="#008A00">int</font> <b><font color="#0000FF">const</font></b> n_choice <font color="#990000">=</font> <font color="#993399">5</font><font color="#990000">;</font>
+<font color="#008A00">int</font> <b><font color="#000000">menu</font></b><font color="#990000">(</font><font color="#008080">string</font> option<font color="#990000">[],</font> <font color="#008A00">int</font> n_opt<font color="#990000">);</font>
+<font color="#008A00">bool</font> <b><font color="#000000">is_double</font></b><font color="#990000">(</font><b><font color="#0000FF">const</font></b> string<font color="#990000">&amp;</font> s<font color="#990000">);</font>
+<font color="#008A00">double</font> <b><font color="#000000">sanitize</font></b><font color="#990000">(</font><b><font color="#0000FF">const</font></b> string<font color="#990000">&amp;</font> s<font color="#990000">);</font>
 
-<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span><span style="color:#EF0000">{</span>
-	<span style="color:#008080">string</span> response<span style="color:#990000">;</span>
-	bankAccount<span style="color:#990000">*</span> account <span style="color:#990000">=</span> NULL<span style="color:#990000">;</span>
-	<span style="color:#008A00">double</span> previousAmount<span style="color:#990000">;</span>
+<font color="#008A00">int</font> <b><font color="#000000">main</font></b><font color="#990000">()</font><font color="#DF0000">{</font>
+	<font color="#008080">string</font> response<font color="#990000">;</font>
+	bankAccount<font color="#990000">*</font> account <font color="#990000">=</font> NULL<font color="#990000">;</font>
+	<font color="#008A00">double</font> previousAmount<font color="#990000">;</font>
 
-	cout <span style="color:#990000">&lt;&lt;</span> fixed<span style="color:#990000">;</span>
-	cout <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">setprecision</span></b><span style="color:#990000">(</span><span style="color:#993399">2</span><span style="color:#990000">);</span>
-	cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"--------------------------------------------------</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"This test harness operates with one bank account</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span>
-         <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Use the menu options to manipulate it</span><span style="color:#CC33CC">\n\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
+	cout <font color="#990000">&lt;&lt;</font> fixed<font color="#990000">;</font>
+	cout <font color="#990000">&lt;&lt;</font> <b><font color="#000000">setprecision</font></b><font color="#990000">(</font><font color="#993399">2</font><font color="#990000">);</font>
+	cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"--------------------------------------------------</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"This test harness operates with one bank account</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font>
+         <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"Use the menu options to manipulate it</font><font color="#CC33CC">\n\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
 
-	<b><span style="color:#0000FF">while</span></b><span style="color:#990000">(</span><span style="color:#993399">1</span><span style="color:#990000">)</span><span style="color:#EF0000">{</span>
-		<span style="color:#008A00">int</span> option <span style="color:#990000">=</span> <b><span style="color:#000000">menu</span></b><span style="color:#990000">(</span>options<span style="color:#990000">,</span> n_choice<span style="color:#990000">);</span>
+	<b><font color="#0000FF">while</font></b><font color="#990000">(</font><font color="#993399">1</font><font color="#990000">)</font><font color="#DF0000">{</font>
+		<font color="#008A00">int</font> option <font color="#990000">=</font> <b><font color="#000000">menu</font></b><font color="#990000">(</font>options<font color="#990000">,</font> n_choice<font color="#990000">);</font>
 
-		<b><span style="color:#0000FF">switch</span></b><span style="color:#990000">(</span>option<span style="color:#990000">)</span><span style="color:#EF0000">{</span>
-			<b><span style="color:#0000FF">case</span></b> <span style="color:#993399">1</span><span style="color:#990000">:</span>					<i><span style="color:#9A1900">// quit</span></i>
-				cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Do you really want to quit? (y/n) &gt; "</span><span style="color:#990000">;</span>
-                cin  <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
+		<b><font color="#0000FF">switch</font></b><font color="#990000">(</font>option<font color="#990000">)</font><font color="#DF0000">{</font>
+			<b><font color="#0000FF">case</font></b> <font color="#993399">1</font><font color="#990000">:</font>					<i><font color="#9A1900">// quit</font></i>
+				cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Do you really want to quit? (y/n) &gt; "</font><font color="#990000">;</font>
+                cin  <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
 
-                <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">==</span> <span style="color:#EF0000">'y'</span> <span style="color:#990000">||</span> response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">==</span> <span style="color:#EF0000">'Y'</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>                 <i><span style="color:#9A1900">// Normal Exit</span></i>
-                    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>account <span style="color:#990000">!=</span> NULL<span style="color:#990000">)</span> <b><span style="color:#0000FF">delete</span></b> account<span style="color:#990000">;</span>
-                    <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-                <span style="color:#EF0000">}</span>
+                <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>response<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">==</font> <font color="#DF0000">'y'</font> <font color="#990000">||</font> response<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">==</font> <font color="#DF0000">'Y'</font><font color="#990000">)</font> <font color="#DF0000">{</font>                 <i><font color="#9A1900">// Normal Exit</font></i>
+                    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>account <font color="#990000">!=</font> NULL<font color="#990000">)</font> <b><font color="#0000FF">delete</font></b> account<font color="#990000">;</font>
+                    <b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
+                <font color="#DF0000">}</font>
 
-	            <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-	        <b><span style="color:#0000FF">case</span></b> <span style="color:#993399">2</span><span style="color:#990000">:</span>					<i><span style="color:#9A1900">// new accont</span></i>
-	        	<b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>account <span style="color:#990000">!=</span> NULL<span style="color:#990000">)</span> <b><span style="color:#0000FF">delete</span></b> account<span style="color:#990000">;</span>
+	            <b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+	        <b><font color="#0000FF">case</font></b> <font color="#993399">2</font><font color="#990000">:</font>					<i><font color="#9A1900">// new accont</font></i>
+	        	<b><font color="#0000FF">if</font></b> <font color="#990000">(</font>account <font color="#990000">!=</font> NULL<font color="#990000">)</font> <b><font color="#0000FF">delete</font></b> account<font color="#990000">;</font>
 
-                cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Do you want to initialize it with an amount (y/n)? &gt; "</span><span style="color:#990000">;</span>
-                cin  <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
+                cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Do you want to initialize it with an amount (y/n)? &gt; "</font><font color="#990000">;</font>
+                cin  <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
 
-                <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">!=</span> <span style="color:#EF0000">'y'</span> <span style="color:#990000">&amp;&amp;</span> response<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">!=</span> <span style="color:#EF0000">'Y'</span><span style="color:#990000">)</span><span style="color:#EF0000">{</span>
-                	cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Current balance is: $0.00</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
-                	account <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> bankAccount<span style="color:#990000">;</span>
-                    <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-                <span style="color:#EF0000">}</span> 
-                <i><span style="color:#9A1900">// accept elements</span></i>
-                cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t\t</span><span style="color:#EF0000">Enter the amount you would like your bank account to have.</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
-                cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t\t</span><span style="color:#EF0000">The amount will be rounded to the second decimal place: "</span><span style="color:#990000">;</span>
-                cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
+                <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>response<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">!=</font> <font color="#DF0000">'y'</font> <font color="#990000">&amp;&amp;</font> response<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">!=</font> <font color="#DF0000">'Y'</font><font color="#990000">)</font><font color="#DF0000">{</font>
+                	cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Current balance is: $0.00</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
+                	account <font color="#990000">=</font> <b><font color="#0000FF">new</font></b> bankAccount<font color="#990000">;</font>
+                    <b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+                <font color="#DF0000">}</font> 
+                <i><font color="#9A1900">// accept elements</font></i>
+                cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t\t</font><font color="#DF0000">Enter the amount you would like your bank account to have.</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
+                cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t\t</font><font color="#DF0000">The amount will be rounded to the second decimal place: "</font><font color="#990000">;</font>
+                cin <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
 
-                <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(!</span> <b><span style="color:#000000">is_double</span></b><span style="color:#990000">(</span>response<span style="color:#990000">))</span> <span style="color:#EF0000">{</span>
-                    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t\t</span><span style="color:#EF0000">Please input a valid numeric: "</span><span style="color:#990000">;</span>
-                    cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
-                <span style="color:#EF0000">}</span>
+                <b><font color="#0000FF">while</font></b> <font color="#990000">(!</font> <b><font color="#000000">is_double</font></b><font color="#990000">(</font>response<font color="#990000">))</font> <font color="#DF0000">{</font>
+                    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t\t</font><font color="#DF0000">Please input a valid numeric: "</font><font color="#990000">;</font>
+                    cin <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
+                <font color="#DF0000">}</font>
 
-                account <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">bankAccount</span></b><span style="color:#990000">(</span><b><span style="color:#000000">sanitize</span></b><span style="color:#990000">(</span>response<span style="color:#990000">));</span>
-                cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Current balance is: $"</span> <span style="color:#990000">&lt;&lt;</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-                <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-            <b><span style="color:#0000FF">case</span></b> <span style="color:#993399">3</span><span style="color:#990000">:</span> 				<i><span style="color:#9A1900">// Deposit</span></i>
-            	<b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>account <span style="color:#990000">==</span> NULL<span style="color:#990000">)</span><span style="color:#EF0000">{</span>
-            		cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Create an account first."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-            		<b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-            	<span style="color:#EF0000">}</span>
+                account <font color="#990000">=</font> <b><font color="#0000FF">new</font></b> <b><font color="#000000">bankAccount</font></b><font color="#990000">(</font><b><font color="#000000">sanitize</font></b><font color="#990000">(</font>response<font color="#990000">));</font>
+                cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"Current balance is: $"</font> <font color="#990000">&lt;&lt;</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+                <b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+            <b><font color="#0000FF">case</font></b> <font color="#993399">3</font><font color="#990000">:</font> 				<i><font color="#9A1900">// Deposit</font></i>
+            	<b><font color="#0000FF">if</font></b> <font color="#990000">(</font>account <font color="#990000">==</font> NULL<font color="#990000">)</font><font color="#DF0000">{</font>
+            		cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Create an account first."</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+            		<b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+            	<font color="#DF0000">}</font>
 
-            	cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">You currently have $"</span> <span style="color:#990000">&lt;&lt;</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" in your account</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span>
-            		 <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Enter how much you would like to deposit: "</span><span style="color:#990000">;</span>
-            	cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
+            	cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">You currently have $"</font> <font color="#990000">&lt;&lt;</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">" in your account</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font>
+            		 <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Enter how much you would like to deposit: "</font><font color="#990000">;</font>
+            	cin <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
 
-            	<b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(!</span> <b><span style="color:#000000">is_double</span></b><span style="color:#990000">(</span>response<span style="color:#990000">))</span> <span style="color:#EF0000">{</span>
-                    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Please input a valid numeric: "</span><span style="color:#990000">;</span>
-                    cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
-                <span style="color:#EF0000">}</span>
+            	<b><font color="#0000FF">while</font></b> <font color="#990000">(!</font> <b><font color="#000000">is_double</font></b><font color="#990000">(</font>response<font color="#990000">))</font> <font color="#DF0000">{</font>
+                    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Please input a valid numeric: "</font><font color="#990000">;</font>
+                    cin <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
+                <font color="#DF0000">}</font>
 
-                previousAmount <span style="color:#990000">=</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">();</span>
-                account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">deposit</span></b><span style="color:#990000">(</span><b><span style="color:#000000">sanitize</span></b><span style="color:#990000">(</span>response<span style="color:#990000">));</span>
-                <b><span style="color:#0000FF">if</span></b><span style="color:#990000">(</span>previousAmount <span style="color:#990000">==</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">())</span><span style="color:#EF0000">{</span>
-                	cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">No money deposited into your account."</span><span style="color:#990000">;</span>
-                <span style="color:#EF0000">}</span>
-                cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">The new balance is: $"</span> <span style="color:#990000">&lt;&lt;</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-                <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-            <b><span style="color:#0000FF">case</span></b> <span style="color:#993399">4</span><span style="color:#990000">:</span>					<i><span style="color:#9A1900">// Withdraw</span></i>
-            	<b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>account <span style="color:#990000">==</span> NULL<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-            		cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Create an account first."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-            		<b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-            	<span style="color:#EF0000">}</span>
+                previousAmount <font color="#990000">=</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">();</font>
+                account<font color="#990000">-&gt;</font><b><font color="#000000">deposit</font></b><font color="#990000">(</font><b><font color="#000000">sanitize</font></b><font color="#990000">(</font>response<font color="#990000">));</font>
+                <b><font color="#0000FF">if</font></b><font color="#990000">(</font>previousAmount <font color="#990000">==</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">())</font><font color="#DF0000">{</font>
+                	cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">No money deposited into your account."</font><font color="#990000">;</font>
+                <font color="#DF0000">}</font>
+                cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">The new balance is: $"</font> <font color="#990000">&lt;&lt;</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+                <b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+            <b><font color="#0000FF">case</font></b> <font color="#993399">4</font><font color="#990000">:</font>					<i><font color="#9A1900">// Withdraw</font></i>
+            	<b><font color="#0000FF">if</font></b> <font color="#990000">(</font>account <font color="#990000">==</font> NULL<font color="#990000">)</font> <font color="#DF0000">{</font>
+            		cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Create an account first."</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+            		<b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+            	<font color="#DF0000">}</font>
 
-            	cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">You currently have $"</span> <span style="color:#990000">&lt;&lt;</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" in your account</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span>
-            		 <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Enter how much you would like to withdraw: "</span><span style="color:#990000">;</span>
-            	cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
+            	cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">You currently have $"</font> <font color="#990000">&lt;&lt;</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">" in your account</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font>
+            		 <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Enter how much you would like to withdraw: "</font><font color="#990000">;</font>
+            	cin <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
 
-            	<b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(!</span> <b><span style="color:#000000">is_double</span></b><span style="color:#990000">(</span>response<span style="color:#990000">))</span> <span style="color:#EF0000">{</span>
-                    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Please input a valid numeric: "</span><span style="color:#990000">;</span>
-                    cin <span style="color:#990000">&gt;&gt;</span> response<span style="color:#990000">;</span>
-                <span style="color:#EF0000">}</span>
+            	<b><font color="#0000FF">while</font></b> <font color="#990000">(!</font> <b><font color="#000000">is_double</font></b><font color="#990000">(</font>response<font color="#990000">))</font> <font color="#DF0000">{</font>
+                    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Please input a valid numeric: "</font><font color="#990000">;</font>
+                    cin <font color="#990000">&gt;&gt;</font> response<font color="#990000">;</font>
+                <font color="#DF0000">}</font>
 
-                previousAmount <span style="color:#990000">=</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">();</span>
-                account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">withdraw</span></b><span style="color:#990000">(</span><b><span style="color:#000000">sanitize</span></b><span style="color:#990000">(</span>response<span style="color:#990000">));</span>
-                <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>previousAmount <span style="color:#990000">==</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">())</span><span style="color:#EF0000">{</span>
-                	cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">No money was taken out of your account."</span><span style="color:#990000">;</span>
-                <span style="color:#EF0000">}</span>
-                cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">The new balance is: $"</span> <span style="color:#990000">&lt;&lt;</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-                <b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-            <b><span style="color:#0000FF">case</span></b> <span style="color:#993399">5</span><span style="color:#990000">:</span>					<i><span style="color:#9A1900">// View balance</span></i>
-            	<b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>account <span style="color:#990000">==</span> NULL<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-            		cout <span style="color:#990000">&lt;&lt;</span> endl <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Create an account first."</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-            		<b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-            	<span style="color:#EF0000">}</span>
+                previousAmount <font color="#990000">=</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">();</font>
+                account<font color="#990000">-&gt;</font><b><font color="#000000">withdraw</font></b><font color="#990000">(</font><b><font color="#000000">sanitize</font></b><font color="#990000">(</font>response<font color="#990000">));</font>
+                <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>previousAmount <font color="#990000">==</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">())</font><font color="#DF0000">{</font>
+                	cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">No money was taken out of your account."</font><font color="#990000">;</font>
+                <font color="#DF0000">}</font>
+                cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">The new balance is: $"</font> <font color="#990000">&lt;&lt;</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+                <b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+            <b><font color="#0000FF">case</font></b> <font color="#993399">5</font><font color="#990000">:</font>					<i><font color="#9A1900">// View balance</font></i>
+            	<b><font color="#0000FF">if</font></b> <font color="#990000">(</font>account <font color="#990000">==</font> NULL<font color="#990000">)</font> <font color="#DF0000">{</font>
+            		cout <font color="#990000">&lt;&lt;</font> endl <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Create an account first."</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+            		<b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+            	<font color="#DF0000">}</font>
 
-            	cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Current balance is: $"</span> <span style="color:#990000">&lt;&lt;</span> account<span style="color:#990000">-&gt;</span><b><span style="color:#000000">getBalance</span></b><span style="color:#990000">()</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-            	<b><span style="color:#0000FF">break</span></b><span style="color:#990000">;</span>
-		<span style="color:#EF0000">}</span>
-	<span style="color:#EF0000">}</span>
+            	cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Current balance is: $"</font> <font color="#990000">&lt;&lt;</font> account<font color="#990000">-&gt;</font><b><font color="#000000">getBalance</font></b><font color="#990000">()</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+            	<b><font color="#0000FF">break</font></b><font color="#990000">;</font>
+		<font color="#DF0000">}</font>
+	<font color="#DF0000">}</font>
 
-	<b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
+	<b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
+<font color="#DF0000">}</font>
 
-<span style="color:#008A00">int</span> <b><span style="color:#000000">menu</span></b><span style="color:#990000">(</span><span style="color:#008080">string</span> option<span style="color:#990000">[],</span> <span style="color:#008A00">int</span> n_opt<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-    <span style="color:#008A00">int</span> choice<span style="color:#990000">,</span> i<span style="color:#990000">;</span>
-    <span style="color:#008080">string</span> input<span style="color:#990000">;</span>
+<font color="#008A00">int</font> <b><font color="#000000">menu</font></b><font color="#990000">(</font><font color="#008080">string</font> option<font color="#990000">[],</font> <font color="#008A00">int</font> n_opt<font color="#990000">)</font> <font color="#DF0000">{</font>
+    <font color="#008A00">int</font> choice<font color="#990000">,</font> i<font color="#990000">;</font>
+    <font color="#008080">string</font> input<font color="#990000">;</font>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"     - - - - - -  MENU - - - - - -</span><span style="color:#CC33CC">\n\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"     - - - - - -  MENU - - - - - -</font><font color="#CC33CC">\n\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
 
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span>i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n_opt<span style="color:#990000">;</span> <span style="color:#990000">++</span>i<span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">"</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#990000">(</span>i<span style="color:#990000">+</span><span style="color:#993399">1</span><span style="color:#990000">)</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" - "</span> <span style="color:#990000">&lt;&lt;</span> option<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><font color="#0000FF">for</font></b> <font color="#990000">(</font>i <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font> i <font color="#990000">&lt;</font> n_opt<font color="#990000">;</font> <font color="#990000">++</font>i<font color="#990000">)</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">"</font> <font color="#990000">&lt;&lt;</font> <font color="#990000">(</font>i<font color="#990000">+</font><font color="#993399">1</font><font color="#990000">)</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">" - "</font> <font color="#990000">&lt;&lt;</font> option<font color="#990000">[</font>i<font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"     - - - - - - - - - - - - - - -</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"     - - - - - - - - - - - - - - -</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
 
-    <b><span style="color:#0000FF">while</span></b> <span style="color:#990000">(</span>input<span style="color:#990000">.</span><b><span style="color:#000000">empty</span></b><span style="color:#990000">())</span> <span style="color:#EF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"     Enter number of choice &gt; "</span><span style="color:#990000">;</span>
-        cin <span style="color:#990000">&gt;&gt;</span> input<span style="color:#990000">;</span>
+    <b><font color="#0000FF">while</font></b> <font color="#990000">(</font>input<font color="#990000">.</font><b><font color="#000000">empty</font></b><font color="#990000">())</font> <font color="#DF0000">{</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"     Enter number of choice &gt; "</font><font color="#990000">;</font>
+        cin <font color="#990000">&gt;&gt;</font> input<font color="#990000">;</font>
 
-        <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span><b><span style="color:#000000">isdigit</span></b><span style="color:#990000">(</span>input<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]))</span> <span style="color:#EF0000">{</span>
-            choice <span style="color:#990000">=</span> <b><span style="color:#000000">atoi</span></b><span style="color:#990000">(</span>input<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">());</span>
+        <b><font color="#0000FF">if</font></b> <font color="#990000">(</font><b><font color="#000000">isdigit</font></b><font color="#990000">(</font>input<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]))</font> <font color="#DF0000">{</font>
+            choice <font color="#990000">=</font> <b><font color="#000000">atoi</font></b><font color="#990000">(</font>input<font color="#990000">.</font><b><font color="#000000">c_str</font></b><font color="#990000">());</font>
 
-            <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>choice <span style="color:#990000">&lt;=</span> n_opt <span style="color:#990000">&amp;&amp;</span> choice <span style="color:#990000">&gt;</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-                <b><span style="color:#0000FF">return</span></b> choice<span style="color:#990000">;</span>
-            <span style="color:#EF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#EF0000">{</span>          <i><span style="color:#9A1900">/* choice out of range */</span></i>
-                cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Your response MUST be between 1 and "</span>
-                     <span style="color:#990000">&lt;&lt;</span> n_opt <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-                input <span style="color:#990000">=</span> <span style="color:#EF0000">""</span><span style="color:#990000">;</span>
-            <span style="color:#EF0000">}</span>
-        <span style="color:#EF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#EF0000">{</span>                <i><span style="color:#9A1900">/* Non-numeric input, ignore */</span></i>
-            cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">Your response MUST be a number!</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
-            input <span style="color:#990000">=</span> <span style="color:#EF0000">""</span><span style="color:#990000">;</span>
-        <span style="color:#EF0000">}</span>
-    <span style="color:#EF0000">}</span>
+            <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>choice <font color="#990000">&lt;=</font> n_opt <font color="#990000">&amp;&amp;</font> choice <font color="#990000">&gt;</font> <font color="#993399">0</font><font color="#990000">)</font> <font color="#DF0000">{</font>
+                <b><font color="#0000FF">return</font></b> choice<font color="#990000">;</font>
+            <font color="#DF0000">}</font> <b><font color="#0000FF">else</font></b> <font color="#DF0000">{</font>          <i><font color="#9A1900">/* choice out of range */</font></i>
+                cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Your response MUST be between 1 and "</font>
+                     <font color="#990000">&lt;&lt;</font> n_opt <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+                input <font color="#990000">=</font> <font color="#DF0000">""</font><font color="#990000">;</font>
+            <font color="#DF0000">}</font>
+        <font color="#DF0000">}</font> <b><font color="#0000FF">else</font></b> <font color="#DF0000">{</font>                <i><font color="#9A1900">/* Non-numeric input, ignore */</font></i>
+            cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">Your response MUST be a number!</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
+            input <font color="#990000">=</font> <font color="#DF0000">""</font><font color="#990000">;</font>
+        <font color="#DF0000">}</font>
+    <font color="#DF0000">}</font>
 
-    <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
+    <b><font color="#0000FF">return</font></b> <font color="#993399">1</font><font color="#990000">;</font>
+<font color="#DF0000">}</font>
 
-<span style="color:#008A00">bool</span> <b><span style="color:#000000">is_double</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> string<span style="color:#990000">&amp;</span> s<span style="color:#990000">)</span><span style="color:#EF0000">{</span>
-	<span style="color:#008A00">char</span><span style="color:#990000">*</span> end<span style="color:#990000">;</span>
-	<span style="color:#008A00">double</span> val <span style="color:#990000">=</span> <b><span style="color:#000000">strtod</span></b><span style="color:#990000">(</span>s<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">(),</span> <span style="color:#990000">&amp;</span>end<span style="color:#990000">);</span>
-	<i><span style="color:#9A1900">// make sure end is not the start of the string nor null terminate</span></i>
-	<i><span style="color:#9A1900">// make sure val is not HUGE_VAL, meaning the num is out of double's range</span></i>
-	<b><span style="color:#0000FF">return</span></b> end <span style="color:#990000">!=</span> s<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">()</span> <span style="color:#990000">&amp;&amp;</span> <span style="color:#990000">*</span>end <span style="color:#990000">==</span> <span style="color:#EF0000">'</span><span style="color:#CC33CC">\0</span><span style="color:#EF0000">'</span> <span style="color:#990000">&amp;&amp;</span> val <span style="color:#990000">!=</span> HUGE_VAL<span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
+<font color="#008A00">bool</font> <b><font color="#000000">is_double</font></b><font color="#990000">(</font><b><font color="#0000FF">const</font></b> string<font color="#990000">&amp;</font> s<font color="#990000">)</font><font color="#DF0000">{</font>
+	<font color="#008A00">char</font><font color="#990000">*</font> end<font color="#990000">;</font>
+	<font color="#008A00">double</font> val <font color="#990000">=</font> <b><font color="#000000">strtod</font></b><font color="#990000">(</font>s<font color="#990000">.</font><b><font color="#000000">c_str</font></b><font color="#990000">(),</font> <font color="#990000">&amp;</font>end<font color="#990000">);</font>
+	<i><font color="#9A1900">// make sure end is not the start of the string nor null terminate</font></i>
+	<i><font color="#9A1900">// make sure val is not HUGE_VAL, meaning the num is out of double's range</font></i>
+	<b><font color="#0000FF">return</font></b> end <font color="#990000">!=</font> s<font color="#990000">.</font><b><font color="#000000">c_str</font></b><font color="#990000">()</font> <font color="#990000">&amp;&amp;</font> <font color="#990000">*</font>end <font color="#990000">==</font> <font color="#DF0000">'</font><font color="#CC33CC">\0</font><font color="#DF0000">'</font> <font color="#990000">&amp;&amp;</font> val <font color="#990000">!=</font> HUGE_VAL<font color="#990000">;</font>
+<font color="#DF0000">}</font>
 
-<span style="color:#008A00">double</span> <b><span style="color:#000000">sanitize</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> string<span style="color:#990000">&amp;</span> s<span style="color:#990000">)</span><span style="color:#EF0000">{</span>
-	<span style="color:#008A00">char</span><span style="color:#990000">*</span> end<span style="color:#990000">;</span>
-	<span style="color:#008A00">double</span> amount <span style="color:#990000">=</span> <b><span style="color:#000000">strtod</span></b><span style="color:#990000">(</span>s<span style="color:#990000">.</span><b><span style="color:#000000">c_str</span></b><span style="color:#990000">(),</span> <span style="color:#990000">&amp;</span>end<span style="color:#990000">);</span>
-	amount <span style="color:#990000">=</span> <b><span style="color:#000000">round</span></b><span style="color:#990000">(</span>amount <span style="color:#990000">*</span> <span style="color:#993399">100.0</span><span style="color:#990000">)</span> <span style="color:#990000">/</span> <span style="color:#993399">100.0</span><span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>amount <span style="color:#990000">&lt;</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> amount <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-	<b><span style="color:#0000FF">return</span></b> amount<span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
-</pre></main>
+<font color="#008A00">double</font> <b><font color="#000000">sanitize</font></b><font color="#990000">(</font><b><font color="#0000FF">const</font></b> string<font color="#990000">&amp;</font> s<font color="#990000">)</font><font color="#DF0000">{</font>
+	<font color="#008A00">char</font><font color="#990000">*</font> end<font color="#990000">;</font>
+	<font color="#008A00">double</font> amount <font color="#990000">=</font> <b><font color="#000000">strtod</font></b><font color="#990000">(</font>s<font color="#990000">.</font><b><font color="#000000">c_str</font></b><font color="#990000">(),</font> <font color="#990000">&amp;</font>end<font color="#990000">);</font>
+	amount <font color="#990000">=</font> <b><font color="#000000">round</font></b><font color="#990000">(</font>amount <font color="#990000">*</font> <font color="#993399">100.0</font><font color="#990000">)</font> <font color="#990000">/</font> <font color="#993399">100.0</font><font color="#990000">;</font>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>amount <font color="#990000">&lt;</font> <font color="#993399">0</font><font color="#990000">)</font> amount <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font>
+	<b><font color="#0000FF">return</font></b> amount<font color="#990000">;</font>
+<font color="#DF0000">}</font>
+</tt></pre></main>
 </body>
 </html>

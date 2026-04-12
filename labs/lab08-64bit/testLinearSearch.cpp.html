@@ -1,49 +1,49 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab08-64bit/testLinearSearch.cpp file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>testLinearSearch.cpp</title>
+<title>Source code for ./labs/lab08-64bit/testLinearSearch.cpp (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;cstring&gt;</span>
-<b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab08-64bit/testLinearSearch.cpp (via source-highlight)</h1><pre><tt><b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iostream&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;cstring&gt;</font>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
 
-<b><span style="color:#0000FF">extern</span></b> <span style="color:#EF0000">"C"</span> <span style="color:#008A00">int</span> <b><span style="color:#000000">linearSearch</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> <span style="color:#990000">*</span> arr<span style="color:#990000">,</span> <span style="color:#008A00">int</span> size<span style="color:#990000">,</span> <span style="color:#008A00">int</span> target<span style="color:#990000">);</span>
+<b><font color="#0000FF">extern</font></b> <font color="#DF0000">"C"</font> <font color="#008A00">int</font> <b><font color="#000000">linearSearch</font></b><font color="#990000">(</font><font color="#008A00">int</font> <font color="#990000">*</font> arr<font color="#990000">,</font> <font color="#008A00">int</font> size<font color="#990000">,</font> <font color="#008A00">int</font> target<font color="#990000">);</font>
 
-<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span><span style="color:#EF0000">{</span>
+<font color="#008A00">int</font> <b><font color="#000000">main</font></b><font color="#990000">()</font><font color="#DF0000">{</font>
 
-	<span style="color:#008A00">int</span> size<span style="color:#990000">;</span>
-	<i><span style="color:#9A1900">// prompt for array size</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter the array size: "</span><span style="color:#990000">;</span>
-	cin <span style="color:#990000">&gt;&gt;</span> size<span style="color:#990000">;</span>
-	<span style="color:#008A00">int</span> <span style="color:#990000">*</span> arr <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">[</span>size<span style="color:#990000">];</span>
+	<font color="#008A00">int</font> size<font color="#990000">;</font>
+	<i><font color="#9A1900">// prompt for array size</font></i>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"Enter the array size: "</font><font color="#990000">;</font>
+	cin <font color="#990000">&gt;&gt;</font> size<font color="#990000">;</font>
+	<font color="#008A00">int</font> <font color="#990000">*</font> arr <font color="#990000">=</font> <b><font color="#0000FF">new</font></b> <font color="#008A00">int</font><font color="#990000">[</font>size<font color="#990000">];</font>
 
-	<i><span style="color:#9A1900">// read in array values</span></i>
-	<b><span style="color:#0000FF">for</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> size<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter value "</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">": "</span><span style="color:#990000">;</span>
-        cin <span style="color:#990000">&gt;&gt;</span> arr<span style="color:#990000">[</span>i<span style="color:#990000">];</span>
-    <span style="color:#EF0000">}</span>
+	<i><font color="#9A1900">// read in array values</font></i>
+	<b><font color="#0000FF">for</font></b><font color="#990000">(</font><font color="#008A00">int</font> i <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font> i <font color="#990000">&lt;</font> size<font color="#990000">;</font> i<font color="#990000">++)</font> <font color="#DF0000">{</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"Enter value "</font> <font color="#990000">&lt;&lt;</font> i <font color="#990000">&lt;&lt;</font> <font color="#DF0000">": "</font><font color="#990000">;</font>
+        cin <font color="#990000">&gt;&gt;</font> arr<font color="#990000">[</font>i<font color="#990000">];</font>
+    <font color="#DF0000">}</font>
 
-    <span style="color:#008A00">int</span> target<span style="color:#990000">;</span>
-    <i><span style="color:#9A1900">// prompt for target</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Enter target to search for: "</span><span style="color:#990000">;</span>
-    cin <span style="color:#990000">&gt;&gt;</span> target<span style="color:#990000">;</span>
+    <font color="#008A00">int</font> target<font color="#990000">;</font>
+    <i><font color="#9A1900">// prompt for target</font></i>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"Enter target to search for: "</font><font color="#990000">;</font>
+    cin <font color="#990000">&gt;&gt;</font> target<font color="#990000">;</font>
 
-    <span style="color:#008A00">int</span> ind <span style="color:#990000">=</span> <b><span style="color:#000000">linearSearch</span></b><span style="color:#990000">(</span>arr<span style="color:#990000">,</span> size<span style="color:#990000">,</span> target<span style="color:#990000">);</span>
+    <font color="#008A00">int</font> ind <font color="#990000">=</font> <b><font color="#000000">linearSearch</font></b><font color="#990000">(</font>arr<font color="#990000">,</font> size<font color="#990000">,</font> target<font color="#990000">);</font>
 
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>ind <span style="color:#990000">&gt;</span> <span style="color:#990000">-</span><span style="color:#993399">1</span><span style="color:#990000">)</span>
-    	cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">Found "</span> <span style="color:#990000">&lt;&lt;</span> target <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" at index "</span> <span style="color:#990000">&lt;&lt;</span> ind <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">else</span></b>
-    	cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">Did not find "</span> <span style="color:#990000">&lt;&lt;</span> target <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>ind <font color="#990000">&gt;</font> <font color="#990000">-</font><font color="#993399">1</font><font color="#990000">)</font>
+    	cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\n</font><font color="#DF0000">Found "</font> <font color="#990000">&lt;&lt;</font> target <font color="#990000">&lt;&lt;</font> <font color="#DF0000">" at index "</font> <font color="#990000">&lt;&lt;</font> ind <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    <b><font color="#0000FF">else</font></b>
+    	cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\n</font><font color="#DF0000">Did not find "</font> <font color="#990000">&lt;&lt;</font> target <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
 
-    <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
+    <b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
 
-<span style="color:#EF0000">}</span>
-</pre></main>
+<font color="#DF0000">}</font>
+</tt></pre></main>
 </body>
 </html>

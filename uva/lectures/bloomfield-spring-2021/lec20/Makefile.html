@@ -1,30 +1,30 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./uva/lectures/bloomfield-spring-2021/lec20/Makefile file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>Makefile</title>
+<title>Source code for ./uva/lectures/bloomfield-spring-2021/lec20/Makefile (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><span style="color:#008A00">CXX =</span> clang<span style="color:#990000">++</span> -Wall -Wno-unused-private-field
-<span style="color:#008A00">OFILES =</span> List.o ListItr.o ListNode.o ListTest.o
+<body bgcolor="white">
+<main><h1>Source code for ./uva/lectures/bloomfield-spring-2021/lec20/Makefile (via source-highlight)</h1><pre><tt><font color="#008A00">CXX =</font> clang<font color="#990000">++</font> -Wall -Wno-unused-private-field
+<font color="#008A00">OFILES =</font> List.o ListItr.o ListNode.o ListTest.o
 
-<b><span style="color:#000080">.PHONY:</span></b> clean
+<b><font color="#000080">.PHONY:</font></b> clean
 
-<span style="color:#990000">main:</span> <span style="color:#008A00">$(OFILES)</span>
-	<span style="color:#008A00">$(CXX)</span> <span style="color:#008A00">$(OFILES)</span>
+<font color="#990000">main:</font> <font color="#008A00">$(OFILES)</font>
+	<font color="#008A00">$(CXX)</font> <font color="#008A00">$(OFILES)</font>
 
-<span style="color:#990000">clean:</span>
-	/bin/rm -f <span style="color:#990000">*</span>.o <span style="color:#990000">*~</span> a.out
+<font color="#990000">clean:</font>
+	/bin/rm -f <font color="#990000">*</font>.o <font color="#990000">*~</font> a.out
 
-<i><span style="color:#9A1900"># output from `clang++ -MM *.cpp`</span></i>
-<span style="color:#990000">List.o:</span> List.cpp List.h ListNode.h ListItr.h
-<span style="color:#990000">ListItr.o:</span> ListItr.cpp ListItr.h ListNode.h List.h
-<span style="color:#990000">ListNode.o:</span> ListNode.cpp ListNode.h
-<span style="color:#990000">ListTest.o:</span> ListTest.cpp List.h ListNode.h ListItr.h
-</pre></main>
+<i><font color="#9A1900"># output from `clang++ -MM *.cpp`</font></i>
+<font color="#990000">List.o:</font> List.cpp List.h ListNode.h ListItr.h
+<font color="#990000">ListItr.o:</font> ListItr.cpp ListItr.h ListNode.h List.h
+<font color="#990000">ListNode.o:</font> ListNode.cpp ListNode.h
+<font color="#990000">ListTest.o:</font> ListTest.cpp List.h ListNode.h ListItr.h
+</tt></pre></main>
 </body>
 </html>

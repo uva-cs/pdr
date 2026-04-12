@@ -1,54 +1,54 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab08-32bit/Makefile file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>Makefile</title>
+<title>Source code for ./labs/lab08-32bit/Makefile (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><i><span style="color:#9A1900"># Makefile for CS 2150 pre-lab 8</span></i>
-<i><span style="color:#9A1900"># This Makefile shows how to link assembly with C/C++</span></i>
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab08-32bit/Makefile (via source-highlight)</h1><pre><tt><i><font color="#9A1900"># Makefile for CS 2150 pre-lab 8</font></i>
+<i><font color="#9A1900"># This Makefile shows how to link assembly with C/C++</font></i>
 
-<i><span style="color:#9A1900"># Defines the C++ compiler we'll be using</span></i>
-<span style="color:#008A00">CXX	=</span> g<span style="color:#990000">++</span> -m<span style="color:#993399">32</span>
+<i><font color="#9A1900"># Defines the C++ compiler we'll be using</font></i>
+<font color="#008A00">CXX	=</font> g<font color="#990000">++</font> -m<font color="#993399">32</font>
 
-<i><span style="color:#9A1900"># Defines the flags we'll be passing to the C++ compiler</span></i>
-<span style="color:#008A00">CXXFLAGS	=</span> -Wall -g
+<i><font color="#9A1900"># Defines the flags we'll be passing to the C++ compiler</font></i>
+<font color="#008A00">CXXFLAGS	=</font> -Wall -g
 
-<i><span style="color:#9A1900"># Defines the assembler</span></i>
-<span style="color:#008A00">AS	=</span> nasm
+<i><font color="#9A1900"># Defines the assembler</font></i>
+<font color="#008A00">AS	=</font> nasm
 
-<i><span style="color:#9A1900"># Defines the flags for the assembler</span></i>
-<span style="color:#008A00">ASFLAGS	=</span> -f elf -g
+<i><font color="#9A1900"># Defines the flags for the assembler</font></i>
+<font color="#008A00">ASFLAGS	=</font> -f elf -g
 
-<i><span style="color:#9A1900"># All of the .o files for our program</span></i>
-<span style="color:#008A00">OFILES	=</span> vecsum.o main.o
+<i><font color="#9A1900"># All of the .o files for our program</font></i>
+<font color="#008A00">OFILES	=</font> vecsum.o main.o
 
-<i><span style="color:#9A1900"># This tells make to create a .o file from a .cpp file, using the</span></i>
-<i><span style="color:#9A1900"># defaults above (i.e. the CXX and CXXFLAGS macros)</span></i>
-<b><span style="color:#000080">.SUFFIXES:</span></b> .o .cpp
+<i><font color="#9A1900"># This tells make to create a .o file from a .cpp file, using the</font></i>
+<i><font color="#9A1900"># defaults above (i.e. the CXX and CXXFLAGS macros)</font></i>
+<b><font color="#000080">.SUFFIXES:</font></b> .o .cpp
 
-<i><span style="color:#9A1900"># This tells make to create a .o file from a .s file, using the</span></i>
-<i><span style="color:#9A1900"># defaults above (i.e. the AS and ASFLAGS macros)</span></i>
-<b><span style="color:#000080">.SUFFIXES:</span></b> .o .s
+<i><font color="#9A1900"># This tells make to create a .o file from a .s file, using the</font></i>
+<i><font color="#9A1900"># defaults above (i.e. the AS and ASFLAGS macros)</font></i>
+<b><font color="#000080">.SUFFIXES:</font></b> .o .s
 
-<i><span style="color:#9A1900"># How to compile our final program.  Note that we do NOT specify an</span></i>
-<i><span style="color:#9A1900"># output executable name -- in order for this to work with the grading</span></i>
-<i><span style="color:#9A1900"># system, the file needs to be a.out (a.exe in Cygwin).</span></i>
-<span style="color:#990000">main:</span>	<span style="color:#008A00">$(OFILES)</span>
-	<span style="color:#008A00">$(CXX)</span> <span style="color:#008A00">$(CXXFLAGS)</span> <span style="color:#008A00">$(OFILES)</span>
+<i><font color="#9A1900"># How to compile our final program.  Note that we do NOT specify an</font></i>
+<i><font color="#9A1900"># output executable name -- in order for this to work with the grading</font></i>
+<i><font color="#9A1900"># system, the file needs to be a.out (a.exe in Cygwin).</font></i>
+<font color="#990000">main:</font>	<font color="#008A00">$(OFILES)</font>
+	<font color="#008A00">$(CXX)</font> <font color="#008A00">$(CXXFLAGS)</font> <font color="#008A00">$(OFILES)</font>
 
-<i><span style="color:#9A1900"># This will clean up (remove) all our object files.  The -f option</span></i>
-<i><span style="color:#9A1900"># tells rm to forcily remove the files (i.e. don't ask if they should</span></i>
-<i><span style="color:#9A1900"># be removed or not).  This removes object files (*.o) and Emacs</span></i>
-<i><span style="color:#9A1900"># backup files (*~)</span></i>
-<span style="color:#990000">clean:</span>
-	/bin/rm -f <span style="color:#990000">*</span>.o <span style="color:#990000">*~</span>
+<i><font color="#9A1900"># This will clean up (remove) all our object files.  The -f option</font></i>
+<i><font color="#9A1900"># tells rm to forcily remove the files (i.e. don't ask if they should</font></i>
+<i><font color="#9A1900"># be removed or not).  This removes object files (*.o) and Emacs</font></i>
+<i><font color="#9A1900"># backup files (*~)</font></i>
+<font color="#990000">clean:</font>
+	/bin/rm -f <font color="#990000">*</font>.o <font color="#990000">*~</font>
 
-<i><span style="color:#9A1900"># We don't have any dependencies for this small program</span></i>
-</pre></main>
+<i><font color="#9A1900"># We don't have any dependencies for this small program</font></i>
+</tt></pre></main>
 </body>
 </html>

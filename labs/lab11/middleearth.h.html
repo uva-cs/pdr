@@ -1,45 +1,45 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab11/middleearth.h file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>middleearth.h</title>
+<title>Source code for ./labs/lab11/middleearth.h (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">#ifndef</span></b> MIDDLEEARTH_H
-<b><span style="color:#000080">#define</span></b> MIDDLEEARTH_H
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab11/middleearth.h (via source-highlight)</h1><pre><tt><b><font color="#000080">#ifndef</font></b> MIDDLEEARTH_H
+<b><font color="#000080">#define</font></b> MIDDLEEARTH_H
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;vector&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;string&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;unordered_map&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;random&gt;</span>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iostream&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;vector&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;string&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;unordered_map&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;random&gt;</font>
 
-<b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
 
-<i><span style="color:#9A1900">// see the comments in the lab11 write-up, or in middleearth.cpp</span></i>
+<i><font color="#9A1900">// see the comments in the lab11 write-up, or in middleearth.cpp</font></i>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">MiddleEarth</span> <span style="color:#EF0000">{</span>
-<b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#000000">MiddleEarth</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> xsize<span style="color:#990000">,</span> <span style="color:#008A00">int</span> ysize<span style="color:#990000">,</span> <span style="color:#008A00">int</span> num_cities<span style="color:#990000">,</span> <span style="color:#008A00">int</span> seed<span style="color:#990000">);</span>
-    <span style="color:#008A00">void</span> <b><span style="color:#000000">print</span></b><span style="color:#990000">();</span>
-    <span style="color:#008A00">void</span> <b><span style="color:#000000">printTable</span></b><span style="color:#990000">();</span>
-    <span style="color:#008A00">float</span> <b><span style="color:#000000">getDistance</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">const</span></b> string<span style="color:#990000">&amp;</span> city1<span style="color:#990000">,</span> <b><span style="color:#0000FF">const</span></b> string<span style="color:#990000">&amp;</span> city2<span style="color:#990000">);</span>
-    <span style="color:#008080">vector&lt;string&gt;</span> <b><span style="color:#000000">getItinerary</span></b><span style="color:#990000">(</span><span style="color:#008A00">unsigned</span> <span style="color:#008A00">int</span> length<span style="color:#990000">);</span>
+<b><font color="#0000FF">class</font></b> <font color="#008080">MiddleEarth</font> <font color="#DF0000">{</font>
+<b><font color="#0000FF">public</font></b><font color="#990000">:</font>
+    <b><font color="#000000">MiddleEarth</font></b><font color="#990000">(</font><font color="#008A00">int</font> xsize<font color="#990000">,</font> <font color="#008A00">int</font> ysize<font color="#990000">,</font> <font color="#008A00">int</font> num_cities<font color="#990000">,</font> <font color="#008A00">int</font> seed<font color="#990000">);</font>
+    <font color="#008A00">void</font> <b><font color="#000000">print</font></b><font color="#990000">();</font>
+    <font color="#008A00">void</font> <b><font color="#000000">printTable</font></b><font color="#990000">();</font>
+    <font color="#008A00">float</font> <b><font color="#000000">getDistance</font></b><font color="#990000">(</font><b><font color="#0000FF">const</font></b> string<font color="#990000">&amp;</font> city1<font color="#990000">,</font> <b><font color="#0000FF">const</font></b> string<font color="#990000">&amp;</font> city2<font color="#990000">);</font>
+    <font color="#008080">vector&lt;string&gt;</font> <b><font color="#000000">getItinerary</font></b><font color="#990000">(</font><font color="#008A00">unsigned</font> <font color="#008A00">int</font> length<font color="#990000">);</font>
 
-<b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
-    <span style="color:#008A00">int</span> num_city_names<span style="color:#990000">,</span> xsize<span style="color:#990000">,</span> ysize<span style="color:#990000">;</span>
-    <span style="color:#008080">unordered_map&lt;string, float&gt;</span> xpos<span style="color:#990000">,</span> ypos<span style="color:#990000">;</span>
-    <span style="color:#008080">vector&lt;string&gt;</span> cities<span style="color:#990000">;</span>
-    <span style="color:#008080">unordered_map&lt;string, unordered_map&lt;string, float&gt;&gt;</span> distances<span style="color:#990000">;</span>
+<b><font color="#0000FF">private</font></b><font color="#990000">:</font>
+    <font color="#008A00">int</font> num_city_names<font color="#990000">,</font> xsize<font color="#990000">,</font> ysize<font color="#990000">;</font>
+    <font color="#008080">unordered_map&lt;string, float&gt;</font> xpos<font color="#990000">,</font> ypos<font color="#990000">;</font>
+    <font color="#008080">vector&lt;string&gt;</font> cities<font color="#990000">;</font>
+    <font color="#008080">unordered_map&lt;string, unordered_map&lt;string, float&gt;&gt;</font> distances<font color="#990000">;</font>
 
-    <span style="color:#008080">mt19937</span> gen<span style="color:#990000">;</span> <i><span style="color:#9A1900">// Mersenne-Twister random number engine</span></i>
-<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
+    <font color="#008080">mt19937</font> gen<font color="#990000">;</font> <i><font color="#9A1900">// Mersenne-Twister random number engine</font></i>
+<font color="#DF0000">}</font><font color="#990000">;</font>
 
-<b><span style="color:#000080">#endif</span></b>
-</pre></main>
+<b><font color="#000080">#endif</font></b>
+</tt></pre></main>
 </body>
 </html>

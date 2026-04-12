@@ -1,74 +1,74 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./uva/lectures/bloomfield-spring-2021/lec25/main.cpp file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>main.cpp</title>
+<title>Source code for ./uva/lectures/bloomfield-spring-2021/lec25/main.cpp (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><i><span style="color:#9A1900">// main.cpp</span></i>
+<body bgcolor="white">
+<main><h1>Source code for ./uva/lectures/bloomfield-spring-2021/lec25/main.cpp (via source-highlight)</h1><pre><tt><i><font color="#9A1900">// main.cpp</font></i>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;time.h&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;cstdlib&gt;</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;assert.h&gt;</span>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iostream&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;time.h&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;cstdlib&gt;</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;assert.h&gt;</font>
 
-<b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
 
-<b><span style="color:#0000FF">extern</span></b> <span style="color:#EF0000">"C"</span> <span style="color:#008A00">long</span> <b><span style="color:#000000">addOrMult</span></b> <span style="color:#990000">(</span><span style="color:#008A00">bool</span> addOrMult<span style="color:#990000">,</span> <span style="color:#008A00">long</span><span style="color:#990000">*</span> arr<span style="color:#990000">,</span> <span style="color:#008A00">long</span> n<span style="color:#990000">);</span>
+<b><font color="#0000FF">extern</font></b> <font color="#DF0000">"C"</font> <font color="#008A00">long</font> <b><font color="#000000">addOrMult</font></b> <font color="#990000">(</font><font color="#008A00">bool</font> addOrMult<font color="#990000">,</font> <font color="#008A00">long</font><font color="#990000">*</font> arr<font color="#990000">,</font> <font color="#008A00">long</font> n<font color="#990000">);</font>
 
-<span style="color:#008A00">int</span>  <b><span style="color:#000000">main</span></b> <span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
+<font color="#008A00">int</font>  <b><font color="#000000">main</font></b> <font color="#990000">()</font> <font color="#DF0000">{</font>
 
-    <i><span style="color:#9A1900">// delcare the local variables</span></i>
-    <span style="color:#008A00">long</span>  n<span style="color:#990000">,</span> <span style="color:#990000">*</span>vec<span style="color:#990000">;</span>
+    <i><font color="#9A1900">// delcare the local variables</font></i>
+    <font color="#008A00">long</font>  n<font color="#990000">,</font> <font color="#990000">*</font>vec<font color="#990000">;</font>
 
-    <i><span style="color:#9A1900">// make sure longs are 8 bytes in size, else this program won't work right</span></i>
-    <b><span style="color:#000000">assert</span></b> <span style="color:#990000">(</span><b><span style="color:#0000FF">sizeof</span></b> <span style="color:#990000">(</span><span style="color:#008A00">long</span><span style="color:#990000">)</span> <span style="color:#990000">==</span> <span style="color:#993399">8</span><span style="color:#990000">);</span>
+    <i><font color="#9A1900">// make sure longs are 8 bytes in size, else this program won't work right</font></i>
+    <b><font color="#000000">assert</font></b> <font color="#990000">(</font><b><font color="#0000FF">sizeof</font></b> <font color="#990000">(</font><font color="#008A00">long</font><font color="#990000">)</font> <font color="#990000">==</font> <font color="#993399">8</font><font color="#990000">);</font>
 
-    <i><span style="color:#9A1900">// how big is the array we want to use?</span></i>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Please enter a array size:  "</span><span style="color:#990000">;</span>
-    cin <span style="color:#990000">&gt;&gt;</span> n<span style="color:#990000">;</span>
+    <i><font color="#9A1900">// how big is the array we want to use?</font></i>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"Please enter a array size:  "</font><font color="#990000">;</font>
+    cin <font color="#990000">&gt;&gt;</font> n<font color="#990000">;</font>
 
-    <i><span style="color:#9A1900">// sanity check the array size</span></i>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>n <span style="color:#990000">&lt;=</span> <span style="color:#993399">0</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-        cerr <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"Array size must be greater than zero.</span><span style="color:#CC33CC">\n</span><span style="color:#EF0000">"</span><span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    <span style="color:#EF0000">}</span>
+    <i><font color="#9A1900">// sanity check the array size</font></i>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>n <font color="#990000">&lt;=</font> <font color="#993399">0</font><font color="#990000">)</font> <font color="#DF0000">{</font>
+        cerr <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"Array size must be greater than zero.</font><font color="#CC33CC">\n</font><font color="#DF0000">"</font><font color="#990000">;</font>
+        <b><font color="#0000FF">return</font></b> <font color="#993399">1</font><font color="#990000">;</font>
+    <font color="#DF0000">}</font>
 
-    <i><span style="color:#9A1900">// allocate the array</span></i>
-    vec <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">long</span><span style="color:#990000">[</span>n<span style="color:#990000">];</span>
+    <i><font color="#9A1900">// allocate the array</font></i>
+    vec <font color="#990000">=</font> <b><font color="#0000FF">new</font></b> <font color="#008A00">long</font><font color="#990000">[</font>n<font color="#990000">];</font>
 
-    <i><span style="color:#9A1900">// use current time as random seed</span></i>
-    <b><span style="color:#000000">srand</span></b> <span style="color:#990000">(</span> <span style="color:#990000">(</span><span style="color:#008A00">unsigned</span><span style="color:#990000">)</span> <b><span style="color:#000000">time</span></b> <span style="color:#990000">(</span>NULL<span style="color:#990000">)</span> <span style="color:#990000">);</span>
+    <i><font color="#9A1900">// use current time as random seed</font></i>
+    <b><font color="#000000">srand</font></b> <font color="#990000">(</font> <font color="#990000">(</font><font color="#008A00">unsigned</font><font color="#990000">)</font> <b><font color="#000000">time</font></b> <font color="#990000">(</font>NULL<font color="#990000">)</font> <font color="#990000">);</font>
 
-    <i><span style="color:#9A1900">// fill the array with random values</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">long</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> <span style="color:#990000">++</span>i<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-        vec<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#990000">(</span><b><span style="color:#000000">rand</span></b><span style="color:#990000">()</span> <span style="color:#990000">%</span> <span style="color:#993399">50</span><span style="color:#990000">)</span> <span style="color:#990000">+</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"</span><span style="color:#CC33CC">\t</span><span style="color:#EF0000">vec["</span> <span style="color:#990000">&lt;&lt;</span> i <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"] = "</span> <span style="color:#990000">&lt;&lt;</span> vec<span style="color:#990000">[</span>i<span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#EF0000">}</span>
+    <i><font color="#9A1900">// fill the array with random values</font></i>
+    <b><font color="#0000FF">for</font></b> <font color="#990000">(</font><font color="#008A00">long</font> i <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font> i <font color="#990000">&lt;</font> n<font color="#990000">;</font> <font color="#990000">++</font>i<font color="#990000">)</font> <font color="#DF0000">{</font>
+        vec<font color="#990000">[</font>i<font color="#990000">]</font> <font color="#990000">=</font> <font color="#990000">(</font><b><font color="#000000">rand</font></b><font color="#990000">()</font> <font color="#990000">%</font> <font color="#993399">50</font><font color="#990000">)</font> <font color="#990000">+</font> <font color="#993399">1</font><font color="#990000">;</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"</font><font color="#CC33CC">\t</font><font color="#DF0000">vec["</font> <font color="#990000">&lt;&lt;</font> i <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"] = "</font> <font color="#990000">&lt;&lt;</font> vec<font color="#990000">[</font>i<font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    <font color="#DF0000">}</font>
 
-    <span style="color:#008A00">bool</span> which <span style="color:#990000">=</span> <b><span style="color:#000000">rand</span></b><span style="color:#990000">()</span> <span style="color:#990000">%</span> <span style="color:#993399">2</span><span style="color:#990000">;</span>
+    <font color="#008A00">bool</font> which <font color="#990000">=</font> <b><font color="#000000">rand</font></b><font color="#990000">()</font> <font color="#990000">%</font> <font color="#993399">2</font><font color="#990000">;</font>
 
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>which<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-        <i><span style="color:#9A1900">// sum up the array and print out results</span></i>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"boolean is true, summing array"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-        <span style="color:#008A00">long</span> sum <span style="color:#990000">=</span> <b><span style="color:#000000">addOrMult</span></b> <span style="color:#990000">(</span><b><span style="color:#0000FF">true</span></b><span style="color:#990000">,</span> vec<span style="color:#990000">,</span> n<span style="color:#990000">);</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"The sum of all array elements is "</span> <span style="color:#990000">&lt;&lt;</span> sum <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#EF0000">}</span> <b><span style="color:#0000FF">else</span></b> <span style="color:#EF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"boolean is false, multiplying array"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-        <span style="color:#008A00">long</span> prod <span style="color:#990000">=</span> <b><span style="color:#000000">addOrMult</span></b> <span style="color:#990000">(</span><b><span style="color:#0000FF">false</span></b><span style="color:#990000">,</span> vec<span style="color:#990000">,</span> n<span style="color:#990000">);</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"The product of all array elements is "</span> <span style="color:#990000">&lt;&lt;</span> prod <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <span style="color:#EF0000">}</span>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>which<font color="#990000">)</font> <font color="#DF0000">{</font>
+        <i><font color="#9A1900">// sum up the array and print out results</font></i>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"boolean is true, summing array"</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+        <font color="#008A00">long</font> sum <font color="#990000">=</font> <b><font color="#000000">addOrMult</font></b> <font color="#990000">(</font><b><font color="#0000FF">true</font></b><font color="#990000">,</font> vec<font color="#990000">,</font> n<font color="#990000">);</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"The sum of all array elements is "</font> <font color="#990000">&lt;&lt;</font> sum <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    <font color="#DF0000">}</font> <b><font color="#0000FF">else</font></b> <font color="#DF0000">{</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"boolean is false, multiplying array"</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+        <font color="#008A00">long</font> prod <font color="#990000">=</font> <b><font color="#000000">addOrMult</font></b> <font color="#990000">(</font><b><font color="#0000FF">false</font></b><font color="#990000">,</font> vec<font color="#990000">,</font> n<font color="#990000">);</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"The product of all array elements is "</font> <font color="#990000">&lt;&lt;</font> prod <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    <font color="#DF0000">}</font>
 
-    <i><span style="color:#9A1900">// properly deallocate the array</span></i>
-    <b><span style="color:#0000FF">delete</span></b> <span style="color:#990000">[]</span> vec<span style="color:#990000">;</span>
+    <i><font color="#9A1900">// properly deallocate the array</font></i>
+    <b><font color="#0000FF">delete</font></b> <font color="#990000">[]</font> vec<font color="#990000">;</font>
 
-    <i><span style="color:#9A1900">// all done!</span></i>
-    <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
-</pre></main>
+    <i><font color="#9A1900">// all done!</font></i>
+    <b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
+<font color="#DF0000">}</font>
+</tt></pre></main>
 </body>
 </html>

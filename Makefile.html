@@ -1,43 +1,43 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./Makefile file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>Makefile</title>
+<title>Source code for ./Makefile (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><span style="color:#990000">markdown:</span>
-	@echo Converting markdown files to html format<span style="color:#990000">...</span>
-	@chmod <span style="color:#993399">755</span> utils/convert-markdown-to-html.sh
+<body bgcolor="white">
+<main><h1>Source code for ./Makefile (via source-highlight)</h1><pre><tt><font color="#990000">markdown:</font>
+	@echo Converting markdown files to html format<font color="#990000">...</font>
+	@chmod <font color="#993399">755</font> utils/convert-markdown-to-html.sh
 	@utils/convert-markdown-to-html.sh
-	@git checkout uva/old<span style="color:#990000">/*</span>.html
-	@echo <b><span style="color:#0000FF">done</span></b><span style="color:#990000">!</span>
+	@git checkout uva/old<font color="#990000">/*</font>.html
+	@echo <b><font color="#0000FF">done</font></b><font color="#990000">!</font>
 
-<span style="color:#990000">touchall:</span>
-	find <span style="color:#990000">.</span> <span style="color:#990000">|</span> grep <span style="color:#EF0000">"</span><span style="color:#CC33CC">\.</span><span style="color:#EF0000">md$$"</span> <span style="color:#990000">|</span> awk <span style="color:#EF0000">'{print "touch "$$1}'</span> <span style="color:#990000">|</span> bash
+<font color="#990000">touchall:</font>
+	find <font color="#990000">.</font> <font color="#990000">|</font> grep <font color="#DF0000">"</font><font color="#CC33CC">\.</font><font color="#DF0000">md$$"</font> <font color="#990000">|</font> awk <font color="#DF0000">'{print "touch "$$1}'</font> <font color="#990000">|</font> bash
 
-<span style="color:#990000">all:</span> markdown format highlight
+<font color="#990000">all:</font> markdown format highlight
 
-<span style="color:#990000">format:</span>
-	@echo Formatting <b><span style="color:#0000FF">source</span></b> files<span style="color:#990000">...</span>
-	@chmod <span style="color:#993399">755</span> utils/format-source-files.sh
+<font color="#990000">format:</font>
+	@echo Formatting <b><font color="#0000FF">source</font></b> files<font color="#990000">...</font>
+	@chmod <font color="#993399">755</font> utils/format-source-files.sh
 	@utils/format-source-files.sh
-	@git checkout uva/old<span style="color:#990000">/*</span>.html
-	@echo <b><span style="color:#0000FF">done</span></b><span style="color:#990000">!</span>
+	@git checkout uva/old<font color="#990000">/*</font>.html
+	@echo <b><font color="#0000FF">done</font></b><font color="#990000">!</font>
 
-<span style="color:#990000">highlight:</span>
-	@echo Highlighting <b><span style="color:#0000FF">source</span></b> files<span style="color:#990000">...</span>
-	@chmod <span style="color:#993399">755</span> utils/highlight-source-files.sh
+<font color="#990000">highlight:</font>
+	@echo Highlighting <b><font color="#0000FF">source</font></b> files<font color="#990000">...</font>
+	@chmod <font color="#993399">755</font> utils/highlight-source-files.sh
 	@utils/highlight-source-files.sh
-	@git checkout uva/old<span style="color:#990000">/*</span>.html
-	@echo <b><span style="color:#0000FF">done</span></b><span style="color:#990000">!</span>
+	@git checkout uva/old<font color="#990000">/*</font>.html
+	@echo <b><font color="#0000FF">done</font></b><font color="#990000">!</font>
 
-<span style="color:#990000">clean:</span>
-	/bin/rm -rf <span style="color:#990000">*~</span> <span style="color:#990000">*/*~</span> <span style="color:#990000">*/*/*~</span> <span style="color:#990000">*/*/*/*~</span>
-	/bin/rm -f uva<span style="color:#990000">/*</span>.aux uva<span style="color:#990000">/*</span>.log
-</pre></main>
+<font color="#990000">clean:</font>
+	/bin/rm -rf <font color="#990000">*~</font> <font color="#990000">*/*~</font> <font color="#990000">*/*/*~</font> <font color="#990000">*/*/*/*~</font>
+	/bin/rm -f uva<font color="#990000">/*</font>.aux uva<font color="#990000">/*</font>.log
+</tt></pre></main>
 </body>
 </html>

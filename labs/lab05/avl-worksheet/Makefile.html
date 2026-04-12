@@ -1,21 +1,21 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab05/avl-worksheet/Makefile file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>Makefile</title>
+<title>Source code for ./labs/lab05/avl-worksheet/Makefile (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><span style="color:#990000">graphs:</span>
-	@echo Making all graphs into .svg files<span style="color:#990000">...</span>
-	@ls <span style="color:#990000">*</span>.dot <span style="color:#990000">|</span> sed s<span style="color:#990000">/</span>.dot//g <span style="color:#990000">|</span> awk <span style="color:#EF0000">'{print "dot -Tpdf "$$1".dot -o "$$1".pdf"}'</span> <span style="color:#990000">|</span> bash
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab05/avl-worksheet/Makefile (via source-highlight)</h1><pre><tt><font color="#990000">graphs:</font>
+	@echo Making all graphs into .svg files<font color="#990000">...</font>
+	@ls <font color="#990000">*</font>.dot <font color="#990000">|</font> sed s<font color="#990000">/</font>.dot//g <font color="#990000">|</font> awk <font color="#DF0000">'{print "dot -Tpdf "$$1".dot -o "$$1".pdf"}'</font> <font color="#990000">|</font> bash
 	pdflatex avl-worksheet.tex
 
-<span style="color:#990000">clean:</span>
-	/bin/rm -f <span style="color:#990000">*~</span> <span style="color:#990000">*</span>.log <span style="color:#990000">*</span>.aux
-</pre></main>
+<font color="#990000">clean:</font>
+	/bin/rm -f <font color="#990000">*~</font> <font color="#990000">*</font>.log <font color="#990000">*</font>.aux
+</tt></pre></main>
 </body>
 </html>

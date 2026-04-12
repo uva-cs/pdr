@@ -1,51 +1,51 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./uva/lectures/bloomfield-spring-2021/lec05/mistakes.cpp file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>mistakes.cpp</title>
+<title>Source code for ./uva/lectures/bloomfield-spring-2021/lec05/mistakes.cpp (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
-<b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
+<body bgcolor="white">
+<main><h1>Source code for ./uva/lectures/bloomfield-spring-2021/lec05/mistakes.cpp (via source-highlight)</h1><pre><tt><b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iostream&gt;</font>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
 
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">ListNode</span> <span style="color:#EF0000">{</span>
-<b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <span style="color:#008A00">int</span> value <span style="color:#990000">=</span> <span style="color:#993399">5</span><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
+<b><font color="#0000FF">class</font></b> <font color="#008080">ListNode</font> <font color="#DF0000">{</font>
+<b><font color="#0000FF">public</font></b><font color="#990000">:</font>
+    <font color="#008A00">int</font> value <font color="#990000">=</font> <font color="#993399">5</font><font color="#990000">;</font>
+<font color="#DF0000">}</font><font color="#990000">;</font>
 
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">List</span> <span style="color:#EF0000">{</span>
+<b><font color="#0000FF">class</font></b> <font color="#008080">List</font> <font color="#DF0000">{</font>
 
-<b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <b><span style="color:#000000">List</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"In List constructor"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<b><font color="#0000FF">public</font></b><font color="#990000">:</font>
+    <b><font color="#000000">List</font></b><font color="#990000">()</font> <font color="#DF0000">{</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"In List constructor"</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
 
-        <i><span style="color:#9A1900">// Common mistake 1 (C++ slide 10.15)</span></i>
-        <i><span style="color:#9A1900">//ListNode* head = new ListNode();</span></i>
+        <i><font color="#9A1900">// Common mistake 1 (C++ slide 10.15)</font></i>
+        <i><font color="#9A1900">//ListNode* head = new ListNode();</font></i>
 
-        <i><span style="color:#9A1900">// Common mistake 2 (C++ slide 10.16)</span></i>
-        <i><span style="color:#9A1900">//ListNode temp;</span></i>
-        <i><span style="color:#9A1900">//head = &amp;temp;</span></i>
+        <i><font color="#9A1900">// Common mistake 2 (C++ slide 10.16)</font></i>
+        <i><font color="#9A1900">//ListNode temp;</font></i>
+        <i><font color="#9A1900">//head = &amp;temp;</font></i>
 
-        <i><span style="color:#9A1900">// Correct version:</span></i>
-        head <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">ListNode</span></b><span style="color:#990000">();</span>
-    <span style="color:#EF0000">}</span>
+        <i><font color="#9A1900">// Correct version:</font></i>
+        head <font color="#990000">=</font> <b><font color="#0000FF">new</font></b> <b><font color="#000000">ListNode</font></b><font color="#990000">();</font>
+    <font color="#DF0000">}</font>
 
-<b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
-    ListNode<span style="color:#990000">*</span> head<span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
+<b><font color="#0000FF">private</font></b><font color="#990000">:</font>
+    ListNode<font color="#990000">*</font> head<font color="#990000">;</font>
+<font color="#DF0000">}</font><font color="#990000">;</font>
 
 
-<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
-    List<span style="color:#990000">*</span> l <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <b><span style="color:#000000">List</span></b><span style="color:#990000">();</span>
-    <b><span style="color:#0000FF">delete</span></b> l<span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
-</pre></main>
+<font color="#008A00">int</font> <b><font color="#000000">main</font></b><font color="#990000">()</font> <font color="#DF0000">{</font>
+    List<font color="#990000">*</font> l <font color="#990000">=</font> <b><font color="#0000FF">new</font></b> <b><font color="#000000">List</font></b><font color="#990000">();</font>
+    <b><font color="#0000FF">delete</font></b> l<font color="#990000">;</font>
+    <b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
+<font color="#DF0000">}</font>
+</tt></pre></main>
 </body>
 </html>

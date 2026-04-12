@@ -1,51 +1,51 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab07/timer.cpp file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>timer.cpp</title>
+<title>Source code for ./labs/lab07/timer.cpp (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"timer.h"</span>
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab07/timer.cpp (via source-highlight)</h1><pre><tt><b><font color="#000080">#include</font></b> <font color="#DF0000">"timer.h"</font>
 
-timer<span style="color:#990000">::</span><b><span style="color:#000000">timer</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
-    running <span style="color:#990000">=</span> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
+timer<font color="#990000">::</font><b><font color="#000000">timer</font></b><font color="#990000">()</font> <font color="#DF0000">{</font>
+    running <font color="#990000">=</font> <b><font color="#0000FF">false</font></b><font color="#990000">;</font>
+<font color="#DF0000">}</font>
 
-timer<span style="color:#990000">::</span><b><span style="color:#000000">timer</span></b><span style="color:#990000">(</span>timer<span style="color:#990000">&amp;</span> t<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-    running <span style="color:#990000">=</span> t<span style="color:#990000">.</span>running<span style="color:#990000">;</span>
-    start_time <span style="color:#990000">=</span> t<span style="color:#990000">.</span>start_time<span style="color:#990000">;</span>
-    stop_time <span style="color:#990000">=</span> t<span style="color:#990000">.</span>stop_time<span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
+timer<font color="#990000">::</font><b><font color="#000000">timer</font></b><font color="#990000">(</font>timer<font color="#990000">&amp;</font> t<font color="#990000">)</font> <font color="#DF0000">{</font>
+    running <font color="#990000">=</font> t<font color="#990000">.</font>running<font color="#990000">;</font>
+    start_time <font color="#990000">=</font> t<font color="#990000">.</font>start_time<font color="#990000">;</font>
+    stop_time <font color="#990000">=</font> t<font color="#990000">.</font>stop_time<font color="#990000">;</font>
+<font color="#DF0000">}</font>
 
-<span style="color:#008A00">void</span> timer<span style="color:#990000">::</span><b><span style="color:#000000">start</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(!</span>running<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-        running <span style="color:#990000">=</span> <b><span style="color:#0000FF">true</span></b><span style="color:#990000">;</span>
-        start_time <span style="color:#990000">=</span> steady_clock<span style="color:#990000">::</span><b><span style="color:#000000">now</span></b><span style="color:#990000">();</span>
-    <span style="color:#EF0000">}</span>
-<span style="color:#EF0000">}</span>
+<font color="#008A00">void</font> timer<font color="#990000">::</font><b><font color="#000000">start</font></b><font color="#990000">()</font> <font color="#DF0000">{</font>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(!</font>running<font color="#990000">)</font> <font color="#DF0000">{</font>
+        running <font color="#990000">=</font> <b><font color="#0000FF">true</font></b><font color="#990000">;</font>
+        start_time <font color="#990000">=</font> steady_clock<font color="#990000">::</font><b><font color="#000000">now</font></b><font color="#990000">();</font>
+    <font color="#DF0000">}</font>
+<font color="#DF0000">}</font>
 
-<span style="color:#008A00">void</span> timer<span style="color:#990000">::</span><b><span style="color:#000000">stop</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>running<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-        running <span style="color:#990000">=</span> <b><span style="color:#0000FF">false</span></b><span style="color:#990000">;</span>
-        stop_time <span style="color:#990000">=</span> steady_clock<span style="color:#990000">::</span><b><span style="color:#000000">now</span></b><span style="color:#990000">();</span>
-    <span style="color:#EF0000">}</span>
-<span style="color:#EF0000">}</span>
+<font color="#008A00">void</font> timer<font color="#990000">::</font><b><font color="#000000">stop</font></b><font color="#990000">()</font> <font color="#DF0000">{</font>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>running<font color="#990000">)</font> <font color="#DF0000">{</font>
+        running <font color="#990000">=</font> <b><font color="#0000FF">false</font></b><font color="#990000">;</font>
+        stop_time <font color="#990000">=</font> steady_clock<font color="#990000">::</font><b><font color="#000000">now</font></b><font color="#990000">();</font>
+    <font color="#DF0000">}</font>
+<font color="#DF0000">}</font>
 
-<i><span style="color:#9A1900">// Returns the time elapsed, in seconds</span></i>
-<span style="color:#008A00">double</span> timer<span style="color:#990000">::</span><b><span style="color:#000000">getTime</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
-    <i><span style="color:#9A1900">// Cast the intrinsic duration to seconds, but use a double so that we can</span></i>
-    <i><span style="color:#9A1900">// have fractional seconds to represent anything more precise (i.e. microseconds)</span></i>
-    <b><span style="color:#0000FF">return</span></b> duration_cast<span style="color:#990000">&lt;</span>duration<span style="color:#990000">&lt;</span><span style="color:#008A00">double</span><span style="color:#990000">&gt;&gt;(</span>stop_time <span style="color:#990000">-</span> start_time<span style="color:#990000">).</span><b><span style="color:#000000">count</span></b><span style="color:#990000">();</span>
-<span style="color:#EF0000">}</span>
+<i><font color="#9A1900">// Returns the time elapsed, in seconds</font></i>
+<font color="#008A00">double</font> timer<font color="#990000">::</font><b><font color="#000000">getTime</font></b><font color="#990000">()</font> <font color="#DF0000">{</font>
+    <i><font color="#9A1900">// Cast the intrinsic duration to seconds, but use a double so that we can</font></i>
+    <i><font color="#9A1900">// have fractional seconds to represent anything more precise (i.e. microseconds)</font></i>
+    <b><font color="#0000FF">return</font></b> duration_cast<font color="#990000">&lt;</font>duration<font color="#990000">&lt;</font><font color="#008A00">double</font><font color="#990000">&gt;&gt;(</font>stop_time <font color="#990000">-</font> start_time<font color="#990000">).</font><b><font color="#000000">count</font></b><font color="#990000">();</font>
+<font color="#DF0000">}</font>
 
-<i><span style="color:#9A1900">// Prints the time elapsed, in milliseconds</span></i>
-ostream<span style="color:#990000">&amp;</span> <b><span style="color:#0000FF">operator</span></b><span style="color:#990000">&lt;&lt;(</span>ostream<span style="color:#990000">&amp;</span> out<span style="color:#990000">,</span> timer<span style="color:#990000">&amp;</span> t<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-    <b><span style="color:#0000FF">return</span></b> out <span style="color:#990000">&lt;&lt;</span> <b><span style="color:#000000">to_string</span></b><span style="color:#990000">(</span><b><span style="color:#0000FF">static_cast</span></b><span style="color:#990000">&lt;</span><span style="color:#008A00">int</span><span style="color:#990000">&gt;(</span>t<span style="color:#990000">.</span><b><span style="color:#000000">getTime</span></b><span style="color:#990000">()</span> <span style="color:#990000">*</span> <span style="color:#993399">1000</span><span style="color:#990000">));</span>
-<span style="color:#EF0000">}</span>
-</pre></main>
+<i><font color="#9A1900">// Prints the time elapsed, in milliseconds</font></i>
+ostream<font color="#990000">&amp;</font> <b><font color="#0000FF">operator</font></b><font color="#990000">&lt;&lt;(</font>ostream<font color="#990000">&amp;</font> out<font color="#990000">,</font> timer<font color="#990000">&amp;</font> t<font color="#990000">)</font> <font color="#DF0000">{</font>
+    <b><font color="#0000FF">return</font></b> out <font color="#990000">&lt;&lt;</font> <b><font color="#000000">to_string</font></b><font color="#990000">(</font><b><font color="#0000FF">static_cast</font></b><font color="#990000">&lt;</font><font color="#008A00">int</font><font color="#990000">&gt;(</font>t<font color="#990000">.</font><b><font color="#000000">getTime</font></b><font color="#990000">()</font> <font color="#990000">*</font> <font color="#993399">1000</font><font color="#990000">));</font>
+<font color="#DF0000">}</font>
+</tt></pre></main>
 </body>
 </html>

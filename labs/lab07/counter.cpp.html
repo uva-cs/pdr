@@ -1,45 +1,45 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab07/counter.cpp file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>counter.cpp</title>
+<title>Source code for ./labs/lab07/counter.cpp (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"timer.h"</span>
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab07/counter.cpp (via source-highlight)</h1><pre><tt><b><font color="#000080">#include</font></b> <font color="#DF0000">"timer.h"</font>
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iostream&gt;</font>
 
-<b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
 
-<i><span style="color:#9A1900">// this main method just counts the time taken to iterate 1 billion</span></i>
-<i><span style="color:#9A1900">// times through an idle loop</span></i>
-<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">(</span><span style="color:#008A00">int</span> argc<span style="color:#990000">,</span> <span style="color:#008A00">char</span><span style="color:#990000">**</span> argv<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-    <i><span style="color:#9A1900">// check the number of parameters</span></i>
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span>argc <span style="color:#990000">!=</span> <span style="color:#993399">2</span><span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-        cerr <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"usage: "</span> <span style="color:#990000">&lt;&lt;</span> argv<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">" &lt;iterations&gt;"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-        <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    <span style="color:#EF0000">}</span>
+<i><font color="#9A1900">// this main method just counts the time taken to iterate 1 billion</font></i>
+<i><font color="#9A1900">// times through an idle loop</font></i>
+<font color="#008A00">int</font> <b><font color="#000000">main</font></b><font color="#990000">(</font><font color="#008A00">int</font> argc<font color="#990000">,</font> <font color="#008A00">char</font><font color="#990000">**</font> argv<font color="#990000">)</font> <font color="#DF0000">{</font>
+    <i><font color="#9A1900">// check the number of parameters</font></i>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font>argc <font color="#990000">!=</font> <font color="#993399">2</font><font color="#990000">)</font> <font color="#DF0000">{</font>
+        cerr <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"usage: "</font> <font color="#990000">&lt;&lt;</font> argv<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">" &lt;iterations&gt;"</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+        <b><font color="#0000FF">return</font></b> <font color="#993399">1</font><font color="#990000">;</font>
+    <font color="#DF0000">}</font>
 
-    <i><span style="color:#9A1900">// convert the second parameter to a int</span></i>
-    <span style="color:#008A00">int</span> e <span style="color:#990000">=</span> <b><span style="color:#000000">stoi</span></b><span style="color:#990000">(</span>argv<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]);</span>
+    <i><font color="#9A1900">// convert the second parameter to a int</font></i>
+    <font color="#008A00">int</font> e <font color="#990000">=</font> <b><font color="#000000">stoi</font></b><font color="#990000">(</font>argv<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]);</font>
 
-    <i><span style="color:#9A1900">// compute 10^e</span></i>
-    <span style="color:#008A00">long</span> n <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> e<span style="color:#990000">;</span> i<span style="color:#990000">++)</span> <span style="color:#EF0000">{</span>
-        n <span style="color:#990000">*=</span> <span style="color:#993399">10</span><span style="color:#990000">;</span>
-    <span style="color:#EF0000">}</span>
+    <i><font color="#9A1900">// compute 10^e</font></i>
+    <font color="#008A00">long</font> n <font color="#990000">=</font> <font color="#993399">1</font><font color="#990000">;</font>
+    <b><font color="#0000FF">for</font></b> <font color="#990000">(</font><font color="#008A00">int</font> i <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font> i <font color="#990000">&lt;</font> e<font color="#990000">;</font> i<font color="#990000">++)</font> <font color="#DF0000">{</font>
+        n <font color="#990000">*=</font> <font color="#993399">10</font><font color="#990000">;</font>
+    <font color="#DF0000">}</font>
 
-    <span style="color:#008080">timer</span> t<span style="color:#990000">;</span>
-    t<span style="color:#990000">.</span><b><span style="color:#000000">start</span></b><span style="color:#990000">();</span>
-    <i><span style="color:#9A1900">// do something that takes some time...</span></i>
-    <b><span style="color:#0000FF">for</span></b> <span style="color:#990000">(</span><span style="color:#008A00">long</span> i <span style="color:#990000">=</span> <span style="color:#993399">0</span><span style="color:#990000">;</span> i <span style="color:#990000">&lt;</span> n<span style="color:#990000">;</span> i<span style="color:#990000">++);</span>
-    t<span style="color:#990000">.</span><b><span style="color:#000000">stop</span></b><span style="color:#990000">();</span>
-    cout <span style="color:#990000">&lt;&lt;</span> t <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
-</pre></main>
+    <font color="#008080">timer</font> t<font color="#990000">;</font>
+    t<font color="#990000">.</font><b><font color="#000000">start</font></b><font color="#990000">();</font>
+    <i><font color="#9A1900">// do something that takes some time...</font></i>
+    <b><font color="#0000FF">for</font></b> <font color="#990000">(</font><font color="#008A00">long</font> i <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font> i <font color="#990000">&lt;</font> n<font color="#990000">;</font> i<font color="#990000">++);</font>
+    t<font color="#990000">.</font><b><font color="#000000">stop</font></b><font color="#990000">();</font>
+    cout <font color="#990000">&lt;&lt;</font> t <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+<font color="#DF0000">}</font>
+</tt></pre></main>
 </body>
 </html>

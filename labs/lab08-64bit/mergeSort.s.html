@@ -1,145 +1,145 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab08-64bit/mergeSort.s file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>mergeSort.s</title>
+<title>Source code for ./labs/lab08-64bit/mergeSort.s (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><i><span style="color:#9A1900">; University of Virginia</span></i>
-<i><span style="color:#9A1900">; CS 2150 In-Lab 8</span></i>
-<i><span style="color:#9A1900">; Spring 2018</span></i>
-<i><span style="color:#9A1900">; mergeSort.s	</span></i>
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab08-64bit/mergeSort.s (via source-highlight)</h1><pre><tt>; University of Virginia
+; CS 2150 In-Lab 8
+; Spring 2018
+; mergeSort.s	
 
 	global mergeSort
 	global merge
 
-	section <span style="color:#990000">.</span>text
+	section .text
 
 
-<i><span style="color:#9A1900">; Parameter 1 is a pointer to the int array </span></i>
-<i><span style="color:#9A1900">; Parameter 2 is the left index in the array </span></i>
-<i><span style="color:#9A1900">; Parameter 3 is the right index in the array</span></i>
-<i><span style="color:#9A1900">; Return type is void </span></i>
-<b><span style="color:#000080">mergeSort:</span></b>
+; Parameter 1 is a pointer to the int array 
+; Parameter 2 is the left index in the array 
+; Parameter 3 is the right index in the array
+; Return type is void 
+mergeSort:
 
-	<i><span style="color:#9A1900">; Implement mergeSort here</span></i>
+	; Implement mergeSort here
 	
 
 
 
-<i><span style="color:#9A1900">; Parameter 1 is a pointer to the int array </span></i>
-<i><span style="color:#9A1900">; Parameter 2 is the left index in the array</span></i>
-<i><span style="color:#9A1900">; Parameter 3 is the middle index in the array </span></i>
-<i><span style="color:#9A1900">; Parameter 4 is the right index in the array</span></i>
-<i><span style="color:#9A1900">; Return type is void </span></i>
-<b><span style="color:#000080">merge:</span></b>
-	<i><span style="color:#9A1900">; Save callee-save registers</span></i>
-	<i><span style="color:#9A1900">; Store local variables </span></i>
-	<b><span style="color:#0000FF">push</span></b> rbx			<i><span style="color:#9A1900">; int i</span></i>
-	<b><span style="color:#0000FF">push</span></b> r<span style="color:#993399">12</span>			<i><span style="color:#9A1900">; int j</span></i>
-	<b><span style="color:#0000FF">push</span></b> r<span style="color:#993399">13</span>			<i><span style="color:#9A1900">; int k</span></i>
-	<b><span style="color:#0000FF">push</span></b> r<span style="color:#993399">14</span>			<i><span style="color:#9A1900">; int n1</span></i>
-	<b><span style="color:#0000FF">push</span></b> r<span style="color:#993399">15</span>			<i><span style="color:#9A1900">; int n2</span></i>
+; Parameter 1 is a pointer to the int array 
+; Parameter 2 is the left index in the array
+; Parameter 3 is the middle index in the array 
+; Parameter 4 is the right index in the array
+; Return type is void 
+merge:
+	; Save callee-save registers
+	; Store local variables 
+	push rbx			; int i
+	push r12			; int j
+	push r13			; int k
+	push r14			; int n1
+	push r15			; int n2
 	
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">14</span><span style="color:#990000">,</span> rdx			<i><span style="color:#9A1900">; n1 = mid - left + 1</span></i>
-	<b><span style="color:#0000FF">sub</span></b> r<span style="color:#993399">14</span><span style="color:#990000">,</span> rsi
-	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">14</span>
+	mov r14, rdx			; n1 = mid - left + 1
+	sub r14, rsi
+	inc r14
 
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">15</span><span style="color:#990000">,</span> rcx			<i><span style="color:#9A1900">; n2 = right - mid </span></i>
-	<b><span style="color:#0000FF">sub</span></b> r<span style="color:#993399">15</span><span style="color:#990000">,</span> rdx
+	mov r15, rcx			; n2 = right - mid 
+	sub r15, rdx
 
-	<b><span style="color:#0000FF">lea</span></b> r<span style="color:#993399">11</span><span style="color:#990000">,</span> <span style="color:#990000">[</span>r<span style="color:#993399">14</span><span style="color:#990000">+</span>r<span style="color:#993399">15</span><span style="color:#990000">]</span>		<i><span style="color:#9A1900">; r11 = rsp offset = 4(n1 + n2)</span></i>
-	<b><span style="color:#0000FF">lea</span></b> r<span style="color:#993399">11</span><span style="color:#990000">,</span> <span style="color:#990000">[</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">11</span><span style="color:#990000">]</span>		
-	<b><span style="color:#0000FF">sub</span></b> rsp<span style="color:#990000">,</span> r<span style="color:#993399">11</span>			<i><span style="color:#9A1900">; allocate space for temp arrays</span></i>
+	lea r11, [r14+r15]		; r11 = rsp offset = 4(n1 + n2)
+	lea r11, [4*r11]		
+	sub rsp, r11			; allocate space <b><font color="#0000FF">for</font></b> temp arrays
 
-	<b><span style="color:#0000FF">mov</span></b> rbx<span style="color:#990000">,</span> <span style="color:#993399">0</span>			<i><span style="color:#9A1900">; i = 0</span></i>
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">12</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>			<i><span style="color:#9A1900">; j = 0</span></i>
+	mov rbx, 0			; i = 0
+	mov r12, 0			; j = 0
 	
-<i><span style="color:#9A1900">; Copy elements of arr[] into L[]	</span></i>
-<b><span style="color:#000080">copyLloop:</span></b>
-	<b><span style="color:#0000FF">cmp</span></b> rbx<span style="color:#990000">,</span> r<span style="color:#993399">14</span>			<i><span style="color:#9A1900">; is i &gt;= n1?</span></i>
-	<b><span style="color:#0000FF">jge</span></b> copyRloop
-					<i><span style="color:#9A1900">; L[i] = arr[left + i]</span></i>
-	<b><span style="color:#0000FF">lea</span></b> r<span style="color:#993399">10</span><span style="color:#990000">,</span> <span style="color:#990000">[</span>rsi<span style="color:#990000">+</span>rbx<span style="color:#990000">]</span>		
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">10</span>d<span style="color:#990000">,</span> DWORD <span style="color:#990000">[</span>rdi<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">10</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; r10 = arr[left + i]</span></i>
-	<b><span style="color:#0000FF">mov</span></b> DWORD <span style="color:#990000">[</span>rsp<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>rbx<span style="color:#990000">],</span> r<span style="color:#993399">10</span>d	<i><span style="color:#9A1900">; L[i] = r10</span></i>
-	<b><span style="color:#0000FF">inc</span></b> rbx				<i><span style="color:#9A1900">; i++</span></i>
-	<b><span style="color:#0000FF">jmp</span></b> copyLloop
+; Copy elements of arr[] into L[]	
+copyLloop:
+	cmp rbx, r14			; is i &gt;= n1?
+	jge copyRloop
+					; L[i] = arr[left + i]
+	lea r10, [rsi+rbx]		
+	mov r10d, DWORD [rdi+4*r10]	; r10 = arr[left + i]
+	mov DWORD [rsp+4*rbx], r10d	; L[i] = r10
+	inc rbx				; i++
+	jmp copyLloop
 
-<i><span style="color:#9A1900">; Copy elements of arr[] into R[]</span></i>
-<b><span style="color:#000080">copyRloop:</span></b>
-	<b><span style="color:#0000FF">cmp</span></b> r<span style="color:#993399">12</span><span style="color:#990000">,</span> r<span style="color:#993399">15</span>			<i><span style="color:#9A1900">; is j &gt;= n2?</span></i>
-	<b><span style="color:#0000FF">jge</span></b> endcopyR
- 					<i><span style="color:#9A1900">; R[j] = arr[mid + 1 + j]</span></i>
-	<b><span style="color:#0000FF">lea</span></b> r<span style="color:#993399">10</span><span style="color:#990000">,</span> <span style="color:#990000">[</span>rdx<span style="color:#990000">+</span>r<span style="color:#993399">12</span><span style="color:#990000">+</span><span style="color:#993399">1</span><span style="color:#990000">]</span>	
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">10</span>d<span style="color:#990000">,</span> DWORD <span style="color:#990000">[</span>rdi<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">10</span><span style="color:#990000">]</span>	<i><span style="color:#9A1900">; r10 = arr[mid + 1 + j]</span></i>
-	<b><span style="color:#0000FF">lea</span></b> rax<span style="color:#990000">,</span> <span style="color:#990000">[</span>r<span style="color:#993399">12</span><span style="color:#990000">+</span>r<span style="color:#993399">14</span><span style="color:#990000">]</span>		
-	<b><span style="color:#0000FF">mov</span></b> DWORD <span style="color:#990000">[</span>rsp<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>rax<span style="color:#990000">],</span> r<span style="color:#993399">10</span>d	<i><span style="color:#9A1900">; R[j] = r10</span></i>
-	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">12</span>				<i><span style="color:#9A1900">; j++</span></i>
-	<b><span style="color:#0000FF">jmp</span></b> copyRloop
+; Copy elements of arr[] into R[]
+copyRloop:
+	cmp r12, r15			; is j &gt;= n2?
+	jge endcopyR
+ 					; R[j] = arr[mid + 1 + j]
+	lea r10, [rdx+r12+1]	
+	mov r10d, DWORD [rdi+4*r10]	; r10 = arr[mid + 1 + j]
+	lea rax, [r12+r14]		
+	mov DWORD [rsp+4*rax], r10d	; R[j] = r10
+	inc r12				; j++
+	jmp copyRloop
 
-<b><span style="color:#000080">endcopyR:</span></b>	
-	<b><span style="color:#0000FF">mov</span></b> rbx<span style="color:#990000">,</span> <span style="color:#993399">0</span>			<i><span style="color:#9A1900">; i = 0</span></i>
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">12</span><span style="color:#990000">,</span> <span style="color:#993399">0</span>			<i><span style="color:#9A1900">; j = 0</span></i>
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">13</span><span style="color:#990000">,</span> rsi			<i><span style="color:#9A1900">; k = left</span></i>
+endcopyR:	
+	mov rbx, 0			; i = 0
+	mov r12, 0			; j = 0
+	mov r13, rsi			; k = left
 
-<i><span style="color:#9A1900">; Merge L[] and R[] into arr[]</span></i>
-<b><span style="color:#000080">mergeLoop:</span></b>
-	<b><span style="color:#0000FF">cmp</span></b> rbx<span style="color:#990000">,</span> r<span style="color:#993399">14</span>			<i><span style="color:#9A1900">; is i &gt;= n1 or j &gt;= n2?</span></i>
-	<b><span style="color:#0000FF">jge</span></b> loopL
-	<b><span style="color:#0000FF">cmp</span></b> r<span style="color:#993399">12</span><span style="color:#990000">,</span> r<span style="color:#993399">15</span>
-	<b><span style="color:#0000FF">jge</span></b> loopL
-	<b><span style="color:#0000FF">lea</span></b> r<span style="color:#993399">10</span><span style="color:#990000">,</span> <span style="color:#990000">[</span>r<span style="color:#993399">12</span><span style="color:#990000">+</span>r<span style="color:#993399">14</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">10</span>d<span style="color:#990000">,</span> DWORD <span style="color:#990000">[</span>rsp<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">10</span><span style="color:#990000">]</span> 	<i><span style="color:#9A1900">; r10d = R[j]</span></i>
-	<b><span style="color:#0000FF">cmp</span></b> DWORD <span style="color:#990000">[</span>rsp<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>rbx<span style="color:#990000">],</span> r<span style="color:#993399">10</span>d	<i><span style="color:#9A1900">; is L[i] &lt;= R[j]?</span></i>
-	<b><span style="color:#0000FF">jle</span></b> if
-	<b><span style="color:#0000FF">mov</span></b> DWORD <span style="color:#990000">[</span>rdi<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">13</span><span style="color:#990000">],</span> r<span style="color:#993399">10</span>d	<i><span style="color:#9A1900">; arr[k] = R[j]</span></i>
-	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">12</span>				<i><span style="color:#9A1900">; j++</span></i>
-	<b><span style="color:#0000FF">jmp</span></b> endif 
-<b><span style="color:#000080">if:</span></b>
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">10</span>d<span style="color:#990000">,</span> DWORD <span style="color:#990000">[</span>rsp<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>rbx<span style="color:#990000">]</span> 
-	<b><span style="color:#0000FF">mov</span></b> DWORD <span style="color:#990000">[</span>rdi<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">13</span><span style="color:#990000">],</span> r<span style="color:#993399">10</span>d	<i><span style="color:#9A1900">; arr[k] = L[i] </span></i>
-	<b><span style="color:#0000FF">inc</span></b> rbx				<i><span style="color:#9A1900">; i++</span></i>
-<b><span style="color:#000080">endif:</span></b>	
-	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">13</span>				<i><span style="color:#9A1900">; k++	</span></i>
-	<b><span style="color:#0000FF">jmp</span></b> mergeLoop
+; Merge L[] and R[] into arr[]
+mergeLoop:
+	cmp rbx, r14			; is i &gt;= n1 or j &gt;= n2?
+	jge loopL
+	cmp r12, r15
+	jge loopL
+	lea r10, [r12+r14]
+	mov r10d, DWORD [rsp+4*r10] 	; r10d = R[j]
+	cmp DWORD [rsp+4*rbx], r10d	; is L[i] &lt;= R[j]?
+	jle <b><font color="#0000FF">if</font></b>
+	mov DWORD [rdi+4*r13], r10d	; arr[k] = R[j]
+	inc r12				; j++
+	jmp endif 
+<b><font color="#0000FF">if</font></b>:
+	mov r10d, DWORD [rsp+4*rbx] 
+	mov DWORD [rdi+4*r13], r10d	; arr[k] = L[i] 
+	inc rbx				; i++
+endif:	
+	inc r13				; k++	
+	jmp mergeLoop
 	
-<i><span style="color:#9A1900">; Copy elements of L[] into arr[]</span></i>
-<b><span style="color:#000080">loopL:</span></b>				
-	<b><span style="color:#0000FF">cmp</span></b> rbx<span style="color:#990000">,</span> r<span style="color:#993399">14</span>			<i><span style="color:#9A1900">; is i &gt;= n1?</span></i>
-	<b><span style="color:#0000FF">jge</span></b> loopR
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">10</span>d<span style="color:#990000">,</span> DWORD <span style="color:#990000">[</span>rsp<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>rbx<span style="color:#990000">]</span> 
-	<b><span style="color:#0000FF">mov</span></b> DWORD <span style="color:#990000">[</span>rdi<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">13</span><span style="color:#990000">],</span> r<span style="color:#993399">10</span>d	<i><span style="color:#9A1900">; arr[k] = L[i]</span></i>
-	<b><span style="color:#0000FF">inc</span></b> rbx				<i><span style="color:#9A1900">; i++</span></i>
-	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">13</span>				<i><span style="color:#9A1900">; k++</span></i>
-	<b><span style="color:#0000FF">jmp</span></b> loopL
+; Copy elements of L[] into arr[]
+loopL:				
+	cmp rbx, r14			; is i &gt;= n1?
+	jge loopR
+	mov r10d, DWORD [rsp+4*rbx] 
+	mov DWORD [rdi+4*r13], r10d	; arr[k] = L[i]
+	inc rbx				; i++
+	inc r13				; k++
+	jmp loopL
 
-<i><span style="color:#9A1900">; Copy elements of R[] into arr[]</span></i>
-<b><span style="color:#000080">loopR:</span></b>	
-	<b><span style="color:#0000FF">cmp</span></b> r<span style="color:#993399">12</span><span style="color:#990000">,</span> r<span style="color:#993399">15</span>			<i><span style="color:#9A1900">; is j &gt;= n2?</span></i>
-	<b><span style="color:#0000FF">jge</span></b> endR
-	<b><span style="color:#0000FF">lea</span></b> r<span style="color:#993399">10</span><span style="color:#990000">,</span> <span style="color:#990000">[</span>r<span style="color:#993399">12</span><span style="color:#990000">+</span>r<span style="color:#993399">14</span><span style="color:#990000">]</span>
-	<b><span style="color:#0000FF">mov</span></b> r<span style="color:#993399">10</span>d<span style="color:#990000">,</span> DWORD <span style="color:#990000">[</span>rsp<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">10</span><span style="color:#990000">]</span> 	
-	<b><span style="color:#0000FF">mov</span></b> DWORD <span style="color:#990000">[</span>rdi<span style="color:#990000">+</span><span style="color:#993399">4</span><span style="color:#990000">*</span>r<span style="color:#993399">13</span><span style="color:#990000">],</span> r<span style="color:#993399">10</span>d	<i><span style="color:#9A1900">; arr[k] = R[j]</span></i>
+; Copy elements of R[] into arr[]
+loopR:	
+	cmp r12, r15			; is j &gt;= n2?
+	jge endR
+	lea r10, [r12+r14]
+	mov r10d, DWORD [rsp+4*r10] 	
+	mov DWORD [rdi+4*r13], r10d	; arr[k] = R[j]
 
-	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">12</span>				<i><span style="color:#9A1900">; j++</span></i>
-	<b><span style="color:#0000FF">inc</span></b> r<span style="color:#993399">13</span>				<i><span style="color:#9A1900">; k++</span></i>
-	<b><span style="color:#0000FF">jmp</span></b> loopR
+	inc r12				; j++
+	inc r13				; k++
+	jmp loopR
 	
-<b><span style="color:#000080">endR:</span></b>
-	<i><span style="color:#9A1900">; deallocate temp arrays</span></i>
-	<i><span style="color:#9A1900">; restore callee-save registers</span></i>
-	<b><span style="color:#0000FF">add</span></b> rsp<span style="color:#990000">,</span> r<span style="color:#993399">11</span>	
-	<b><span style="color:#0000FF">pop</span></b> r<span style="color:#993399">15</span>			
-	<b><span style="color:#0000FF">pop</span></b> r<span style="color:#993399">14</span>
-	<b><span style="color:#0000FF">pop</span></b> r<span style="color:#993399">13</span>
-	<b><span style="color:#0000FF">pop</span></b> r<span style="color:#993399">12</span>
-	<b><span style="color:#0000FF">pop</span></b> rbx
-	<b><span style="color:#0000FF">ret</span></b>
-</pre></main>
+endR:
+	; deallocate temp arrays
+	; restore callee-save registers
+	add rsp, r11	
+	pop r15			
+	pop r14
+	pop r13
+	pop r12
+	pop rbx
+	ret
+</tt></pre></main>
 </body>
 </html>

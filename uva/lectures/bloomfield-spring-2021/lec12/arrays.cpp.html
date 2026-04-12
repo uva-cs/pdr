@@ -1,58 +1,58 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./uva/lectures/bloomfield-spring-2021/lec12/arrays.cpp file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>arrays.cpp</title>
+<title>Source code for ./uva/lectures/bloomfield-spring-2021/lec12/arrays.cpp (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">&lt;iostream&gt;</span>
-<b><span style="color:#0000FF">using</span></b> <b><span style="color:#0000FF">namespace</span></b> std<span style="color:#990000">;</span>
+<body bgcolor="white">
+<main><h1>Source code for ./uva/lectures/bloomfield-spring-2021/lec12/arrays.cpp (via source-highlight)</h1><pre><tt><b><font color="#000080">#include</font></b> <font color="#DF0000">&lt;iostream&gt;</font>
+<b><font color="#0000FF">using</font></b> <b><font color="#0000FF">namespace</font></b> std<font color="#990000">;</font>
 
-<span style="color:#008A00">void</span> <b><span style="color:#000000">subroutine</span></b> <span style="color:#990000">(</span><span style="color:#008A00">int</span> a<span style="color:#990000">[],</span> <span style="color:#008A00">int</span> s<span style="color:#990000">)</span> <span style="color:#EF0000">{</span>
-    a<span style="color:#990000">[</span><span style="color:#993399">5</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">9999</span><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
+<font color="#008A00">void</font> <b><font color="#000000">subroutine</font></b> <font color="#990000">(</font><font color="#008A00">int</font> a<font color="#990000">[],</font> <font color="#008A00">int</font> s<font color="#990000">)</font> <font color="#DF0000">{</font>
+    a<font color="#990000">[</font><font color="#993399">5</font><font color="#990000">]</font> <font color="#990000">=</font> <font color="#993399">9999</font><font color="#990000">;</font>
+<font color="#DF0000">}</font>
 
-<span style="color:#008A00">int</span> <b><span style="color:#000000">main</span></b><span style="color:#990000">()</span> <span style="color:#EF0000">{</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"hello world"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+<font color="#008A00">int</font> <b><font color="#000000">main</font></b><font color="#990000">()</font> <font color="#DF0000">{</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"hello world"</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
 
-    <span style="color:#008A00">int</span> a1<span style="color:#990000">[</span><span style="color:#993399">3</span><span style="color:#990000">];</span>
-    <span style="color:#008A00">int</span> a2<span style="color:#990000">[]</span> <span style="color:#990000">=</span> <span style="color:#EF0000">{</span> <span style="color:#993399">1</span><span style="color:#990000">,</span> <span style="color:#993399">2</span><span style="color:#990000">,</span> <span style="color:#993399">3</span> <span style="color:#EF0000">}</span><span style="color:#990000">;</span>
-    <span style="color:#008A00">int</span><span style="color:#990000">*</span> a3 <span style="color:#990000">=</span> <b><span style="color:#0000FF">new</span></b> <span style="color:#008A00">int</span><span style="color:#990000">[</span><span style="color:#993399">3</span><span style="color:#990000">];</span>
+    <font color="#008A00">int</font> a1<font color="#990000">[</font><font color="#993399">3</font><font color="#990000">];</font>
+    <font color="#008A00">int</font> a2<font color="#990000">[]</font> <font color="#990000">=</font> <font color="#DF0000">{</font> <font color="#993399">1</font><font color="#990000">,</font> <font color="#993399">2</font><font color="#990000">,</font> <font color="#993399">3</font> <font color="#DF0000">}</font><font color="#990000">;</font>
+    <font color="#008A00">int</font><font color="#990000">*</font> a3 <font color="#990000">=</font> <b><font color="#0000FF">new</font></b> <font color="#008A00">int</font><font color="#990000">[</font><font color="#993399">3</font><font color="#990000">];</font>
 
-    <i><span style="color:#9A1900">// a1 = a2; // not allowed</span></i>
+    <i><font color="#9A1900">// a1 = a2; // not allowed</font></i>
 
-    a1<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    a1<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">2</span><span style="color:#990000">;</span>
-    a1<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">3</span><span style="color:#990000">;</span>
-    a3<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">1</span><span style="color:#990000">;</span>
-    a3<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">2</span><span style="color:#990000">;</span>
-    a3<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">=</span> <span style="color:#993399">3</span><span style="color:#990000">;</span>
+    a1<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">=</font> <font color="#993399">1</font><font color="#990000">;</font>
+    a1<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">=</font> <font color="#993399">2</font><font color="#990000">;</font>
+    a1<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">=</font> <font color="#993399">3</font><font color="#990000">;</font>
+    a3<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">=</font> <font color="#993399">1</font><font color="#990000">;</font>
+    a3<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">=</font> <font color="#993399">2</font><font color="#990000">;</font>
+    a3<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">=</font> <font color="#993399">3</font><font color="#990000">;</font>
 
-    <b><span style="color:#0000FF">if</span></b> <span style="color:#990000">(</span> a1 <span style="color:#990000">==</span> a2 <span style="color:#990000">)</span>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"they are the same"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    <b><span style="color:#0000FF">else</span></b>
-        cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"they are different"</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    <b><font color="#0000FF">if</font></b> <font color="#990000">(</font> a1 <font color="#990000">==</font> a2 <font color="#990000">)</font>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"they are the same"</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    <b><font color="#0000FF">else</font></b>
+        cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"they are different"</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
 
-    <i><span style="color:#9A1900">//a3 = a1;</span></i>
+    <i><font color="#9A1900">//a3 = a1;</font></i>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"a1: "</span> <span style="color:#990000">&lt;&lt;</span> a1<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a1<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a1<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"a2: "</span> <span style="color:#990000">&lt;&lt;</span> a2<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a2<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a2<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"a3: "</span> <span style="color:#990000">&lt;&lt;</span> a3<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a3<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a3<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"a1: "</font> <font color="#990000">&lt;&lt;</font> a1<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a1<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a1<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"a2: "</font> <font color="#990000">&lt;&lt;</font> a2<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a2<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a2<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"a3: "</font> <font color="#990000">&lt;&lt;</font> a3<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a3<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a3<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
 
-    <b><span style="color:#000000">subroutine</span></b> <span style="color:#990000">(</span>a2<span style="color:#990000">,</span> <span style="color:#993399">3</span><span style="color:#990000">);</span>
+    <b><font color="#000000">subroutine</font></b> <font color="#990000">(</font>a2<font color="#990000">,</font> <font color="#993399">3</font><font color="#990000">);</font>
 
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"a1: "</span> <span style="color:#990000">&lt;&lt;</span> a1<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a1<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a1<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"a2: "</span> <span style="color:#990000">&lt;&lt;</span> a2<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a2<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a2<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
-    cout <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">"a3: "</span> <span style="color:#990000">&lt;&lt;</span> a3<span style="color:#990000">[</span><span style="color:#993399">0</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a3<span style="color:#990000">[</span><span style="color:#993399">1</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> <span style="color:#EF0000">", "</span> <span style="color:#990000">&lt;&lt;</span> a3<span style="color:#990000">[</span><span style="color:#993399">2</span><span style="color:#990000">]</span> <span style="color:#990000">&lt;&lt;</span> endl<span style="color:#990000">;</span>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"a1: "</font> <font color="#990000">&lt;&lt;</font> a1<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a1<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a1<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"a2: "</font> <font color="#990000">&lt;&lt;</font> a2<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a2<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a2<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
+    cout <font color="#990000">&lt;&lt;</font> <font color="#DF0000">"a3: "</font> <font color="#990000">&lt;&lt;</font> a3<font color="#990000">[</font><font color="#993399">0</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a3<font color="#990000">[</font><font color="#993399">1</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> <font color="#DF0000">", "</font> <font color="#990000">&lt;&lt;</font> a3<font color="#990000">[</font><font color="#993399">2</font><font color="#990000">]</font> <font color="#990000">&lt;&lt;</font> endl<font color="#990000">;</font>
 
-    <b><span style="color:#0000FF">delete</span></b> <span style="color:#990000">[]</span> a3<span style="color:#990000">;</span>
+    <b><font color="#0000FF">delete</font></b> <font color="#990000">[]</font> a3<font color="#990000">;</font>
 
-    <b><span style="color:#0000FF">return</span></b> <span style="color:#993399">0</span><span style="color:#990000">;</span>
-<span style="color:#EF0000">}</span>
-</pre></main>
+    <b><font color="#0000FF">return</font></b> <font color="#993399">0</font><font color="#990000">;</font>
+<font color="#DF0000">}</font>
+</tt></pre></main>
 </body>
 </html>

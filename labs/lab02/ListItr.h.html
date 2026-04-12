@@ -1,54 +1,54 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang='en'>
-<head>
+<head><meta name='description' content='This page contains the source code for the ./labs/lab02/ListItr.h file'>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="GENERATOR" content="GNU source-highlight 
+<meta name="GENERATOR" content="GNU source-highlight 3.1.9
 by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite">
-<title>ListItr.h</title>
+<title>Source code for ./labs/lab02/ListItr.h (via source-highlight)</title>
 </head>
-<body style="background-color:white">
-<main><pre><i><span style="color:#9A1900">/*</span></i>
-<i><span style="color:#9A1900"> * Filename: ListItr.h</span></i>
-<i><span style="color:#9A1900"> * Description: ListItr class definition</span></i>
-<i><span style="color:#9A1900"> */</span></i>
-<b><span style="color:#000080">#ifndef</span></b> LISTITR_H
-<b><span style="color:#000080">#define</span></b> LISTITR_H
+<body bgcolor="white">
+<main><h1>Source code for ./labs/lab02/ListItr.h (via source-highlight)</h1><pre><tt><i><font color="#9A1900">/*</font></i>
+<i><font color="#9A1900"> * Filename: ListItr.h</font></i>
+<i><font color="#9A1900"> * Description: ListItr class definition</font></i>
+<i><font color="#9A1900"> */</font></i>
+<b><font color="#000080">#ifndef</font></b> LISTITR_H
+<b><font color="#000080">#define</font></b> LISTITR_H
 
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"ListNode.h"</span>
-<b><span style="color:#000080">#include</span></b> <span style="color:#EF0000">"List.h"</span>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">"ListNode.h"</font>
+<b><font color="#000080">#include</font></b> <font color="#DF0000">"List.h"</font>
 
-<b><span style="color:#0000FF">class</span></b> <span style="color:#008080">ListItr</span> <span style="color:#EF0000">{</span>
-<b><span style="color:#0000FF">public</span></b><span style="color:#990000">:</span>
-    <i><span style="color:#9A1900">// Constructors</span></i>
-    <b><span style="color:#000000">ListItr</span></b><span style="color:#990000">();</span>
-    <b><span style="color:#000000">ListItr</span></b><span style="color:#990000">(</span>ListNode<span style="color:#990000">*</span> theNode<span style="color:#990000">);</span>
+<b><font color="#0000FF">class</font></b> <font color="#008080">ListItr</font> <font color="#DF0000">{</font>
+<b><font color="#0000FF">public</font></b><font color="#990000">:</font>
+    <i><font color="#9A1900">// Constructors</font></i>
+    <b><font color="#000000">ListItr</font></b><font color="#990000">();</font>
+    <b><font color="#000000">ListItr</font></b><font color="#990000">(</font>ListNode<font color="#990000">*</font> theNode<font color="#990000">);</font>
 
-    <i><span style="color:#9A1900">// Returns true if the iterator is currently pointing past the end position</span></i>
-    <i><span style="color:#9A1900">// in the list (i.e., it's pointing to the dummy tail), else false</span></i>
-    <span style="color:#008A00">bool</span> <b><span style="color:#000000">isPastEnd</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b><span style="color:#990000">;</span>
+    <i><font color="#9A1900">// Returns true if the iterator is currently pointing past the end position</font></i>
+    <i><font color="#9A1900">// in the list (i.e., it's pointing to the dummy tail), else false</font></i>
+    <font color="#008A00">bool</font> <b><font color="#000000">isPastEnd</font></b><font color="#990000">()</font> <b><font color="#0000FF">const</font></b><font color="#990000">;</font>
 
-    <i><span style="color:#9A1900">// Returns true if the iterator is currently pointing past (before) the first position</span></i>
-    <i><span style="color:#9A1900">// in list (i.e., it's pointing to the dummy head), else false</span></i>
-    <span style="color:#008A00">bool</span> <b><span style="color:#000000">isPastBeginning</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b><span style="color:#990000">;</span>
+    <i><font color="#9A1900">// Returns true if the iterator is currently pointing past (before) the first position</font></i>
+    <i><font color="#9A1900">// in list (i.e., it's pointing to the dummy head), else false</font></i>
+    <font color="#008A00">bool</font> <b><font color="#000000">isPastBeginning</font></b><font color="#990000">()</font> <b><font color="#0000FF">const</font></b><font color="#990000">;</font>
 
-    <i><span style="color:#9A1900">// Advances `current` to the next position in the list (unless already past the end of the list)</span></i>
-    <span style="color:#008A00">void</span> <b><span style="color:#000000">moveForward</span></b><span style="color:#990000">();</span>
+    <i><font color="#9A1900">// Advances `current` to the next position in the list (unless already past the end of the list)</font></i>
+    <font color="#008A00">void</font> <b><font color="#000000">moveForward</font></b><font color="#990000">();</font>
 
-    <i><span style="color:#9A1900">// Moves `current` back to the previous position in the list (unless already past the beginning of the list)</span></i>
-    <span style="color:#008A00">void</span> <b><span style="color:#000000">moveBackward</span></b><span style="color:#990000">();</span>
+    <i><font color="#9A1900">// Moves `current` back to the previous position in the list (unless already past the beginning of the list)</font></i>
+    <font color="#008A00">void</font> <b><font color="#000000">moveBackward</font></b><font color="#990000">();</font>
 
-    <i><span style="color:#9A1900">// Returns the value of the item in the current position of the list</span></i>
-    <span style="color:#008A00">int</span> <b><span style="color:#000000">retrieve</span></b><span style="color:#990000">()</span> <b><span style="color:#0000FF">const</span></b><span style="color:#990000">;</span>
+    <i><font color="#9A1900">// Returns the value of the item in the current position of the list</font></i>
+    <font color="#008A00">int</font> <b><font color="#000000">retrieve</font></b><font color="#990000">()</font> <b><font color="#0000FF">const</font></b><font color="#990000">;</font>
 
-<b><span style="color:#0000FF">private</span></b><span style="color:#990000">:</span>
-    ListNode<span style="color:#990000">*</span> current<span style="color:#990000">;</span> <i><span style="color:#9A1900">// Holds the position in the list</span></i>
+<b><font color="#0000FF">private</font></b><font color="#990000">:</font>
+    ListNode<font color="#990000">*</font> current<font color="#990000">;</font> <i><font color="#9A1900">// Holds the position in the list</font></i>
 
-    <b><span style="color:#0000FF">friend</span></b> <b><span style="color:#0000FF">class</span></b> <span style="color:#008080">List</span><span style="color:#990000">;</span> <i><span style="color:#9A1900">// List class needs access to "current"</span></i>
-<span style="color:#EF0000">}</span><span style="color:#990000">;</span>
+    <b><font color="#0000FF">friend</font></b> <b><font color="#0000FF">class</font></b> <font color="#008080">List</font><font color="#990000">;</font> <i><font color="#9A1900">// List class needs access to "current"</font></i>
+<font color="#DF0000">}</font><font color="#990000">;</font>
 
-<b><span style="color:#000080">#endif</span></b>
-</pre></main>
+<b><font color="#000080">#endif</font></b>
+</tt></pre></main>
 </body>
 </html>
