@@ -486,7 +486,7 @@ is all set up to do this properly):</p>
 <pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 brew install llvm
 PROFILE_FILE=$(if [[ -n $ZSH_VERSION ]]; then echo ~/.zshrc; else echo ~/.bash_profile; fi)
-echo &#39;ASAN_OPTIONS=detect_leaks=1\nexport PATH=&quot;/usr/local/opt/llvm/bin:${PATH}&quot;&#39; &gt;&gt; $PROFILE_FILE
+echo &#39;export ASAN_OPTIONS=detect_leaks=1\nexport PATH=&quot;/usr/local/opt/llvm/bin:${PATH}&quot;&#39; &gt;&gt; $PROFILE_FILE
 source $PROFILE_FILE</code></pre>
 <p>Now you can compile your code with <a
 href="https://clang.llvm.org/docs/AddressSanitizer.html">AddressSanitizer</a>

@@ -368,7 +368,7 @@ If you are using Mac OS X (and ONLY if you are using Mac OS X), then you will ne
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install llvm
 PROFILE_FILE=$(if [[ -n $ZSH_VERSION ]]; then echo ~/.zshrc; else echo ~/.bash_profile; fi)
-echo 'ASAN_OPTIONS=detect_leaks=1\nexport PATH="/usr/local/opt/llvm/bin:${PATH}"' >> $PROFILE_FILE
+echo 'export ASAN_OPTIONS=detect_leaks=1\nexport PATH="/usr/local/opt/llvm/bin:${PATH}"' >> $PROFILE_FILE
 source $PROFILE_FILE
 ```
 
